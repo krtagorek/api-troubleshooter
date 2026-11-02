@@ -1,0 +1,32 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "final_split_assigned": false,
+  "independence_established": false,
+  "groups": [
+    {
+      "cases": [
+        "W4-REAL-006",
+        "W4-REAL-010"
+      ],
+      "level": "media-type rejection family",
+      "difference": "006 historical empty-body/header comparison; 010 ambiguous multipart rejection with transport status unknown"
+    },
+    {
+      "cases": [
+        "W4-REAL-004",
+        "W4-REAL-009"
+      ],
+      "level": "broad rate-limiting/ambiguity family",
+      "difference": "004 GitHub 403 secondary-limit hypothesis; 009 Spotify reporter/body 429 supported response category, cause/scope unknown"
+    },
+    {
+      "cases": [
+        "W4-REAL-008",
+        "W4-REAL-004"
+      ],
+      "level": "broad GitHub access/response-ambiguity exposure",
+      "difference": "Different resources and symptoms; exact causes not shared or proven"
+    }
+  ],
+  "limits": "Not a full semantic independence audit of inherited synthetic families. Do not count Spring linked duplicate #21955 as another independent incident."
+}

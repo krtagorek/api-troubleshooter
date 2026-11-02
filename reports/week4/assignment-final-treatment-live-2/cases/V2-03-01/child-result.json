@@ -1,0 +1,549 @@
+{
+  "case_id": "V2-03-01",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "authorization",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/logs/0/fields/decision_rule",
+        "/logs/0/fields/identity_valid",
+        "/logs/0/fields/resource_environment",
+        "/logs/0/fields/workload_environment",
+        "/response_body/status",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP 403 status code indicates the client is forbidden from accessing the resource, which is an authorization failure. The logs confirm the identity is valid (E06) but the decision rule 'environment-equality' failed due to mismatched environments between resource (production) and workload (staging) (E05, E07, E08). This mismatch caused the authorization denial, not an authentication or validation error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.8,
+      "diagnostic_checks": [
+        "Inspect detailed authorization policy configuration and decision trace logs for environment-equality rule enforcement.",
+        "Correlate upstream/downstream traces to confirm authorization decision path and environment mismatch impact.",
+        "Verify no proxy or intermediary altered the response or caused denial."
+      ],
+      "discriminating_evidence_ids": [
+        "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+        "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+        "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9"
+      ],
+      "missing_evidence": [
+        {
+          "description": "Detailed authorization policy configuration and decision trace logs to confirm environment-equality rule enforcement and exact cause of denial.",
+          "required_to_resolve": "To definitively confirm environment mismatch as root cause and exclude other authorization factors."
+        },
+        {
+          "description": "Upstream and downstream request traces correlating identity validation and authorization decision.",
+          "required_to_resolve": "To verify no other intermediary or policy caused the 403 response."
+        }
+      ],
+      "selected_hypothesis_id": "H1",
+      "status": "tentative",
+      "summary": "The most supported hypothesis is that the 403 authorization failure is caused by an environment mismatch between the resource (production) and workload (staging), triggering the environment-equality decision rule to deny access despite valid identity authentication.",
+      "uncertainty": [
+        "No direct evidence confirms the environment-equality rule logic beyond the log message.",
+        "No upstream or downstream traces confirm the exact authorization decision path.",
+        "The reliability of log observations is moderate (0.5), so some uncertainty remains."
+      ]
+    },
+    "evidence": {
+      "completeness": "complete",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:2b9600badd8b870b597763d1",
+          "observation": "Observed status 403; the client could not complete its intended operation",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+          "observation": "environment-equality",
+          "reference": "/logs/0/fields/decision_rule",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:51cb3385c2d8c312f6ad0e3e",
+          "observation": "true",
+          "reference": "/logs/0/fields/identity_valid",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+          "observation": "production",
+          "reference": "/logs/0/fields/resource_environment",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9",
+          "observation": "staging",
+          "reference": "/logs/0/fields/workload_environment",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:4793310b391dbc24e965ce0a",
+          "observation": "403",
+          "reference": "/response_body/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:56ff0eec3b9dc35177e93381",
+          "observation": "403",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": {
+      "diagnosis": {
+        "confidence": 0.8,
+        "diagnostic_checks": [
+          "Inspect detailed authorization policy configuration and decision trace logs for environment-equality rule enforcement.",
+          "Correlate upstream/downstream traces to confirm authorization decision path and environment mismatch impact.",
+          "Verify no proxy or intermediary altered the response or caused denial."
+        ],
+        "discriminating_evidence_ids": [
+          "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+          "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+          "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9"
+        ],
+        "missing_evidence": [
+          {
+            "description": "Detailed authorization policy configuration and decision trace logs to confirm environment-equality rule enforcement and exact cause of denial.",
+            "required_to_resolve": "To definitively confirm environment mismatch as root cause and exclude other authorization factors."
+          },
+          {
+            "description": "Upstream and downstream request traces correlating identity validation and authorization decision.",
+            "required_to_resolve": "To verify no other intermediary or policy caused the 403 response."
+          }
+        ],
+        "selected_hypothesis_id": "H1",
+        "status": "tentative",
+        "summary": "The most supported hypothesis is that the 403 authorization failure is caused by an environment mismatch between the resource (production) and workload (staging), triggering the environment-equality decision rule to deny access despite valid identity authentication.",
+        "uncertainty": [
+          "No direct evidence confirms the environment-equality rule logic beyond the log message.",
+          "No upstream or downstream traces confirm the exact authorization decision path.",
+          "The reliability of log observations is moderate (0.5), so some uncertainty remains."
+        ]
+      },
+      "evidence": {
+        "completeness": "complete",
+        "items": [
+          {
+            "ambiguous": false,
+            "evidence_id": "ev:75641fc6aacc73864c59d51e:2b9600badd8b870b597763d1",
+            "observation": "Observed status 403; the client could not complete its intended operation",
+            "reference": "/actual_behavior",
+            "reliability": 0.5,
+            "source": "user"
+          },
+          {
+            "ambiguous": false,
+            "evidence_id": "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+            "observation": "environment-equality",
+            "reference": "/logs/0/fields/decision_rule",
+            "reliability": 0.5,
+            "source": "log"
+          },
+          {
+            "ambiguous": false,
+            "evidence_id": "ev:75641fc6aacc73864c59d51e:51cb3385c2d8c312f6ad0e3e",
+            "observation": "true",
+            "reference": "/logs/0/fields/identity_valid",
+            "reliability": 0.5,
+            "source": "log"
+          },
+          {
+            "ambiguous": false,
+            "evidence_id": "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+            "observation": "production",
+            "reference": "/logs/0/fields/resource_environment",
+            "reliability": 0.5,
+            "source": "log"
+          },
+          {
+            "ambiguous": false,
+            "evidence_id": "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9",
+            "observation": "staging",
+            "reference": "/logs/0/fields/workload_environment",
+            "reliability": 0.5,
+            "source": "log"
+          },
+          {
+            "ambiguous": false,
+            "evidence_id": "ev:75641fc6aacc73864c59d51e:4793310b391dbc24e965ce0a",
+            "observation": "403",
+            "reference": "/response_body/status",
+            "reliability": 0.5,
+            "source": "response"
+          },
+          {
+            "ambiguous": false,
+            "evidence_id": "ev:75641fc6aacc73864c59d51e:56ff0eec3b9dc35177e93381",
+            "observation": "403",
+            "reference": "/status_code",
+            "reliability": 0.5,
+            "source": "response"
+          }
+        ],
+        "missing": []
+      },
+      "incident_id": "V2-03-01",
+      "limitations": [
+        "Qualified hypothesis only; upstream cause is not definitively confirmed",
+        "Validation NOT_TESTED; no checks or fix steps were executed",
+        "Diagnostic plan requires human approval",
+        "User-supplied observations; no signed ingestion provenance or trusted diagnostic-contract authority was verified"
+      ],
+      "proposed_fix": {
+        "evidence_ids": [
+          "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+          "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+          "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9"
+        ],
+        "plan_kind": "diagnostic",
+        "prerequisites": [
+          "Access to detailed authorization policy configurations and decision trace logs.",
+          "Access to upstream and downstream request trace logs.",
+          "Access to proxy or intermediary component logs if applicable."
+        ],
+        "requires_human_approval": true,
+        "risks": [
+          "No configuration changes are proposed, so no risk of service disruption or access impact."
+        ],
+        "steps": [
+          "Inspect detailed authorization policy configuration and decision trace logs to confirm the logic and enforcement of the environment-equality decision rule.",
+          "Compare resource environment and workload environment values in policy and logs to verify mismatch.",
+          "Review upstream and downstream request traces to correlate identity validation and authorization decision path.",
+          "Inspect any proxy or intermediary components to ensure they did not alter the response or cause the denial."
+        ],
+        "summary": "Verify the environment-equality authorization decision rule enforcement and confirm the environment mismatch as the cause of the 403 denial.",
+        "verification_steps": [
+          "Confirm that the environment-equality decision rule requires matching resource and workload environments for authorization to succeed.",
+          "Verify that the resource environment is 'production' and workload environment is 'staging' as observed in logs.",
+          "Confirm that the authorization decision trace logs show denial due to environment mismatch.",
+          "Ensure no other authorization policies or intermediaries caused the 403 response."
+        ]
+      },
+      "summary": "Tentative diagnostic analysis completed; validation NOT_TESTED and human approval required",
+      "validation_results": [
+        {
+          "checks": [],
+          "issues": [
+            "No real or simulated validation tools are integrated; no checks were executed."
+          ],
+          "retry_recommended": false,
+          "status": "NOT_TESTED"
+        }
+      ]
+    },
+    "hypotheses": [
+      {
+        "assumptions": [
+          "The environment-equality decision rule enforces that resource and workload environments must match for authorization to succeed.",
+          "The identity is valid and authentication succeeded, so denial is due to authorization policy.",
+          "The 403 status code indicates forbidden access due to authorization, not authentication failure."
+        ],
+        "confidence": 0.8,
+        "contradicting_evidence_ids": [],
+        "description": "Authorization failure due to environment mismatch between resource and workload causing the environment-equality decision rule to deny access.",
+        "evidence_assessments": [
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d"
+            ],
+            "explanation": "The decision rule 'environment-equality' indicates the authorization check is based on environment matching.",
+            "hypothesis_prediction": "Environment mismatch causes denial by this rule.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:51cb3385c2d8c312f6ad0e3e"
+            ],
+            "explanation": "Identity is valid, so authentication succeeded, supporting authorization failure as cause.",
+            "hypothesis_prediction": "Valid identity means denial is not due to authentication failure.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead"
+            ],
+            "explanation": "Resource environment is 'production', relevant to environment-equality check.",
+            "hypothesis_prediction": "Resource environment is production, which must match workload environment.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9"
+            ],
+            "explanation": "Workload environment is 'staging', which mismatches resource environment, triggering denial.",
+            "hypothesis_prediction": "Mismatch between staging and production causes denial.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:4793310b391dbc24e965ce0a",
+              "ev:75641fc6aacc73864c59d51e:56ff0eec3b9dc35177e93381"
+            ],
+            "explanation": "HTTP 403 status code in response confirms authorization denial.",
+            "hypothesis_prediction": "403 status is expected for authorization failure.",
+            "relation": "supporting"
+          }
+        ],
+        "hypothesis_id": "H1",
+        "supporting_evidence_ids": [
+          "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+          "ev:75641fc6aacc73864c59d51e:51cb3385c2d8c312f6ad0e3e",
+          "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+          "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9",
+          "ev:75641fc6aacc73864c59d51e:4793310b391dbc24e965ce0a",
+          "ev:75641fc6aacc73864c59d51e:56ff0eec3b9dc35177e93381"
+        ]
+      }
+    ],
+    "incident_id": "V2-03-01",
+    "max_retries": 0,
+    "pending_user_questions": [],
+    "proposed_fix": {
+      "evidence_ids": [
+        "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+        "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+        "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9"
+      ],
+      "plan_kind": "diagnostic",
+      "prerequisites": [
+        "Access to detailed authorization policy configurations and decision trace logs.",
+        "Access to upstream and downstream request trace logs.",
+        "Access to proxy or intermediary component logs if applicable."
+      ],
+      "requires_human_approval": true,
+      "risks": [
+        "No configuration changes are proposed, so no risk of service disruption or access impact."
+      ],
+      "steps": [
+        "Inspect detailed authorization policy configuration and decision trace logs to confirm the logic and enforcement of the environment-equality decision rule.",
+        "Compare resource environment and workload environment values in policy and logs to verify mismatch.",
+        "Review upstream and downstream request traces to correlate identity validation and authorization decision path.",
+        "Inspect any proxy or intermediary components to ensure they did not alter the response or cause the denial."
+      ],
+      "summary": "Verify the environment-equality authorization decision rule enforcement and confirm the environment mismatch as the cause of the 403 denial.",
+      "verification_steps": [
+        "Confirm that the environment-equality decision rule requires matching resource and workload environments for authorization to succeed.",
+        "Verify that the resource environment is 'production' and workload environment is 'staging' as observed in logs.",
+        "Confirm that the authorization decision trace logs show denial due to environment mismatch.",
+        "Ensure no other authorization policies or intermediaries caused the 403 response."
+      ]
+    },
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 403; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-03-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-2-0",
+          "event": "connector.response",
+          "fields": {
+            "decision_rule": "environment-equality",
+            "identity_valid": true,
+            "resource_environment": "production",
+            "workload_environment": "staging"
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-03T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-2-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-2-0",
+        "result": "request unsuccessful",
+        "status": 403,
+        "timestamp": "2026-01-03T12:00:00Z"
+      },
+      "service": "synthetic-authorization-connector",
+      "severity": "medium",
+      "status_code": 403
+    },
+    "status": "completed",
+    "stop_reason": "tentative_diagnostic_report",
+    "thread_id": "c651068d-f481-447d-8249-02895e26c736",
+    "validation_results": [
+      {
+        "checks": [],
+        "issues": [
+          "No real or simulated validation tools are integrated; no checks were executed."
+        ],
+        "retry_recommended": false,
+        "status": "NOT_TESTED"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "9f0c5ec8-cf52-406d-821e-0f15fe5bbefa",
+      "elapsed_seconds": 1.8343045839574188,
+      "error": null,
+      "input_tokens": 1718,
+      "output_tokens": 176,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1894
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "9abdcc3e-dd76-41d8-9dd0-159fed225e54",
+      "elapsed_seconds": 1.4917615000158548,
+      "error": null,
+      "input_tokens": 2248,
+      "output_tokens": 93,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2341
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "4f0e3aaa-e128-445b-86a4-b0ac215c90bf",
+      "elapsed_seconds": 4.132549792062491,
+      "error": null,
+      "input_tokens": 2844,
+      "output_tokens": 693,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "RootCauseAnalystOutput",
+      "source": "provider_usage",
+      "total_tokens": 3537
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "34e73da0-40cd-44a7-a767-35eb532c15be",
+      "elapsed_seconds": 2.3689792919903994,
+      "error": null,
+      "input_tokens": 2801,
+      "output_tokens": 321,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ResolutionGeneratorOutput",
+      "source": "provider_usage",
+      "total_tokens": 3122
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "f2b9a0a3-34da-4350-9997-a8042f491f64",
+      "elapsed_seconds": 1.3758878749795258,
+      "error": null,
+      "input_tokens": 2701,
+      "output_tokens": 92,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ValidatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2793
+    }
+  ],
+  "root_id": "c651068d-f481-447d-8249-02895e26c736",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [
+        "/logs/0/fields/resource_environment",
+        "/logs/0/fields/workload_environment"
+      ],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/logs/0/correlation_id",
+        "/logs/0/event",
+        "/logs/0/level",
+        "/logs/0/message",
+        "/logs/0/timestamp",
+        "/request_metadata/environment",
+        "/request_metadata/evidence_quality",
+        "/request_metadata/headers/X-Demo-Mode",
+        "/request_metadata/request_id",
+        "/request_metadata/timeout_ms",
+        "/response_body/request_id",
+        "/response_body/result",
+        "/response_body/timestamp"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": true,
+      "readiness_reason": "Legacy readiness retained",
+      "selected_references": [
+        "/actual_behavior",
+        "/logs/0/fields/decision_rule",
+        "/logs/0/fields/identity_valid",
+        "/logs/0/fields/resource_environment",
+        "/logs/0/fields/workload_environment",
+        "/response_body/status",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "complete",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": true,
+    "readiness_reason": "Legacy readiness retained",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 7,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "fcd20455363917bfdd8127b204a4f549a2d2280e42f1a1056a55216b7c54d756",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "completed",
+    "root_cause_analyst": "completed",
+    "validator": "completed"
+  },
+  "terminal_status": "completed",
+  "workflow_status": "completed"
+}

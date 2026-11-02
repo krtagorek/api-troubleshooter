@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-028",
+  "incident": {
+    "incident_id": "W4-REAL-028",
+    "service": "Open WebUI",
+    "endpoint": "/api/chat/completions",
+    "http_method": "POST",
+    "status_code": 400,
+    "request_metadata": {
+      "upstream_status_reported": 429,
+      "upstream_retry_after_reported": "7",
+      "client_retry_after_reported": "absent",
+      "status_evidence": {
+        "kind": "third_party_controlled_mock_upstream_reproduction_client_log_400_distinct_upstream_429"
+      },
+      "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+      "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+      "reproduction_context": "Third-party controlled reproduction using a mock upstream, not production rate-limit traffic."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Submit the intended chat completion through POST /api/chat/completions.",
+    "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published server log pairs POST /api/chat/completions with 400; response detail describes rate limiting.\n- Controlled mock upstream returns 429 and retry headers; client response lacks retry headers.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

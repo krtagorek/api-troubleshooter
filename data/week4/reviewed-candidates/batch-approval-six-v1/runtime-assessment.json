@@ -1,0 +1,78 @@
+{
+  "cases": [
+    {
+      "case_id": "V2-01-03",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "catalog_entries": 20,
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "agent_graph": "NOT_RUN",
+      "semantic_scores": null,
+      "golden_ready": false
+    },
+    {
+      "case_id": "V2-03-01",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "catalog_entries": 21,
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "agent_graph": "NOT_RUN",
+      "semantic_scores": null,
+      "golden_ready": false
+    },
+    {
+      "case_id": "V2-04-01",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "catalog_entries": 21,
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "agent_graph": "NOT_RUN",
+      "semantic_scores": null,
+      "golden_ready": false
+    },
+    {
+      "case_id": "V2-05-01",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "catalog_entries": 21,
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "agent_graph": "NOT_RUN",
+      "semantic_scores": null,
+      "golden_ready": false
+    },
+    {
+      "case_id": "V2-15-01",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "catalog_entries": 21,
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "agent_graph": "NOT_RUN",
+      "semantic_scores": null,
+      "golden_ready": false
+    },
+    {
+      "case_id": "W4-REAL-007",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "catalog_entries": 15,
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "agent_graph": "NOT_RUN",
+      "semantic_scores": null,
+      "golden_ready": false
+    }
+  ],
+  "golden_ready": false,
+  "workflow_execution": "NOT_RUN"
+}

@@ -1,0 +1,207 @@
+{
+  "case_id": "W4-REAL-023",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "authorization",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_error",
+        "/status_code"
+      ],
+      "reasoning": "The reported error explicitly states 'unauthorized' while attempting to save a design document, indicating an authorization failure. The HTTP 500 status code is observed, but the error message clearly points to an authorization issue rather than a server error or other categories. The evidence includes the reported error message (E04) and the HTTP 500 status (E09) with the context of an unauthorized error during a POST request (E01)."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:69e85dec4833c384425fd047:b8f41a23b680255dc1084d01",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Report supplies explicit POST curl command without authorization and HTTP 500 response.\n- JSON body reports error_saving_ddoc with unauthorized reason; affected version 2.0.0.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:69e85dec4833c384425fd047:c43ca034fc154522216c3549",
+          "observation": "error_saving_ddoc; Unknown error while saving the design document: unauthorized",
+          "reference": "/request_metadata/reported_error",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:69e85dec4833c384425fd047:2af465ac548465729c71cbd4",
+          "observation": "500",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent captured telemetry or logs are supplied to verify the reported unauthorized error or to clarify why the server returned HTTP 500 instead of a 401/403 status.",
+          "required_to_resolve": "Access to server logs or telemetry capturing the authorization failure and error handling path during the POST /new/_index request."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-023",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Access to server logs or telemetry capturing the authorization failure and error handling path during the POST /new/_index request.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /request_metadata/observation_representation, /request_metadata/request_headers/Content-Type, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/reported_error, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Report supplies explicit POST curl command without authorization and HTTP 500 response.\n- JSON body reports error_saving_ddoc with unauthorized reason; affected version 2.0.0.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/new/_index",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Submit the intended index-creation request to POST /new/_index.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-023",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_error": "error_saving_ddoc; Unknown error while saving the design document: unauthorized",
+        "request_headers": {
+          "Content-Type": "application/json"
+        },
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "published_curl_http_500"
+        }
+      },
+      "response_body": null,
+      "service": "CouchDB",
+      "severity": "unknown",
+      "status_code": 500
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "890240d4-3e1b-4698-9c1b-89c97ea69aa1",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "940d85dc-0572-4c3f-8176-9247f8d6533b",
+      "elapsed_seconds": 1.813750582979992,
+      "error": null,
+      "input_tokens": 1237,
+      "output_tokens": 167,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1404
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "878ae5c5-18fb-4a30-aace-5d4ac6f8129f",
+      "elapsed_seconds": 1.395481541985646,
+      "error": null,
+      "input_tokens": 1738,
+      "output_tokens": 142,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1880
+    }
+  ],
+  "root_id": "890240d4-3e1b-4698-9c1b-89c97ea69aa1",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/request_metadata/observation_representation",
+        "/request_metadata/request_headers/Content-Type",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_error",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 3,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "04a0b1497404ee230f95ac654901408f91601fefac1e190c62873422a9fa5836",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

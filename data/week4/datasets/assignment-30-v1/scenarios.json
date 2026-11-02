@@ -1,0 +1,137 @@
+{
+  "counts": {
+    "edge": 15,
+    "happy": 12,
+    "known_difficult_or_failure": 2,
+    "adversarial": 1
+  },
+  "guide": {
+    "happy": 15,
+    "edge": 9,
+    "known_difficult_or_failure": 4,
+    "adversarial": 2
+  },
+  "deviation": "Actual 12/15/2/1 vs approximate 15/9/4/2; partial reports support more edge cases. 028 is reported application failure/difficult, not observed agent failure. Rank real agent clusters only from baseline results.",
+  "cases": {
+    "W4-REAL-005": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-006": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-008": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-009": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-011": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-012": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-013": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-014": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-015": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-016": {
+      "scenario": "known_difficult_or_failure",
+      "failure_provenance": null
+    },
+    "W4-REAL-017": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-018": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-019": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-020": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-DRAFT-032-v1": {
+      "scenario": "adversarial",
+      "failure_provenance": null
+    },
+    "V2-03-01": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "V2-04-01": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "V2-05-01": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "V2-15-01": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-007": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-021": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-022": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-023": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-024": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-025": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-026": {
+      "scenario": "happy",
+      "failure_provenance": null
+    },
+    "W4-REAL-027": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-REAL-028": {
+      "scenario": "known_difficult_or_failure",
+      "failure_provenance": "Reported application failure in a third-party controlled reproduction; not an observed agent failure"
+    },
+    "W4-REAL-029": {
+      "scenario": "edge",
+      "failure_provenance": null
+    },
+    "W4-DRAFT-031-v1": {
+      "scenario": "edge",
+      "failure_provenance": null
+    }
+  }
+}

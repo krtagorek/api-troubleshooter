@@ -1,0 +1,33 @@
+{
+  "case_id": "W4-REAL-012",
+  "incident": {
+    "incident_id": "W4-REAL-012",
+    "service": "Elasticsearch",
+    "endpoint": "/euronews/mytable/1266?pretty=true",
+    "http_method": "POST",
+    "status_code": 400,
+    "request_metadata": {
+      "status_evidence": {
+        "kind": "reported_client_exception_http_status_line"
+      },
+      "observation_representation": "Attributed public-report paraphrases, not independently reproduced measurements.",
+      "response_body_scope": "reported_excerpt_completeness_unknown"
+    },
+    "response_body": {
+      "error": {
+        "type": "mapper_parsing_exception",
+        "reason": "failed to parse",
+        "caused_by": {
+          "type": "json_parse_exception",
+          "reason": "Unexpected character ('f' (code 102)): was expecting comma to separate Object entries; line: 2, column: 45"
+        }
+      },
+      "status": 400
+    },
+    "logs": [],
+    "expected_behavior": "Submit the intended document to the reported POST /euronews/mytable/1266?pretty=true operation.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Client exception explicitly provides method POST, URI and HTTP/1.1 400.\n- Response names mapper_parsing_exception caused by json_parse_exception; parser encounters character f while expecting a comma at line 2 column 45.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

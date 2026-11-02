@@ -1,0 +1,34 @@
+{
+  "case_id": "W4-REAL-026",
+  "incident": {
+    "incident_id": "W4-REAL-026",
+    "service": "Connexion",
+    "endpoint": "/todos",
+    "http_method": "POST",
+    "status_code": 500,
+    "request_metadata": {
+      "reported_header_entries": [
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "Content-Type",
+          "Application/Json"
+        ]
+      ],
+      "reported_error": "ValueError: too many values to unpack (expected 2)",
+      "status_evidence": {
+        "kind": "contributor_reproduction_v3_access_log_500_distinct_v2_201_comparison"
+      },
+      "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+      "response_body_scope": "Not supplied; null is not evidence of a captured null response."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Submit the intended request through POST /todos.",
+    "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published curl sends both content-type application/json and Content-Type Application/Json.\n- Version-3 reproduction logs ValueError during MIME splitting and POST /todos 500; version-2 comparison returns 201.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

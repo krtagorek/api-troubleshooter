@@ -1,0 +1,87 @@
+{
+  "kind": "PROVENANCE_ONLY_NOT_INFERENCE",
+  "anchors": [
+    {
+      "archive": "sources/fastapi-1911-issue.json",
+      "archive_sha256": "2ce73028e840c0c987c8edd7bdc1d3c3a4c3b9ddcfa04002693df137fafb19f2",
+      "json_pointer": "/body",
+      "start_character": 514,
+      "end_character": 543,
+      "excerpt": "@app.post(\"/upload_two_files\"",
+      "excerpt_sha256": "8996475bb0f38d0fe8b41386e07d4c087f6e3ef6a7800a540e038e5b3afee515",
+      "scope": "Declared route only, not response evidence"
+    },
+    {
+      "archive": "sources/fastapi-1911-issue.json",
+      "archive_sha256": "2ce73028e840c0c987c8edd7bdc1d3c3a4c3b9ddcfa04002693df137fafb19f2",
+      "json_pointer": "/body",
+      "start_character": 610,
+      "end_character": 644,
+      "excerpt": "first_file: UploadFile = File(...)",
+      "excerpt_sha256": "5b908d59511d97c9d15b26ffdde1bd4e7e337f20b0597836065a4eddd6b6aec0",
+      "scope": "Declared file argument"
+    },
+    {
+      "archive": "sources/fastapi-1911-issue.json",
+      "archive_sha256": "2ce73028e840c0c987c8edd7bdc1d3c3a4c3b9ddcfa04002693df137fafb19f2",
+      "json_pointer": "/body",
+      "start_character": 651,
+      "end_character": 686,
+      "excerpt": "second_file: UploadFile = File(...)",
+      "excerpt_sha256": "5e17e53c6245ccef5845bdace844f6a0da95ab9bdf2dc8a393723b1a635e7766",
+      "scope": "Declared file argument"
+    },
+    {
+      "archive": "sources/fastapi-1911-comments.json",
+      "archive_sha256": "476fb5df74b5ef3c941784a9c4e5c8623cd8f5c83d334435c59a28bf93081d1d",
+      "json_pointer": "/6/body",
+      "start_character": 471,
+      "end_character": 508,
+      "excerpt": "\"POST /upload_two_files HTTP/1.1\" 422",
+      "excerpt_sha256": "b7f529b8d6b1c73af1e71e09cdad72915cba96bbfb388b6537946c179802d59a",
+      "scope": "Reporter-published observed access line, not independently authenticated capture"
+    },
+    {
+      "archive": "sources/fastapi-1911-comments.json",
+      "archive_sha256": "476fb5df74b5ef3c941784a9c4e5c8623cd8f5c83d334435c59a28bf93081d1d",
+      "json_pointer": "/6/body",
+      "start_character": 344,
+      "end_character": 439,
+      "excerpt": "{\"detail\":[{\"loc\":[\"body\",\"second_file\"],\"msg\":\"field required\",\"type\":\"value_error.missing\"}]}",
+      "excerpt_sha256": "d5c225c8280bae10956774c8ad9303eab3e86009cc203a82112d0759ba793986",
+      "scope": "Adjacent reporter middleware validation excerpt; not full response capture"
+    },
+    {
+      "archive": "sources/fastapi-1911-comments.json",
+      "archive_sha256": "476fb5df74b5ef3c941784a9c4e5c8623cd8f5c83d334435c59a28bf93081d1d",
+      "json_pointer": "/6/body",
+      "start_character": 3933,
+      "end_character": 3991,
+      "excerpt": "RuntimeError: Response content shorter than Content-Length",
+      "excerpt_sha256": "c08cb20b97c06ee48de57a0bcec36695f87b303c85cefb184a178b34cb5002e6",
+      "scope": "Same posted excerpt; same operation/cause unverified"
+    },
+    {
+      "archive": "sources/open-webui-31326-issue.json",
+      "archive_sha256": "1029f8a9fd6a07a384f5ec883e6110a288cbfbfca16fe6ce4e37f60a69844111",
+      "json_pointer": "/body",
+      "start_character": 2168,
+      "end_character": 2219,
+      "excerpt": "Measured on v0.11.4 and on dev with a mock provider",
+      "excerpt_sha256": "b84378d3824a306bc9350442b19abadffbbcd41ee26e567f5fd2d837958ef2b9",
+      "scope": "Documents controlled mock-upstream context, not independent verification"
+    },
+    {
+      "archive": "sources/open-webui-31326-issue.json",
+      "archive_sha256": "1029f8a9fd6a07a384f5ec883e6110a288cbfbfca16fe6ce4e37f60a69844111",
+      "json_pointer": "/body",
+      "start_character": 2062,
+      "end_character": 2086,
+      "excerpt": "HTTP/1.1 400 Bad Request",
+      "excerpt_sha256": "4072752c6777bca317f44fb471d889f43b62e48366f6fcb890352525cec17ae0",
+      "scope": "Client-visible response reported by third party; not paid provider result"
+    }
+  ],
+  "independently_reproduced": false,
+  "authenticated_correlation": false
+}

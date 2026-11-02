@@ -1,0 +1,43 @@
+{
+  "status": "PASS_FOR_OFFLINE_PROPOSAL; LIVE_EXECUTION_BLOCKED",
+  "baseline_files_checked": 328,
+  "protected_assets_checked": 50,
+  "preexisting_files_unchanged": 880,
+  "prior_sealed_manifests": {
+    "reports/week4/attributed-report-readiness-v2-preservation-2": 2,
+    "reports/week4/attributed-report-readiness-v1-paired-1": 144,
+    "reports/week4/offline-verification-1": 12,
+    "reports/week4/attributed-report-readiness-v2-regressions-1": 1,
+    "reports/week4/offline-verification-final": 12,
+    "reports/week4/case-016-source-attribution-v1": 3,
+    "reports/week4/attributed-report-readiness-v1-paired-2": 144,
+    "reports/week4/attributed-report-readiness-v2-paired-1": 13,
+    "reports/week4/real-graph-mock-v1": 74,
+    "reports/week4/attributed-report-readiness-v2-controls-1": 2
+  },
+  "dependencies": {
+    "pins_checked": 88,
+    "python": "3.11.16",
+    "lock_sha256": "337dbdc8e75e70bebe1c8ac3b06b2a4149aede9299862ef99d03c74cb775fca0",
+    "mismatches": [],
+    "artifact_integrity": "installed versions checked; reinstall --require-hashes to verify distribution archives"
+  },
+  "sdk_or_network_or_command_attempts": {
+    "network_attempts_blocked": 0,
+    "sdk_initializations_blocked": 0,
+    "command_attempts_blocked": 0
+  },
+  "no_workflow_or_agent_or_smoke_invoked": true,
+  "no_SDK_clients_initialized": true,
+  "sanitization_unchanged": true,
+  "inference_field_exclusion_check": true,
+  "first_payload_and_system_match_current_code": true,
+  "later_requests_symbolic_only": true,
+  "deterministic_assessment_selection_conditional": true,
+  "proposed_config_rejected_as_expected": "Invalid input cap",
+  "source_hashes_and_input_archive_bindings_checked": true,
+  "budget_math_fits_proposed_ceiling": true,
+  "current_execution_bound_support": false,
+  "semantic_accuracy": null,
+  "cost_usd": null
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-029",
+  "incident": {
+    "incident_id": "W4-REAL-029",
+    "service": "nginx",
+    "endpoint": "/keepalive.html",
+    "http_method": "GET",
+    "status_code": 400,
+    "request_metadata": {
+      "request_headers": {
+        "Host": ""
+      },
+      "reported_error": "client sent invalid host header",
+      "status_evidence": {
+        "kind": "published_curl_http_400"
+      },
+      "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+      "response_body_scope": "Not supplied; null is not evidence of a captured null response."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Process the reported GET /keepalive.html according to the configured request contract.",
+    "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published curl transcript includes an empty Host header and HTTP/1.1 400.\n- Server message reports invalid host header.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

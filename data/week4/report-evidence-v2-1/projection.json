@@ -1,0 +1,16 @@
+{
+  "added_field": "request_metadata.report_attribution_v2",
+  "all_original_fields_unchanged": true,
+  "authenticated_request_correlation": false,
+  "case_id": "W4-REAL-016",
+  "cost_usd": null,
+  "independent_reproduction": false,
+  "original_input": "data/week4/reviewed-candidates/batch-016-020/inference/W4-REAL-016.json",
+  "original_input_sha256": "cf4360b672c9bef5846202ee084a17ffcb0a9811bc4a0bfc0501adac55ec4883",
+  "relationship_basis": "Issue reproduction and its author-introduced explanatory Logs section; editorial annotation anchored to original source snippets, not human acceptance.",
+  "revised_input_sha256": "30ece2362f9b8623b12568cc6726215d407604fcc92b3cae2c1e4c3c0f29410c",
+  "semantic_accuracy": null,
+  "source_capture_limit": "Partial selected-excerpt transcription from previously inspected page; no raw page archive or authenticated correlation.",
+  "source_document_sha256": "dbc8ea81f66eba30c74cba89b08ab1c1ceee230886825f4f4f0acca429916d9f",
+  "version": "week4-report-evidence-projection-2-1"
+}

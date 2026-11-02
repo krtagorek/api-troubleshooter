@@ -1,0 +1,41 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "independence_established": false,
+  "final_split_assigned": false,
+  "groups": [
+    {
+      "cases": [
+        "W4-REAL-024",
+        "W4-REAL-025"
+      ],
+      "relationship": "Broad CSRF rejection family; different source/application. Form encoding versus relay/web handler routing hypotheses; do not transfer later resolutions or call them independent holdouts."
+    },
+    {
+      "cases": [
+        "W4-REAL-021",
+        "W4-REAL-022",
+        "W4-REAL-026",
+        "W4-REAL-006",
+        "W4-REAL-010"
+      ],
+      "relationship": "Broad media-type/header parsing overlap; missing boundary, empty JSON body, duplicate headers and historical consumes condition are distinct."
+    },
+    {
+      "cases": [
+        "W4-REAL-028",
+        "W4-REAL-009",
+        "W4-REAL-004"
+      ],
+      "relationship": "Broad rate-limit symptoms; 028 is controlled mock-upstream reproduction and client/upstream status transformation, not proof of production traffic."
+    },
+    {
+      "cases": [
+        "W4-REAL-027",
+        "W4-REAL-016",
+        "W4-REAL-020"
+      ],
+      "relationship": "Broad gateway/proxy failure; protocol interaction does not establish header-encoding or TLS/request-target causes."
+    }
+  ],
+  "exposure": "All source packets now inspected/development-exposed; earlier exposure unknown. No independent holdout claim."
+}

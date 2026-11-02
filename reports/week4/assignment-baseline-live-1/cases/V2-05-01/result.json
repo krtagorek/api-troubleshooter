@@ -1,0 +1,205 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0019920",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0019920",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0019920",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "case_id": "V2-05-01",
+  "elapsed_seconds": 3.719947125064209,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 3.110992457717657,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.110992457717657,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/response_body/result",
+        "/response_body/status",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP status code 422 indicates an Unprocessable Entity, which typically means the request was syntactically correct but semantically invalid or failed validation rules. The response body confirms the request was unsuccessful with status 422 (E19, E21, E18). There is no evidence of authentication, authorization, rate limiting, timeout, server error, schema mismatch, or dependency failure. The logs and metadata do not indicate other failure categories. Therefore, the failure is best classified as a validation error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:2506c6cd1e79c10ff24abe58:006d952fee13739308b32347",
+          "observation": "Observed status 422; the client could not complete its intended operation",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:2506c6cd1e79c10ff24abe58:80e471b41df9c69834bb8bd3",
+          "observation": "request unsuccessful",
+          "reference": "/response_body/result",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:2506c6cd1e79c10ff24abe58:5cae049901bd84c7e850b94b",
+          "observation": "422",
+          "reference": "/response_body/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:2506c6cd1e79c10ff24abe58:e010d9672a2b3cd8fa86988e",
+          "observation": "422",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "Trusted coverage check cannot establish diagnostic sufficiency",
+          "required_to_resolve": "Collect specific correlated diagnostics or review omitted comparison evidence"
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "V2-05-01",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Collect specific correlated diagnostics or review omitted comparison evidence",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 422; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "POST",
+      "incident_id": "V2-05-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-4-0",
+          "event": "connector.response",
+          "fields": {
+            "contract_unit": "milliseconds",
+            "field": "event_time_ms",
+            "minimum": 1700000000000,
+            "received": 1770000000
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-05T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-4-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-4-0",
+        "result": "request unsuccessful",
+        "status": 422,
+        "timestamp": "2026-01-05T12:00:00Z"
+      },
+      "service": "synthetic-validation-connector",
+      "severity": "medium",
+      "status_code": 422
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "02954422-13f2-42a0-80c1-6a79ec95c7b4",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "e3d6a575-e85a-4ce9-abfa-0b399e935e83",
+      "elapsed_seconds": 1.9429732079152018,
+      "error": null,
+      "input_tokens": 1742,
+      "output_tokens": 196,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1938
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "206162e2-7a05-4b6e-b8e6-fa89024c8f38",
+      "elapsed_seconds": 1.1680192498024553,
+      "error": null,
+      "input_tokens": 2082,
+      "output_tokens": 93,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2175
+    }
+  ],
+  "root_id": "02954422-13f2-42a0-80c1-6a79ec95c7b4",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 67976,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

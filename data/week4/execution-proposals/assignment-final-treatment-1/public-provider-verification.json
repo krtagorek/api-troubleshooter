@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-10-29T20:44:22.139905+00:00",
+  "source_kind": "Official public documentation only; no authenticated discovery",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "service_tier": "default",
+  "documented_context_tokens": 1047576,
+  "structured_outputs": true,
+  "chat_completions": true,
+  "input_per_million": "0.40",
+  "cached_input_per_million": "0.10",
+  "output_per_million": "1.60",
+  "lifecycle": "Deprecated; documented API shutdown 2027-01-14; plan expires 2027-01-13. No substitution.",
+  "sources": [
+    "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+    "https://developers.openai.com/api/docs/deprecations"
+  ],
+  "current_private_account_access": "UNVERIFIED",
+  "paid_calls": 0,
+  "authenticated_discovery": false
+}

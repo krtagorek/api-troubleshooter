@@ -1,0 +1,28 @@
+{
+  "case_id": "W4-REAL-009",
+  "incident": {
+    "incident_id": "W4-REAL-009",
+    "service": "Spotify Web API",
+    "endpoint": "/v1/albums/054sbn8pn705PuLxwKgi6L?market=from_token",
+    "http_method": "GET",
+    "status_code": 429,
+    "request_metadata": {
+      "client_reported": "Spotify Web Player; Firefox Nightly",
+      "status_evidence": {
+        "kind": "reporter_stated_and_body_echo",
+        "captured_status_line_available": false
+      }
+    },
+    "response_body": {
+      "error": {
+        "status": 429,
+        "message": "API rate limit exceeded"
+      }
+    },
+    "logs": [],
+    "expected_behavior": "Retrieve the requested album information.",
+    "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly lists the GET URL and describes a 429 while opening album/artist information.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

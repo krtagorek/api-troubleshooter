@@ -1,0 +1,25 @@
+{
+  "test_command": ".venv-week4-py311/bin/python -m unittest scripts.week4_reviewed_compatibility_tests scripts.week4_reviewed_batch2_tests scripts.week4_reviewed_batch3_tests -v",
+  "tests_passed": 28,
+  "counts": {
+    "human_accepted": 5,
+    "input_schema_compatible": 5,
+    "evidence_preserving_input_compatible": 5,
+    "graph_executed": 0,
+    "golden_set_ready": 0
+  },
+  "external_network_blocked": true,
+  "agent_graph_executed": false,
+  "provider_sdk_imported": false,
+  "baseline_entries_checked": 328,
+  "baseline_mismatches": [],
+  "prior_review_artifacts_checked": 19,
+  "prior_artifact_mismatches": [],
+  "inventory_rows": 230,
+  "inventory_unique_ids": 230,
+  "idempotence_verified": true,
+  "source_hashes": {
+    "api-incident-candidates-011-015-v1.json": "7eaf6dcd1169bf11ccbf139cf53b76f2f46a0cb846e68388400783df8cf6773e",
+    "api-incident-reviewed-011-015-v5.json": "0ff93d69a63a7e98aadbce8c9f5184b079f943e6f12c2837bc329b0730c23c63"
+  }
+}

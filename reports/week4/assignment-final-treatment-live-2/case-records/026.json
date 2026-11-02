@@ -1,0 +1,238 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0018812",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0018812",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0018812",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "W4-REAL-027",
+  "elapsed_seconds": 4.423333957791328,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 3.7905736658722162,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.7905736658722162,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "dependency_failure",
+      "confidence": 0.7,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_backend_protocol",
+        "/status_code"
+      ],
+      "reasoning": "The incident involves an HTTP 502 Bad Gateway error from HAProxy when accessing a backend over QUIC/HTTP3, while direct backend access and HTTP/2 backend configuration work correctly. This suggests the failure is related to the dependency backend service or its protocol handling rather than client authentication, authorization, validation, rate limiting, or schema issues. The evidence includes the 502 status code (E10), the reported backend protocol as QUIC/HTTP3 (E04), and the user observation of backend failure with QUIC but not HTTP/2 (E01). However, the evidence is indirect and not independently reproduced, so confidence is moderate."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:b38c0e3d2dc568f39d3261ae:06943347560fe5ab272ad5ca",
+          "observation": "Reporter-published observations; not independently reproduced:\n- HTTP/1.1 curl transcript shows GET / and 502 after approximately 30 seconds.\n- Reporter compares QUIC backend failure with working HTTP/2 backend configuration and says direct backend access works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:b38c0e3d2dc568f39d3261ae:4076ef150203c666aaf96551",
+          "observation": "QUIC/HTTP3",
+          "reference": "/request_metadata/reported_backend_protocol",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:b38c0e3d2dc568f39d3261ae:d8986be1dbbbccf734d35ad6",
+          "observation": "502",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent telemetry or logs from HAProxy or backend to confirm the cause of the 502 error or to distinguish between network, protocol, or backend service failures.",
+          "required_to_resolve": "Captured HAProxy logs, backend service logs, or independent network traces showing the failure mode and timing."
+        },
+        {
+          "description": "No evidence on backend service health or configuration differences between QUIC/HTTP3 and HTTP/2 backends to explain the protocol-specific failure.",
+          "required_to_resolve": "Backend service status and configuration details for QUIC/HTTP3 and HTTP/2 endpoints."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-027",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Captured HAProxy logs, backend service logs, or independent network traces showing the failure mode and timing.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Backend service status and configuration details for QUIC/HTTP3 and HTTP/2 endpoints.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /request_metadata/observation_representation, /request_metadata/reported_frontend_protocol, /request_metadata/reported_version, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/reported_backend_protocol, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- HTTP/1.1 curl transcript shows GET / and 502 after approximately 30 seconds.\n- Reporter compares QUIC backend failure with working HTTP/2 backend configuration and says direct backend access works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Retrieve the intended resource through GET /.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-027",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_backend_protocol": "QUIC/HTTP3",
+        "reported_frontend_protocol": "HTTP/1.1",
+        "reported_version": "3.3.3",
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "published_curl_http_502"
+        }
+      },
+      "response_body": null,
+      "service": "HAProxy",
+      "severity": "unknown",
+      "status_code": 502
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "0425be8f-8cd9-4a44-82ae-1c72832e532f",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "780690a2-3bb6-4b6a-b1ac-b83cb1c297d0",
+      "elapsed_seconds": 1.9015440829098225,
+      "error": null,
+      "input_tokens": 1271,
+      "output_tokens": 211,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1482
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "140e7fae-1c55-4749-a883-45fc2d9fda5c",
+      "elapsed_seconds": 1.8890295829623938,
+      "error": null,
+      "input_tokens": 1816,
+      "output_tokens": 193,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2009
+    }
+  ],
+  "root_id": "0425be8f-8cd9-4a44-82ae-1c72832e532f",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/request_metadata/observation_representation",
+        "/request_metadata/reported_frontend_protocol",
+        "/request_metadata/reported_version",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_backend_protocol",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 3,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "584e72513406277e07b7740516a6a6ea9cd5919c341e2ede658681f418d5a244",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 73080,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

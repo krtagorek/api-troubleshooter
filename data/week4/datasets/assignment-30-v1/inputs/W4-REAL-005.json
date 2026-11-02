@@ -1,0 +1,17 @@
+{
+  "case_id": "W4-REAL-005",
+  "incident": {
+    "incident_id": "W4-REAL-005",
+    "service": "HTTP endpoint (identity omitted)",
+    "endpoint": "/",
+    "http_method": "GET",
+    "status_code": 302,
+    "request_metadata": {},
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Complete the reported GET / request without a client protocol exception.",
+    "actual_behavior": "Reported observations from the reviewed public-report paraphrase; not independently captured:\n- Trace records a redirect to HTTPS port 4433 with Transfer-Encoding: chunked.\n- A protocol exception follows the redirect response.\n- Reporter states curl works.\nQuoted reported trace text, not a captured response body:\n- reported HTTPX trace: h11.RemoteProtocolError; their_state=ERROR; error_status_hint=400\nNo raw response body or endpoint identity is supplied in this reviewed evidence.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

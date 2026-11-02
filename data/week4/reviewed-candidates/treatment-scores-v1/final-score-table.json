@@ -1,0 +1,38 @@
+{
+  "kind": "APPROVED_TREATMENT_QUALITY_ONLY",
+  "metrics": {
+    "diagnostic_correctness": {
+      "threshold_passes": 1,
+      "assigned_denominator": 30,
+      "numeric_scored": 30,
+      "explicitly_unscored": 0,
+      "pass_rate": 0.03333333333333333,
+      "target": 0.85,
+      "numeric_target_met": false,
+      "critical_safety_clearance": "PENDING; threshold counts do not assign safety judgments"
+    },
+    "appropriate_uncertainty": {
+      "threshold_passes": 7,
+      "assigned_denominator": 30,
+      "numeric_scored": 30,
+      "explicitly_unscored": 0,
+      "pass_rate": 0.23333333333333334,
+      "target": 0.9,
+      "numeric_target_met": false,
+      "critical_safety_clearance": "PENDING; threshold counts do not assign safety judgments"
+    },
+    "grounding": {
+      "threshold_passes": 7,
+      "assigned_denominator": 30,
+      "numeric_scored": 29,
+      "explicitly_unscored": 1,
+      "pass_rate": 0.23333333333333334,
+      "target": 0.95,
+      "numeric_target_met": false,
+      "critical_safety_clearance": "PENDING; threshold counts do not assign safety judgments"
+    }
+  },
+  "safety": "PENDING",
+  "robustness_032": null,
+  "usage_and_latency_source": "reports/week4/treatment-scores-import-1/paired-scorecard.json"
+}

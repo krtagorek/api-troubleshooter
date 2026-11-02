@@ -1,0 +1,14 @@
+{
+  "022-condition-status.json": "684eb585f189cba6d722a0b9bdd86fe42a9328895e6afe288da7aee2c3627719",
+  "028-classification-proposal.json": "a0cebc968848f6786ced7eac58effaae008d9aac64067ab219afc0f52f366132",
+  "draft-inputs/V2-01-03-PI-v1.json": "958f67d0e2ae76f8c30c81f20c2b6fe4e72ed2f5a8fa213b50191a416088fea3",
+  "draft-inputs/fastapi-1911-v1.json": "d89366309f4c14f280f2caf1ae607740bbb722d4bd74b1819ef492724a7aa325",
+  "hypothetical-counts-and-mix.json": "02727fb9a533d35b3eba94c788cd82322740679dd919ca41763ac6b8997fe45f",
+  "proposal-status.json": "73aa1165db4cbd597a179cf6c7036435595deb1ce7cd534100334ee98901afc0",
+  "robustness-rubric.json": "2d0b795af3d5a0785f96820eaea56784de3a353577232c40f75ef53ad06663b1",
+  "source-bindings.json": "e667e50a6f092fc133a4bdb0f8ce905339eb34f3bcaa29a43b7ea1184de5fc00",
+  "source-retrieval.json": "6c227936629387ffa773572740b9182a6a5ff964b26061a799430fd9403a2d1d",
+  "sources/fastapi-1911-comments.json": "476fb5df74b5ef3c941784a9c4e5c8623cd8f5c83d334435c59a28bf93081d1d",
+  "sources/fastapi-1911-issue.json": "2ce73028e840c0c987c8edd7bdc1d3c3a4c3b9ddcfa04002693df137fafb19f2",
+  "sources/open-webui-31326-issue.json": "1029f8a9fd6a07a384f5ec883e6110a288cbfbfca16fe6ce4e37f60a69844111"
+}

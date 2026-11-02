@@ -1,0 +1,6 @@
+{
+  "case_id": "W4-REAL-013",
+  "input_sha256": "ae1397b85f08c6ad54434abd88c8791cbd70c27542c36ddc3c7513bcaeb50f33",
+  "kind": "case_resource_admission_not_provider_call",
+  "plan_identity": "84a95172c6f5eb750b32ef00b2edc2eec381f0f3378ab3c2230995527e998797"
+}

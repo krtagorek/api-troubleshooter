@@ -1,0 +1,14 @@
+{
+  "approval-summary.md": "cea7de48b0ce39d32d1dee84d7b8a5c16d6a4c4300a96c2bfe8028e8a2da6b24",
+  "attribution-assessment.json": "f229e4696931effd1a5d8fd89a5a30c84d5cea8a0e1c90753190eeb743e70131",
+  "config.json": "479251af6eca126ca6f84565e44c01b281fe8afaea70fc9cf8595d62e11f3e45",
+  "cost-reservation.json": "4dce9efac39e7448134396785221084cd8e2b108e15a6817f9ccca89d8976b6e",
+  "first-request-preview.json": "637961d428ff01d21bd56172e8d7887f24b9401df3cc5d10bd9e90d31ae65578",
+  "later-request-templates.json": "bef30ac817081fdfd2e8e26a004f81f32b810d41329fbbb5e1d1def0a996e675",
+  "official-docs.json": "074e207413b9b08fcbf41d25b37195acc8e0d2524422e75d297b98cb34d7f503",
+  "plan.json": "69e756641250cd698921804cb4dbde0757c6c9e84fa75c04821c29e8b7446acb",
+  "review-worksheet.json": "e4cdd6c13c581c1aa95f543206f358d0e3760a5323b4adbfd0e42e3ebdc6e12b",
+  "sanitized-input.json": "30ece2362f9b8623b12568cc6726215d407604fcc92b3cae2c1e4c3c0f29410c",
+  "source-hashes.json": "f966dd1b593af5feb755eb7a0b754c693772a7a34c1d66c631485a63d1a59ee3",
+  "verification.json": "b191e5c1e43700a52946281e373f332e5c38c0f9c1c2647073cebe3a053df267"
+}

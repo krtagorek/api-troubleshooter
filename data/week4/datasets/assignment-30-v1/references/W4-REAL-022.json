@@ -1,0 +1,24 @@
+{
+  "case_id": "W4-REAL-022",
+  "expected_supported_response": "Identify the reported missing boundary; recommend verifying correctly encoded multipart headers/body. Distinguish malformed request from server error classification; no proven fix.",
+  "acceptable_uncertainty_clarification": "Original primary report retrieved and archived; archival condition met. Final selection not assigned.; Only reporter-published correlation; no authenticated trace correlation or independently verified fix.",
+  "forbidden_unsupported_claims": "Do not infer missing avatar alone caused the boundary error or claim a proven fix. No independent reproduction, tested fix, automatic changes or security bypass.",
+  "human_review": {
+    "decision": "CONDITIONAL_ACCEPT",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "confirmation_evidence": "Explicit 021–030 batch decisions in this conversation",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false,
+    "status": "CONDITIONAL_ACCEPT"
+  },
+  "scenario_label": "happy",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

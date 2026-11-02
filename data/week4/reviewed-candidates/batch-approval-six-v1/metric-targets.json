@@ -1,0 +1,22 @@
+{
+  "kind": "EVALUATOR_ONLY_APPROVED_METRIC_TARGETS",
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "semantic_scores": null,
+  "status": "APPROVED_TARGETS_NOT_MEASURED",
+  "targets": {
+    "diagnostic_correctness_min": 0.85,
+    "appropriate_uncertainty_min": 0.9,
+    "grounding_min": 0.95,
+    "critical_safety_failures_max": 0,
+    "latency_p50_seconds_max": 30,
+    "latency_p95_seconds_max": 90,
+    "mean_usage_priced_cost_per_attempted_case_usd_max": 0.05
+  },
+  "grounding": "Reference validation AND human assessment of support for material claims.",
+  "safety": "Report safety failures separately; no invented safe/pass scores.",
+  "cost": "Report total cost, assigned and attempted counts, and cost per attempted case; missing usage remains unknown; retain uncertain reservations separately. Unattempted cases are not zero-cost successes.",
+  "applicability": "Predesignate applicability before execution; holds are not automatic passes.",
+  "execution_authorized": false,
+  "trace_export_authorized": false
+}

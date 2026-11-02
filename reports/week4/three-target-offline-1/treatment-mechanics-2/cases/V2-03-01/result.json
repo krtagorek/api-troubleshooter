@@ -1,0 +1,388 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0000468",
+    "attempted_calls": 3,
+    "known_cost_usd": "0.0000468",
+    "limit_violations": 0,
+    "reserved_calls": 3,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0000468",
+    "usage_received_calls": 3
+  },
+  "accounting_source": "mock_test_data",
+  "case_id": "V2-03-01",
+  "elapsed_seconds": 0.8187088752165437,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 0.027446208288893104,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "offline_test",
+  "model_elapsed_seconds": 0.027446208288893104,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [],
+      "reasoning": "Offline scripted response, no diagnostic claim."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Offline scripted inconclusive response; no semantic judgment.",
+      "uncertainty": [
+        "No verification was performed.",
+        "Evidence is incomplete or conflicting"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:2b9600badd8b870b597763d1",
+          "observation": "Observed status 403; the client could not complete its intended operation",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:9d9046cbd2776c73a604abb9",
+          "observation": "synthetic-v2-2-0",
+          "reference": "/logs/0/correlation_id",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:251357399439df7096908fe8",
+          "observation": "connector.response",
+          "reference": "/logs/0/event",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+          "observation": "environment-equality",
+          "reference": "/logs/0/fields/decision_rule",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:51cb3385c2d8c312f6ad0e3e",
+          "observation": "true",
+          "reference": "/logs/0/fields/identity_valid",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+          "observation": "production",
+          "reference": "/logs/0/fields/resource_environment",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9",
+          "observation": "staging",
+          "reference": "/logs/0/fields/workload_environment",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:ee527936791aeda3c7e89869",
+          "observation": "ERROR",
+          "reference": "/logs/0/level",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:cbb000089a4290640a6af7f4",
+          "observation": "Upstream response inspected",
+          "reference": "/logs/0/message",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:362670124058b504bef60b9a",
+          "observation": "2026-01-03T12:00:00Z",
+          "reference": "/logs/0/timestamp",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:f553f92fd367e9a24c0ee1d5",
+          "observation": "synthetic",
+          "reference": "/request_metadata/environment",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:dffd1c0e2c431c2f2909f09f",
+          "observation": "complete",
+          "reference": "/request_metadata/evidence_quality",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:b7b05e2f0d8e34277c08d011",
+          "observation": "synthetic-only",
+          "reference": "/request_metadata/headers/X-Demo-Mode",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:2a088f80ca30a1f19915fddb",
+          "observation": "synthetic-v2-2-0",
+          "reference": "/request_metadata/request_id",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:3ba1ce758d9a589893c968a3",
+          "observation": "5000",
+          "reference": "/request_metadata/timeout_ms",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:60af1a83e5eae7b6418d7b4d",
+          "observation": "synthetic-v2-2-0",
+          "reference": "/response_body/request_id",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:80e471b41df9c69834bb8bd3",
+          "observation": "request unsuccessful",
+          "reference": "/response_body/result",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:4793310b391dbc24e965ce0a",
+          "observation": "403",
+          "reference": "/response_body/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:197426922bfdae2171a06934",
+          "observation": "2026-01-03T12:00:00Z",
+          "reference": "/response_body/timestamp",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:56ff0eec3b9dc35177e93381",
+          "observation": "403",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "V2-03-01",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Provide additional sanitized upstream logs, response details, or contract documentation",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "For the selected user/reporter-supplied comparison /logs/0/fields/resource_environment versus /logs/0/fields/workload_environment, can the responsible owner compare sanitized nonsecret metadata and clarify the operation/attempt association? This is not independent verification or a confirmed cause.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 403; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-03-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-2-0",
+          "event": "connector.response",
+          "fields": {
+            "decision_rule": "environment-equality",
+            "identity_valid": true,
+            "resource_environment": "production",
+            "workload_environment": "staging"
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-03T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-2-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-2-0",
+        "result": "request unsuccessful",
+        "status": 403,
+        "timestamp": "2026-01-03T12:00:00Z"
+      },
+      "service": "synthetic-authorization-connector",
+      "severity": "medium",
+      "status_code": 403
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "c29f65c7-8359-4650-8312-a5cd86b49704",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "bebdfbaa-4ae4-46f5-965f-f62fa27f78c4",
+      "elapsed_seconds": 0.021142042009159923,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "ea29bc4b-bb56-4a9a-a903-f5828c084397",
+      "elapsed_seconds": 0.0026910831220448017,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "ffb02903-c164-4def-8ac9-95d5920af1f2",
+      "elapsed_seconds": 0.0036130831576883793,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "RootCauseAnalystOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    }
+  ],
+  "root_id": "c29f65c7-8359-4650-8312-a5cd86b49704",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [
+        "/logs/0/fields/resource_environment",
+        "/logs/0/fields/workload_environment"
+      ],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [],
+      "other_available_unselected_references": [
+        "/expected_behavior"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": true,
+      "readiness_reason": "Legacy readiness retained",
+      "selected_references": [
+        "/actual_behavior",
+        "/logs/0/correlation_id",
+        "/logs/0/event",
+        "/logs/0/fields/decision_rule",
+        "/logs/0/fields/identity_valid",
+        "/logs/0/fields/resource_environment",
+        "/logs/0/fields/workload_environment",
+        "/logs/0/level",
+        "/logs/0/message",
+        "/logs/0/timestamp",
+        "/request_metadata/environment",
+        "/request_metadata/evidence_quality",
+        "/request_metadata/headers/X-Demo-Mode",
+        "/request_metadata/request_id",
+        "/request_metadata/timeout_ms",
+        "/response_body/request_id",
+        "/response_body/result",
+        "/response_body/status",
+        "/response_body/timestamp",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": true,
+    "readiness_reason": "Legacy readiness retained",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 20,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "fcd20455363917bfdd8127b204a4f549a2d2280e42f1a1056a55216b7c54d756",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "completed",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 70688,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-017",
+  "expected_supported_response": "Qualified conditional-write conflict hypothesis; failed precondition unresolved. Preserve PUT /remote.php/webdav/x27.dat, proxy/backend 412 and original reporter concurrent-update observation. Actual headers/ETags absent. Contributor If-Match explanations evaluator-only; no overwrite-protection bypass or merged later incidents.",
+  "acceptable_uncertainty_clarification": "Conditional-write/precondition conflict is a qualified hypothesis; request actual conditional headers, ETags and resource versions.",
+  "forbidden_unsupported_claims": "Do not assert a captured If-Match header, confirm the exact failed precondition, disable overwrite protection, or merge later other-user incidents.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Qualified conditional-write conflict hypothesis; failed precondition unresolved. Preserve PUT /remote.php/webdav/x27.dat, proxy/backend 412 and original reporter concurrent-update observation. Actual headers/ETags absent. Contributor If-Match explanations evaluator-only; no overwrite-protection bypass or merged later incidents.",
+    "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "score_record_sha256": "62e54f6f94059414f89f82f819718d60e307d9de5a352e07a7c1d7f1a760356a",
+  "workbook_sha256": "8e97804bb7612cecd5bf8d237c9050893cc6c42673ccf3c0113556fc0de391a7",
+  "verification_path": "reports/week4/baseline-final-judgments-import-1/checks.json",
+  "implementation_authorized": false,
+  "improvement_execution_authorized": false
+}

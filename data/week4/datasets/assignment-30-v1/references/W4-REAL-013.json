@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-013",
+  "expected_supported_response": "Supported method-routing diagnosis and reported missing-Allow-header defect. Preserve GET-only configuration, successful GET and PUT / 405 without Allow shown. Informative rejection is intended, not PUT success. No full allowed-method list or guaranteed upgrade fix.",
+  "acceptable_uncertainty_clarification": "Explain GET-only routing and informative PUT rejection; verify the reported missing-Allow behavior without inventing the complete method list.",
+  "forbidden_unsupported_claims": "Do not demand PUT success, invent all allowed methods, or guarantee an upgrade fix.",
+  "human_review": null,
+  "scenario_label": "happy",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Supported method-routing diagnosis and reported missing-Allow-header defect. Preserve GET-only configuration, successful GET and PUT / 405 without Allow shown. Informative rejection is intended, not PUT success. No full allowed-method list or guaranteed upgrade fix.",
+    "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

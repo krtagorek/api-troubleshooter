@@ -1,0 +1,678 @@
+{
+  "version": "week4-real-input-compatibility-1",
+  "source_sha256": "f3eb5764d834b6a65e4a54dfad61426fdeb08adc41bbe73e5ed703b8e826af28",
+  "reviewed_candidates": 5,
+  "input_compatible": 1,
+  "blocked": 4,
+  "agent_graph_executed": false,
+  "model_executed": false,
+  "cases": [
+    {
+      "case_id": "W4-REAL-001",
+      "review_decision": "ACCEPT_WITH_REVISIONS",
+      "source_runtime_status": "RUNTIME_MAPPING_PENDING",
+      "status": "BLOCKED",
+      "blockers": [
+        "http_method missing-source evidence / schema incompatibility",
+        "status_code missing-source evidence / schema incompatibility",
+        "endpoint missing-source evidence / mapping ambiguity"
+      ],
+      "field_mapping": [
+        {
+          "runtime_field": "incident_id",
+          "required": true,
+          "available_source_observation": "Source case ID W4-REAL-001",
+          "proposed_mapping": "W4-REAL-001",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Dataset linkage only; not an observed request/correlation ID."
+        },
+        {
+          "runtime_field": "service",
+          "required": true,
+          "available_source_observation": "Stripe",
+          "proposed_mapping": "Stripe",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Reviewed service label; not independently captured identity. Preserve deliberate omission for 005."
+        },
+        {
+          "runtime_field": "endpoint",
+          "required": true,
+          "available_source_observation": "Charge.list",
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: operation name alone is not an observed path/endpoint."
+        },
+        {
+          "runtime_field": "http_method",
+          "required": true,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: no method reported; do not infer from SDK operation."
+        },
+        {
+          "runtime_field": "status_code",
+          "required": true,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: missing HTTP status; exception names/TLS failures are not HTTP 400/500."
+        },
+        {
+          "runtime_field": "expected_behavior",
+          "required": true,
+          "available_source_observation": "Reported operation: Charge.list",
+          "proposed_mapping": null,
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "No explicit user requirement recorded; a neutral operation goal would need editorial mapping. Never copy accepted_expected_behavior."
+        },
+        {
+          "runtime_field": "actual_behavior",
+          "required": true,
+          "available_source_observation": [
+            "A list request expands application without a data prefix.",
+            "InvalidRequestError identifies application and suggests data.application.",
+            "Reporter states that prefixing the list expansion paths with data. makes the request work."
+          ],
+          "proposed_mapping": null,
+          "classification": "derived",
+          "blocker_and_rationale": "Attributable reports may be joined without causal additions; only 005 has a complete input proposal."
+        },
+        {
+          "runtime_field": "request_metadata",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": {},
+          "classification": "unknown",
+          "blocker_and_rationale": "No request IDs/times/SDK patch versions invented; optional empty default."
+        },
+        {
+          "runtime_field": "response_body",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "No raw HTTP body supplied; optional null preserved."
+        },
+        {
+          "runtime_field": "logs",
+          "required": false,
+          "available_source_observation": [
+            {
+              "source": "reported SDK exception",
+              "message": "This property cannot be expanded (application)."
+            }
+          ],
+          "proposed_mapping": null,
+          "classification": "observed_report",
+          "blocker_and_rationale": "These are attributed exception excerpts, not verified raw telemetry. Empty source list for 004 stays empty."
+        },
+        {
+          "runtime_field": "severity",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; no severity rating assigned."
+        },
+        {
+          "runtime_field": "evidence_quality",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; accepted review sufficiency is evaluator-only."
+        }
+      ],
+      "checks": {
+        "schema": "NOT_CHECKED_BLOCKED",
+        "sanitization": "NOT_CHECKED_NO_COMPLETE_PROJECTION",
+        "initialization": "NOT_CHECKED_BLOCKED",
+        "evidence_catalog": "NOT_CHECKED_BLOCKED",
+        "log_parser": "NOT_CHECKED_BLOCKED",
+        "agent_graph": "NOT_CHECKED_NOT_AUTHORIZED",
+        "models": "NOT_CHECKED_NOT_AUTHORIZED",
+        "diagnostic_readiness": "NOT_CHECKED",
+        "publication_validation": "NOT_CHECKED"
+      },
+      "sanitization_changes": null,
+      "safe_rejections": [],
+      "projection_human_confirmed": false
+    },
+    {
+      "case_id": "W4-REAL-002",
+      "review_decision": "ACCEPT",
+      "source_runtime_status": "RUNTIME_MAPPING_PENDING",
+      "status": "BLOCKED",
+      "blockers": [
+        "http_method missing-source evidence / schema incompatibility",
+        "status_code missing-source evidence / schema incompatibility",
+        "endpoint missing-source evidence / mapping ambiguity"
+      ],
+      "field_mapping": [
+        {
+          "runtime_field": "incident_id",
+          "required": true,
+          "available_source_observation": "Source case ID W4-REAL-002",
+          "proposed_mapping": "W4-REAL-002",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Dataset linkage only; not an observed request/correlation ID."
+        },
+        {
+          "runtime_field": "service",
+          "required": true,
+          "available_source_observation": "Stripe",
+          "proposed_mapping": "Stripe",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Reviewed service label; not independently captured identity. Preserve deliberate omission for 005."
+        },
+        {
+          "runtime_field": "endpoint",
+          "required": true,
+          "available_source_observation": "checkout.Session.create_async",
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: operation name alone is not an observed path/endpoint."
+        },
+        {
+          "runtime_field": "http_method",
+          "required": true,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: no method reported; do not infer from SDK operation."
+        },
+        {
+          "runtime_field": "status_code",
+          "required": true,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: missing HTTP status; exception names/TLS failures are not HTTP 400/500."
+        },
+        {
+          "runtime_field": "expected_behavior",
+          "required": true,
+          "available_source_observation": "Reported operation: checkout.Session.create_async",
+          "proposed_mapping": null,
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "No explicit user requirement recorded; a neutral operation goal would need editorial mapping. Never copy accepted_expected_behavior."
+        },
+        {
+          "runtime_field": "actual_behavior",
+          "required": true,
+          "available_source_observation": [
+            "Reporter compares stripe-python 11.4.0 failure with 11.3.0 success under asyncio and HTTPXClient.",
+            "Trace reaches TLS setup; Python versions 3.9.15/3.12.2; macOS/Fedora reported."
+          ],
+          "proposed_mapping": null,
+          "classification": "derived",
+          "blocker_and_rationale": "Attributable reports may be joined without causal additions; only 005 has a complete input proposal."
+        },
+        {
+          "runtime_field": "request_metadata",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": {},
+          "classification": "unknown",
+          "blocker_and_rationale": "No request IDs/times/SDK patch versions invented; optional empty default."
+        },
+        {
+          "runtime_field": "response_body",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "No raw HTTP body supplied; optional null preserved."
+        },
+        {
+          "runtime_field": "logs",
+          "required": false,
+          "available_source_observation": [
+            {
+              "source": "reported client traceback",
+              "message": "httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate"
+            }
+          ],
+          "proposed_mapping": null,
+          "classification": "observed_report",
+          "blocker_and_rationale": "These are attributed exception excerpts, not verified raw telemetry. Empty source list for 004 stays empty."
+        },
+        {
+          "runtime_field": "severity",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; no severity rating assigned."
+        },
+        {
+          "runtime_field": "evidence_quality",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; accepted review sufficiency is evaluator-only."
+        }
+      ],
+      "checks": {
+        "schema": "NOT_CHECKED_BLOCKED",
+        "sanitization": "NOT_CHECKED_NO_COMPLETE_PROJECTION",
+        "initialization": "NOT_CHECKED_BLOCKED",
+        "evidence_catalog": "NOT_CHECKED_BLOCKED",
+        "log_parser": "NOT_CHECKED_BLOCKED",
+        "agent_graph": "NOT_CHECKED_NOT_AUTHORIZED",
+        "models": "NOT_CHECKED_NOT_AUTHORIZED",
+        "diagnostic_readiness": "NOT_CHECKED",
+        "publication_validation": "NOT_CHECKED"
+      },
+      "sanitization_changes": null,
+      "safe_rejections": [],
+      "projection_human_confirmed": false
+    },
+    {
+      "case_id": "W4-REAL-003",
+      "review_decision": "ACCEPT",
+      "source_runtime_status": "RUNTIME_MAPPING_PENDING",
+      "status": "BLOCKED",
+      "blockers": [
+        "http_method missing-source evidence / schema incompatibility",
+        "status_code missing-source evidence / schema incompatibility",
+        "endpoint missing-source evidence / mapping ambiguity"
+      ],
+      "field_mapping": [
+        {
+          "runtime_field": "incident_id",
+          "required": true,
+          "available_source_observation": "Source case ID W4-REAL-003",
+          "proposed_mapping": "W4-REAL-003",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Dataset linkage only; not an observed request/correlation ID."
+        },
+        {
+          "runtime_field": "service",
+          "required": true,
+          "available_source_observation": "AWS S3",
+          "proposed_mapping": "AWS S3",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Reviewed service label; not independently captured identity. Preserve deliberate omission for 005."
+        },
+        {
+          "runtime_field": "endpoint",
+          "required": true,
+          "available_source_observation": "PutObject via upload_file",
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: operation name alone is not an observed path/endpoint."
+        },
+        {
+          "runtime_field": "http_method",
+          "required": true,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: no method reported; do not infer from SDK operation."
+        },
+        {
+          "runtime_field": "status_code",
+          "required": true,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: missing HTTP status; exception names/TLS failures are not HTTP 400/500."
+        },
+        {
+          "runtime_field": "expected_behavior",
+          "required": true,
+          "available_source_observation": "Reported operation: PutObject via upload_file",
+          "proposed_mapping": null,
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "No explicit user requirement recorded; a neutral operation goal would need editorial mapping. Never copy accepted_expected_behavior."
+        },
+        {
+          "runtime_field": "actual_behavior",
+          "required": true,
+          "available_source_observation": [
+            "Reporter uses boto3/botocore 1.36.x with transfer acceleration and s3v4.",
+            "Reporter says disabling acceleration or using boto3 1.35.99 succeeds.",
+            "Environment: Python 3.9.4, Ubuntu 20.04.6."
+          ],
+          "proposed_mapping": null,
+          "classification": "derived",
+          "blocker_and_rationale": "Attributable reports may be joined without causal additions; only 005 has a complete input proposal."
+        },
+        {
+          "runtime_field": "request_metadata",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": {},
+          "classification": "unknown",
+          "blocker_and_rationale": "No request IDs/times/SDK patch versions invented; optional empty default."
+        },
+        {
+          "runtime_field": "response_body",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "No raw HTTP body supplied; optional null preserved."
+        },
+        {
+          "runtime_field": "logs",
+          "required": false,
+          "available_source_observation": [
+            {
+              "source": "reported SDK exception",
+              "message": "SignatureDoesNotMatch"
+            }
+          ],
+          "proposed_mapping": null,
+          "classification": "observed_report",
+          "blocker_and_rationale": "These are attributed exception excerpts, not verified raw telemetry. Empty source list for 004 stays empty."
+        },
+        {
+          "runtime_field": "severity",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; no severity rating assigned."
+        },
+        {
+          "runtime_field": "evidence_quality",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; accepted review sufficiency is evaluator-only."
+        }
+      ],
+      "checks": {
+        "schema": "NOT_CHECKED_BLOCKED",
+        "sanitization": "NOT_CHECKED_NO_COMPLETE_PROJECTION",
+        "initialization": "NOT_CHECKED_BLOCKED",
+        "evidence_catalog": "NOT_CHECKED_BLOCKED",
+        "log_parser": "NOT_CHECKED_BLOCKED",
+        "agent_graph": "NOT_CHECKED_NOT_AUTHORIZED",
+        "models": "NOT_CHECKED_NOT_AUTHORIZED",
+        "diagnostic_readiness": "NOT_CHECKED",
+        "publication_validation": "NOT_CHECKED"
+      },
+      "sanitization_changes": null,
+      "safe_rejections": [],
+      "projection_human_confirmed": false
+    },
+    {
+      "case_id": "W4-REAL-004",
+      "review_decision": "ACCEPT",
+      "source_runtime_status": "RUNTIME_MAPPING_PENDING",
+      "status": "BLOCKED",
+      "blockers": [
+        "http_method missing-source evidence / schema incompatibility",
+        "endpoint missing-source evidence / mapping ambiguity"
+      ],
+      "field_mapping": [
+        {
+          "runtime_field": "incident_id",
+          "required": true,
+          "available_source_observation": "Source case ID W4-REAL-004",
+          "proposed_mapping": "W4-REAL-004",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Dataset linkage only; not an observed request/correlation ID."
+        },
+        {
+          "runtime_field": "service",
+          "required": true,
+          "available_source_observation": "GitHub GraphQL",
+          "proposed_mapping": "GitHub GraphQL",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Reviewed service label; not independently captured identity. Preserve deliberate omission for 005."
+        },
+        {
+          "runtime_field": "endpoint",
+          "required": true,
+          "available_source_observation": "GraphQL requests using app authentication",
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: operation name alone is not an observed path/endpoint."
+        },
+        {
+          "runtime_field": "http_method",
+          "required": true,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "BLOCKED: no method reported; do not infer from SDK operation."
+        },
+        {
+          "runtime_field": "status_code",
+          "required": true,
+          "available_source_observation": 403,
+          "proposed_mapping": 403,
+          "classification": "observed_report",
+          "blocker_and_rationale": "Reported 403 is a symptom, not proof of permission failure or throttling."
+        },
+        {
+          "runtime_field": "expected_behavior",
+          "required": true,
+          "available_source_observation": "Reported operation: GraphQL requests using app authentication",
+          "proposed_mapping": null,
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "No explicit user requirement recorded; a neutral operation goal would need editorial mapping. Never copy accepted_expected_behavior."
+        },
+        {
+          "runtime_field": "actual_behavior",
+          "required": true,
+          "available_source_observation": [
+            "Reporter sees bursts lasting seconds, sometimes 20–30 seconds.",
+            "No detailed message reported; reporter says primary quota is not exhausted."
+          ],
+          "proposed_mapping": null,
+          "classification": "derived",
+          "blocker_and_rationale": "Attributable reports may be joined without causal additions; only 005 has a complete input proposal."
+        },
+        {
+          "runtime_field": "request_metadata",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": {},
+          "classification": "unknown",
+          "blocker_and_rationale": "No request IDs/times/SDK patch versions invented; optional empty default."
+        },
+        {
+          "runtime_field": "response_body",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "No raw HTTP body supplied; optional null preserved."
+        },
+        {
+          "runtime_field": "logs",
+          "required": false,
+          "available_source_observation": [],
+          "proposed_mapping": null,
+          "classification": "observed_report",
+          "blocker_and_rationale": "These are attributed exception excerpts, not verified raw telemetry. Empty source list for 004 stays empty."
+        },
+        {
+          "runtime_field": "severity",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; no severity rating assigned."
+        },
+        {
+          "runtime_field": "evidence_quality",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; accepted review sufficiency is evaluator-only."
+        }
+      ],
+      "checks": {
+        "schema": "NOT_CHECKED_BLOCKED",
+        "sanitization": "NOT_CHECKED_NO_COMPLETE_PROJECTION",
+        "initialization": "NOT_CHECKED_BLOCKED",
+        "evidence_catalog": "NOT_CHECKED_BLOCKED",
+        "log_parser": "NOT_CHECKED_BLOCKED",
+        "agent_graph": "NOT_CHECKED_NOT_AUTHORIZED",
+        "models": "NOT_CHECKED_NOT_AUTHORIZED",
+        "diagnostic_readiness": "NOT_CHECKED",
+        "publication_validation": "NOT_CHECKED"
+      },
+      "sanitization_changes": null,
+      "safe_rejections": [],
+      "projection_human_confirmed": false
+    },
+    {
+      "case_id": "W4-REAL-005",
+      "review_decision": "ACCEPT",
+      "source_runtime_status": "RUNTIME_VALIDATION_PENDING",
+      "status": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "blockers": [],
+      "field_mapping": [
+        {
+          "runtime_field": "incident_id",
+          "required": true,
+          "available_source_observation": "Source case ID W4-REAL-005",
+          "proposed_mapping": "W4-REAL-005",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Dataset linkage only; not an observed request/correlation ID."
+        },
+        {
+          "runtime_field": "service",
+          "required": true,
+          "available_source_observation": "HTTP endpoint (identity omitted)",
+          "proposed_mapping": "HTTP endpoint (identity omitted)",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "Reviewed service label; not independently captured identity. Preserve deliberate omission for 005."
+        },
+        {
+          "runtime_field": "endpoint",
+          "required": true,
+          "available_source_observation": "GET /",
+          "proposed_mapping": "/",
+          "classification": "derived",
+          "blocker_and_rationale": "Only the path / is explicit in GET /; host remains omitted and no URL is reconstructed."
+        },
+        {
+          "runtime_field": "http_method",
+          "required": true,
+          "available_source_observation": "GET",
+          "proposed_mapping": "GET",
+          "classification": "observed_report",
+          "blocker_and_rationale": "GET explicitly reported."
+        },
+        {
+          "runtime_field": "status_code",
+          "required": true,
+          "available_source_observation": 302,
+          "proposed_mapping": 302,
+          "classification": "observed_report",
+          "blocker_and_rationale": "Observed/reported 302 only; error_status_hint=400 stays quoted exception text."
+        },
+        {
+          "runtime_field": "expected_behavior",
+          "required": true,
+          "available_source_observation": "Reported operation: GET /",
+          "proposed_mapping": "Complete the reported GET / request without a client protocol exception.",
+          "classification": "editorial_metadata",
+          "blocker_and_rationale": "005 uses a proposed editorial request-completion goal, not a reporter quotation or new human-confirmed label; accepted diagnostic expectation excluded."
+        },
+        {
+          "runtime_field": "actual_behavior",
+          "required": true,
+          "available_source_observation": [
+            "Trace records a redirect to HTTPS port 4433 with Transfer-Encoding: chunked.",
+            "A protocol exception follows the redirect response.",
+            "Reporter states curl works."
+          ],
+          "proposed_mapping": "Reported observations from the reviewed public-report paraphrase; not independently captured:\n- Trace records a redirect to HTTPS port 4433 with Transfer-Encoding: chunked.\n- A protocol exception follows the redirect response.\n- Reporter states curl works.\nQuoted reported trace text, not a captured response body:\n- reported HTTPX trace: h11.RemoteProtocolError; their_state=ERROR; error_status_hint=400\nNo raw response body or endpoint identity is supplied in this reviewed evidence.",
+          "classification": "derived",
+          "blocker_and_rationale": "Attributable reports may be joined without causal additions; only 005 has a complete input proposal."
+        },
+        {
+          "runtime_field": "request_metadata",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": {},
+          "classification": "unknown",
+          "blocker_and_rationale": "No request IDs/times/SDK patch versions invented; optional empty default."
+        },
+        {
+          "runtime_field": "response_body",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": null,
+          "classification": "unknown",
+          "blocker_and_rationale": "No raw HTTP body supplied; optional null preserved."
+        },
+        {
+          "runtime_field": "logs",
+          "required": false,
+          "available_source_observation": [
+            {
+              "source": "reported HTTPX trace",
+              "message": "h11.RemoteProtocolError; their_state=ERROR; error_status_hint=400"
+            }
+          ],
+          "proposed_mapping": [],
+          "classification": "derived",
+          "blocker_and_rationale": "005 quotes the existing reported trace in actual_behavior (user source); logs defaults empty, not a claim no trace existed. No synthetic log events."
+        },
+        {
+          "runtime_field": "severity",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; no severity rating assigned."
+        },
+        {
+          "runtime_field": "evidence_quality",
+          "required": false,
+          "available_source_observation": null,
+          "proposed_mapping": "unknown",
+          "classification": "unknown",
+          "blocker_and_rationale": "Runtime unknown default only; accepted review sufficiency is evaluator-only."
+        }
+      ],
+      "checks": {
+        "schema": "PASS",
+        "sanitization": "PASS_UNCHANGED",
+        "initialization": "PASS",
+        "evidence_catalog": "PASS",
+        "log_parser": "OK",
+        "agent_graph": "NOT_CHECKED_NOT_AUTHORIZED",
+        "models": "NOT_CHECKED_NOT_AUTHORIZED",
+        "diagnostic_readiness": "NOT_CHECKED",
+        "publication_validation": "NOT_CHECKED"
+      },
+      "sanitization_changes": [],
+      "safe_rejections": [],
+      "projection_human_confirmed": false,
+      "catalog_entries": 4,
+      "catalog_sources": [
+        "response",
+        "user"
+      ],
+      "catalog_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/response_body",
+        "/status_code"
+      ],
+      "input_sha256": "af8be851b8302f1067f91f44d98b2f3defd8c73c7d41cfdeabcfbd42763e013f",
+      "distinction_preserved": {
+        "http_status": 302,
+        "exception_hint": 400,
+        "endpoint_path": "/",
+        "endpoint_identity": null
+      },
+      "safety_redaction": "No rejection or content loss in supplied projection; original source untouched"
+    }
+  ]
+}

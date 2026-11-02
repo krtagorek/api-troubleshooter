@@ -1,0 +1,23 @@
+{
+  "calculation": "max_calls * (input_cap*input_rate + output_cap*output_rate) / 1000000",
+  "currency": "USD",
+  "token_rate_unit": 1000000,
+  "cache_hit_assumption": false,
+  "per_call_reservation_usd": "0.028672",
+  "five_full_reservations_usd": "0.143360",
+  "proposed_ceiling_usd": "0.25",
+  "headroom_usd": "0.106640",
+  "scope": "Conditional capped-usage arithmetic at published model rates and default service tier; not an enforceable current-runner invoice guarantee.",
+  "reasoning": "Selected documented model has no reasoning step. max_completion_tokens bounds total generated tokens including reasoning where applicable; completion_tokens is billed once at the output rate, never add reasoning twice.",
+  "current_input_cap_max": 32768,
+  "proposed_input_cap": 65536,
+  "current_request_guard": "len(serialized HTTP request content)+4096 <= input_cap",
+  "token_guard_status": "Byte/framing proxy, not verified pre-dispatch provider token metering; observed cap overruns are post-response failures.",
+  "historical_all_selected_analyst_body_bytes": 36300,
+  "historical_all_selected_analyst_bytes_plus_allowance": 40396,
+  "historical_size_scenario": "Recorded common-mock inputs only; size illustration, not a future analyst payload or semantic evidence.",
+  "historical_scenario_fits_current_input_guard": false,
+  "historical_scenario_fits_proposed_input_guard": true,
+  "proposed_config_accepted_by_current_LiveConfig": false,
+  "current_config_rejection": "Invalid input cap"
+}

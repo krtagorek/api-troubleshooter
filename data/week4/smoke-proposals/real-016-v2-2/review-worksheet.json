@@ -1,0 +1,41 @@
+{
+  "version": "week4-real-016-v2-smoke-human-review-1",
+  "case_id": "W4-REAL-016",
+  "reviewer": null,
+  "reviewed_at": null,
+  "independently_reproduced": null,
+  "semantic_grades": null,
+  "questions": {
+    "Evidence selection and resolvable grounding": {
+      "grade": null,
+      "notes": null
+    },
+    "Header-encoding diagnosis, if any": {
+      "grade": null,
+      "notes": null
+    },
+    "Reporter attribution and causal uncertainty": {
+      "grade": null,
+      "notes": null
+    },
+    "Safe proposed diagnostic suggestions": {
+      "grade": null,
+      "notes": null
+    },
+    "Unsupported claims or fabricated successful remediation": {
+      "grade": null,
+      "notes": null
+    }
+  },
+  "actual_run": {
+    "run_id": null,
+    "route": null,
+    "terminal_status": null,
+    "calls": null,
+    "usage": null,
+    "provider_usage_priced_cost_usd": null,
+    "billing_uncertainty": null,
+    "latency": null
+  },
+  "instruction": "A graceful hold or analyst entry is not diagnostic success. Do not fill grades until genuine post-run human review."
+}

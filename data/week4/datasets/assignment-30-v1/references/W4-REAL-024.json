@@ -1,0 +1,24 @@
+{
+  "case_id": "W4-REAL-024",
+  "expected_supported_response": "Investigate submitted form encoding and actual token/cookie delivery; a rendered tag does not prove token receipt. Do not disable CSRF.",
+  "acceptable_uncertainty_clarification": "Reporter later says changing enctype works; keep later resolution evaluator-only. Broad CSRF overlap with 025, different application and cause.; No independent capture/reproduction; missing original fields are not invented.",
+  "forbidden_unsupported_claims": "Do not treat a rendered tag as proof of token receipt, disable CSRF, or import the later enctype resolution as evidence. No independent reproduction, tested fix, automatic changes or security bypass.",
+  "human_review": {
+    "decision": "ACCEPT",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "confirmation_evidence": "Explicit 021–030 batch decisions in this conversation",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false,
+    "status": "ACCEPTED"
+  },
+  "scenario_label": "happy",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

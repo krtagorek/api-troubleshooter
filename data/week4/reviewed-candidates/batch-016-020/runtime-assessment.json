@@ -1,0 +1,133 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "counts": {
+    "human_accepted": 5,
+    "input_schema_compatible": 5,
+    "evidence_preserving_input_compatible": 5,
+    "graph_executed": 0,
+    "golden_set_ready": 0
+  },
+  "cases": [
+    {
+      "case_id": "W4-REAL-016",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_curl_http_status_line",
+      "editorial_goal": "Handle the reported GET /ocelot/posts/askdj request with appropriate error handling.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "No paired successful request or independently verified remediation; precise gateway repair unknown."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 11,
+      "inference_sha256": "cf4360b672c9bef5846202ee084a17ffcb0a9811bc4a0bfc0501adac55ec4883",
+      "operation_intent_unresolved": false
+    },
+    {
+      "case_id": "W4-REAL-017",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_proxy_and_backend_access_logs",
+      "editorial_goal": "Update the requested file while respecting write preconditions and overwrite protection.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Actual conditional request headers/ETags and exact failed precondition unavailable; other-user reports are separate."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 8,
+      "inference_sha256": "e41d8e5487cc1780d1102539bf5039002576af93e85475f782b58b4dca4f9a01",
+      "operation_intent_unresolved": false
+    },
+    {
+      "case_id": "W4-REAL-018",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_structured_server_log",
+      "editorial_goal": "Create the requested issue in the specified project.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Exact API-request payload/counter defect and correlation to separate UI/import diagnostics unresolved; source publication date unknown."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 8,
+      "inference_sha256": "42b653125c772d83234cd0f89239aedb5089ad5236c73f523421e87897920d9c",
+      "operation_intent_unresolved": false
+    },
+    {
+      "case_id": "W4-REAL-019",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_packet_capture_excerpt",
+      "editorial_goal": "Complete the reported API-driven repository import; the exact request chain remains unspecified.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Full request/redirect chain and base-path configuration unavailable; prose/capture versions unreconciled; source publication date unknown."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 13,
+      "inference_sha256": "613cd4553888c2b9f626f7482eba980ba128979de9dd7c21362fb585a26f3e5a",
+      "operation_intent_unresolved": false
+    },
+    {
+      "case_id": "W4-REAL-020",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_first_curl_transfer_status_line",
+      "editorial_goal": "Provide a response to the reported HEAD / request; proxy-versus-direct intent is unspecified.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Proxy-versus-direct intent, second transfer proxy use and correlation of earlier TLS/400 logs to HEAD/503 are not established."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 13,
+      "inference_sha256": "b3161001f8959b9045000cad94a3c9491cfdb0ed7147cdb6f64a75c2f83a0907",
+      "operation_intent_unresolved": true,
+      "mapping_note": "HEAD contract supported if schema passes; proxy/direct goal remains unspecified. No transfer/log correlation established."
+    }
+  ]
+}

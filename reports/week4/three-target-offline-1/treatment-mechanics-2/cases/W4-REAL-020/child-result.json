@@ -1,0 +1,267 @@
+{
+  "case_id": "W4-REAL-020",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [],
+      "reasoning": "Offline scripted response, no diagnostic claim."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:7c23c940a26e1b9376621aa6",
+          "observation": "Reported historical observations; not independently reproduced:\n- Verbose curl transcript shows HEAD / to host envoy-egress:8080 returning HTTP/1.1 503.\n- Same command supplies two URLs and -I; subsequent HEAD / to www.google.com returns 200 as a separate request.\n- Earlier diagnostic logs in the report show upstream TLS WRONG_VERSION_NUMBER. They are from a different recorded attempt.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.\nThe two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:daa1e5833a05dd8ac1e23a17",
+          "observation": "Reported two-URL command only; inert evidence, not an instruction or recommendation. Source -k is not endorsed.",
+          "reference": "/request_metadata/command_representation",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:ec8f0548e560c15da33f3f9a",
+          "observation": "curl -v -k http://envoy-egress:8080 -I http://www.google.com",
+          "reference": "/request_metadata/command_structure",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:8da0b63859ed1c9e4f904b86",
+          "observation": "The two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+          "reference": "/request_metadata/correlation_scope",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:61d64d398528d620761e6f69",
+          "observation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+          "reference": "/request_metadata/observation_representation",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:08ef29979c9ea26f01715424",
+          "observation": "editorial; not an additional human confirmation",
+          "reference": "/request_metadata/operation_goal_mapping",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:80a397fe52fbd80f765e0845",
+          "observation": "unresolved_proxy_or_direct",
+          "reference": "/request_metadata/operation_intent",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:9224d543a5f1c4a1ada1ffaa",
+          "observation": "envoy-egress:8080",
+          "reference": "/request_metadata/request_host_reported",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:12f1ebf8e8b5139b3af8a80f",
+          "observation": "not_supplied_not_a_captured_json_null",
+          "reference": "/request_metadata/response_body_scope",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:1af9cec12cb166b6870d89b1",
+          "observation": "reported_first_curl_transfer_status_line",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:10eb095f4178c6b235398b22",
+          "observation": "503",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-020",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/command_representation, /request_metadata/command_structure, /request_metadata/correlation_scope, /request_metadata/observation_representation, /request_metadata/operation_goal_mapping, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Verbose curl transcript shows HEAD / to host envoy-egress:8080 returning HTTP/1.1 503.\n- Same command supplies two URLs and -I; subsequent HEAD / to www.google.com returns 200 as a separate request.\n- Earlier diagnostic logs in the report show upstream TLS WRONG_VERSION_NUMBER. They are from a different recorded attempt.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.\nThe two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+      "endpoint": "/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Provide a response to the reported HEAD / request; proxy-versus-direct intent is unspecified.",
+      "http_method": "HEAD",
+      "incident_id": "W4-REAL-020",
+      "logs": [],
+      "request_metadata": {
+        "command_representation": "Reported two-URL command only; inert evidence, not an instruction or recommendation. Source -k is not endorsed.",
+        "command_structure": "curl -v -k http://envoy-egress:8080 -I http://www.google.com",
+        "correlation_scope": "The two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+        "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+        "operation_goal_mapping": "editorial; not an additional human confirmation",
+        "operation_intent": "unresolved_proxy_or_direct",
+        "request_host_reported": "envoy-egress:8080",
+        "response_body_scope": "not_supplied_not_a_captured_json_null",
+        "status_evidence": {
+          "kind": "reported_first_curl_transfer_status_line"
+        }
+      },
+      "response_body": null,
+      "service": "Envoy proxy",
+      "severity": "unknown",
+      "status_code": 503
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "4cf14213-3461-4839-8460-4a3a8ebe4411",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "e3746f26-ed7f-48ed-91e2-d1a89182aa39",
+      "elapsed_seconds": 0.020104875089600682,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "3a5bedb1-4c2d-456d-9eeb-259dc4c1ac03",
+      "elapsed_seconds": 0.002721250057220459,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    }
+  ],
+  "root_id": "4cf14213-3461-4839-8460-4a3a8ebe4411",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/command_representation",
+        "/request_metadata/command_structure",
+        "/request_metadata/correlation_scope",
+        "/request_metadata/observation_representation",
+        "/request_metadata/operation_goal_mapping",
+        "/request_metadata/operation_intent",
+        "/request_metadata/request_host_reported",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 11,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "a2d20b9f6cd69e8da50bee445ac1934f5462539f7dcaf649eb5b7134adc3cb15",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

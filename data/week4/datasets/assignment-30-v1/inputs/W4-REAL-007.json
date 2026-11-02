@@ -1,0 +1,41 @@
+{
+  "case_id": "W4-REAL-007",
+  "incident": {
+    "incident_id": "W4-REAL-007",
+    "service": "FastAPI application",
+    "endpoint": "/users/me",
+    "http_method": "GET",
+    "status_code": 422,
+    "request_metadata": {
+      "query_parameter_present": false,
+      "framework_version": "0.92.0",
+      "handler_code": "@app.get(\"/users/me\"); read_current_user(username: str = Depends(decode_access_token))",
+      "status_evidence": {
+        "kind": "published_http_transcript"
+      },
+      "reported_header_scheme": "Bearer",
+      "dependency_signature_parts": {
+        "function": "decode_access_token",
+        "parameter_name": "token",
+        "annotation": "str"
+      }
+    },
+    "response_body": {
+      "detail": [
+        {
+          "loc": [
+            "query",
+            "token"
+          ],
+          "msg": "field required",
+          "type": "value_error.missing"
+        }
+      ]
+    },
+    "logs": [],
+    "expected_behavior": "Complete the reported GET /users/me request.",
+    "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Report includes an explicit GET /users/me and HTTP 422 response.\n- The supplied request places authentication in a header; the dependency has a plain required token parameter.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

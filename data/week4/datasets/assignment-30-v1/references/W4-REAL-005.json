@@ -1,0 +1,25 @@
+{
+  "case_id": "W4-REAL-005",
+  "expected_supported_response": "Investigate missing/malformed chunked response framing as a qualified hypothesis. Distinguish observed 302 from exception hint 400.",
+  "acceptable_uncertainty_clarification": "Raw response/framing is unavailable; retain a qualified transport hypothesis and ask for sanitized redirect/response framing evidence.",
+  "forbidden_unsupported_claims": "Do not turn the quoted exception hint 400 into the observed status 302, reconstruct the omitted host, or claim confirmed framing defect/repair.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "accepted_case_type": "Transport-edge qualified hypothesis",
+    "runtime_status": "RUNTIME_VALIDATION_PENDING",
+    "reviewer": "User in this conversation",
+    "confirmation_evidence": "Explicit user acceptance in the case-by-case conversation",
+    "reviewed_at": null,
+    "recorded_at": "2026-10-28T23:39:03Z",
+    "notes": "Generic HTTP transport failures are accepted in scope. Distinguish actual 302 from exception hint 400.",
+    "semantic_scores": null,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

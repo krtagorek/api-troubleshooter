@@ -1,0 +1,44 @@
+{
+  "case_id": "V2-05-01",
+  "incident": {
+    "actual_behavior": "Observed status 422; the client could not complete its intended operation",
+    "endpoint": "/demo/resources/1",
+    "evidence_quality": "complete",
+    "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+    "http_method": "POST",
+    "incident_id": "V2-05-01",
+    "logs": [
+      {
+        "correlation_id": "synthetic-v2-4-0",
+        "event": "connector.response",
+        "fields": {
+          "contract_unit": "milliseconds",
+          "field": "event_time_ms",
+          "minimum": 1700000000000,
+          "received": 1770000000
+        },
+        "level": "ERROR",
+        "message": "Upstream response inspected",
+        "timestamp": "2026-01-05T12:00:00Z"
+      }
+    ],
+    "request_metadata": {
+      "environment": "synthetic",
+      "evidence_quality": "complete",
+      "headers": {
+        "X-Demo-Mode": "synthetic-only"
+      },
+      "request_id": "synthetic-v2-4-0",
+      "timeout_ms": 5000
+    },
+    "response_body": {
+      "request_id": "synthetic-v2-4-0",
+      "result": "request unsuccessful",
+      "status": 422,
+      "timestamp": "2026-01-05T12:00:00Z"
+    },
+    "service": "synthetic-validation-connector",
+    "severity": "medium",
+    "status_code": 422
+  }
+}

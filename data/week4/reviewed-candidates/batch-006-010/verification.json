@@ -1,0 +1,26 @@
+{
+  "test_command": ".venv-week4-py311/bin/python -m unittest scripts.week4_reviewed_compatibility_tests scripts.week4_reviewed_batch2_tests -v",
+  "tests_passed": 18,
+  "network_blocked": true,
+  "graph_executed": false,
+  "models_executed": false,
+  "baseline_entries_checked": 328,
+  "baseline_mismatches": [],
+  "reviewed_decisions": {
+    "W4-REAL-006": "ACCEPTED",
+    "W4-REAL-007": "ACCEPTED",
+    "W4-REAL-008": "ACCEPTED",
+    "W4-REAL-009": "ACCEPTED",
+    "W4-REAL-010": "ACCEPTED"
+  },
+  "source_hashes": {
+    "api-incident-candidates-006-010-v1.json": "c56e7aff05e0b0aede6b4df79691482798de07b32b09f1808ad709998b0e203f",
+    "api-incident-reviewed-006-010-v5.json": "682f0b0e1564f79528cb86a7e3048ffafdf9f51e67253dfd1d8561446f50a5df"
+  },
+  "inference_ids": [
+    "W4-REAL-006",
+    "W4-REAL-008",
+    "W4-REAL-009"
+  ],
+  "golden_ready": false
+}

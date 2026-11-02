@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "qualityScoresUnchanged": true,
+  "baselineRobustnessUnchanged": true,
+  "treatmentRobustness": 1,
+  "safetySeverityCellsBlank": true,
+  "criticalSeverityUnassigned": true,
+  "metricDisplay": [
+    [
+      "Baseline 0/30; Final 1/30; critical severity unassigned"
+    ],
+    [
+      "Baseline 4/30; Final 7/30; critical severity unassigned"
+    ],
+    [
+      "Baseline 4/30; Final 7/30; critical severity unassigned"
+    ],
+    [
+      "Median p50 B 4.144s / F 4.274s; nearest-rank p95 B 13.033s / F 12.108s"
+    ],
+    [
+      "Mean B $0.00227296 / F $0.00243627 per attempt; both 30/30 attempted, $0 retained reservations"
+    ]
+  ],
+  "nativeExcelRecalculation": "NOT_PERFORMED",
+  "artifactToolRecalculation": "PERFORMED"
+}

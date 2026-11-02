@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-015",
+  "expected_supported_response": "Supported route/handler rejection, underlying cause unresolved. Preserve POST /_plugins/_sm/policies/snapshot_policy, HTTP 400, Content-Type application/json, no-handler response and versions. Check deployed API support/plugins/method-path compatibility; no proven malformed JSON, missing plugin, licensing or POST-to-PUT fix.",
+  "acceptable_uncertainty_clarification": "A no-handler rejection is supported; verify deployed API support, versions/plugins and method-path compatibility.",
+  "forbidden_unsupported_claims": "Do not infer malformed JSON solely from 400, prove a missing plugin/licensing cause, or recommend a guaranteed POST-to-PUT/different-API fix.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Supported route/handler rejection, underlying cause unresolved. Preserve POST /_plugins/_sm/policies/snapshot_policy, HTTP 400, Content-Type application/json, no-handler response and versions. Check deployed API support/plugins/method-path compatibility; no proven malformed JSON, missing plugin, licensing or POST-to-PUT fix.",
+    "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

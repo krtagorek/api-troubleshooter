@@ -1,0 +1,25 @@
+{
+  "case_id": "W4-REAL-024",
+  "incident": {
+    "incident_id": "W4-REAL-024",
+    "service": "Django form application",
+    "endpoint": "/",
+    "http_method": "POST",
+    "status_code": 403,
+    "request_metadata": {
+      "reported_form_enctype": "text/plain",
+      "reported_error": "CSRF token missing",
+      "status_evidence": {
+        "kind": "reporter_published_server_access_log_403"
+      },
+      "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+      "response_body_scope": "Not supplied; null is not evidence of a captured null response."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Submit the intended form through POST /.",
+    "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Server log shows POST / returning 403 with CSRF token missing warning.\n- Displayed form uses enctype text/plain despite including a CSRF template tag; version 5.0.7.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

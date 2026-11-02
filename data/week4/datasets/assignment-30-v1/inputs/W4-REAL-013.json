@@ -1,0 +1,23 @@
+{
+  "case_id": "W4-REAL-013",
+  "incident": {
+    "incident_id": "W4-REAL-013",
+    "service": "Actix Web",
+    "endpoint": "/",
+    "http_method": "PUT",
+    "status_code": 405,
+    "request_metadata": {
+      "status_evidence": {
+        "kind": "reported_httpie_status_line"
+      },
+      "observation_representation": "Attributed public-report paraphrases, not independently reproduced measurements.",
+      "response_body_scope": "not_supplied_not_a_captured_null"
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Return an informative rejection for the reported unsupported PUT / request under the configured route contract.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Reporter configures only GET / using actix-web 3.3.2.\n- HTTPie PUT / transcript receives HTTP/1.1 405, content-length 0, with no Allow header shown.\n- GET / comparison receives HTTP 200.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "W4-REAL-006",
+  "incident": {
+    "incident_id": "W4-REAL-006",
+    "service": "Spring MVC application",
+    "endpoint": "/records",
+    "http_method": "POST",
+    "status_code": 415,
+    "request_metadata": {
+      "request_body_present": false,
+      "content_type_present": false,
+      "framework_version": "5.1.2",
+      "handler_code": "@PostMapping(value = \"/records\", consumes = \"application/json\"); queryRecords(@RequestBody(required = false) Map<String, String> filter)",
+      "status_evidence": {
+        "kind": "published_http_transcript"
+      }
+    },
+    "response_body": {
+      "status": 415,
+      "error": "Unsupported Media Type",
+      "message": "Content type '' not supported",
+      "path": "/records"
+    },
+    "logs": [],
+    "expected_behavior": "Process the reported POST /records request.",
+    "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Published curl transcript shows POST /records returning HTTP 415.\n- Adding Content-Type: application/json to the same empty-body request reportedly returns HTTP 200 and [].",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "case_id": "W4-REAL-011",
+  "incident": {
+    "incident_id": "W4-REAL-011",
+    "service": "OpenHands",
+    "endpoint": "/api/list-files",
+    "http_method": "GET",
+    "status_code": 401,
+    "request_metadata": {
+      "status_evidence": {
+        "kind": "reported_server_access_log"
+      },
+      "observation_representation": "Attributed public-report paraphrases, not independently reproduced measurements.",
+      "response_body_scope": "not_supplied_not_a_captured_null"
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "List the reporter's generated files through the reported GET /api/list-files operation.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Published server log pairs GET /api/list-files with 401 Unauthorized.\n- Adjacent middleware warning reports Missing Authorization header.\n- Reporter can use the assistant but cannot access generated files; image 0.15, Linux, changed port 3001.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

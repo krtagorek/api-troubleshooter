@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-016",
+  "expected_supported_response": "Supported outgoing-header encoding diagnosis; remediation unverified. Preserve GET /ocelot/posts/askdj, 502, skull: 💀 and outgoing-header ASCII exception. Appropriate error handling is intended; removing the header is only a diagnostic comparison, not proven gateway repair or upstream outage.",
+  "acceptable_uncertainty_clarification": "Associate the reported emoji header and exact outgoing-header ASCII exception at reporter-attribution level only; removing the header is a diagnostic comparison, not proven repair.",
+  "forbidden_unsupported_claims": "No authenticated request correlation, independent reproduction, confirmed outage, precise released fix, or successful remediation claim.",
+  "human_review": null,
+  "scenario_label": "known_difficult_or_failure",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Supported outgoing-header encoding diagnosis; remediation unverified. Preserve GET /ocelot/posts/askdj, 502, skull: 💀 and outgoing-header ASCII exception. Appropriate error handling is intended; removing the header is only a diagnostic comparison, not proven gateway repair or upstream outage.",
+    "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

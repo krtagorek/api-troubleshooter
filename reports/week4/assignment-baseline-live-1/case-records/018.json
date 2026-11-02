@@ -1,0 +1,329 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0056040",
+    "attempted_calls": 4,
+    "known_cost_usd": "0.0056040",
+    "limit_violations": 0,
+    "reserved_calls": 4,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0056040",
+    "usage_received_calls": 4
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "V2-15-01",
+  "elapsed_seconds": 10.514472709037364,
+  "errors": [
+    "AgentOutputError"
+  ],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 9.787567417137325,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 9.787567417137325,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "schema_mismatch",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/logs/0/fields/error_offset",
+        "/logs/0/level",
+        "/response_body/result",
+        "/status_code"
+      ],
+      "reasoning": "The response body contains a field 'result' with value 'contract rejected' despite the HTTP status code being 200, indicating the response does not satisfy the approved endpoint contract. The logs show an error related to decoding the upstream response (error_offset 12), suggesting a schema mismatch or format error in the response. The client could not complete its intended operation due to this contract violation."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.7,
+      "diagnostic_checks": [
+        "Inspect detailed schema validation logs from client or middleware.",
+        "Compare upstream raw response against approved schema contract.",
+        "Check for any intermediary components modifying response content or headers."
+      ],
+      "discriminating_evidence_ids": [
+        "ev:fb3d9fa7cea46e070230d7b2:4ccd607e957be5a70e334731",
+        "ev:fb3d9fa7cea46e070230d7b2:88445a9e7f84a5b5d0b51c82"
+      ],
+      "missing_evidence": [
+        {
+          "description": "Schema validation logs or error details from the client or middleware.",
+          "required_to_resolve": "To confirm the exact schema mismatch and exclude other causes."
+        },
+        {
+          "description": "Upstream response raw content and schema contract definitions.",
+          "required_to_resolve": "To verify if the response truly violates the approved contract."
+        }
+      ],
+      "selected_hypothesis_id": "H1",
+      "status": "tentative",
+      "summary": "The most plausible cause is a schema mismatch in the response body causing the client to reject the contract despite HTTP 200 status. Parsing errors in logs support this. However, definitive confirmation is missing due to lack of direct schema validation results or upstream response inspection.",
+      "uncertainty": [
+        "No direct evidence of schema validation failure details.",
+        "No upstream response content or schema definitions to confirm mismatch.",
+        "Possible alternative causes like intermediary rewriting or client misinterpretation are not excluded."
+      ]
+    },
+    "evidence": {
+      "completeness": "complete",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:f7aaea7f0b31e5a03bbddb5a",
+          "observation": "Observed status 200; the client could not complete its intended operation",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:a33d7aa3d07b8a576a815c7b",
+          "observation": "Return a response satisfying the approved endpoint contract within its deadline",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:4ccd607e957be5a70e334731",
+          "observation": "12",
+          "reference": "/logs/0/fields/error_offset",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:ee527936791aeda3c7e89869",
+          "observation": "ERROR",
+          "reference": "/logs/0/level",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:88445a9e7f84a5b5d0b51c82",
+          "observation": "contract rejected",
+          "reference": "/response_body/result",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:ecc299f4202b4fed9ba715de",
+          "observation": "200",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:1fdc60ab494c275b38f2ef89",
+          "observation": "application/x-ndjson",
+          "reference": "/logs/0/fields/content_type",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:f8006d85772f3670fc69b853",
+          "observation": "single-document",
+          "reference": "/logs/0/fields/decoder",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:37d7d9e60c488140330ab1d1",
+          "observation": "2",
+          "reference": "/logs/0/fields/line_count",
+          "reliability": 0.5,
+          "source": "log"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [
+      {
+        "assumptions": [
+          "The client strictly validates response body schema against the approved contract.",
+          "The error_offset in logs indicates a parsing failure due to schema mismatch.",
+          "The 'contract rejected' message in response body signals a contract violation detected by the client or an intermediary."
+        ],
+        "confidence": 0.7,
+        "contradicting_evidence_ids": [],
+        "description": "The response body format does not match the expected schema, causing the client to reject the contract despite HTTP 200 status.",
+        "evidence_assessments": [
+          {
+            "evidence_ids": [
+              "ev:fb3d9fa7cea46e070230d7b2:f7aaea7f0b31e5a03bbddb5a",
+              "ev:fb3d9fa7cea46e070230d7b2:88445a9e7f84a5b5d0b51c82"
+            ],
+            "explanation": "The client could not complete its operation and the response body contains 'contract rejected', indicating contract violation.",
+            "hypothesis_prediction": "If schema mismatch occurs, client operation fails and response indicates rejection.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:fb3d9fa7cea46e070230d7b2:4ccd607e957be5a70e334731",
+              "ev:fb3d9fa7cea46e070230d7b2:ee527936791aeda3c7e89869"
+            ],
+            "explanation": "Error log with error_offset 12 and ERROR level indicates parsing failure consistent with schema mismatch.",
+            "hypothesis_prediction": "Parsing error logs are expected if response schema is incorrect.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:fb3d9fa7cea46e070230d7b2:ecc299f4202b4fed9ba715de"
+            ],
+            "explanation": "HTTP 200 status code is present but does not guarantee contract compliance, consistent with schema mismatch causing client rejection.",
+            "hypothesis_prediction": "Status 200 with contract rejection message is consistent with schema mismatch.",
+            "relation": "supporting"
+          }
+        ],
+        "hypothesis_id": "H1",
+        "supporting_evidence_ids": [
+          "ev:fb3d9fa7cea46e070230d7b2:f7aaea7f0b31e5a03bbddb5a",
+          "ev:fb3d9fa7cea46e070230d7b2:4ccd607e957be5a70e334731",
+          "ev:fb3d9fa7cea46e070230d7b2:ee527936791aeda3c7e89869",
+          "ev:fb3d9fa7cea46e070230d7b2:88445a9e7f84a5b5d0b51c82",
+          "ev:fb3d9fa7cea46e070230d7b2:ecc299f4202b4fed9ba715de"
+        ]
+      }
+    ],
+    "incident_id": "V2-15-01",
+    "max_retries": 0,
+    "pending_user_questions": [],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 200; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-15-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-14-0",
+          "event": "connector.response",
+          "fields": {
+            "content_type": "application/x-ndjson",
+            "decoder": "single-document",
+            "error_offset": 12,
+            "line_count": 2
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-15T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-14-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-14-0",
+        "result": "contract rejected",
+        "status": 200,
+        "timestamp": "2026-01-15T12:00:00Z"
+      },
+      "service": "synthetic-schema_mismatch-connector",
+      "severity": "medium",
+      "status_code": 200
+    },
+    "status": "running",
+    "stop_reason": null,
+    "thread_id": "fb2ef35a-5519-4894-93d0-6546bd86b3f9",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "35698ebe-e2fe-4cf9-9b6b-7e416fbbcc9e",
+      "elapsed_seconds": 1.6555390420835465,
+      "error": null,
+      "input_tokens": 1722,
+      "output_tokens": 173,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1895
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "885802d0-f4de-4882-a4d4-6e2a86ff0163",
+      "elapsed_seconds": 1.1271850001066923,
+      "error": null,
+      "input_tokens": 2056,
+      "output_tokens": 91,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2147
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "2b7e7b24-ade4-46e2-80d0-f305892324a2",
+      "elapsed_seconds": 4.491626541828737,
+      "error": null,
+      "input_tokens": 2950,
+      "output_tokens": 589,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "RootCauseAnalystOutput",
+      "source": "provider_usage",
+      "total_tokens": 3539
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "d6244da0-ea23-4188-8022-a8ce18e4635f",
+      "elapsed_seconds": 2.5132168331183493,
+      "error": null,
+      "input_tokens": 2674,
+      "output_tokens": 299,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ResolutionGeneratorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2973
+    }
+  ],
+  "root_id": "fb2ef35a-5519-4894-93d0-6546bd86b3f9",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "failed",
+    "root_cause_analyst": "completed",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 67985,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "failed",
+  "workflow_status": "running"
+}

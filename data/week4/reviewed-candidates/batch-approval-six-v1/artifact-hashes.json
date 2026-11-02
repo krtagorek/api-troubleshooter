@@ -1,0 +1,8 @@
+{
+  "evaluator-references.json": "a2b9529ef04d131e7e659aa005023e06f4f3930507fed046333dc382e6122663",
+  "inference/W4-REAL-007.json": "d77f3671d5d45286ce44e1f383861079962ab8c071d86013e33e938ab83dfc36",
+  "metric-targets.json": "ed95f2a29a82232d8d6a7794e64791b72fc6ee8750c84df5ba605e0fd79cb04b",
+  "projection-provenance.json": "97f616b50a650a88a202dc52bfe6004badaa2227f45e7bd4a5c46b1a0b5022f1",
+  "review-decisions.json": "377fc53f83dcbe4284082148f53c74f3f21aaa7b1bff72ab3a47e5d723c11102",
+  "runtime-assessment.json": "8b1466942227377898d6d3b50257eb82acaf52cc7d8f1c67d566e5a82e1a5505"
+}

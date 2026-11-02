@@ -1,0 +1,49 @@
+{
+  "primary_archive": "sources/primary-022-response.json",
+  "sha256": "96dfdb7854db8a90db327e01cb341a5833475d2aadd98a6b566f97e00c2ef5c9",
+  "iid": 385112,
+  "project_id": 278964,
+  "anchors": [
+    {
+      "json_pointer": "/description",
+      "start_character": 1340,
+      "end_character": 1350,
+      "excerpt": "HTTP/2 500",
+      "excerpt_sha256": "1a04e28ce7a69564fa15e1747c185781b20d58c223816173f1bd8192fac4e438"
+    },
+    {
+      "json_pointer": "/description",
+      "start_character": 1600,
+      "end_character": 1643,
+      "excerpt": "no multipart boundary param in Content-Type",
+      "excerpt_sha256": "756fe7da724c1d9fc1e9b1e38fd7d15f3d2f0b1233360d2eec327d44d6e5c30a"
+    },
+    {
+      "json_pointer": "/description",
+      "start_character": 3221,
+      "end_character": 3266,
+      "excerpt": "\"correlation_id\":\"01GKMTCDYYDPNX0TQ5D0W06PQX\"",
+      "excerpt_sha256": "c8608b2b6d95471dc69a9b357922ea74e5b08fef160d712307a0a93a349847a5"
+    },
+    {
+      "json_pointer": "/description",
+      "start_character": 3785,
+      "end_character": 3797,
+      "excerpt": "\"status\":500",
+      "excerpt_sha256": "4d1bdf63afd838f704f8ccb4496dca742718ff37b66caadca48bdf11fb2a42e6"
+    },
+    {
+      "json_pointer": "/description",
+      "start_character": 3463,
+      "end_character": 3487,
+      "excerpt": "\"uri\":\"/api/v4/projects\"",
+      "excerpt_sha256": "449b4e932aa8ef3956d44c3d014cbab446130d49d10a5dae1f74190acdb4b52e"
+    }
+  ],
+  "archival_prerequisite_met": true,
+  "status_provenance": "Published HTTP/2 500 transcript plus reporter-published access log, not independent capture.",
+  "association": "Reporter-published workhorse error/access log entries contain matching correlation_id, method and URI. Not authenticated request correlation.",
+  "source_metadata_created_at": "2022-12-07T21:00:22Z",
+  "human_reviewed_at": null,
+  "limitations": "Header missing-boundary evidence supported; no independent reproduction, no assertion that missing avatar alone proves cause or a guaranteed remedy."
+}

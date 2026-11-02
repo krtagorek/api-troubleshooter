@@ -1,0 +1,222 @@
+{
+  "case_id": "W4-REAL-026",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "server_error",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_error",
+        "/status_code"
+      ],
+      "reasoning": "The incident involves a 500 Internal Server Error status code (E12) and a ValueError exception indicating 'too many values to unpack (expected 2)' (E04). This suggests a server-side failure during request processing rather than client-side issues such as authentication, authorization, or validation. The error occurs during MIME splitting as per the reproduction logs (E01). There is no direct evidence of authentication, authorization, validation, rate limiting, timeout, schema mismatch, or dependency failure issues. Therefore, the failure is best categorized as a server error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:dd5da2f1b56a235de2a63e3a:001f4bc67a13e4e8f5ec82c4",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Published curl sends both content-type application/json and Content-Type Application/Json.\n- Version-3 reproduction logs ValueError during MIME splitting and POST /todos 500; version-2 comparison returns 201.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:dd5da2f1b56a235de2a63e3a:e03e4a4ba1b4ebacefed4c6e",
+          "observation": "ValueError: too many values to unpack (expected 2)",
+          "reference": "/request_metadata/reported_error",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:dd5da2f1b56a235de2a63e3a:2af465ac548465729c71cbd4",
+          "observation": "500",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent captured telemetry logs or stack traces are supplied to confirm the exact code path or root cause of the ValueError.",
+          "required_to_resolve": "Access to sanitized server logs or stack traces showing the MIME splitting failure and context of the ValueError."
+        },
+        {
+          "description": "No response body or error payload is supplied to clarify the server's error reporting or handling behavior.",
+          "required_to_resolve": "Captured response body or error message from the server to verify error details and client impact."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-026",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Access to sanitized server logs or stack traces showing the MIME splitting failure and context of the ValueError.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Captured response body or error message from the server to verify error details and client impact.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /request_metadata/observation_representation, /request_metadata/reported_header_entries/0/0, /request_metadata/reported_header_entries/0/1, /request_metadata/reported_header_entries/1/0, /request_metadata/reported_header_entries/1/1, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/reported_error, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published curl sends both content-type application/json and Content-Type Application/Json.\n- Version-3 reproduction logs ValueError during MIME splitting and POST /todos 500; version-2 comparison returns 201.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/todos",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Submit the intended request through POST /todos.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-026",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_error": "ValueError: too many values to unpack (expected 2)",
+        "reported_header_entries": [
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "Content-Type",
+            "Application/Json"
+          ]
+        ],
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "contributor_reproduction_v3_access_log_500_distinct_v2_201_comparison"
+        }
+      },
+      "response_body": null,
+      "service": "Connexion",
+      "severity": "unknown",
+      "status_code": 500
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "b2fe1931-3fed-4cdf-9631-bd68874ac26d",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "4b929b0c-9082-4a96-b54d-b841205a2cd6",
+      "elapsed_seconds": 2.0982493329793215,
+      "error": null,
+      "input_tokens": 1406,
+      "output_tokens": 193,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1599
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "5db756b2-0b7a-44ab-8e13-81d557e9db88",
+      "elapsed_seconds": 2.043801291845739,
+      "error": null,
+      "input_tokens": 1932,
+      "output_tokens": 175,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2107
+    }
+  ],
+  "root_id": "b2fe1931-3fed-4cdf-9631-bd68874ac26d",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/request_metadata/observation_representation",
+        "/request_metadata/reported_header_entries/0/0",
+        "/request_metadata/reported_header_entries/0/1",
+        "/request_metadata/reported_header_entries/1/0",
+        "/request_metadata/reported_header_entries/1/1",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_error",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 3,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "c5b116ca084746d441460b50e85f5f3630818a1455c76262969ca06da3313ff0",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

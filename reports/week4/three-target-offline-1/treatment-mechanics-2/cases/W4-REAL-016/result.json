@@ -1,0 +1,659 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0000468",
+    "attempted_calls": 3,
+    "known_cost_usd": "0.0000468",
+    "limit_violations": 0,
+    "reserved_calls": 3,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0000468",
+    "usage_received_calls": 3
+  },
+  "accounting_source": "mock_test_data",
+  "case_id": "W4-REAL-016",
+  "elapsed_seconds": 1.4447913749609143,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 0.03377312491647899,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "offline_test",
+  "model_elapsed_seconds": 0.03377312491647899,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [],
+      "reasoning": "Offline scripted response, no diagnostic claim."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Offline scripted inconclusive response; no semantic judgment.",
+      "uncertainty": [
+        "No verification was performed.",
+        "Evidence is incomplete or conflicting"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:fac62466a8d20ee3b0051b6c",
+          "observation": "Reported historical observations; not independently reproduced:\n- Curl transcript shows GET and HTTP/1.1 502; response Content-Length is 0.\n- Request includes custom header skull with value \ud83d\udc80.\n- Gateway exception says outgoing request headers must contain only ASCII characters; report uses sample tag 24.1.0.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:61d64d398528d620761e6f69",
+          "observation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+          "reference": "/request_metadata/observation_representation",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:08ef29979c9ea26f01715424",
+          "observation": "editorial; not an additional human confirmation",
+          "reference": "/request_metadata/operation_goal_mapping",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:d3585f49a6bee3d876ebfa08",
+          "observation": "bridge",
+          "reference": "/request_metadata/report_attribution_v2/anchors/bridge/block",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:6f7fd3798c1a21c834ec9c26",
+          "observation": "25",
+          "reference": "/request_metadata/report_attribution_v2/anchors/bridge/end",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:749e7c15bc3c56f5ccfdfbd5",
+          "observation": "verbatim_source_excerpt",
+          "reference": "/request_metadata/report_attribution_v2/anchors/bridge/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:2b628614214ae87e956cc71f",
+          "observation": "The logs shed some light:",
+          "reference": "/request_metadata/report_attribution_v2/anchors/bridge/literal",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:d5ff970da429d3d2fbb2bfc0",
+          "observation": "0",
+          "reference": "/request_metadata/report_attribution_v2/anchors/bridge/start",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:0f4974d829253ec9901a52a3",
+          "observation": "exception",
+          "reference": "/request_metadata/report_attribution_v2/anchors/exception/block",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:99cfbded344c6aea79dfe156",
+          "observation": "89",
+          "reference": "/request_metadata/report_attribution_v2/anchors/exception/end",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:8763af51baa27d342f0cc06e",
+          "observation": "verbatim_source_excerpt",
+          "reference": "/request_metadata/report_attribution_v2/anchors/exception/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:12ec45b7ac821276029f5587",
+          "observation": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+          "reference": "/request_metadata/report_attribution_v2/anchors/exception/literal",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:e994a27e7ac8aca59884e0e6",
+          "observation": "0",
+          "reference": "/request_metadata/report_attribution_v2/anchors/exception/start",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:abede5344f948314be150fc7",
+          "observation": "header",
+          "reference": "/request_metadata/report_attribution_v2/anchors/header/block",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:9713e51146ae967ce6c730e5",
+          "observation": "8",
+          "reference": "/request_metadata/report_attribution_v2/anchors/header/end",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:4d947979ae4e115626706bb3",
+          "observation": "verbatim_source_excerpt",
+          "reference": "/request_metadata/report_attribution_v2/anchors/header/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:1c2b89c2738af53ec2926b16",
+          "observation": "skull: \ud83d\udc80",
+          "reference": "/request_metadata/report_attribution_v2/anchors/header/literal",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:f368adf93c217a400d9e6ded",
+          "observation": "0",
+          "reference": "/request_metadata/report_attribution_v2/anchors/header/start",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:b72ae65b8eb7fdbd044d877d",
+          "observation": "request",
+          "reference": "/request_metadata/report_attribution_v2/anchors/request/block",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:c7cb4004c4096e953438ce91",
+          "observation": "23",
+          "reference": "/request_metadata/report_attribution_v2/anchors/request/end",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:7621d4fe0dd5c1d978463719",
+          "observation": "verbatim_source_excerpt",
+          "reference": "/request_metadata/report_attribution_v2/anchors/request/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:a473cc91443d2cd71497303a",
+          "observation": "GET /ocelot/posts/askdj",
+          "reference": "/request_metadata/report_attribution_v2/anchors/request/literal",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:5da5d0713e8340cac5289715",
+          "observation": "0",
+          "reference": "/request_metadata/report_attribution_v2/anchors/request/start",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:f3f61e276db92e5edfaee8ae",
+          "observation": "status",
+          "reference": "/request_metadata/report_attribution_v2/anchors/status/block",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:0cc5b7159459f685d0293ca9",
+          "observation": "12",
+          "reference": "/request_metadata/report_attribution_v2/anchors/status/end",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:a8e42a2b1544a0f7d6680f3b",
+          "observation": "verbatim_source_excerpt",
+          "reference": "/request_metadata/report_attribution_v2/anchors/status/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:656ec1e1d154d44618fd841b",
+          "observation": "HTTP/1.1 502",
+          "reference": "/request_metadata/report_attribution_v2/anchors/status/literal",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:9235ece8b362fd7072a11ae4",
+          "observation": "0",
+          "reference": "/request_metadata/report_attribution_v2/anchors/status/start",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:07b4e81ac8e29335049abd37",
+          "observation": "false",
+          "reference": "/request_metadata/report_attribution_v2/authenticated_request_correlation",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:ff860749a33dd7f0b9d3cbf8",
+          "observation": "/ocelot/posts/askdj",
+          "reference": "/request_metadata/report_attribution_v2/endpoint",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:3d43d6d31e9032908b48d974",
+          "observation": "/request_metadata/reported_exception",
+          "reference": "/request_metadata/report_attribution_v2/exception_pointer",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:7da4782b4ef34a5c31aa7659",
+          "observation": "/request_metadata/request_headers/skull",
+          "reference": "/request_metadata/report_attribution_v2/header_pointer",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:302dd18853f9801dc97493dc",
+          "observation": "reporter_associated_reproduction",
+          "reference": "/request_metadata/report_attribution_v2/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:7edd3da333011af78fb3c6c4",
+          "observation": "GET",
+          "reference": "/request_metadata/report_attribution_v2/method",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:15a579ced468a4d43ec2c8e2",
+          "observation": "reproduction-with-explanatory-logs",
+          "reference": "/request_metadata/report_attribution_v2/relationship",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:86bbbc7b05734e81adde95d5",
+          "observation": "dbc8ea81f66eba30c74cba89b08ab1c1ceee230886825f4f4f0acca429916d9f",
+          "reference": "/request_metadata/report_attribution_v2/source_sha256",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:c1a5458bb45c4252969482c9",
+          "observation": "The report presents the request transcript and explanatory log excerpt as the same reproduction; this is attributed context, not independent correlation.",
+          "reference": "/request_metadata/report_attribution_v2/summary",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:177d7f078683e05957ea07f6",
+          "observation": "attributed_editorial_summary",
+          "reference": "/request_metadata/report_attribution_v2/summary_kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:e6b1b5fee703821be851b75c",
+          "observation": "attributed-report-readiness-v2",
+          "reference": "/request_metadata/report_attribution_v2/version",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:63b08b8be5810c56363976fa",
+          "observation": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+          "reference": "/request_metadata/reported_exception",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:1a5be6121e2dcab291c6af16",
+          "observation": "*/*",
+          "reference": "/request_metadata/request_headers/Accept",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:81d2dadf397aa697b5f38137",
+          "observation": "\ud83d\udc80",
+          "reference": "/request_metadata/request_headers/skull",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:12f1ebf8e8b5139b3af8a80f",
+          "observation": "not_supplied_not_a_captured_json_null",
+          "reference": "/request_metadata/response_body_scope",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:d0f1a803e84a6072eb441f5e",
+          "observation": "reported_curl_http_status_line",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:d8986be1dbbbccf734d35ad6",
+          "observation": "502",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-016",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Provide additional sanitized upstream logs, response details, or contract documentation",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "For the selected user/reporter-supplied comparison /request_metadata/request_headers/skull versus /request_metadata/reported_exception, can the responsible owner compare sanitized nonsecret metadata and clarify the operation/attempt association? This is not independent verification or a confirmed cause.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Curl transcript shows GET and HTTP/1.1 502; response Content-Length is 0.\n- Request includes custom header skull with value \ud83d\udc80.\n- Gateway exception says outgoing request headers must contain only ASCII characters; report uses sample tag 24.1.0.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+      "endpoint": "/ocelot/posts/askdj",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Handle the reported GET /ocelot/posts/askdj request with appropriate error handling.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-016",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+        "operation_goal_mapping": "editorial; not an additional human confirmation",
+        "report_attribution_v2": {
+          "anchors": {
+            "bridge": {
+              "block": "bridge",
+              "end": 25,
+              "kind": "verbatim_source_excerpt",
+              "literal": "The logs shed some light:",
+              "start": 0
+            },
+            "exception": {
+              "block": "exception",
+              "end": 89,
+              "kind": "verbatim_source_excerpt",
+              "literal": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+              "start": 0
+            },
+            "header": {
+              "block": "header",
+              "end": 8,
+              "kind": "verbatim_source_excerpt",
+              "literal": "skull: \ud83d\udc80",
+              "start": 0
+            },
+            "request": {
+              "block": "request",
+              "end": 23,
+              "kind": "verbatim_source_excerpt",
+              "literal": "GET /ocelot/posts/askdj",
+              "start": 0
+            },
+            "status": {
+              "block": "status",
+              "end": 12,
+              "kind": "verbatim_source_excerpt",
+              "literal": "HTTP/1.1 502",
+              "start": 0
+            }
+          },
+          "authenticated_request_correlation": false,
+          "endpoint": "/ocelot/posts/askdj",
+          "exception_pointer": "/request_metadata/reported_exception",
+          "header_pointer": "/request_metadata/request_headers/skull",
+          "kind": "reporter_associated_reproduction",
+          "method": "GET",
+          "relationship": "reproduction-with-explanatory-logs",
+          "source_sha256": "dbc8ea81f66eba30c74cba89b08ab1c1ceee230886825f4f4f0acca429916d9f",
+          "summary": "The report presents the request transcript and explanatory log excerpt as the same reproduction; this is attributed context, not independent correlation.",
+          "summary_kind": "attributed_editorial_summary",
+          "version": "attributed-report-readiness-v2"
+        },
+        "reported_exception": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+        "request_headers": {
+          "Accept": "*/*",
+          "skull": "\ud83d\udc80"
+        },
+        "response_body_scope": "not_supplied_not_a_captured_json_null",
+        "status_evidence": {
+          "kind": "reported_curl_http_status_line"
+        }
+      },
+      "response_body": null,
+      "service": "Ocelot",
+      "severity": "unknown",
+      "status_code": 502
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "7637bffe-5d42-4879-af5c-f54b4ad95bbe",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "61a7cfa7-a4ac-4314-bf70-c1c03f0cb14a",
+      "elapsed_seconds": 0.021733667002990842,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "5a527b32-bd3a-4b63-bc14-1f3c76f363a8",
+      "elapsed_seconds": 0.004973624832928181,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "36cbaea5-567d-4801-873b-63d4b1028c30",
+      "elapsed_seconds": 0.007065833080559969,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "RootCauseAnalystOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    }
+  ],
+  "root_id": "7637bffe-5d42-4879-af5c-f54b4ad95bbe",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [
+        "/request_metadata/request_headers/skull",
+        "/request_metadata/reported_exception"
+      ],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": true,
+      "readiness_reason": "Original excerpt-bound reporter association permits qualified analysis only",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/observation_representation",
+        "/request_metadata/operation_goal_mapping",
+        "/request_metadata/report_attribution_v2/anchors/bridge/block",
+        "/request_metadata/report_attribution_v2/anchors/bridge/end",
+        "/request_metadata/report_attribution_v2/anchors/bridge/kind",
+        "/request_metadata/report_attribution_v2/anchors/bridge/literal",
+        "/request_metadata/report_attribution_v2/anchors/bridge/start",
+        "/request_metadata/report_attribution_v2/anchors/exception/block",
+        "/request_metadata/report_attribution_v2/anchors/exception/end",
+        "/request_metadata/report_attribution_v2/anchors/exception/kind",
+        "/request_metadata/report_attribution_v2/anchors/exception/literal",
+        "/request_metadata/report_attribution_v2/anchors/exception/start",
+        "/request_metadata/report_attribution_v2/anchors/header/block",
+        "/request_metadata/report_attribution_v2/anchors/header/end",
+        "/request_metadata/report_attribution_v2/anchors/header/kind",
+        "/request_metadata/report_attribution_v2/anchors/header/literal",
+        "/request_metadata/report_attribution_v2/anchors/header/start",
+        "/request_metadata/report_attribution_v2/anchors/request/block",
+        "/request_metadata/report_attribution_v2/anchors/request/end",
+        "/request_metadata/report_attribution_v2/anchors/request/kind",
+        "/request_metadata/report_attribution_v2/anchors/request/literal",
+        "/request_metadata/report_attribution_v2/anchors/request/start",
+        "/request_metadata/report_attribution_v2/anchors/status/block",
+        "/request_metadata/report_attribution_v2/anchors/status/end",
+        "/request_metadata/report_attribution_v2/anchors/status/kind",
+        "/request_metadata/report_attribution_v2/anchors/status/literal",
+        "/request_metadata/report_attribution_v2/anchors/status/start",
+        "/request_metadata/report_attribution_v2/authenticated_request_correlation",
+        "/request_metadata/report_attribution_v2/endpoint",
+        "/request_metadata/report_attribution_v2/exception_pointer",
+        "/request_metadata/report_attribution_v2/header_pointer",
+        "/request_metadata/report_attribution_v2/kind",
+        "/request_metadata/report_attribution_v2/method",
+        "/request_metadata/report_attribution_v2/relationship",
+        "/request_metadata/report_attribution_v2/source_sha256",
+        "/request_metadata/report_attribution_v2/summary",
+        "/request_metadata/report_attribution_v2/summary_kind",
+        "/request_metadata/report_attribution_v2/version",
+        "/request_metadata/reported_exception",
+        "/request_metadata/request_headers/Accept",
+        "/request_metadata/request_headers/skull",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": true,
+    "readiness_reason": "Original excerpt-bound reporter association permits qualified analysis only",
+    "required_reference_count": 39,
+    "required_reference_coverage_complete": true,
+    "selected_reference_count": 45,
+    "selected_required_reference_count": 39,
+    "semantic_accuracy": null,
+    "snapshot": "a153398686288d9b0ca69b6deca394dba17f9a332cbea86e5d6175c22406693d",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "completed",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 70646,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

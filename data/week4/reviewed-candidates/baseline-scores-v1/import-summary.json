@@ -1,0 +1,12 @@
+{
+  "score_record_sha256": "4f39d63d574a468f1a4e85e983ae9e7dbd12248e99a76a713da04ad5b3de80be",
+  "workbook_path": "outputs/week4-completion-30/week4-evaluation.xlsx",
+  "workbook_sha256": "b622e7b494f2bbbfc4c5918a5c0d1c519c02b2df7f08410188dc25c4f0016980",
+  "verification": "reports/week4/baseline-scores-import-1/checks.json",
+  "approved_correctness_passes": 0,
+  "approved_uncertainty_passes": 4,
+  "denominator": 30,
+  "grounding_safety_robustness": "PENDING_NOT_IMPORTED",
+  "reviewer": "User in this conversation",
+  "reviewed_at": null
+}

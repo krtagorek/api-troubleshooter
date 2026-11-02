@@ -1,0 +1,251 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0000312",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0000312",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0000312",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "mock_test_data",
+  "case_id": "W4-REAL-025",
+  "elapsed_seconds": 0.6900421250611544,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 0.022313040914013982,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "offline_test",
+  "model_elapsed_seconds": 0.022313040914013982,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [],
+      "reasoning": "Offline scripted response, no diagnostic claim."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:db7f54feb2cde8566750e4f8",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Access and application logs record POST /api/2/envelope/ returning 403.\n- Warning says CSRF cookie not set; recorded handler is RedirectView.\n- Relay reports envelope delivery failure while web UI works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:54b888343d0ed6551718147f",
+          "observation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+          "reference": "/request_metadata/observation_representation",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:6886cdc23d7609098387e226",
+          "observation": "CSRF cookie not set",
+          "reference": "/request_metadata/reported_error",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:a043eca98eb48791ef53e438",
+          "observation": "django.views.generic.base.RedirectView",
+          "reference": "/request_metadata/reported_handler",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:04a3e0a3c19cd9859f3129a6",
+          "observation": "Not supplied; null is not evidence of a captured null response.",
+          "reference": "/request_metadata/response_body_scope",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:db5f9e9cb0273dc1bf220094",
+          "observation": "reporter_published_access_application_logs_403",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:56ff0eec3b9dc35177e93381",
+          "observation": "403",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-025",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_error, /request_metadata/reported_handler, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Access and application logs record POST /api/2/envelope/ returning 403.\n- Warning says CSRF cookie not set; recorded handler is RedirectView.\n- Relay reports envelope delivery failure while web UI works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/api/2/envelope/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Deliver the intended envelope through POST /api/2/envelope/.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-025",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_error": "CSRF cookie not set",
+        "reported_handler": "django.views.generic.base.RedirectView",
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "reporter_published_access_application_logs_403"
+        }
+      },
+      "response_body": null,
+      "service": "Sentry self-hosted",
+      "severity": "unknown",
+      "status_code": 403
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "e1a25a31-7375-4b39-b61e-78df13cc9fd8",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "8eef95c0-d38b-439b-896c-421606a50655",
+      "elapsed_seconds": 0.019974750000983477,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "cbc38ff0-3fbb-48ac-bfe0-ea1d214dd6a4",
+      "elapsed_seconds": 0.002338290913030505,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    }
+  ],
+  "root_id": "e1a25a31-7375-4b39-b61e-78df13cc9fd8",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/observation_representation",
+        "/request_metadata/reported_error",
+        "/request_metadata/reported_handler",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 7,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "80b35fb62e58aaf6e3598abcf65d19a1a3a020cbb15c2ac4ad9b5b8e37b28eb8",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 70738,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-014",
+  "expected_supported_response": "Reported write/response inconsistency and duplicate-retry risk, exact server defect unresolved. Preserve POST endpoint and HTTP 500. Persistence/duplicates are reporter claims. Check existing state before replay; no blind retries or confirmed serialization/transaction/code defect.",
+  "acceptable_uncertainty_clarification": "Treat write outcome as uncertain despite HTTP 500; reported persistence/duplicates require verification before any replay.",
+  "forbidden_unsupported_claims": "No blind retry of a non-idempotent write; no confirmed transaction/serialization/code defect or independently verified persistence claim.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Reported write/response inconsistency and duplicate-retry risk, exact server defect unresolved. Preserve POST endpoint and HTTP 500. Persistence/duplicates are reporter claims. Check existing state before replay; no blind retries or confirmed serialization/transaction/code defect.",
+    "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

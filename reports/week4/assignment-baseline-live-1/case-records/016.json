@@ -1,0 +1,246 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0020284",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0020284",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0020284",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "V2-04-01",
+  "elapsed_seconds": 4.553715834161267,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 3.918828209163621,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.918828209163621,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "authorization",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/logs/0/fields/operation",
+        "/logs/0/fields/retention_active",
+        "/logs/0/fields/retention_rule",
+        "/logs/0/fields/role_permits_delete",
+        "/logs/0/level",
+        "/response_body/result",
+        "/response_body/status",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP 403 status code indicates the client is forbidden from performing the operation. The logs show a delete operation with retention active under a legal-hold rule, and the role permits delete is true, yet the request was unsuccessful. This suggests an authorization failure due to retention policy constraints despite role permissions. Evidence includes the 403 status (E19, E21), the unsuccessful request (E18, E01), and log details about retention and permissions (E05, E06, E07, E08, E09)."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "complete",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:2b9600badd8b870b597763d1",
+          "observation": "Observed status 403; the client could not complete its intended operation",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:b640fcfaa2044ae02d9e7a9f",
+          "observation": "delete",
+          "reference": "/logs/0/fields/operation",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:4f0bd6a39a32bf48197b97f2",
+          "observation": "true",
+          "reference": "/logs/0/fields/retention_active",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:7cb21b982863fceb231307db",
+          "observation": "legal-hold",
+          "reference": "/logs/0/fields/retention_rule",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:6e50d102881063cecaa97418",
+          "observation": "true",
+          "reference": "/logs/0/fields/role_permits_delete",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:ee527936791aeda3c7e89869",
+          "observation": "ERROR",
+          "reference": "/logs/0/level",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:80e471b41df9c69834bb8bd3",
+          "observation": "request unsuccessful",
+          "reference": "/response_body/result",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:4793310b391dbc24e965ce0a",
+          "observation": "403",
+          "reference": "/response_body/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:56ff0eec3b9dc35177e93381",
+          "observation": "403",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "V2-04-01",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 403; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-04-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-3-0",
+          "event": "connector.response",
+          "fields": {
+            "operation": "delete",
+            "retention_active": true,
+            "retention_rule": "legal-hold",
+            "role_permits_delete": true
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-04T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-3-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-3-0",
+        "result": "request unsuccessful",
+        "status": 403,
+        "timestamp": "2026-01-04T12:00:00Z"
+      },
+      "service": "synthetic-authorization-connector",
+      "severity": "medium",
+      "status_code": 403
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "e51dfae7-bc70-41d6-a10f-69f87b18e94e",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "93021bc5-8f54-42ad-bea2-1777343d3359",
+      "elapsed_seconds": 1.9404515421483666,
+      "error": null,
+      "input_tokens": 1721,
+      "output_tokens": 209,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1930
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "95b6abb3-3aee-465e-be43-16c132e4b314",
+      "elapsed_seconds": 1.9783766670152545,
+      "error": null,
+      "input_tokens": 2118,
+      "output_tokens": 99,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2217
+    }
+  ],
+  "root_id": "e51dfae7-bc70-41d6-a10f-69f87b18e94e",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 67969,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

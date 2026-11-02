@@ -1,0 +1,22 @@
+{
+  "review_decision": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "semantic_scores": null,
+  "final_selection": null,
+  "golden_ready": false,
+  "active_assets_changed": false,
+  "drafts_imported": false,
+  "execution_authorized": false,
+  "trace_export_authorized": false,
+  "proposed_actions": [
+    {
+      "remove_from_future_selection": "W4-REAL-030",
+      "insert_draft": "W4-DRAFT-031-v1"
+    },
+    {
+      "remove_from_future_selection": "V2-01-03",
+      "insert_draft": "W4-DRAFT-032-v1"
+    }
+  ]
+}

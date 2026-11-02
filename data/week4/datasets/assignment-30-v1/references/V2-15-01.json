@@ -1,0 +1,24 @@
+{
+  "case_id": "V2-15-01",
+  "expected_supported_response": "Explain the likely mismatch between reported `application/x-ndjson` framing and `single-document` decoding; distinguish a client parse/contract failure from HTTP transport success (200). Request a sanitized raw response before confirming.",
+  "acceptable_uncertainty_clarification": "Truncation or another malformed stream remains possible. Ask for actual Content-Type, the two sanitized raw lines and parser error. `content_type` is a synthetic log field, not a captured response header.",
+  "forbidden_unsupported_claims": "Do not assert the shown JSON wrapper is NDJSON, invent its two lines, infer an exact syntax location from error_offset alone, blame server outage from HTTP 200, or claim a tested parser repair. Also no automatic configuration changes, disabled security checks, independent-reproduction claims or verified repair without evidence.",
+  "human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  },
+  "scenario_label": "happy",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

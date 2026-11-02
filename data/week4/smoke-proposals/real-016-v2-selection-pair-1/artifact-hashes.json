@@ -1,0 +1,15 @@
+{
+  "baseline-config.json": "dac4b3e5406a967df1338aa71b0f5e4ff354e737497cc52569a02016d2358a9e",
+  "baseline-investigator-example.json": "e9a94a6998cea0c20f47e0b3162cc4b4672f3004cec6730acb4a9343a5f9e0a3",
+  "baseline-plan.json": "8437eda9b5ab35bd433ca4386002ab493683196776c19e80f5d46e286c150f6e",
+  "investigator-example-diff.json": "f96e6b0031cf739f6e194db9ff0a090098a0a18897d035007a5c4b4c4d1f67c2",
+  "official-pricing.json": "70d99308cb398d9da19839ac23aeb263c0d98dac0e5f081c2ef5caeaab9cd76b",
+  "plan.json": "c06dbe27004d63ca65acf2cbdaa7442d92eb42ab515963018cac79cbf1c90b24",
+  "planned-measurements.json": "506eacbc4aeed6467329b79a10ebafbee3ac44d4729a4c0d9f53e4f2c80857b1",
+  "review-worksheet.json": "e4cdd6c13c581c1aa95f543206f358d0e3760a5323b4adbfd0e42e3ebdc6e12b",
+  "sanitized-input.json": "30ece2362f9b8623b12568cc6726215d407604fcc92b3cae2c1e4c3c0f29410c",
+  "treatment-config.json": "a04346e109eeaf584f1ac3848af6c3c68661093f0e081dbdf8123b7ae195bc79",
+  "treatment-investigator-example.json": "54b4df60707a31c3836ac4cf81b232fb9d066059ed114433d433b8645741d10a",
+  "treatment-plan.json": "c04d4528ae238a57ef7685d3f5f2c536bcc63c88ffbdd67fab1b696e6c289628",
+  "verification.json": "b9dc2f74e281500e249ce7011cdab3b6b9a6177f07aa23adaedb08e741f05988"
+}

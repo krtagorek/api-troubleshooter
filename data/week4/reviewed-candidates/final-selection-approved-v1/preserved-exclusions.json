@@ -1,0 +1,232 @@
+{
+  "parent_preserved_outside_selected_set": {
+    "case_id": "V2-01-03",
+    "role": "PROPOSED_EXISTING_SYNTHETIC_ADDITION",
+    "addition_rank": 1,
+    "source_reference": {
+      "path": "data/benchmark_v2/dataset/inference/development.jsonl",
+      "line": 3,
+      "file_sha256": "e37473b691a26bf3cfac2979ec228f52eaff9dcff1d834e1258f92cda24bab29",
+      "line_sha256": "50c5585f4f0dc914b2e23e107d20cc50254718fda5f44801f9059aa9c6d346ef"
+    },
+    "source_url": null,
+    "source_date": null,
+    "source_provenance": "Inherited deterministic synthetic generator output; not a real observed incident. Generation uses no model; specification authorship/AI assistance remains unverified.",
+    "transport_fields": {
+      "http_method": "GET",
+      "endpoint": "/demo/resources/3",
+      "status_code": 401
+    },
+    "transport_provenance": "Synthetic fixture values, including any log timestamps/correlation IDs; not captured or reporter-observed transport.",
+    "body_scope": "Synthetic fixture body, not an authentic captured HTTP response.",
+    "inference_path": "data/benchmark_v2/dataset/inference/development.jsonl",
+    "inference_line": 3,
+    "inference_record_sha256": "50c5585f4f0dc914b2e23e107d20cc50254718fda5f44801f9059aa9c6d346ef",
+    "expected_supported_response": "Identify the literal issuer mismatch (received ends in `/`; configured does not) and investigate the configured issuer comparison as the leading explanation for this synthetic 401. Keep signature validity as a fixture-reported fact, not independent verification.",
+    "expectation_status": "HUMAN_ACCEPTED",
+    "inherited_label_reference": {
+      "path": "data/benchmark_v2/dataset/labels/development.jsonl",
+      "line": 3,
+      "file_sha256": "82df8be9005d00523e9631c8b56207390f1891820e4fcb7a39e9bbab75f6873b"
+    },
+    "acceptable_uncertainty_clarification": "Request the actual verifier/comparison rule and rejection detail before calling the mismatch the confirmed cause. A different key/verifier context remains possible; the inherited signing-key-rotation alternative is not equally supported by this fixture’s `signature_valid: true`.",
+    "forbidden_unsupported_claims": "Do not claim an expired/forged token, a proven signing-key rotation, a tested fix, or that arbitrary issuer normalization is safe. Do not disable issuer/signature validation. Also no automatic configuration changes, disabled security checks, independent-reproduction claims or verified repair without evidence.",
+    "inherited_evidence_pointers_evaluator_only": [
+      "/logs/0/records/0/name",
+      "/logs/0/records/0/value",
+      "/logs/0/records/1/name",
+      "/logs/0/records/1/value",
+      "/logs/0/records/2/name",
+      "/logs/0/records/2/value"
+    ],
+    "runtime_compatibility": {
+      "case_id": "V2-01-03",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "catalog_entries": 20,
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "agent_graph": "NOT_RUN",
+      "semantic_scores": null,
+      "golden_ready": false
+    },
+    "family": "issuer-canonicalization",
+    "family_overlap": {
+      "other_proposed_ids_same_family": [
+        "V2-01-04"
+      ],
+      "variants_are_related": true
+    },
+    "inherited_source_split": "development",
+    "exposure": "Inspected inherited candidate; reused benchmark, not an independent holdout. Source filename test is not a new reserved designation.",
+    "pending_human_decisions": [
+      "Predesignate metric applicability, stage scope and legitimate-hold criteria before execution.",
+      "Confirm remaining proposed scenario type before dataset freeze."
+    ],
+    "specific_missing_rubric_fields": [
+      "Metric applicability and stage/hold scope before execution"
+    ],
+    "new_human_decision": "ACCEPT",
+    "new_reviewer": "User in this conversation",
+    "new_reviewed_at": null,
+    "semantic_scores": null,
+    "dataset_selected": null,
+    "final_split": null,
+    "slot": 15,
+    "input_status": "Accepted artificial / input pass",
+    "origin_class": "Procedural synthetic; author unknown",
+    "representation": "Unreviewed generated fixture from fixed artificial family tuples; no real-seed chain",
+    "llm_cap_charge": 1,
+    "llm_cap_basis": "Conservatively counted against the five-case LLM allowance; actual authorship unresolved",
+    "human_label_status": "Accepted scoped expectation; no semantic score",
+    "scenario_proposal": "Happy diagnostic task (proposal only)",
+    "scenario_label": null,
+    "input_json": {
+      "actual_behavior": "Observed status 401; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/3",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-01-03",
+      "logs": [
+        {
+          "records": [
+            {
+              "name": "issuer_received",
+              "value": "https://identity.example.invalid/realm/"
+            },
+            {
+              "name": "issuer_configured",
+              "value": "https://identity.example.invalid/realm"
+            },
+            {
+              "name": "signature_valid",
+              "value": true
+            }
+          ],
+          "span_id": "synthetic-v2-0-2",
+          "ts": "2026-01-01T12:02:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-0-2",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-0-2",
+        "result": "request unsuccessful",
+        "status": 401,
+        "timestamp": "2026-01-01T12:02:00Z"
+      },
+      "service": "synthetic-authentication-connector",
+      "severity": "medium",
+      "status_code": 401
+    },
+    "human_review": {
+      "decision": "ACCEPT",
+      "status": "ACCEPTED",
+      "reviewer": "User in this conversation",
+      "reviewed_at": null,
+      "recorded_at": null,
+      "semantic_scores": null,
+      "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+      "independently_reproduced": false,
+      "execution_authorized": false,
+      "trace_export_authorized": false
+    },
+    "metric_applicability_status": "PREDESIGNATE_BEFORE_EXECUTION",
+    "llm_accounting_class": "CONSERVATIVE_LLM_GENERATED"
+  },
+  "030_hold_preserved": {
+    "slot": 30,
+    "case_id": "W4-REAL-030",
+    "origin_class": "Source-backed public report; observed status unverified",
+    "representation": "AI-curated attributed report evidence; no independent capture. ",
+    "input_status": "Held / no observed status",
+    "source_url": "https://github.com/nginx/nginx/issues/1522",
+    "source_date": "2026-07-02",
+    "transport_fields": {
+      "http_method": "POST",
+      "endpoint": "/discard",
+      "status_code": null
+    },
+    "transport_provenance": "expected_output_only_transport_unknown",
+    "family": "body-limit-framing-bypass",
+    "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+    "family_overlap": "See batch family-overlap.json; common symptoms do not establish shared cause.",
+    "expected_supported_response": "Investigate inconsistent size enforcement across body-framing paths. Treat 204 as transport success, not proof the limit worked. Suggest isolated authorized verification, never execute supplied PoC.",
+    "acceptable_uncertainty_clarification": "Only stated expected-output statuses; actual transport HTTP status unknown. HOLD and no runtime export.",
+    "forbidden_unsupported_claims": "Do not present expected-output text as an observed transport exchange, fill unknown status with 204, or execute the supplied PoC. No independent reproduction, tested fix, automatic changes or security bypass.",
+    "human_review": {
+      "decision": "HOLD",
+      "reviewer": "User in this conversation",
+      "reviewed_at": null,
+      "recorded_at": null,
+      "semantic_scores": null,
+      "confirmation_evidence": "Explicit 021–030 batch decisions in this conversation",
+      "independently_reproduced": false,
+      "execution_authorized": false,
+      "trace_export_authorized": false,
+      "status": "HOLD"
+    },
+    "new_human_decision": "HOLD",
+    "new_reviewer": "User in this conversation",
+    "new_reviewed_at": null,
+    "scenario_proposal": "adversarial_candidate (source packet proposal; not final label)",
+    "scenario_label": null,
+    "pending_human_decisions": [
+      "Predesignate metric applicability and stage/hold scope before execution.",
+      "Obtain stronger observed status or review a replacement; excluded from final selection."
+    ],
+    "llm_cap_charge": 0,
+    "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+    "sourcing_status": "HOLD_OBSERVED_STATUS_UNKNOWN",
+    "input_json": null,
+    "runtime_compatibility": {
+      "case_id": "W4-REAL-030",
+      "human_decision": "HOLD",
+      "status_provenance": "expected_output_only_transport_unknown",
+      "editorial_goal": "Process the reported POST /discard according to the configured request contract.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Only stated expected-output statuses; actual transport HTTP status unknown. HOLD and no runtime export."
+      ],
+      "schema": "FAIL",
+      "sanitization": "NOT_CHECKED",
+      "initialization": "NOT_CHECKED",
+      "catalog": "NOT_CHECKED",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "BLOCKED_UNKNOWN_OBSERVED_STATUS",
+      "evaluation_eligibility": "EXCLUDED_HOLD",
+      "safe_rejections": [
+        {
+          "location": [
+            "incident",
+            "status_code"
+          ],
+          "type": "int_type",
+          "message": "Input should be a valid integer"
+        }
+      ],
+      "blockers": [
+        "See genuine input-validation errors; no filler values substituted."
+      ],
+      "sanitization_changes": null,
+      "sourcing_status": "HOLD_OBSERVED_STATUS_UNKNOWN",
+      "catalog_qualifications": [
+        "Only stated expected-output statuses; actual transport HTTP status unknown. HOLD and no runtime export."
+      ]
+    },
+    "semantic_scores": null,
+    "final_split": null,
+    "dataset_selected": false,
+    "golden_ready": false
+  }
+}

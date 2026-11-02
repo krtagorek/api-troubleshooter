@@ -1,0 +1,271 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0000312",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0000312",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0000312",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "mock_test_data",
+  "case_id": "W4-REAL-028",
+  "elapsed_seconds": 0.7123135840520263,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 0.023267499869689345,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "offline_test",
+  "model_elapsed_seconds": 0.023267499869689345,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [],
+      "reasoning": "Offline scripted response, no diagnostic claim."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:5964fe00f52df646fd7ec7a6",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Published server log pairs POST /api/chat/completions with 400; response detail describes rate limiting.\n- Controlled mock upstream returns 429 and retry headers; client response lacks retry headers.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:cd62b365c985dd7c408b5e21",
+          "observation": "absent",
+          "reference": "/request_metadata/client_retry_after_reported",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:54b888343d0ed6551718147f",
+          "observation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+          "reference": "/request_metadata/observation_representation",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:25569035e78a21051f49b6ae",
+          "observation": "Third-party controlled reproduction using a mock upstream, not production rate-limit traffic.",
+          "reference": "/request_metadata/reproduction_context",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:04a3e0a3c19cd9859f3129a6",
+          "observation": "Not supplied; null is not evidence of a captured null response.",
+          "reference": "/request_metadata/response_body_scope",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:87fb3032d84662a704400255",
+          "observation": "third_party_controlled_mock_upstream_reproduction_client_log_400_distinct_upstream_429",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:2cfa8ed1d9cf55893024f6fb",
+          "observation": "7",
+          "reference": "/request_metadata/upstream_retry_after_reported",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:82ff3d3c40ad71511e4ac1e3",
+          "observation": "429",
+          "reference": "/request_metadata/upstream_status_reported",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:bf54b024eb5e781a2180f774",
+          "observation": "400",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-028",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/client_retry_after_reported, /request_metadata/observation_representation, /request_metadata/reproduction_context, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published server log pairs POST /api/chat/completions with 400; response detail describes rate limiting.\n- Controlled mock upstream returns 429 and retry headers; client response lacks retry headers.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/api/chat/completions",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Submit the intended chat completion through POST /api/chat/completions.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-028",
+      "logs": [],
+      "request_metadata": {
+        "client_retry_after_reported": "absent",
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reproduction_context": "Third-party controlled reproduction using a mock upstream, not production rate-limit traffic.",
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "third_party_controlled_mock_upstream_reproduction_client_log_400_distinct_upstream_429"
+        },
+        "upstream_retry_after_reported": "7",
+        "upstream_status_reported": 429
+      },
+      "response_body": null,
+      "service": "Open WebUI",
+      "severity": "unknown",
+      "status_code": 400
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "424706ee-805f-4f4e-a34b-d3c97ee9a212",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "052063aa-3706-4657-b584-d7edb3b9ad65",
+      "elapsed_seconds": 0.020680499961599708,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "3ccdc2df-6c26-46a2-8545-94a0e831e557",
+      "elapsed_seconds": 0.0025869999080896378,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    }
+  ],
+  "root_id": "424706ee-805f-4f4e-a34b-d3c97ee9a212",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/client_retry_after_reported",
+        "/request_metadata/observation_representation",
+        "/request_metadata/reproduction_context",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind",
+        "/request_metadata/upstream_retry_after_reported",
+        "/request_metadata/upstream_status_reported",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 9,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "b9ce66c2c84c1232800c60b98b23f819898d3db6021cb7ab99d280d2752f803e",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 70756,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

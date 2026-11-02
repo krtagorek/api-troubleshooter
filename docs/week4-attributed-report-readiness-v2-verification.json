@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "assigned_real_inputs": 1,
+  "arms": {
+    "baseline": {
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "calls": 2,
+      "analyst_entries": 0,
+      "terminal_status": "held",
+      "errors": []
+    },
+    "v2": {
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "root_cause_analyst",
+        "request_user_input"
+      ],
+      "calls": 3,
+      "analyst_entries": 1,
+      "terminal_status": "held",
+      "errors": []
+    }
+  },
+  "pre_analyst_parity": true,
+  "scoped_advisory_only": true,
+  "timing_usage_spans_reconcile": true,
+  "baseline_files_unchanged": 328,
+  "protected_assets_unchanged": 50,
+  "protected_files_unchanged": 500,
+  "archive_source_binding": true,
+  "source_truth_authenticated": false,
+  "authenticated_request_correlation": false,
+  "original_fields_preserved": true,
+  "semantic_accuracy": null,
+  "cost_usd": null,
+  "external_requests": 0,
+  "trace_exports": 0
+}

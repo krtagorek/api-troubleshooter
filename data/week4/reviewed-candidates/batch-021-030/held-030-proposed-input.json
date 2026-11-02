@@ -1,0 +1,37 @@
+{
+  "kind": "NOT_RUNTIME_IMPORTABLE",
+  "reason": "Transport status unverified; strict Incident requires integer 100..599",
+  "proposal": {
+    "case_id": "W4-REAL-030",
+    "incident": {
+      "incident_id": "W4-REAL-030",
+      "service": "nginx",
+      "http_method": "POST",
+      "endpoint": "/discard",
+      "status_code": null,
+      "response_body": null,
+      "logs": [],
+      "request_metadata": {
+        "reported_limit_bytes": 1024,
+        "reported_decoded_bytes": 4096,
+        "request_headers": {
+          "Transfer-Encoding": "chunked"
+        },
+        "comparison_status_reported": 413,
+        "status_provenance": {
+          "kind": "expected_output_only_transport_unknown",
+          "body_framing_expected_output_status": 204,
+          "comparison_expected_output_status": 413,
+          "transport_status": null
+        },
+        "status_evidence": {
+          "kind": "expected_output_only_transport_unknown"
+        },
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response."
+      },
+      "expected_behavior": "Process the reported POST /discard according to the configured request contract.",
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Source states expected-output 204 for an over-limit chunked POST /discard and 413 for a fixed-length comparison; no captured exchange establishes those as observed transport statuses.\n- Source configuration declares client_max_body_size 1k and reported decoded bodies of 4096 bytes.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied."
+    }
+  }
+}

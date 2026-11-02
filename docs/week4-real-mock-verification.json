@@ -1,0 +1,244 @@
+{
+  "mode": "POST_RUN_MECHANICAL_VERIFICATION",
+  "real_cases_checked": 14,
+  "valid_selected_evidence_entries": 102,
+  "mocked_model_calls": 28,
+  "external_requests": 0,
+  "sdk_client_initializations": 0,
+  "trace_exports": 0,
+  "source_reference_assessment_input_hashes_unchanged": true,
+  "baseline": {
+    "checked": 328,
+    "mismatches": [],
+    "manifest_sha256": "0ad4421d9342b780996b70de8b72d9d0cab1b771e6f37fd82dd4c5ccbf42b62f"
+  },
+  "read_only_artifact_hashes_verified": 74,
+  "cases": [
+    {
+      "case_id": "W4-REAL-005",
+      "input_preserved": true,
+      "evidence_entries_valid": 2,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-006",
+      "input_preserved": true,
+      "evidence_entries_valid": 11,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-008",
+      "input_preserved": true,
+      "evidence_entries_valid": 7,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-009",
+      "input_preserved": true,
+      "evidence_entries_valid": 7,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-011",
+      "input_preserved": true,
+      "evidence_entries_valid": 5,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-012",
+      "input_preserved": true,
+      "evidence_entries_valid": 10,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-013",
+      "input_preserved": true,
+      "evidence_entries_valid": 5,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-014",
+      "input_preserved": true,
+      "evidence_entries_valid": 6,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-015",
+      "input_preserved": true,
+      "evidence_entries_valid": 6,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-016",
+      "input_preserved": true,
+      "evidence_entries_valid": 9,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-017",
+      "input_preserved": true,
+      "evidence_entries_valid": 6,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-018",
+      "input_preserved": true,
+      "evidence_entries_valid": 6,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-019",
+      "input_preserved": true,
+      "evidence_entries_valid": 11,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    },
+    {
+      "case_id": "W4-REAL-020",
+      "input_preserved": true,
+      "evidence_entries_valid": 11,
+      "route": [
+        "initialize",
+        "classifier",
+        "log_investigator",
+        "request_user_input"
+      ],
+      "termination": "held",
+      "state_valid": true,
+      "no_new_evidence_or_tool_claims": true,
+      "cleanup_verified": true,
+      "gate_reason": "No supported comparative or specific diagnostic observation; request discriminating evidence"
+    }
+  ],
+  "semantic_quality": null,
+  "cost_usd": null
+}

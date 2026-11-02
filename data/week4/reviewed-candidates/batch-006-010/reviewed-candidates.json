@@ -1,0 +1,304 @@
+{
+  "collection": "Second batch: public API incident candidates",
+  "version": "week4-confirmed-006-010-1",
+  "collected_on": "2026-10-28",
+  "review_status": "ACCEPTED_CONTENT_RUNTIME_PENDING",
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "provenance": "Real public third-party problem reports/reproductions, AI-curated summaries and proposed expectations. Not independent reproductions or verified production outages. Source links/report dates are evaluator-only metadata. All are development-exposed.",
+  "schema_status": "Evidence records, not validated runtime Incident objects. Status provenance varies; preserve qualifiers. No API endpoint was called.",
+  "separation": "Only inference_evidence is intended for later reviewed runtime projection. Expected labels, families, URLs and source resolutions must stay evaluator-only.",
+  "reuse": "Publication rights unadjudicated. Minimal excerpts/paraphrases; no assertion that repository code licenses cover issue prose.",
+  "cases": [
+    {
+      "id": "W4-REAL-006",
+      "source_url": "https://github.com/spring-projects/spring-framework/issues/22010",
+      "source_date": "2018-11-08",
+      "family": "spring-optional-body-consumes",
+      "proposed_stratum": "happy",
+      "inference_evidence": {
+        "service": "Spring MVC application",
+        "http_method": "POST",
+        "endpoint": "/records",
+        "status_code": 415,
+        "request_metadata": {
+          "request_body_present": false,
+          "content_type_present": false,
+          "framework_version": "5.1.2",
+          "handler_code": "@PostMapping(value = \"/records\", consumes = \"application/json\"); queryRecords(@RequestBody(required = false) Map<String, String> filter)",
+          "status_evidence": {
+            "kind": "published_http_transcript"
+          }
+        },
+        "response_body": {
+          "status": 415,
+          "error": "Unsupported Media Type",
+          "message": "Content type '' not supported",
+          "path": "/records"
+        },
+        "observations": [
+          "Published curl transcript shows POST /records returning HTTP 415.",
+          "Adding Content-Type: application/json to the same empty-body request reportedly returns HTTP 200 and []."
+        ],
+        "logs": []
+      },
+      "field_provenance": "Method/path/status explicitly in transcript; host omitted, path preserved. No timestamp invented.",
+      "proposed_review": {
+        "expected_behavior": "Explain the consumes condition versus optional body distinction using the reported header comparison. Propose checking header/handler compatibility; no independently verified remediation.",
+        "sufficiency": "Qualified mechanism",
+        "limitations": "Historical reporter reproduction, not production capture. Linked duplicate #21955 is the same family, not another independent case.",
+        "mapping": "Core method/path/status available; offline contract and redaction checks pending."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported media-type diagnosis. Preserve empty-body/no-Content-Type failure and successful JSON-header comparison; historical Spring behavior only.",
+        "confirmation_evidence": "Explicit user decisions in this conversation (006–010 import request)",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "runtime_ready": false,
+      "accepted_expected_behavior": "Explain the consumes condition versus optional body distinction using the reported header comparison. Propose checking header/handler compatibility; no independently verified remediation."
+    },
+    {
+      "id": "W4-REAL-007",
+      "source_url": "https://github.com/fastapi/fastapi/discussions/9168",
+      "source_date": "2023-03-02",
+      "family": "fastapi-dependency-query-binding",
+      "proposed_stratum": "happy",
+      "inference_evidence": {
+        "service": "FastAPI application",
+        "http_method": "GET",
+        "endpoint": "/users/me",
+        "status_code": 422,
+        "request_metadata": {
+          "authorization_scheme_reported": "Bearer",
+          "query_parameter_present": false,
+          "framework_version": "0.92.0",
+          "dependency_code": "decode_access_token(token: str)",
+          "handler_code": "@app.get(\"/users/me\"); read_current_user(username: str = Depends(decode_access_token))",
+          "status_evidence": {
+            "kind": "published_http_transcript"
+          }
+        },
+        "response_body": {
+          "detail": [
+            {
+              "loc": [
+                "query",
+                "token"
+              ],
+              "msg": "field required",
+              "type": "value_error.missing"
+            }
+          ]
+        },
+        "observations": [
+          "Report includes an explicit GET /users/me and HTTP 422 response.",
+          "The supplied request places authentication in a header; the dependency has a plain required token parameter."
+        ],
+        "logs": []
+      },
+      "field_provenance": "Method/path/status from HTTP transcript. Token values, passwords and signing secret removed; code reduced to relevant signatures. Python version omitted because source entry is questionable.",
+      "proposed_review": {
+        "expected_behavior": "Identify missing query-parameter binding rather than expired-token rejection. Explain dependency/header mismatch; prefer deliberate bearer-security extraction over exposing credentials in URLs.",
+        "sufficiency": "Supported binding diagnosis",
+        "limitations": "Reporter later confirms query binding and reports a working query-based request. That outcome is evaluator-only and not recommended as secure production design.",
+        "mapping": "Core fields available; credential-related metadata may be redacted. Verify offline."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported parameter-binding diagnosis. Preserve query-token validation and dependency signature; no credential values; later resolution evaluator-only; do not prefer URL credentials.",
+        "confirmation_evidence": "Explicit user decisions in this conversation (006–010 import request)",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "runtime_ready": false,
+      "accepted_expected_behavior": "Identify missing query-parameter binding rather than expired-token rejection. Explain dependency/header mismatch; prefer deliberate bearer-security extraction over exposing credentials in URLs."
+    },
+    {
+      "id": "W4-REAL-008",
+      "source_url": "https://github.com/orgs/community/discussions/24604",
+      "source_date": "2021-02-05",
+      "family": "github-pages-access-versus-absence",
+      "proposed_stratum": "edge",
+      "inference_evidence": {
+        "service": "GitHub REST API",
+        "http_method": "GET",
+        "endpoint": "/repos/octocat/hello-world/pages",
+        "status_code": 404,
+        "request_metadata": {
+          "accept": "application/vnd.github.v3+json",
+          "status_evidence": {
+            "kind": "reporter_stated",
+            "captured_status_line_available": false
+          },
+          "repository_scope": {
+            "shown_endpoint_role": "example repository",
+            "other_reported_requests": "Reporter-owned repositories; identities and exact requests not supplied; separate from the shown example."
+          }
+        },
+        "response_body": null,
+        "observations": [
+          "Reporter explicitly calls this a GET request and reports 404 for the shown endpoint.",
+          "Reporter also reports failures on owned repositories with Pages configured; branch endpoints work."
+        ],
+        "logs": []
+      },
+      "field_provenance": "Method/path/status explicitly reported; no Authorization header in shown command does not establish that no credentials were used elsewhere. Other repository names are not invented.",
+      "proposed_review": {
+        "expected_behavior": "Distinguish absent Pages resource from authorization-related concealment. Ask which repository/request is being diagnosed and inspect permissions without requesting secret values; avoid one definitive cause for all requests.",
+        "sufficiency": "Ambiguous initial evidence",
+        "limitations": "Reporter later confirms authenticated access for owned Pages, while noting example repository lacks Pages. Keep those two outcomes separate. Broad auth family overlaps earlier cases.",
+        "mapping": "Core fields available; raw response absent is preserved."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Ambiguous evidence. Separate example repository from reporter-owned repositories; clarify resource absence versus access, not one cause for every 404.",
+        "confirmation_evidence": "Explicit user decisions in this conversation (006–010 import request)",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "runtime_ready": false,
+      "accepted_expected_behavior": "Distinguish absent Pages resource from authorization-related concealment. Ask which repository/request is being diagnosed and inspect permissions without requesting secret values; avoid one definitive cause for all requests."
+    },
+    {
+      "id": "W4-REAL-009",
+      "source_url": "https://github.com/spotify/web-api/issues/1402",
+      "source_date": "2019-12-02",
+      "family": "spotify-album-rate-limit",
+      "proposed_stratum": "edge",
+      "inference_evidence": {
+        "service": "Spotify Web API",
+        "http_method": "GET",
+        "endpoint": "/v1/albums/054sbn8pn705PuLxwKgi6L?market=from_token",
+        "status_code": 429,
+        "request_metadata": {
+          "client_reported": "Spotify Web Player; Firefox Nightly",
+          "status_evidence": {
+            "kind": "reporter_stated_and_body_echo",
+            "captured_status_line_available": false
+          }
+        },
+        "response_body": {
+          "error": {
+            "status": 429,
+            "message": "API rate limit exceeded"
+          }
+        },
+        "observations": [
+          "Reporter explicitly lists the GET URL and describes a 429 while opening album/artist information."
+        ],
+        "logs": []
+      },
+      "field_provenance": "Method/endpoint explicitly listed; status reported and echoed in body, not a raw HTTP status-line capture. Album ID preserved; no credentials copied.",
+      "proposed_review": {
+        "expected_behavior": "Identify a rate-limit response; request response headers and request pattern to determine scope. Respect Retry-After if actually present; do not invent its value or prove user overuse/outage.",
+        "sufficiency": "Response category supported; underlying scope unknown",
+        "limitations": "Another commenter suspects wider service trouble, not confirmation. Historical archived repository. Related to earlier rate-limit family; not automatically independent holdout.",
+        "mapping": "Core fields reported; offline validation pending."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported rate-limit response, scope/cause unresolved. Reporter-stated 429 echoed in body, not a captured status line. No invented Retry-After, quotas, excessive traffic or outage.",
+        "confirmation_evidence": "Explicit user decisions in this conversation (006–010 import request)",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "runtime_ready": false,
+      "accepted_expected_behavior": "Identify a rate-limit response; request response headers and request pattern to determine scope. Respect Retry-After if actually present; do not invent its value or prove user overuse/outage."
+    },
+    {
+      "id": "W4-REAL-010",
+      "source_url": "https://github.com/ahx/openapi_first/issues/149",
+      "source_date": "2022-12-21",
+      "family": "openapi-multipart-media-negotiation",
+      "proposed_stratum": "edge",
+      "inference_evidence": {
+        "service": "openapi_first application",
+        "http_method": "POST",
+        "endpoint": "/api/v1/test",
+        "status_code": null,
+        "request_metadata": {
+          "declared_request_media_type": "multipart/form-data",
+          "declared_property": "id: string, format uuid",
+          "client_reported": "Postman form-data",
+          "status_evidence": {
+            "kind": "error_body_only_transport_unknown",
+            "captured_status_line_available": false,
+            "body_status": "415",
+            "transport_status": null
+          }
+        },
+        "response_body": {
+          "errors": [
+            {
+              "status": "415",
+              "title": "Unsupported Media Type"
+            }
+          ]
+        },
+        "observations": [
+          "Reporter gives the path/post operation in the spec and says a form-data POST returns the shown error.",
+          "Actual outgoing headers, boundary and payload bytes are not available in retrieved text."
+        ],
+        "logs": []
+      },
+      "field_provenance": "POST/path from specification and report. 415 appears in response-body status, not captured wire status: preserve reported-only provenance; confirm before asserting transport status.",
+      "proposed_review": {
+        "expected_behavior": "Investigate multipart Content-Type/boundary and middleware contract alignment; request sanitized actual request/response headers. Do not declare a missing boundary or invalid UUID proven.",
+        "sufficiency": "Ambiguous media-type rejection",
+        "limitations": "Header/body images were not retrieved; no visible resolution. Related media-type family to 006. Require wire-status confirmation or explicit policy for reported body-status mapping.",
+        "mapping": "CONDITIONAL: method/path present; wire-status confidence needs review before runtime import."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_VALIDATION_PENDING",
+        "notes": "Ambiguous media-type rejection. Body status is \"415\"; transport status unknown. Request actual Content-Type, boundary, sanitized payload structure and response status. Missing boundary, invalid UUID and Postman bugs unproven.",
+        "confirmation_evidence": "Explicit user decisions in this conversation (006–010 import request)",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "runtime_ready": false,
+      "accepted_expected_behavior": "Request actual Content-Type, boundary, sanitized payload structure and actual HTTP response status; distinguish error-body \"415\" from unverified transport status. Missing boundary, invalid UUID and Postman bugs remain unproven hypotheses."
+    }
+  ]
+}

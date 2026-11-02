@@ -1,0 +1,219 @@
+{
+  "case_id": "W4-REAL-009",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "rate_limiting",
+      "confidence": 1.0,
+      "evidence_references": [
+        "/response_body/error/message",
+        "/response_body/error/status",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP status code 429 and the response body message 'API rate limit exceeded' clearly indicate that the failure is due to exceeding the allowed number of API requests in a given time frame, which is a rate limiting error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:5c9044a7e45435d1a917602e",
+          "observation": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly lists the GET URL and describes a 429 while opening album/artist information.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:60e1ab110279b54c93ce33cc",
+          "observation": "Retrieve the requested album information.",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:14fddd8050f6526055dffdf8",
+          "observation": "API rate limit exceeded",
+          "reference": "/response_body/error/message",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:c26d19a6e9abe92e3ef82207",
+          "observation": "429",
+          "reference": "/response_body/error/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:06f0d926bec4248bf6e55271",
+          "observation": "429",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent reproduction or server-side logs confirming the rate limit event; only reporter-stated evidence is available.",
+          "required_to_resolve": "Access to server logs or independent monitoring data to confirm the rate limiting event and its context."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-009",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Access to server logs or independent monitoring data to confirm the rate limiting event and its context.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /request_metadata/client_reported, /request_metadata/status_evidence/captured_status_line_available, /request_metadata/status_evidence/kind. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /response_body/error/message, /response_body/error/status, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly lists the GET URL and describes a 429 while opening album/artist information.",
+      "endpoint": "/v1/albums/054sbn8pn705PuLxwKgi6L?market=from_token",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Retrieve the requested album information.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-009",
+      "logs": [],
+      "request_metadata": {
+        "client_reported": "Spotify Web Player; Firefox Nightly",
+        "status_evidence": {
+          "captured_status_line_available": false,
+          "kind": "reporter_stated_and_body_echo"
+        }
+      },
+      "response_body": {
+        "error": {
+          "message": "API rate limit exceeded",
+          "status": 429
+        }
+      },
+      "service": "Spotify Web API",
+      "severity": "unknown",
+      "status_code": 429
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "c99cd2c3-d18a-40fd-ab4a-af15b5f249e0",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "67979b06-89a0-4664-93df-4e95a0d5453d",
+      "elapsed_seconds": 1.393111624987796,
+      "error": null,
+      "input_tokens": 1084,
+      "output_tokens": 133,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1217
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "4ba688e0-a25f-4771-96f7-dda2112c376d",
+      "elapsed_seconds": 1.6599656250327826,
+      "error": null,
+      "input_tokens": 1546,
+      "output_tokens": 139,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1685
+    }
+  ],
+  "root_id": "c99cd2c3-d18a-40fd-ab4a-af15b5f249e0",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/request_metadata/client_reported",
+        "/request_metadata/status_evidence/captured_status_line_available",
+        "/request_metadata/status_evidence/kind"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/response_body/error/message",
+        "/response_body/error/status",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 5,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "9e6c099239a89185ff5206da5427f1d397a01c5fefb0b8bdda4c263905e0f9c9",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

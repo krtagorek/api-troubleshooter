@@ -1,0 +1,26 @@
+{
+  "case_id": "W4-REAL-027",
+  "incident": {
+    "incident_id": "W4-REAL-027",
+    "service": "HAProxy",
+    "endpoint": "/",
+    "http_method": "GET",
+    "status_code": 502,
+    "request_metadata": {
+      "reported_frontend_protocol": "HTTP/1.1",
+      "reported_backend_protocol": "QUIC/HTTP3",
+      "reported_version": "3.3.3",
+      "status_evidence": {
+        "kind": "published_curl_http_502"
+      },
+      "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+      "response_body_scope": "Not supplied; null is not evidence of a captured null response."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Retrieve the intended resource through GET /.",
+    "actual_behavior": "Reporter-published observations; not independently reproduced:\n- HTTP/1.1 curl transcript shows GET / and 502 after approximately 30 seconds.\n- Reporter compares QUIC backend failure with working HTTP/2 backend configuration and says direct backend access works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

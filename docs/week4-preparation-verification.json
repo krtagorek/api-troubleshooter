@@ -1,0 +1,41 @@
+{
+  "source_inspected_files_unchanged": 330,
+  "historical_files_unchanged": 260,
+  "nested_publication_unchanged": true,
+  "baseline_files_verified": 328,
+  "datasets_inference_counts": {
+    "data/benchmark_v2/dataset/inference/test.jsonl": 40,
+    "data/benchmark_v2/dataset/inference/development.jsonl": 40,
+    "data/incidents/inference/test.jsonl": 40,
+    "data/incidents/inference/development.jsonl": 80
+  },
+  "bounded_findings": [
+    {
+      "path": "docs/source-baseline-manifest.json",
+      "type": "machine_path",
+      "line": 4
+    },
+    {
+      "path": "docs/source-baseline-manifest.json",
+      "type": "machine_path",
+      "line": 5
+    },
+    {
+      "path": "docs/source-provenance.md",
+      "type": "machine_path",
+      "line": 3
+    },
+    {
+      "path": "docs/source-provenance.md",
+      "type": "machine_path",
+      "line": 5
+    }
+  ],
+  "finding_disposition": "Only intentional absolute copy paths in provenance metadata; no unexpected bounded findings. Regex checks are not a guarantee.",
+  "tests_run": false,
+  "services_started": false,
+  "database_access": false,
+  "dependencies_installed": false,
+  "paid_calls": 0,
+  "original_files_written": 0
+}

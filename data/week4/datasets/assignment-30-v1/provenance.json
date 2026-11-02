@@ -1,0 +1,813 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "cases": {
+    "W4-REAL-005": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/encode/httpx/issues/739",
+      "source_date": "2020-01-08",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/evaluator-references.json",
+        "sha256": "708fe64be7de22dcdd0681ba6edf808e8d3836a024de40f63d01acc8a22a7bc7",
+        "json_pointer": "/cases/4"
+      },
+      "family": "httpx-chunked-redirect",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-020",
+            "W4-REAL-002",
+            "W4-REAL-005"
+          ],
+          "qualification": "Broad transport/TLS/proxy ambiguity. Earlier different-attempt logs and separate URL transfers are not independent incident additions or correlated causal proof."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-006": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/spring-projects/spring-framework/issues/22010",
+      "source_date": "2018-11-08",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-006-010/evaluator-references.json",
+        "sha256": "5bdeb7709a762d44c8dd519256346ae472bf67debbd04ada69d9cf9726331075",
+        "json_pointer": "/cases/0"
+      },
+      "family": "spring-optional-body-consumes",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-006",
+            "W4-REAL-010"
+          ],
+          "level": "media-type rejection family",
+          "difference": "006 historical empty-body/header comparison; 010 ambiguous multipart rejection with transport status unknown"
+        },
+        {
+          "cases": [
+            "W4-REAL-012",
+            "W4-REAL-001",
+            "W4-REAL-006",
+            "W4-REAL-010"
+          ],
+          "qualification": "Broad request parsing/validation exposure; JSON syntax, expansion path and media-type negotiation are distinct. Shared 400/415/422 symptoms do not prove mechanism equality."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-008": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/orgs/community/discussions/24604",
+      "source_date": "2021-02-05",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-006-010/evaluator-references.json",
+        "sha256": "5bdeb7709a762d44c8dd519256346ae472bf67debbd04ada69d9cf9726331075",
+        "json_pointer": "/cases/2"
+      },
+      "family": "github-pages-access-versus-absence",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-008",
+            "W4-REAL-004"
+          ],
+          "level": "broad GitHub access/response-ambiguity exposure",
+          "difference": "Different resources and symptoms; exact causes not shared or proven"
+        },
+        {
+          "cases": [
+            "W4-REAL-019",
+            "W4-REAL-011",
+            "W4-REAL-008"
+          ],
+          "qualification": "Login-target/access ambiguity is a broad family flag, not proof that 406, 401 and 404 have one cause."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-009": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/spotify/web-api/issues/1402",
+      "source_date": "2019-12-02",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-006-010/evaluator-references.json",
+        "sha256": "5bdeb7709a762d44c8dd519256346ae472bf67debbd04ada69d9cf9726331075",
+        "json_pointer": "/cases/3"
+      },
+      "family": "spotify-album-rate-limit",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-004",
+            "W4-REAL-009"
+          ],
+          "level": "broad rate-limiting/ambiguity family",
+          "difference": "004 GitHub 403 secondary-limit hypothesis; 009 Spotify reporter/body 429 supported response category, cause/scope unknown"
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-011": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/OpenHands/OpenHands/issues/5574",
+      "source_date": "2024-12-12",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-011-015/evaluator-references.json",
+        "sha256": "f736a4ea805becaf0f89941b436485d44fee05092e6065999ef5a60f6224835c",
+        "json_pointer": "/cases/0"
+      },
+      "family": "missing-authorization-header",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-011",
+            "W4-REAL-007"
+          ],
+          "prior_generated_family": "v1:Proxy stripped the Authorization header",
+          "qualification": "Header delivery/authentication exposure overlaps broadly; FastAPI query binding and missing header are not proven identical causes."
+        },
+        {
+          "cases": [
+            "W4-REAL-019",
+            "W4-REAL-011",
+            "W4-REAL-008"
+          ],
+          "qualification": "Login-target/access ambiguity is a broad family flag, not proof that 406, 401 and 404 have one cause."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-012": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://discuss.elastic.co/t/how-to-solve-this-error/181624",
+      "source_date": "2019-05-17",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-011-015/evaluator-references.json",
+        "sha256": "f736a4ea805becaf0f89941b436485d44fee05092e6065999ef5a60f6224835c",
+        "json_pointer": "/cases/1"
+      },
+      "family": "json-serialization-parse-error",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-012",
+            "W4-REAL-001",
+            "W4-REAL-006",
+            "W4-REAL-010"
+          ],
+          "qualification": "Broad request parsing/validation exposure; JSON syntax, expansion path and media-type negotiation are distinct. Shared 400/415/422 symptoms do not prove mechanism equality."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-013": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/actix/actix-web/issues/2359",
+      "source_date": "2021-08-09",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-011-015/evaluator-references.json",
+        "sha256": "f736a4ea805becaf0f89941b436485d44fee05092e6065999ef5a60f6224835c",
+        "json_pointer": "/cases/2"
+      },
+      "family": "router-method-and-allow-header",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-013",
+            "W4-REAL-015"
+          ],
+          "qualification": "Method/route availability overlap. GET-only rejection with reported missing Allow differs from unresolved no-handler support."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-014": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/paperclipai/paperclip/issues/6737",
+      "source_date": "2026-05-26",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-011-015/evaluator-references.json",
+        "sha256": "f736a4ea805becaf0f89941b436485d44fee05092e6065999ef5a60f6224835c",
+        "json_pointer": "/cases/3"
+      },
+      "family": "write-side-effect-error-response",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-014"
+          ],
+          "prior_generated_families": [
+            "compression-double",
+            "recursive-template",
+            "v1:Server database migration was not applied"
+          ],
+          "qualification": "Broad server-error exposure only, not confirmed causal overlap. Related source issues #6529/#3310 must not be counted as independent new incidents."
+        },
+        {
+          "cases": [
+            "W4-REAL-017",
+            "W4-REAL-018",
+            "W4-REAL-014"
+          ],
+          "qualification": "Write/conflict/concurrency exposure overlaps broadly; HTTP 412 precondition, 409 import-associated conflict and 500/write inconsistency are not proven identical mechanisms."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-015": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://forum.opensearch.org/t/error-no-handler-found-for-uri-plugins-sm-policies-snapshot-policy-and-method-post/12649",
+      "source_date": "2023-02-24",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-011-015/evaluator-references.json",
+        "sha256": "f736a4ea805becaf0f89941b436485d44fee05092e6065999ef5a60f6224835c",
+        "json_pointer": "/cases/4"
+      },
+      "family": "plugin-route-availability",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-013",
+            "W4-REAL-015"
+          ],
+          "qualification": "Method/route availability overlap. GET-only rejection with reported missing Allow differs from unresolved no-handler support."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-016": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/ThreeMammals/Ocelot/issues/2376",
+      "source_date": "2026-04-01",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-016-020/evaluator-references.json",
+        "sha256": "730d19c3467ec72d70a5bf7bc6eca336fb3043aa432e40aadb52f5ac70fd23a4",
+        "json_pointer": "/cases/0"
+      },
+      "family": "header-encoding-downstream-failure",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-016"
+          ],
+          "related_source_issues": [
+            "#2374",
+            "#2375"
+          ],
+          "broader_prior": [
+            "W4-REAL-006",
+            "W4-REAL-010"
+          ],
+          "qualification": "Header/media handling overlap only; linked Ocelot issues are same report family, not additional independent incidents."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-017": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/owncloud/core/issues/7479",
+      "source_date": "2014-02-28",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-016-020/evaluator-references.json",
+        "sha256": "730d19c3467ec72d70a5bf7bc6eca336fb3043aa432e40aadb52f5ac70fd23a4",
+        "json_pointer": "/cases/1"
+      },
+      "family": "webdav-concurrent-precondition",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-017",
+            "W4-REAL-018",
+            "W4-REAL-014"
+          ],
+          "qualification": "Write/conflict/concurrency exposure overlaps broadly; HTTP 412 precondition, 409 import-associated conflict and 500/write inconsistency are not proven identical mechanisms."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-018": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://gitlab.com/gitlab-org/gitlab/-/issues/519457",
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-016-020/evaluator-references.json",
+        "sha256": "730d19c3467ec72d70a5bf7bc6eca336fb3043aa432e40aadb52f5ac70fd23a4",
+        "json_pointer": "/cases/2"
+      },
+      "family": "project-import-issue-counter-conflict",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-017",
+            "W4-REAL-018",
+            "W4-REAL-014"
+          ],
+          "qualification": "Write/conflict/concurrency exposure overlaps broadly; HTTP 412 precondition, 409 import-associated conflict and 500/write inconsistency are not proven identical mechanisms."
+        },
+        {
+          "cases": [
+            "W4-REAL-019",
+            "W4-REAL-018"
+          ],
+          "qualification": "GitLab importer exposure overlaps, but remote API-path regression versus local issue-creation conflict are distinct reports and unconfirmed exact defects."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-019": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://gitlab.com/gitlab-org/gitlab/-/issues/438358",
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-016-020/evaluator-references.json",
+        "sha256": "730d19c3467ec72d70a5bf7bc6eca336fb3043aa432e40aadb52f5ac70fd23a4",
+        "json_pointer": "/cases/3"
+      },
+      "family": "enterprise-import-base-path-regression",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-019",
+            "W4-REAL-018"
+          ],
+          "qualification": "GitLab importer exposure overlaps, but remote API-path regression versus local issue-creation conflict are distinct reports and unconfirmed exact defects."
+        },
+        {
+          "cases": [
+            "W4-REAL-019",
+            "W4-REAL-011",
+            "W4-REAL-008"
+          ],
+          "qualification": "Login-target/access ambiguity is a broad family flag, not proof that 406, 401 and 404 have one cause."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-020": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/envoyproxy/envoy/issues/37268",
+      "source_date": "2024-11-20",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-016-020/evaluator-references.json",
+        "sha256": "730d19c3467ec72d70a5bf7bc6eca336fb3043aa432e40aadb52f5ac70fd23a4",
+        "json_pointer": "/cases/4"
+      },
+      "family": "proxy-request-target-and-tls-mismatch",
+      "family_overlap": [
+        {
+          "cases": [
+            "W4-REAL-020",
+            "W4-REAL-002",
+            "W4-REAL-005"
+          ],
+          "qualification": "Broad transport/TLS/proxy ambiguity. Earlier different-attempt logs and separate URL transfers are not independent incident additions or correlated causal proof."
+        }
+      ],
+      "exposure": "Development-exposed; prior mock runs. 016 also has the recorded live smoke. External prior use unknown; no holdout claim.",
+      "representation": "AI-curated excerpt/paraphrase projection; no independent reproduction or new real episode invented",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-DRAFT-032-v1": {
+      "origin_class": "Explicitly LLM-authored artificial adversarial derivative",
+      "source_url": null,
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/review-proposals/final-selection-v1/source-bindings.json",
+        "sha256": "e667e50a6f092fc133a4bdb0f8ce905339eb34f3bcaa29a43b7ea1184de5fc00"
+      },
+      "family": "issuer-canonicalization",
+      "family_overlap": {
+        "other_proposed_ids_same_family": [
+          "V2-01-04"
+        ],
+        "variants_are_related": true
+      },
+      "exposure": "Parent and derivative development-exposed; same-family dependence retained",
+      "representation": "Exact approved draft; original retained outside selected set",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 1,
+      "llm_accounting_class": "CONSERVATIVE_LLM_GENERATED",
+      "replaces": "V2-01-03",
+      "failure_provenance": null
+    },
+    "V2-03-01": {
+      "origin_class": "Procedural synthetic; author unknown",
+      "source_url": null,
+      "source_date": null,
+      "source_reference": {
+        "path": "data/benchmark_v2/dataset/inference/development.jsonl",
+        "line": 6,
+        "file_sha256": "e37473b691a26bf3cfac2979ec228f52eaff9dcff1d834e1258f92cda24bab29",
+        "line_sha256": "a31143035fbc8ae27f4ca4bbe51ad27f8178eed31e138662b174ba7ee5afab66"
+      },
+      "family": "abac-environment",
+      "family_overlap": {
+        "other_proposed_ids_same_family": [
+          "V2-03-04"
+        ],
+        "variants_are_related": true
+      },
+      "exposure": "Inspected inherited candidate; reused benchmark, not an independent holdout. Source filename test is not a new reserved designation.",
+      "representation": "Unreviewed generated fixture from fixed artificial family tuples; no real-seed chain",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 1,
+      "llm_accounting_class": "CONSERVATIVE_LLM_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "V2-04-01": {
+      "origin_class": "Procedural synthetic; author unknown",
+      "source_url": null,
+      "source_date": null,
+      "source_reference": {
+        "path": "data/benchmark_v2/dataset/inference/test.jsonl",
+        "line": 6,
+        "file_sha256": "25b9ff633398c4e2fc846e0548888d765be19a523ce0db5b73bd19589199a21a",
+        "line_sha256": "363ae13bedf04d98daa8f96e2a79c88e81f91e651503d9ea3f7cb44e82a4b984"
+      },
+      "family": "object-retention-lock",
+      "family_overlap": {
+        "other_proposed_ids_same_family": [
+          "V2-04-04"
+        ],
+        "variants_are_related": true
+      },
+      "exposure": "Inspected inherited candidate; reused benchmark, not an independent holdout. Source filename test is not a new reserved designation.",
+      "representation": "Unreviewed generated fixture from fixed artificial family tuples; no real-seed chain",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 1,
+      "llm_accounting_class": "CONSERVATIVE_LLM_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "V2-05-01": {
+      "origin_class": "Procedural synthetic; author unknown",
+      "source_url": null,
+      "source_date": null,
+      "source_reference": {
+        "path": "data/benchmark_v2/dataset/inference/development.jsonl",
+        "line": 11,
+        "file_sha256": "e37473b691a26bf3cfac2979ec228f52eaff9dcff1d834e1258f92cda24bab29",
+        "line_sha256": "ade9dd96ded57afba9126235cac56f7499b64b338a248623df92f7a218f3704b"
+      },
+      "family": "timestamp-unit",
+      "family_overlap": {
+        "other_proposed_ids_same_family": [
+          "V2-05-04"
+        ],
+        "variants_are_related": true
+      },
+      "exposure": "Inspected inherited candidate; reused benchmark, not an independent holdout. Source filename test is not a new reserved designation.",
+      "representation": "Unreviewed generated fixture from fixed artificial family tuples; no real-seed chain",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 1,
+      "llm_accounting_class": "CONSERVATIVE_LLM_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "V2-15-01": {
+      "origin_class": "Procedural synthetic; author unknown",
+      "source_url": null,
+      "source_date": null,
+      "source_reference": {
+        "path": "data/benchmark_v2/dataset/inference/development.jsonl",
+        "line": 36,
+        "file_sha256": "e37473b691a26bf3cfac2979ec228f52eaff9dcff1d834e1258f92cda24bab29",
+        "line_sha256": "ce80c07cc769d5a738dbdd7136bb15913d4cf4fbcd7e4623433519c525c193b0"
+      },
+      "family": "ndjson-framing",
+      "family_overlap": {
+        "other_proposed_ids_same_family": [],
+        "variants_are_related": true
+      },
+      "exposure": "Inspected inherited candidate; reused benchmark, not an independent holdout. Source filename test is not a new reserved designation.",
+      "representation": "Unreviewed generated fixture from fixed artificial family tuples; no real-seed chain",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 1,
+      "llm_accounting_class": "CONSERVATIVE_LLM_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-007": {
+      "origin_class": "Source-backed real report",
+      "source_url": "https://github.com/fastapi/fastapi/discussions/9168",
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-approval-six-v1/inference/W4-REAL-007.json",
+        "sha256": "d77f3671d5d45286ce44e1f383861079962ab8c071d86013e33e938ab83dfc36"
+      },
+      "family": "fastapi-dependency-query-binding",
+      "family_overlap": "Broad authentication/header delivery overlap with 011; distinct binding mechanism.",
+      "exposure": null,
+      "representation": "Approved source-faithful neutral-key projection; original sanitizer failure retained",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": null,
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-021": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://github.com/anomalyco/opencode-sdk-python/issues/40",
+      "source_date": "2025-12-18",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-021.json",
+        "sha256": "4955655148230f3ac723782f8ec1e718cb703aacd677291c1eb3fce900962062"
+      },
+      "family": "empty-json-body",
+      "family_overlap": "See batch family-overlap.json; common symptoms do not establish shared cause.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. ",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-022": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://gitlab.com/gitlab-org/gitlab/-/issues/385112",
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-022.json",
+        "sha256": "79b97697960e3ec39f25501259e64380ff0b08c8c44b8a62109855660e846ac2"
+      },
+      "family": "multipart-boundary-missing",
+      "family_overlap": "See batch family-overlap.json; common symptoms do not establish shared cause.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. Original primary archived.",
+      "sourcing_status": "ARCHIVAL_CONDITION_FULFILLED_SELECTED; historical CONDITIONAL_ACCEPT retained",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-023": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://issues.apache.org/jira/browse/COUCHDB-3374",
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-023.json",
+        "sha256": "42199453910060ec4dab54a6dc6e8589a5ae310ab7a322a943a384d90272889a"
+      },
+      "family": "unauthorized-design-document",
+      "family_overlap": "See batch family-overlap.json; common symptoms do not establish shared cause.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. ",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-024": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://forum.djangoproject.com/t/csrf-token-missing-403/33408",
+      "source_date": "2024-07-30",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-024.json",
+        "sha256": "00032862553b39535a32063fe834b3d9af16db231382a3fbba8e3620942c3eaf"
+      },
+      "family": "form-encoding-csrf",
+      "family_overlap": "024/025: broad CSRF overlap, distinct encoding vs relay routing hypotheses; no independent holdout.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. ",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-025": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://github.com/getsentry/self-hosted/issues/1601",
+      "source_date": "2022-07-26",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-025.json",
+        "sha256": "870b949ab31ea397b405d615ecac91f77c0aa721fe138c8051e54284c80a77f7"
+      },
+      "family": "relay-routing-csrf",
+      "family_overlap": "024/025: broad CSRF overlap, distinct encoding vs relay routing hypotheses; no independent holdout.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. ",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-026": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://github.com/spec-first/connexion/issues/2040",
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-026.json",
+        "sha256": "b03e222a6cbb3691e9f588f0319731a9c6bfd66550d02fc7da33e78f449e777a"
+      },
+      "family": "duplicate-content-type-parse",
+      "family_overlap": "See batch family-overlap.json; common symptoms do not establish shared cause.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. ",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-027": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://github.com/haproxy/haproxy/issues/3267",
+      "source_date": "2026-02-12",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-027.json",
+        "sha256": "4a29b001cb6bff92332d7e22451cee9895765fd80afecce0f404d61a08de4957"
+      },
+      "family": "frontend-backend-protocol-interaction",
+      "family_overlap": "See batch family-overlap.json; common symptoms do not establish shared cause.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. ",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-REAL-028": {
+      "origin_class": "Source-derived third-party controlled reproduction with mock upstream; authorship unknown; not production traffic",
+      "source_url": "https://github.com/open-webui/open-webui/issues/31326",
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-028.json",
+        "sha256": "c5ac95f2f1962098fb9c0e32350f8798ef3b972d2275d56ccdac3f1f475931b5"
+      },
+      "family": "upstream-status-header-loss",
+      "family_overlap": "See batch family-overlap.json; common symptoms do not establish shared cause.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. Mock upstream, not production traffic.",
+      "sourcing_status": "APPROVED_SOURCE_DERIVED_CONTROLLED_REPRODUCTION",
+      "provenance_approval": {
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "execution_authorized": false,
+        "trace_export_authorized": false,
+        "decision": "APPROVE",
+        "authorship": "unknown",
+        "production_traffic": false
+      },
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "APPROVED_SOURCE_DERIVED_CONTROLLED_REPRODUCTION",
+      "replaces": null,
+      "failure_provenance": "Reported application failure in a third-party controlled reproduction; not an observed agent failure"
+    },
+    "W4-REAL-029": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://mailman.nginx.org/pipermail/nginx-devel/2015-July/007140.html",
+      "source_date": "2015-07-22",
+      "source_reference": {
+        "path": "data/week4/reviewed-candidates/batch-021-030/inference/W4-REAL-029.json",
+        "sha256": "bcac311338910227d88e2c38c5834a94a2d96eb2900fb197e7251dba5400b0ea"
+      },
+      "family": "empty-host-rejection",
+      "family_overlap": "See batch family-overlap.json; common symptoms do not establish shared cause.",
+      "exposure": "Source and packet now inspected; prior exposure unknown. Not independent holdout.",
+      "representation": "AI-curated attributed report evidence; no independent capture. ",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED_NOT_NEWLY_GENERATED",
+      "replaces": null,
+      "failure_provenance": null
+    },
+    "W4-DRAFT-031-v1": {
+      "origin_class": "Source-backed public report",
+      "source_url": "https://github.com/fastapi/fastapi/issues/1911",
+      "source_date": null,
+      "source_reference": {
+        "path": "data/week4/review-proposals/final-selection-v1/source-bindings.json",
+        "sha256": "e667e50a6f092fc133a4bdb0f8ce905339eb34f3bcaa29a43b7ea1184de5fc00"
+      },
+      "family": "multipart-file-field-delivery",
+      "family_overlap": "Broad FastAPI/multipart overlap with 007/022/026; no independent holdout",
+      "exposure": "Source and later resolution previously inspected; development-exposed",
+      "representation": "Exact approved draft; original retained outside selected set",
+      "sourcing_status": "APPROVED_SELECTED_DATASET; historical decisions preserved",
+      "provenance_approval": null,
+      "llm_cap_charge": 0,
+      "llm_accounting_class": "SOURCE_DERIVED",
+      "replaces": "W4-REAL-030",
+      "failure_provenance": null
+    }
+  },
+  "independence_claimed": false,
+  "final_splits_assigned": false
+}

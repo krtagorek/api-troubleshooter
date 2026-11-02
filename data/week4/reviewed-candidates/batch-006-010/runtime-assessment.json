@@ -1,0 +1,156 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "agent_graph_executed": false,
+  "cases": [
+    {
+      "case_id": "W4-REAL-006",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "published_http_transcript",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "agent_graph": "NOT_CHECKED",
+      "models": "NOT_CHECKED",
+      "safe_rejections": [],
+      "sanitization_changes": [],
+      "blockers": [],
+      "mapping_note": "Neutral expected_behavior is editorial, not an additional human confirmation.",
+      "catalog_entries": 12
+    },
+    {
+      "case_id": "W4-REAL-007",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "published_http_transcript",
+      "runtime_result": "SCHEMA_PASS_EVIDENCE_LOSS_BLOCKED",
+      "evaluation_eligibility": "BLOCKED_EVIDENCE_PRESERVATION_REVIEW",
+      "schema": "PASS",
+      "sanitization": "CHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "agent_graph": "NOT_CHECKED",
+      "models": "NOT_CHECKED",
+      "safe_rejections": [],
+      "sanitization_changes": [
+        {
+          "path": "/request_metadata/authorization_scheme_reported",
+          "before": "Bearer",
+          "after": "[REDACTED]"
+        },
+        {
+          "path": "/request_metadata/dependency_code",
+          "before": "decode_access_token(token: str)",
+          "after": "decode_access_token(token: [REDACTED]"
+        }
+      ],
+      "blockers": [
+        "Inherited sanitizer redacts reported authorization scheme and truncates the dependency signature; no equivalent runtime mapping approved."
+      ],
+      "mapping_note": "Neutral expected_behavior is editorial, not an additional human confirmation.",
+      "catalog_entries": 12,
+      "sanitized_projection_preview": {
+        "case_id": "W4-REAL-007",
+        "incident": {
+          "incident_id": "W4-REAL-007",
+          "service": "FastAPI application",
+          "endpoint": "/users/me",
+          "http_method": "GET",
+          "status_code": 422,
+          "request_metadata": {
+            "authorization_scheme_reported": "[REDACTED]",
+            "query_parameter_present": false,
+            "framework_version": "0.92.0",
+            "dependency_code": "decode_access_token(token: [REDACTED]",
+            "handler_code": "@app.get(\"/users/me\"); read_current_user(username: str = Depends(decode_access_token))",
+            "status_evidence": {
+              "kind": "published_http_transcript"
+            }
+          },
+          "response_body": {
+            "detail": [
+              {
+                "loc": [
+                  "query",
+                  "token"
+                ],
+                "msg": "field required",
+                "type": "value_error.missing"
+              }
+            ]
+          },
+          "logs": [],
+          "expected_behavior": "Complete the reported GET /users/me request.",
+          "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Report includes an explicit GET /users/me and HTTP 422 response.\n- The supplied request places authentication in a header; the dependency has a plain required token parameter.",
+          "severity": "unknown",
+          "evidence_quality": "unknown"
+        }
+      }
+    },
+    {
+      "case_id": "W4-REAL-008",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reporter_stated",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "agent_graph": "NOT_CHECKED",
+      "models": "NOT_CHECKED",
+      "safe_rejections": [],
+      "sanitization_changes": [],
+      "blockers": [],
+      "mapping_note": "Neutral expected_behavior is editorial, not an additional human confirmation.",
+      "catalog_entries": 9
+    },
+    {
+      "case_id": "W4-REAL-009",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reporter_stated_and_body_echo",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "agent_graph": "NOT_CHECKED",
+      "models": "NOT_CHECKED",
+      "safe_rejections": [],
+      "sanitization_changes": [],
+      "blockers": [],
+      "mapping_note": "Neutral expected_behavior is editorial, not an additional human confirmation.",
+      "catalog_entries": 8
+    },
+    {
+      "case_id": "W4-REAL-010",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "error_body_only_transport_unknown",
+      "runtime_result": "BLOCKED_UNKNOWN_TRANSPORT_STATUS",
+      "evaluation_eligibility": "BLOCKED_RUNTIME_CONTRACT",
+      "schema": "FAIL",
+      "sanitization": "NOT_CHECKED",
+      "initialization": "NOT_CHECKED",
+      "catalog": "NOT_CHECKED",
+      "agent_graph": "NOT_CHECKED",
+      "models": "NOT_CHECKED",
+      "safe_rejections": [
+        {
+          "location": [
+            "incident",
+            "status_code"
+          ],
+          "type": "int_type",
+          "message": "Input should be a valid integer"
+        }
+      ],
+      "sanitization_changes": null,
+      "blockers": [
+        "Transport HTTP status unknown; Incident requires integer 100..599. Body \"415\" is not a substitute."
+      ],
+      "mapping_note": "Neutral expected_behavior is editorial, not an additional human confirmation."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "case_id": "W4-REAL-016",
+  "incident": {
+    "incident_id": "W4-REAL-016",
+    "service": "Ocelot",
+    "endpoint": "/ocelot/posts/askdj",
+    "http_method": "GET",
+    "status_code": 502,
+    "request_metadata": {
+      "request_headers": {
+        "Accept": "*/*",
+        "skull": "💀"
+      },
+      "reported_exception": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+      "status_evidence": {
+        "kind": "reported_curl_http_status_line"
+      },
+      "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+      "response_body_scope": "not_supplied_not_a_captured_json_null",
+      "operation_goal_mapping": "editorial; not an additional human confirmation"
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Handle the reported GET /ocelot/posts/askdj request with appropriate error handling.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Curl transcript shows GET and HTTP/1.1 502; response Content-Length is 0.\n- Request includes custom header skull with value 💀.\n- Gateway exception says outgoing request headers must contain only ASCII characters; report uses sample tag 24.1.0.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

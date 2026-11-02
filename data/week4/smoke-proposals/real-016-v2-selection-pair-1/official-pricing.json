@@ -1,0 +1,26 @@
+{
+  "verified_date_utc": "2026-10-29",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "service_tier": "default",
+  "listed_usd_per_million_tokens": {
+    "input": "0.40",
+    "cached_input": "0.10",
+    "output": "1.60"
+  },
+  "cache_savings_assumed": false,
+  "documented_context": 1047576,
+  "documented_max_output": 32768,
+  "chat_completions": true,
+  "structured_outputs": true,
+  "lifecycle": "deprecated_not_retired",
+  "scheduled_shutdown_date": "2027-01-14",
+  "not_after_utc_date": "2027-01-13",
+  "sources": [
+    "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+    "https://developers.openai.com/api/docs/deprecations"
+  ],
+  "raw_page_hashes": null,
+  "authenticated_discovery": false,
+  "account_access": "Not rechecked; earlier one-case run does not guarantee a future run.",
+  "provider_invoice_tariff": "NOT_INDEPENDENTLY_ATTESTED"
+}

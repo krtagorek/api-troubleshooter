@@ -1,0 +1,192 @@
+{
+  "collection": "Public API incident candidates 011–015",
+  "version": "5",
+  "review_status": "PARTIALLY_REVIEWED",
+  "reviewer": null,
+  "reviewed_at": null,
+  "provenance": "AI-curated public third-party reports, not independently reproduced captures or verified production outages. All development-exposed. Redistribution rights unadjudicated.",
+  "runtime_status": "NOT_CHECKED. Core transport fields explicitly reported; no claim of full app compatibility. Required neutral user-goal mapping, sanitization, initialization and routing still need checking.",
+  "separation": "Only inference_evidence may inform a later reviewed runtime projection. All proposals, URLs, dates, families and source follow-up remain evaluator-only.",
+  "cases": [
+    {
+      "id": "W4-REAL-011",
+      "source_url": "https://github.com/OpenHands/OpenHands/issues/5574",
+      "source_date": "2024-12-12",
+      "family": "missing-authorization-header",
+      "review_status": "NOT_REVIEWED",
+      "inference_evidence": {
+        "service": "OpenHands",
+        "http_method": "GET",
+        "endpoint": "/api/list-files",
+        "status_code": 401,
+        "observations": [
+          "Published server log pairs GET /api/list-files with 401 Unauthorized.",
+          "Adjacent middleware warning reports Missing Authorization header.",
+          "Reporter can use the assistant but cannot access generated files; image 0.15, Linux, changed port 3001."
+        ],
+        "response_body": null,
+        "logs": []
+      },
+      "field_provenance": "server access log; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Identify missing authorization at the server boundary; inspect sanitized client header forwarding and session configuration. Do not disable authentication.",
+        "limitations": "Later commenters describe different invalid-token symptoms; do not merge their causes or fixes with the original report.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "decision": "Accept case 011 as a supported missing-authorization diagnosis with underlying cause unresolved and runtime mapping pending.",
+        "runtime_mapping": "PENDING",
+        "independently_reproduced": false
+      }
+    },
+    {
+      "id": "W4-REAL-012",
+      "source_url": "https://discuss.elastic.co/t/how-to-solve-this-error/181624",
+      "source_date": "2019-05-17",
+      "family": "json-serialization-parse-error",
+      "review_status": "NOT_REVIEWED",
+      "inference_evidence": {
+        "service": "Elasticsearch",
+        "http_method": "POST",
+        "endpoint": "/euronews/mytable/1266?pretty=true",
+        "status_code": 400,
+        "observations": [
+          "Client exception explicitly provides method POST, URI and HTTP/1.1 400.",
+          "Response names mapper_parsing_exception caused by json_parse_exception; parser encounters character f while expecting a comma at line 2 column 45."
+        ],
+        "response_body": {
+          "error": {
+            "type": "mapper_parsing_exception",
+            "reason": "failed to parse",
+            "caused_by": {
+              "type": "json_parse_exception",
+              "reason": "Unexpected character ('f' (code 102)): was expecting comma to separate Object entries; line: 2, column: 45"
+            }
+          },
+          "status": 400
+        },
+        "logs": []
+      },
+      "field_provenance": "client-recorded status line; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Identify malformed serialized JSON as supported failure category. Request sanitized exact request bytes and inspect serialization near reported location. Do not fabricate corrected payload.",
+        "limitations": "Initial request payload is unavailable. Later mapping discussion and another parse error do not establish a fix for this exact request.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "decision": "Accept case 012 as a supported JSON-parsing diagnosis with the exact payload defect unresolved and runtime mapping pending.",
+        "runtime_mapping": "PENDING",
+        "independently_reproduced": false
+      }
+    },
+    {
+      "id": "W4-REAL-013",
+      "source_url": "https://github.com/actix/actix-web/issues/2359",
+      "source_date": "2021-08-09",
+      "family": "router-method-and-allow-header",
+      "review_status": "NOT_REVIEWED",
+      "inference_evidence": {
+        "service": "Actix Web",
+        "http_method": "PUT",
+        "endpoint": "/",
+        "status_code": 405,
+        "observations": [
+          "Reporter configures only GET / using actix-web 3.3.2.",
+          "HTTPie PUT / transcript receives HTTP/1.1 405, content-length 0, with no Allow header shown.",
+          "GET / comparison receives HTTP 200."
+        ],
+        "response_body": null,
+        "logs": []
+      },
+      "field_provenance": "HTTPie response status line; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Explain PUT versus GET route mismatch; distinguish expected method rejection from reported missing Allow response header. Verify route contract and framework behavior without inventing allowed methods.",
+        "limitations": "Standards-correctness reproduction, not production outage. Version milestone is not independently verified upgrade remediation.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "decision": "Accept case 013 as a supported method-routing diagnosis with a reported missing-Allow-header defect, with runtime mapping pending.",
+        "runtime_mapping": "PENDING",
+        "independently_reproduced": false
+      }
+    },
+    {
+      "id": "W4-REAL-014",
+      "source_url": "https://github.com/paperclipai/paperclip/issues/6737",
+      "source_date": "2026-05-26",
+      "family": "write-side-effect-error-response",
+      "review_status": "NOT_REVIEWED",
+      "inference_evidence": {
+        "service": "Paperclip",
+        "http_method": "POST",
+        "endpoint": "/api/issues/5a773a8c-85e8-4668-a72e-b7feff2ce14a/children",
+        "status_code": 500,
+        "observations": [
+          "Verbose curl transcript pairs explicit POST path with HTTP/1.1 500 and JSON error body.",
+          "Reporter says a subsequent listing shows the row created by this request.",
+          "Reporter describes duplicate rows after repeated creates."
+        ],
+        "response_body": {
+          "error": "Internal server error"
+        },
+        "logs": []
+      },
+      "field_provenance": "curl response status line; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Treat write outcome as uncertain despite 500 and reported persistence as important evidence. Verify creation before replay; investigate server logs and response path. Do not automatically retry non-idempotent writes or assert exact failing code.",
+        "limitations": "Reporter theories about transaction/serialization are not independently confirmed. Related #6529 and #3310 must not automatically become independent cases. Source issue UUID preserved; run identifier omitted.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "decision": "Accept case 014 as a reported write/response inconsistency with duplicate-retry risk, with the exact server defect unresolved and runtime mapping pending.",
+        "runtime_mapping": "PENDING",
+        "independently_reproduced": false
+      }
+    },
+    {
+      "id": "W4-REAL-015",
+      "source_url": "https://forum.opensearch.org/t/error-no-handler-found-for-uri-plugins-sm-policies-snapshot-policy-and-method-post/12649",
+      "source_date": "2023-02-24",
+      "family": "plugin-route-availability",
+      "review_status": "NOT_REVIEWED",
+      "inference_evidence": {
+        "service": "OpenSearch",
+        "http_method": "POST",
+        "endpoint": "/_plugins/_sm/policies/snapshot_policy",
+        "status_code": 400,
+        "observations": [
+          "Verbose curl shows POST to the named path, Content-Type application/json and HTTP/1.1 400.",
+          "Response reports no handler for this URI and POST.",
+          "Reporter lists OpenSearch 2.0.1 with Graylog 5.0.3."
+        ],
+        "response_body": {
+          "error": "no handler found for uri [/_plugins/_sm/policies/snapshot_policy] and method [POST]"
+        },
+        "logs": []
+      },
+      "field_provenance": "curl response status line; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Identify route/handler availability as the supported error category. Check version-specific API support, installed plugins and method/path contract before changing payload.",
+        "limitations": "Do not assume malformed JSON from 400. Later unsupported claims about licensing/modified installation and advice for a different snapshot API are not proven root cause or equivalent fix.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      }
+    }
+  ]
+}

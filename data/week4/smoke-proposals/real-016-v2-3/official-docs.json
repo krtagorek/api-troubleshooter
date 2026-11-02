@@ -1,0 +1,33 @@
+{
+  "retrieved_date_utc": "2026-10-29",
+  "retrieval": "Official public HTML pages via documentation tools; no authenticated discovery",
+  "raw_page_hashes": null,
+  "account_access": "UNVERIFIED",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "lifecycle": "deprecated_not_retired_on_retrieval_date",
+  "scheduled_shutdown_date": "2027-01-14",
+  "snapshot_retained": true,
+  "selection_reason": "Existing supported Chat Completions snapshot is suitable for a near-term bounded smoke; no model fallback or baseline model change.",
+  "documented_features": {
+    "chat_completions": true,
+    "structured_outputs": true,
+    "context_window": 1047576,
+    "maximum_output_tokens": 32768,
+    "reasoning_step": false
+  },
+  "listed_text_rates": {
+    "currency": "USD",
+    "per_tokens": 1000000,
+    "input": "0.40",
+    "cached_input": "0.10",
+    "output": "1.60"
+  },
+  "reservation_cache_assumption": "No cache savings",
+  "sources": [
+    "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+    "https://developers.openai.com/api/docs/deprecations",
+    "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create"
+  ],
+  "limits": "Public support is not account access, invoice attestation or acceptance of every concrete dynamic schema. Recheck before paid execution."
+}

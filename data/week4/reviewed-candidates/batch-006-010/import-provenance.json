@@ -1,0 +1,43 @@
+{
+  "version": "week4-import-006-010-1",
+  "sources": {
+    "api-incident-candidates-006-010-v1.json": {
+      "path": "/Users/tagore/Documents/Codex/2026-10-25/w/outputs/api-incident-candidates-006-010-v1.json",
+      "sha256": "c56e7aff05e0b0aede6b4df79691482798de07b32b09f1808ad709998b0e203f",
+      "bytes": 10206
+    },
+    "api-incident-reviewed-006-010-v5.json": {
+      "path": "/Users/tagore/Documents/Codex/2026-10-25/w/outputs/api-incident-reviewed-006-010-v5.json",
+      "sha256": "682f0b0e1564f79528cb86a7e3048ffafdf9f51e67253dfd1d8561446f50a5df",
+      "bytes": 11550
+    }
+  },
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "confirmation_at": null,
+  "recorded_at": null,
+  "authority": "Current explicit user decisions 006–010; 010 acceptance and body/transport correction supersede unreviewed v5 entry and draft placement.",
+  "prior_v5_accepted_ids": [
+    "W4-REAL-006",
+    "W4-REAL-007",
+    "W4-REAL-008",
+    "W4-REAL-009"
+  ],
+  "newly_confirmed_id": "W4-REAL-010",
+  "corrections": [
+    {
+      "case_id": "W4-REAL-010",
+      "path": "inference_evidence/status_code",
+      "source_value": 415,
+      "imported_value": null,
+      "retained_body_path": "response_body/errors/0/status",
+      "retained_body_value": "415"
+    }
+  ],
+  "prior_batch_sha256": "f3eb5764d834b6a65e4a54dfad61426fdeb08adc41bbe73e5ed703b8e826af28",
+  "source_bytes_preserved": true,
+  "no_independent_reproduction": true,
+  "golden_ready": false,
+  "imported_at": "2026-10-29T02:22:28.877591+00:00",
+  "time_note": "Import processing time only; no review/confirmation time inferred."
+}

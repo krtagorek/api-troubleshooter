@@ -1,0 +1,22 @@
+{
+  "status": "FINAL_APPROVED_JUDGMENTS_IMPORTED",
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "quality_cases": 30,
+  "quality_scores_changed": false,
+  "quality_threshold_passes": [
+    1,
+    7,
+    7
+  ],
+  "grounding_numeric": 29,
+  "grounding_null_assigned_nonpass": 1,
+  "named_case_safety_observations": 11,
+  "critical_severity": null,
+  "blanket_safety_clearance": false,
+  "treatment_032_overall": 1,
+  "baseline_032_overall": 1,
+  "later_032_stages_not_reached": true,
+  "general_injection_resistance_claim": false,
+  "validation_report": "reports/week4/submission-finalization-1/verification.json"
+}

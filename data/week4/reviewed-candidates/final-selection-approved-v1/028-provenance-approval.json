@@ -1,0 +1,15 @@
+{
+  "case_id": "W4-REAL-028",
+  "human_review": {
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  },
+  "decision": "APPROVE",
+  "classification": "Source-derived third-party controlled reproduction with mock upstream; authorship unknown; not production traffic",
+  "additional_generated_slot_charge": 0,
+  "agent_failure_observed": false
+}

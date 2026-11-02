@@ -1,0 +1,11 @@
+{
+  "case_id": "W4-REAL-022",
+  "archival_condition": "FULFILLED",
+  "historical_decision": "CONDITIONAL_ACCEPT",
+  "historical_record_path": "data/week4/reviewed-candidates/batch-021-030/reviewed-candidates.json",
+  "historical_record_sha256": "54adb1e54d9739b7ed7438422c92bb0ed513c0eace8dd4b32cacf94c60428f8e",
+  "source_binding_path": "data/week4/reviewed-candidates/batch-021-030/source-022-binding.json",
+  "source_binding_sha256": "b605f1569890222e33f57d0c32c3acde51103be04072c440be805cdc4ae4808d",
+  "historical_decision_rewritten": false,
+  "new_review_decision": null
+}

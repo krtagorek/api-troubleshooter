@@ -1,0 +1,234 @@
+{
+  "case_id": "W4-REAL-020",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "server_error",
+      "confidence": 0.8,
+      "evidence_references": [
+        "/status_code",
+        "/response_body",
+        "/actual_behavior"
+      ],
+      "reasoning": "The HTTP status code 503 indicates that the Envoy proxy service is currently unavailable, which is a server-side error. There is no evidence of authentication, authorization, validation, rate limiting, timeout, or schema mismatch issues. The 503 status is a standard server error response indicating temporary unavailability or overload. The evidence includes the reported 503 status code (E13) and the absence of response body (E12), consistent with a server error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:7c23c940a26e1b9376621aa6",
+          "observation": "Reported historical observations; not independently reproduced:\n- Verbose curl transcript shows HEAD / to host envoy-egress:8080 returning HTTP/1.1 503.\n- Same command supplies two URLs and -I; subsequent HEAD / to www.google.com returns 200 as a separate request.\n- Earlier diagnostic logs in the report show upstream TLS WRONG_VERSION_NUMBER. They are from a different recorded attempt.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.\nThe two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:3cd6e049674c4d5a04f2a26c",
+          "observation": "Provide a response to the reported HEAD / request; proxy-versus-direct intent is unspecified.",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:9224d543a5f1c4a1ada1ffaa",
+          "observation": "envoy-egress:8080",
+          "reference": "/request_metadata/request_host_reported",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:333207f7c74cd957c8a7addf",
+          "observation": "null",
+          "reference": "/response_body",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:10eb095f4178c6b235398b22",
+          "observation": "503",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No direct evidence of the proxy or direct intent for the HEAD / request; correlation between the two URLs and their transfers is unresolved.",
+          "required_to_resolve": "Clarification on whether the HEAD / request to envoy-egress:8080 was intended as a proxy request or direct request, and any logs or traces linking the two URL requests."
+        },
+        {
+          "description": "No detailed logs or error messages explaining the cause of the 503 status code from Envoy proxy.",
+          "required_to_resolve": "Access to Envoy proxy logs or upstream service logs during the time of the 503 response to identify root cause of service unavailability."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-020",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Clarification on whether the HEAD / request to envoy-egress:8080 was intended as a proxy request or direct request, and any logs or traces linking the two URL requests.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Access to Envoy proxy logs or upstream service logs during the time of the 503 response to identify root cause of service unavailability.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /request_metadata/command_representation, /request_metadata/command_structure, /request_metadata/correlation_scope, /request_metadata/observation_representation, /request_metadata/operation_goal_mapping, /request_metadata/operation_intent, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/request_host_reported, /response_body, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Verbose curl transcript shows HEAD / to host envoy-egress:8080 returning HTTP/1.1 503.\n- Same command supplies two URLs and -I; subsequent HEAD / to www.google.com returns 200 as a separate request.\n- Earlier diagnostic logs in the report show upstream TLS WRONG_VERSION_NUMBER. They are from a different recorded attempt.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.\nThe two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+      "endpoint": "/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Provide a response to the reported HEAD / request; proxy-versus-direct intent is unspecified.",
+      "http_method": "HEAD",
+      "incident_id": "W4-REAL-020",
+      "logs": [],
+      "request_metadata": {
+        "command_representation": "Reported two-URL command only; inert evidence, not an instruction or recommendation. Source -k is not endorsed.",
+        "command_structure": "curl -v -k http://envoy-egress:8080 -I http://www.google.com",
+        "correlation_scope": "The two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+        "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+        "operation_goal_mapping": "editorial; not an additional human confirmation",
+        "operation_intent": "unresolved_proxy_or_direct",
+        "request_host_reported": "envoy-egress:8080",
+        "response_body_scope": "not_supplied_not_a_captured_json_null",
+        "status_evidence": {
+          "kind": "reported_first_curl_transfer_status_line"
+        }
+      },
+      "response_body": null,
+      "service": "Envoy proxy",
+      "severity": "unknown",
+      "status_code": 503
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "2c63a089-6c08-437c-8659-d0d9b126f77b",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "8c8b170d-bc6e-4151-a0ae-664224c7b102",
+      "elapsed_seconds": 1.6956372091080993,
+      "error": null,
+      "input_tokens": 1787,
+      "output_tokens": 176,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1963
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "fdcc0be7-0c4a-46a9-9c11-b6aacb830f26",
+      "elapsed_seconds": 1.8361006248742342,
+      "error": null,
+      "input_tokens": 2290,
+      "output_tokens": 213,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2503
+    }
+  ],
+  "root_id": "2c63a089-6c08-437c-8659-d0d9b126f77b",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/request_metadata/command_representation",
+        "/request_metadata/command_structure",
+        "/request_metadata/correlation_scope",
+        "/request_metadata/observation_representation",
+        "/request_metadata/operation_goal_mapping",
+        "/request_metadata/operation_intent",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/request_metadata/request_host_reported",
+        "/response_body",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 5,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "a2d20b9f6cd69e8da50bee445ac1934f5462539f7dcaf649eb5b7134adc3cb15",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

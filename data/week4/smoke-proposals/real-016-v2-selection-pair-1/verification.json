@@ -1,0 +1,26 @@
+{
+  "status": "PASS_OFFLINE_CONFIGURATION; NOT_AUTHORIZED",
+  "master_plan_sha256": "c06dbe27004d63ca65acf2cbdaa7442d92eb42ab515963018cac79cbf1c90b24",
+  "arm_bindings": {
+    "baseline": {
+      "plan_sha256": "8437eda9b5ab35bd433ca4386002ab493683196776c19e80f5d46e286c150f6e",
+      "immutable_authorization_identity_sha256": "2934826fc645d034ab375b51178dcad7155eebd9feae263eab4874705a18eb82"
+    },
+    "treatment": {
+      "plan_sha256": "c04d4528ae238a57ef7685d3f5f2c536bcc63c88ffbdd67fab1b696e6c289628",
+      "immutable_authorization_identity_sha256": "09bbedd3213fe97819a84a9c2c310f4984f6aaf4156672c3ac36d0563d764678"
+    }
+  },
+  "guard_attempts": {
+    "network_attempts_blocked": 0,
+    "sdk_initializations_blocked": 0,
+    "command_attempts_blocked": 0
+  },
+  "combined_budget_funded": true,
+  "arm_count": 2,
+  "max_calls_per_arm": 5,
+  "max_total_calls": 10,
+  "live_calls": 0,
+  "semantic_accuracy": null,
+  "actual_cost_usd": null
+}

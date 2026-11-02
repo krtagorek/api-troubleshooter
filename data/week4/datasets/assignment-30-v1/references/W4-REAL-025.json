@@ -1,0 +1,24 @@
+{
+  "case_id": "W4-REAL-025",
+  "expected_supported_response": "Inspect relay/web routing and correlated CSRF rejection. Do not assume adding browser cookies to ingestion is correct or disable CSRF globally.",
+  "acceptable_uncertainty_clarification": "Keep external acceptance versus internal 403 separate. Omit IPs, cookies, relay signatures and personal data. Later proposed fixes not input.; No independent capture/reproduction; missing original fields are not invented.",
+  "forbidden_unsupported_claims": "Do not assume adding browser cookies to ingestion is correct, disable CSRF globally, or merge external acceptance with internal 403. No independent reproduction, tested fix, automatic changes or security bypass.",
+  "human_review": {
+    "decision": "ACCEPT",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "confirmation_evidence": "Explicit 021–030 batch decisions in this conversation",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false,
+    "status": "ACCEPTED"
+  },
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-008",
+  "expected_supported_response": "Distinguish absent Pages resource from authorization-related concealment. Ask which repository/request is being diagnosed and inspect permissions without requesting secret values; avoid one definitive cause for all requests.",
+  "acceptable_uncertainty_clarification": "Ask which repository/request is being diagnosed and distinguish absent Pages resources from access-related concealment.",
+  "forbidden_unsupported_claims": "Do not merge the example repository with reporter-owned repositories or assert a single confirmed cause for every 404.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Ambiguous evidence. Separate example repository from reporter-owned repositories; clarify resource absence versus access, not one cause for every 404.",
+    "confirmation_evidence": "Explicit user decisions in this conversation (006–010 import request)",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

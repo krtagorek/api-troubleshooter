@@ -1,0 +1,190 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0015044",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0015044",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0015044",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "W4-REAL-029",
+  "elapsed_seconds": 3.9954017919953912,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 3.3935151658952236,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.3935151658952236,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_error",
+        "/request_metadata/status_evidence/kind",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP 400 status code combined with the reported error 'client sent invalid host header' and the empty Host header in the request indicates that the failure is due to invalid input validation on the Host header. This is a client-side input validation failure rather than authentication, authorization, or server error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:55a4138a4f0c756125ce2f11:04e4beed34957b98856e29e3",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Published curl transcript includes an empty Host header and HTTP/1.1 400.\n- Server message reports invalid host header.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:55a4138a4f0c756125ce2f11:a7401e7b3793b784d41c3f7a",
+          "observation": "client sent invalid host header",
+          "reference": "/request_metadata/reported_error",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:55a4138a4f0c756125ce2f11:fde7071af7aeb741a2b97c8d",
+          "observation": "published_curl_http_400",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:55a4138a4f0c756125ce2f11:bf54b024eb5e781a2180f774",
+          "observation": "400",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent captured telemetry or source logs provided to confirm the reported error and status code.",
+          "required_to_resolve": "Access to original server logs or network captures to verify the invalid Host header and HTTP 400 response."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-029",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Access to original server logs or network captures to verify the invalid Host header and HTTP 400 response.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published curl transcript includes an empty Host header and HTTP/1.1 400.\n- Server message reports invalid host header.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/keepalive.html",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Process the reported GET /keepalive.html according to the configured request contract.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-029",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_error": "client sent invalid host header",
+        "request_headers": {
+          "Host": ""
+        },
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "published_curl_http_400"
+        }
+      },
+      "response_body": null,
+      "service": "nginx",
+      "severity": "unknown",
+      "status_code": 400
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "e7a9cd9f-be52-4ebb-9a94-15bd0be1a013",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "85438ddc-5caf-48ec-bd18-344bcf6ee135",
+      "elapsed_seconds": 1.7720209578983486,
+      "error": null,
+      "input_tokens": 1164,
+      "output_tokens": 149,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1313
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "29eaeaac-8123-43b0-a157-887a4e81690b",
+      "elapsed_seconds": 1.621494207996875,
+      "error": null,
+      "input_tokens": 1469,
+      "output_tokens": 133,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1602
+    }
+  ],
+  "root_id": "e7a9cd9f-be52-4ebb-9a94-15bd0be1a013",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 68052,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

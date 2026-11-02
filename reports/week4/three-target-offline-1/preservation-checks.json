@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "baseline_files_unchanged": 328,
+  "baseline_manifest_unchanged": true,
+  "protected_files_unchanged": 1543,
+  "prior_sealed_manifests_verified": 83,
+  "prior_sealed_artifacts_verified": 1343,
+  "frozen_dataset_manifest_sha256": "c105de5632777304e876176f74e5dcf1a0ae0442058ff28e37edbfbb9cb75b32",
+  "baseline_live_summary_sha256": "142635d507cb44df99388d9474eececf512d6b3db91a3259b802dcd3403abe88",
+  "workbook_unchanged": true,
+  "inherited_prompts_routing_grounding_redaction_publication_authorization_unchanged": true,
+  "modified_existing_week4_runtime_files": 5,
+  "modified_or_new_test_files": 2,
+  "new_runners_or_readiness_mechanisms": false,
+  "tests_passed": 50,
+  "actual_mocked_treatment_cases": 30,
+  "actual_mock_calls": 63,
+  "mock_statuses": {
+    "held": 29,
+    "failed": 1
+  },
+  "input_identity_parity_cases": 30,
+  "complete_initial_provider_request_hash_parity_cases": 30,
+  "publication_holds_and_prevention_markers_preserved": true,
+  "semantic_quality": null,
+  "actual_treatment_cost_usd": null,
+  "paid_calls": 0,
+  "external_exports": false,
+  "baseline_live_rerun": false,
+  "credential_presence": "NOT_CHECKED",
+  "final_proposal_id": "assignment-final-treatment-1",
+  "final_proposal_sha256": "a367001cc86e71c320399f3cc128e0259ef3d8f3ea32384067b61944c6c38dad",
+  "execution_authorized": false,
+  "trace_export_authorized": false,
+  "approval_fields_unset": true,
+  "live_output_created": false,
+  "document_hashes": {
+    "docs/week4-three-target-verification.md": "ebf2bf86d7fd6bc8f22e79cb4516655a7be4733dc2a97834da50c0da3eac1ca0",
+    "docs/week4-assignment-final-treatment-proposal-1.md": "61377ff7786e6a154edcee8f1bbe293151777be8ed3f5972dd355b50d0c9dc9b",
+    "docs/week4-assignment-completion-package.md": "7abe857f8ea6f861f94e7895129ad3e51e92b26ccc3e5d1854aa3a17b5b06911"
+  }
+}

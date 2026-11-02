@@ -1,0 +1,150 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "cases": [
+    {
+      "id": "W4-REAL-016",
+      "source_url": "https://github.com/ThreeMammals/Ocelot/issues/2376",
+      "source_date": "2026-04-01",
+      "family": "header-encoding-downstream-failure",
+      "field_provenance": "curl status line. No request timestamps invented. response_body=null means not transcribed/available here, not observed JSON null; logs=[] means no typed log events created, not absence of source logs.",
+      "proposed_review": {
+        "expected_behavior": "Connect the supplied non-ASCII header and outgoing-header exception; recommend verifying without that header or using an agreed compatible encoding. Distinguish observed 502 from reporter's desired client-error classification.",
+        "limitations": "No paired successful request supplied. Do not claim upstream outage or precise released fix. Linked #2374/#2375 are same report family. Unicode/header preservation must be checked offline.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not mapped. Do not use evaluator diagnosis as runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported outgoing-header encoding diagnosis; remediation unverified. Preserve GET /ocelot/posts/askdj, 502, skull: 💀 and outgoing-header ASCII exception. Appropriate error handling is intended; removing the header is only a diagnostic comparison, not proven gateway repair or upstream outage.",
+        "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Supported outgoing-header encoding diagnosis; remediation unverified. Preserve GET /ocelot/posts/askdj, 502, skull: 💀 and outgoing-header ASCII exception. Appropriate error handling is intended; removing the header is only a diagnostic comparison, not proven gateway repair or upstream outage."
+    },
+    {
+      "id": "W4-REAL-017",
+      "source_url": "https://github.com/owncloud/core/issues/7479",
+      "source_date": "2014-02-28",
+      "family": "webdav-concurrent-precondition",
+      "field_provenance": "proxy and backend access-log statuses. No request timestamps invented. response_body=null means not transcribed/available here, not observed JSON null; logs=[] means no typed log events created, not absence of source logs.",
+      "proposed_review": {
+        "expected_behavior": "Explain a conditional-write conflict as a qualified hypothesis; request actual conditional headers and resource version information. Reconcile fresh state safely rather than disabling overwrite protection.",
+        "limitations": "Exact request headers and ETags absent. Keep maintainer If-Match explanation evaluator-only, not a captured header. Later other-user persistent failures are separate. No claim of independently confirmed cause.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not mapped. Do not use evaluator diagnosis as runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Qualified conditional-write conflict hypothesis; failed precondition unresolved. Preserve PUT /remote.php/webdav/x27.dat, proxy/backend 412 and original reporter concurrent-update observation. Actual headers/ETags absent. Contributor If-Match explanations evaluator-only; no overwrite-protection bypass or merged later incidents.",
+        "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Qualified conditional-write conflict hypothesis; failed precondition unresolved. Preserve PUT /remote.php/webdav/x27.dat, proxy/backend 412 and original reporter concurrent-update observation. Actual headers/ETags absent. Contributor If-Match explanations evaluator-only; no overwrite-protection bypass or merged later incidents."
+    },
+    {
+      "id": "W4-REAL-018",
+      "source_url": "https://gitlab.com/gitlab-org/gitlab/-/issues/519457",
+      "source_date": null,
+      "family": "project-import-issue-counter-conflict",
+      "field_provenance": "structured server log. No request timestamps invented. response_body=null means not transcribed/available here, not observed JSON null; logs=[] means no typed log events created, not absence of source logs.",
+      "proposed_review": {
+        "expected_behavior": "Recognize import-related creation conflict; investigate import timing, existing issue identifiers and correlated server errors. Treat counter inconsistency as reported hypothesis, not confirmed database diagnosis.",
+        "limitations": "No automatic database repair, guessed iid mutation or retry loop. Source logs omit/redact some payloads. Similar broad write-conflict family to 014 but distinct report; split independence unassigned. Source publication date not established; log date is not substituted.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not mapped. Do not use evaluator diagnosis as runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported import-associated creation conflict; counter defect unresolved. Preserve POST /api/v4/projects/2/issues, server-log 409 and reported import sequence. Separate UI/import uniqueness diagnostics are not this request trace. No automatic DB repair, guessed identifier override or blind retry.",
+        "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Supported import-associated creation conflict; counter defect unresolved. Preserve POST /api/v4/projects/2/issues, server-log 409 and reported import sequence. Separate UI/import uniqueness diagnostics are not this request trace. No automatic DB repair, guessed identifier override or blind retry."
+    },
+    {
+      "id": "W4-REAL-019",
+      "source_url": "https://gitlab.com/gitlab-org/gitlab/-/issues/438358",
+      "source_date": null,
+      "family": "enterprise-import-base-path-regression",
+      "field_provenance": "packet-capture HTTP status line. No request timestamps invented. response_body=null means not transcribed/available here, not observed JSON null; logs=[] means no typed log events created, not absence of source logs.",
+      "proposed_review": {
+        "expected_behavior": "Investigate importer API-base-path handling and unexpected login-target routing using version comparison. Request redirect chain and importer configuration. Do not conclude unsupported Accept type solely from 406.",
+        "limitations": "Endpoint retains source-masked host text as supplied, not an invented hostname. Do not replace observed login path with /repositories/1 or invent redirect status. Prose mentions 16.7.2 while capture says 16.7.3; preserve discrepancy. Source date unknown.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not mapped. Do not use evaluator diagnosis as runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Qualified importer API-base-path regression hypothesis; request chain unresolved. Preserve captured GET login URL/406, source-masked host and prior /api/v3/repositories/1 success. Keep prose 16.7.2 versus capture 16.7.3 discrepancy. No invented redirect status or later code explanation promoted to measurement.",
+        "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Qualified importer API-base-path regression hypothesis; request chain unresolved. Preserve captured GET login URL/406, source-masked host and prior /api/v3/repositories/1 success. Keep prose 16.7.2 versus capture 16.7.3 discrepancy. No invented redirect status or later code explanation promoted to measurement."
+    },
+    {
+      "id": "W4-REAL-020",
+      "source_url": "https://github.com/envoyproxy/envoy/issues/37268",
+      "source_date": "2024-11-20",
+      "family": "proxy-request-target-and-tls-mismatch",
+      "field_provenance": "curl response status line. No request timestamps invented. response_body=null means not transcribed/available here, not observed JSON null; logs=[] means no typed log events created, not absence of source logs.",
+      "proposed_review": {
+        "expected_behavior": "Clarify whether an explicit proxy or direct request was intended; distinguish two URL transfers. Investigate upstream protocol/TLS alignment as a hypothesis, with fresh correlated logs before claiming the exact cause.",
+        "limitations": "Do not label second request as proxied success; do not merge earlier 400/internal logs into captured 503 response. Do not recommend disabling TLS verification. HEAD support and diagnostic evidence preservation require offline checks.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not mapped. Do not use evaluator diagnosis as runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Ambiguous proxy-configuration case; request/log correlation and intended proxy operation unresolved. Preserve HEAD / envoy-egress:8080 ->503 and separate HEAD / Google ->200, two-URL command, and different-attempt TLS/400 context. Second request is not proven proxied; source -k is not recommended practice; no disabling TLS verification.",
+        "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Ambiguous proxy-configuration case; request/log correlation and intended proxy operation unresolved. Preserve HEAD / envoy-egress:8080 ->503 and separate HEAD / Google ->200, two-URL command, and different-attempt TLS/400 context. Second request is not proven proxied; source -k is not recommended practice; no disabling TLS verification."
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0016632",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0016632",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0016632",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "case_id": "W4-REAL-024",
+  "elapsed_seconds": 3.8401593340095133,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 3.2328905418980867,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.2328905418980867,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "authentication",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_error",
+        "/request_metadata/reported_form_enctype",
+        "/request_metadata/status_evidence/kind",
+        "/status_code"
+      ],
+      "reasoning": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0cbe6838d2d4819f7de56b65:1f81bffe2535d6b2a4b6fc51",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Server log shows POST / returning 403 with CSRF token missing warning.\n- Displayed form uses enctype text/plain despite including a CSRF template tag; version 5.0.7.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0cbe6838d2d4819f7de56b65:af497cb1c262931a8a357102",
+          "observation": "CSRF token missing",
+          "reference": "/request_metadata/reported_error",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0cbe6838d2d4819f7de56b65:21a1c9f5e2096a9cfe103893",
+          "observation": "text/plain",
+          "reference": "/request_metadata/reported_form_enctype",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0cbe6838d2d4819f7de56b65:fe2c94f507963082cb25a075",
+          "observation": "reporter_published_server_access_log_403",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0cbe6838d2d4819f7de56b65:56ff0eec3b9dc35177e93381",
+          "observation": "403",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "Unsafe credential-material request replaced by trusted safety policy; confirmation remains outstanding.",
+          "required_to_resolve": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-024",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Server log shows POST / returning 403 with CSRF token missing warning.\n- Displayed form uses enctype text/plain despite including a CSRF template tag; version 5.0.7.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Submit the intended form through POST /.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-024",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_error": "CSRF token missing",
+        "reported_form_enctype": "text/plain",
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "reporter_published_server_access_log_403"
+        }
+      },
+      "response_body": null,
+      "service": "Django form application",
+      "severity": "unknown",
+      "status_code": 403
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "98c17d5d-9bc3-474b-beee-acfd2b57c426",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "d742c4ba-5c4f-4988-ac37-35a5ce9d1a49",
+      "elapsed_seconds": 1.7636038749478757,
+      "error": null,
+      "input_tokens": 1222,
+      "output_tokens": 197,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1419
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "aec6a5b3-c39f-487a-b69e-d4def221756f",
+      "elapsed_seconds": 1.469286666950211,
+      "error": null,
+      "input_tokens": 1540,
+      "output_tokens": 152,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1692
+    }
+  ],
+  "root_id": "98c17d5d-9bc3-474b-beee-acfd2b57c426",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 68021,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

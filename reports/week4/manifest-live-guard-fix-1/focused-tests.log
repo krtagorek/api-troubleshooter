@@ -1,0 +1,10 @@
+test_actual_selective_env_loader_with_synthetic_file_only (tests.week4.test_manifest_live_guard.ManifestLiveGuardControls.test_actual_selective_env_loader_with_synthetic_file_only) ... ok
+test_case_configuration_and_frozen_bytes_still_checked (tests.week4.test_manifest_live_guard.ManifestLiveGuardControls.test_case_configuration_and_frozen_bytes_still_checked) ... ok
+test_invalid_or_mismatched_manifest_plans_never_dispatch (tests.week4.test_manifest_live_guard.ManifestLiveGuardControls.test_invalid_or_mismatched_manifest_plans_never_dispatch) ... ok
+test_live_cli_manifest_treatment_dispatches_only_mock_transport (tests.week4.test_manifest_live_guard.ManifestLiveGuardControls.test_live_cli_manifest_treatment_dispatches_only_mock_transport) ... ok
+test_unsupported_legacy_plan_remains_rejected (tests.week4.test_manifest_live_guard.ManifestLiveGuardControls.test_unsupported_legacy_plan_remains_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.205s
+
+OK

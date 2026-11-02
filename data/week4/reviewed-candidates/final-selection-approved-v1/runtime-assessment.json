@@ -1,0 +1,123 @@
+{
+  "cases": [
+    {
+      "case_id": "W4-DRAFT-031-v1",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "input_compatibility": "PASS_NOT_DIAGNOSTIC_COMPLETION",
+      "sdk_mock_outcome": {
+        "baseline": {
+          "case_id": "W4-DRAFT-031-v1",
+          "executed_calls": 2,
+          "schemas": [
+            "ClassifierOutput",
+            "LiveLogInvestigatorOutput"
+          ],
+          "terminal_status": "held",
+          "errors": [],
+          "stage_coverage": {
+            "classifier": "completed",
+            "log_investigator": "completed",
+            "resolution_generator": "not_reached",
+            "root_cause_analyst": "not_reached",
+            "validator": "not_reached"
+          },
+          "supervisor": {
+            "child_pid": 66979,
+            "cleanup_verified": true,
+            "exit_code": 0,
+            "terminal": "exited"
+          }
+        },
+        "improved": {
+          "case_id": "W4-DRAFT-031-v1",
+          "executed_calls": 2,
+          "schemas": [
+            "ClassifierOutput",
+            "LiveLogInvestigatorOutput"
+          ],
+          "terminal_status": "held",
+          "errors": [],
+          "stage_coverage": {
+            "classifier": "completed",
+            "log_investigator": "completed",
+            "resolution_generator": "not_reached",
+            "root_cause_analyst": "not_reached",
+            "validator": "not_reached"
+          },
+          "supervisor": {
+            "child_pid": 67071,
+            "cleanup_verified": true,
+            "exit_code": 0,
+            "terminal": "exited"
+          }
+        }
+      },
+      "semantic_accuracy": null,
+      "real_provider_execution": "NOT_RUN"
+    },
+    {
+      "case_id": "W4-DRAFT-032-v1",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "input_compatibility": "PASS_NOT_DIAGNOSTIC_COMPLETION",
+      "sdk_mock_outcome": {
+        "baseline": {
+          "case_id": "W4-DRAFT-032-v1",
+          "executed_calls": 3,
+          "schemas": [
+            "ClassifierOutput",
+            "LiveLogInvestigatorOutput",
+            "RootCauseAnalystOutput"
+          ],
+          "terminal_status": "held",
+          "errors": [],
+          "stage_coverage": {
+            "classifier": "completed",
+            "log_investigator": "completed",
+            "resolution_generator": "not_reached",
+            "root_cause_analyst": "completed",
+            "validator": "not_reached"
+          },
+          "supervisor": {
+            "child_pid": 66934,
+            "cleanup_verified": true,
+            "exit_code": 0,
+            "terminal": "exited"
+          }
+        },
+        "improved": {
+          "case_id": "W4-DRAFT-032-v1",
+          "executed_calls": 3,
+          "schemas": [
+            "ClassifierOutput",
+            "LiveLogInvestigatorOutput",
+            "RootCauseAnalystOutput"
+          ],
+          "terminal_status": "held",
+          "errors": [],
+          "stage_coverage": {
+            "classifier": "completed",
+            "log_investigator": "completed",
+            "resolution_generator": "not_reached",
+            "root_cause_analyst": "completed",
+            "validator": "not_reached"
+          },
+          "supervisor": {
+            "child_pid": 67026,
+            "cleanup_verified": true,
+            "exit_code": 0,
+            "terminal": "exited"
+          }
+        }
+      },
+      "semantic_accuracy": null,
+      "real_provider_execution": "NOT_RUN"
+    }
+  ],
+  "scores": null
+}

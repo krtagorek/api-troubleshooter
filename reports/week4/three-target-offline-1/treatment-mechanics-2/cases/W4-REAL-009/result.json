@@ -1,0 +1,249 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0000312",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0000312",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0000312",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "mock_test_data",
+  "case_id": "W4-REAL-009",
+  "elapsed_seconds": 0.6078279172070324,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 0.020435458980500698,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "offline_test",
+  "model_elapsed_seconds": 0.020435458980500698,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [],
+      "reasoning": "Offline scripted response, no diagnostic claim."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:5c9044a7e45435d1a917602e",
+          "observation": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly lists the GET URL and describes a 429 while opening album/artist information.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:0bcb8237ecce6c998436c2d4",
+          "observation": "Spotify Web Player; Firefox Nightly",
+          "reference": "/request_metadata/client_reported",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:76de9b1e2c156f5f1b0a6501",
+          "observation": "false",
+          "reference": "/request_metadata/status_evidence/captured_status_line_available",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:3f66f0d94c6919f32e99bbe2",
+          "observation": "reporter_stated_and_body_echo",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:14fddd8050f6526055dffdf8",
+          "observation": "API rate limit exceeded",
+          "reference": "/response_body/error/message",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:c26d19a6e9abe92e3ef82207",
+          "observation": "429",
+          "reference": "/response_body/error/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:1040c6f63d5f0122eaa094db:06f0d926bec4248bf6e55271",
+          "observation": "429",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-009",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/client_reported, /request_metadata/status_evidence/captured_status_line_available, /request_metadata/status_evidence/kind, /response_body/error/message, /response_body/error/status, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly lists the GET URL and describes a 429 while opening album/artist information.",
+      "endpoint": "/v1/albums/054sbn8pn705PuLxwKgi6L?market=from_token",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Retrieve the requested album information.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-009",
+      "logs": [],
+      "request_metadata": {
+        "client_reported": "Spotify Web Player; Firefox Nightly",
+        "status_evidence": {
+          "captured_status_line_available": false,
+          "kind": "reporter_stated_and_body_echo"
+        }
+      },
+      "response_body": {
+        "error": {
+          "message": "API rate limit exceeded",
+          "status": 429
+        }
+      },
+      "service": "Spotify Web API",
+      "severity": "unknown",
+      "status_code": 429
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "9512ca45-ca6e-4a54-94d9-197c0ef456ee",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "616bdad5-c22f-4206-b606-35cc01e81886",
+      "elapsed_seconds": 0.018277292139828205,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "12fbd41d-0085-4310-85bd-f8be0f81b0f3",
+      "elapsed_seconds": 0.002158166840672493,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    }
+  ],
+  "root_id": "9512ca45-ca6e-4a54-94d9-197c0ef456ee",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/client_reported",
+        "/request_metadata/status_evidence/captured_status_line_available",
+        "/request_metadata/status_evidence/kind",
+        "/response_body/error/message",
+        "/response_body/error/status",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 7,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "9e6c099239a89185ff5206da5427f1d397a01c5fefb0b8bdda4c263905e0f9c9",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 70626,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

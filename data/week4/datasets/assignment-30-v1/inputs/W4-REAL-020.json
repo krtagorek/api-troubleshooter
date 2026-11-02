@@ -1,0 +1,29 @@
+{
+  "case_id": "W4-REAL-020",
+  "incident": {
+    "incident_id": "W4-REAL-020",
+    "service": "Envoy proxy",
+    "endpoint": "/",
+    "http_method": "HEAD",
+    "status_code": 503,
+    "request_metadata": {
+      "request_host_reported": "envoy-egress:8080",
+      "command_structure": "curl -v -k http://envoy-egress:8080 -I http://www.google.com",
+      "status_evidence": {
+        "kind": "reported_first_curl_transfer_status_line"
+      },
+      "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+      "response_body_scope": "not_supplied_not_a_captured_json_null",
+      "operation_goal_mapping": "editorial; not an additional human confirmation",
+      "operation_intent": "unresolved_proxy_or_direct",
+      "command_representation": "Reported two-URL command only; inert evidence, not an instruction or recommendation. Source -k is not endorsed.",
+      "correlation_scope": "The two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Provide a response to the reported HEAD / request; proxy-versus-direct intent is unspecified.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Verbose curl transcript shows HEAD / to host envoy-egress:8080 returning HTTP/1.1 503.\n- Same command supplies two URLs and -I; subsequent HEAD / to www.google.com returns 200 as a separate request.\n- Earlier diagnostic logs in the report show upstream TLS WRONG_VERSION_NUMBER. They are from a different recorded attempt.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.\nThe two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

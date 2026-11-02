@@ -1,0 +1,24 @@
+{
+  "case_id": "V2-05-01",
+  "expected_supported_response": "Identify `event_time_ms=1770000000` as below the declared `1700000000000` minimum and inconsistent with the fixture’s millisecond contract. Suggest checking seconds versus milliseconds as a leading hypothesis.",
+  "acceptable_uncertainty_clarification": "Ask for the sanitized serialized field, authoritative contract and client conversion code. A stale/out-of-range time or other conversion error is possible. The fixture event timestamp does not authenticate the intended event time.",
+  "forbidden_unsupported_claims": "Do not assert verified client encoding, claim clock skew is proven, multiply production values automatically, or claim a fix was tested. Do not invent the missing request body. Also no automatic configuration changes, disabled security checks, independent-reproduction claims or verified repair without evidence.",
+  "human_review": {
+    "decision": "ACCEPT_WITH_REVISIONS",
+    "status": "ACCEPTED_WITH_REVISIONS",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  },
+  "scenario_label": "happy",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

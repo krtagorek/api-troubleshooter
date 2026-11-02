@@ -1,0 +1,139 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0009992",
+    "attempted_calls": 1,
+    "known_cost_usd": "0.0009992",
+    "limit_violations": 0,
+    "reserved_calls": 1,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0009992",
+    "usage_received_calls": 1
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "V2-05-01",
+  "elapsed_seconds": 2.3225504579022527,
+  "errors": [
+    "AgentOutputError"
+  ],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 1.7736038751900196,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 1.7736038751900196,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/response_body/result",
+        "/response_body/status",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP status code 422 indicates that the server understood the request but the request was semantically erroneous or failed validation. The response body confirms the request was unsuccessful with status 422 (E19, E21, E18). There is no evidence of authentication, authorization, rate limiting, timeout, server error, schema mismatch, or dependency failure. The logs and metadata do not indicate other failure categories. Therefore, the failure is best classified as a validation error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": null,
+    "evidence": {
+      "completeness": "unknown",
+      "items": [],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "V2-05-01",
+    "max_retries": 0,
+    "pending_user_questions": [],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 422; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "POST",
+      "incident_id": "V2-05-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-4-0",
+          "event": "connector.response",
+          "fields": {
+            "contract_unit": "milliseconds",
+            "field": "event_time_ms",
+            "minimum": 1700000000000,
+            "received": 1770000000
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-05T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-4-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-4-0",
+        "result": "request unsuccessful",
+        "status": 422,
+        "timestamp": "2026-01-05T12:00:00Z"
+      },
+      "service": "synthetic-validation-connector",
+      "severity": "medium",
+      "status_code": 422
+    },
+    "status": "running",
+    "stop_reason": null,
+    "thread_id": "b08d19a2-f727-405f-bc3d-8e257d8ecc01",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "77e704b3-11d3-44b4-a02e-16023902d73d",
+      "elapsed_seconds": 1.7736038751900196,
+      "error": null,
+      "input_tokens": 1742,
+      "output_tokens": 189,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1931
+    }
+  ],
+  "root_id": "b08d19a2-f727-405f-bc3d-8e257d8ecc01",
+  "selection_measurements": null,
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "failed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 73015,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "failed",
+  "workflow_status": "running"
+}

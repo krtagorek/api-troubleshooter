@@ -1,0 +1,55 @@
+{
+  "blocks": {
+    "bridge": {
+      "kind": "verbatim_source_excerpt",
+      "location": "Issue description / Logs / introductory bridge",
+      "scope": "published-reproduction-1",
+      "text": "The logs shed some light:"
+    },
+    "exception": {
+      "kind": "verbatim_source_excerpt",
+      "location": "Issue description / Logs / outgoing header-writing exception",
+      "scope": "published-reproduction-1",
+      "text": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters."
+    },
+    "header": {
+      "kind": "verbatim_source_excerpt",
+      "location": "Issue description / Reproducing / printed transcript",
+      "scope": "published-reproduction-1",
+      "text": "skull: 💀"
+    },
+    "request": {
+      "kind": "verbatim_source_excerpt",
+      "location": "Issue description / Reproducing / printed transcript",
+      "scope": "published-reproduction-1",
+      "text": "GET /ocelot/posts/askdj"
+    },
+    "status": {
+      "kind": "verbatim_source_excerpt",
+      "location": "Issue description / Reproducing / printed transcript",
+      "scope": "published-reproduction-1",
+      "text": "HTTP/1.1 502"
+    }
+  },
+  "capture_basis": "Selected original substrings transcribed from the public rendered issue text inspected in the preceding source review. Partial archive, not raw HTML or an authenticated capture.",
+  "origin": "prior_public_page_excerpt_transcription",
+  "raw_capture_sha256": null,
+  "relationships": {
+    "reproduction-with-explanatory-logs": {
+      "authenticated_request_correlation": false,
+      "kind": "reporter_associated_reproduction",
+      "roles": {
+        "bridge": "bridge",
+        "exception": "exception",
+        "header": "header",
+        "request": "request",
+        "status": "status"
+      },
+      "scope": "published-reproduction-1",
+      "summary": "The report presents the request transcript and explanatory log excerpt as the same reproduction; this is attributed context, not independent correlation.",
+      "summary_kind": "attributed_editorial_summary"
+    }
+  },
+  "source_uri": "https://github.com/ThreeMammals/Ocelot/issues/2376",
+  "version": "reported-excerpt-archive-1"
+}

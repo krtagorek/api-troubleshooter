@@ -1,0 +1,24 @@
+{
+  "case_id": "W4-REAL-017",
+  "incident": {
+    "incident_id": "W4-REAL-017",
+    "service": "ownCloud WebDAV",
+    "endpoint": "/remote.php/webdav/x27.dat",
+    "http_method": "PUT",
+    "status_code": 412,
+    "request_metadata": {
+      "status_evidence": {
+        "kind": "reported_proxy_and_backend_access_logs"
+      },
+      "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+      "response_body_scope": "not_supplied_not_a_captured_json_null",
+      "operation_goal_mapping": "editorial; not an additional human confirmation"
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Update the requested file while respecting write preconditions and overwrite protection.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Proxy and backend access logs both record PUT to this path returning 412.\n- Client reports precondition failure under heavier HTTPS load.\n- Original reporter later observes this mainly when two clients update the same user's files concurrently.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

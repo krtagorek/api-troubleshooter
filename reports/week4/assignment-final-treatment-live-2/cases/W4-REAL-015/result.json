@@ -1,0 +1,223 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0016748",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0016748",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0016748",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "case_id": "W4-REAL-015",
+  "elapsed_seconds": 3.9459612919017673,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 3.3149185001384467,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.3149185001384467,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/response_body/error",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP 400 status code combined with the response body indicating 'no handler found for uri [...] and method [POST]' suggests that the request was made to an unsupported or invalid endpoint or method. This points to a validation error where the request does not conform to the expected API schema or endpoint availability. There is no evidence of authentication, authorization, rate limiting, timeout, server error, or dependency failure. The evidence references E01, E06, and E07 support this conclusion."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c92cb6e670f8c6b99d2b6e9b:dbf16f5ea61a4b231d2a584c",
+          "observation": "Reported historical observations; not independently reproduced:\n- Verbose curl shows POST to the named path, Content-Type application/json and HTTP/1.1 400.\n- Response reports no handler for this URI and POST.\n- Reporter lists OpenSearch 2.0.1 with Graylog 5.0.3.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c92cb6e670f8c6b99d2b6e9b:1cda478e3f6dd0cbda873202",
+          "observation": "no handler found for uri [/_plugins/_sm/policies/snapshot_policy] and method [POST]",
+          "reference": "/response_body/error",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c92cb6e670f8c6b99d2b6e9b:bf54b024eb5e781a2180f774",
+          "observation": "400",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "The completeness of the response body excerpt is unknown, limiting full understanding of the error context.",
+          "required_to_resolve": "Complete response body and any related server logs to verify the full error details and confirm no other underlying issues."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-015",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Complete response body and any related server logs to verify the full error details and confirm no other underlying issues.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /request_metadata/observation_representation, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /response_body/error, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Verbose curl shows POST to the named path, Content-Type application/json and HTTP/1.1 400.\n- Response reports no handler for this URI and POST.\n- Reporter lists OpenSearch 2.0.1 with Graylog 5.0.3.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+      "endpoint": "/_plugins/_sm/policies/snapshot_policy",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Submit the intended snapshot policy through the reported POST /_plugins/_sm/policies/snapshot_policy operation.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-015",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report paraphrases, not independently reproduced measurements.",
+        "response_body_scope": "reported_excerpt_completeness_unknown",
+        "status_evidence": {
+          "kind": "reported_curl_status_line"
+        }
+      },
+      "response_body": {
+        "error": "no handler found for uri [/_plugins/_sm/policies/snapshot_policy] and method [POST]"
+      },
+      "service": "OpenSearch",
+      "severity": "unknown",
+      "status_code": 400
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "bda5a988-506f-497c-bd93-04efbdff52cf",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "e8fa6671-ce18-4dd7-aaf1-aeaca9f5d650",
+      "elapsed_seconds": 1.9409663751721382,
+      "error": null,
+      "input_tokens": 1215,
+      "output_tokens": 182,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1397
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "bb7cd72d-d66d-4d45-9b2e-67a797f30e5a",
+      "elapsed_seconds": 1.3739521249663085,
+      "error": null,
+      "input_tokens": 1724,
+      "output_tokens": 130,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1854
+    }
+  ],
+  "root_id": "bda5a988-506f-497c-bd93-04efbdff52cf",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/request_metadata/observation_representation",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/response_body/error",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 3,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "52b7da59647cfb7651157e84f8b3d3e1650f746d65e8c07f75636b6139045503",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 72921,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

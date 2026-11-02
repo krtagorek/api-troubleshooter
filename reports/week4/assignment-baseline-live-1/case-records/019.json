@@ -1,0 +1,231 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0017672",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0017672",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0017672",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "W4-REAL-007",
+  "elapsed_seconds": 4.03102537500672,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 3.4052112919744104,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.4052112919744104,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/query_parameter_present",
+        "/response_body/detail/0/loc/0",
+        "/response_body/detail/0/loc/1",
+        "/response_body/detail/0/msg",
+        "/response_body/detail/0/type",
+        "/status_code"
+      ],
+      "reasoning": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:deb028bc8e53a08006c1b376:f7e7497518297589c78c0aea",
+          "observation": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Report includes an explicit GET /users/me and HTTP 422 response.\n- The supplied request places authentication in a header; the dependency has a plain required token parameter.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:deb028bc8e53a08006c1b376:cbed573a0858052599a5867b",
+          "observation": "false",
+          "reference": "/request_metadata/query_parameter_present",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:deb028bc8e53a08006c1b376:b20baf8eadb31fc013611d19",
+          "observation": "query",
+          "reference": "/response_body/detail/0/loc/0",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:deb028bc8e53a08006c1b376:6760b47b021dfb548ceb5c23",
+          "observation": "token",
+          "reference": "/response_body/detail/0/loc/1",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:deb028bc8e53a08006c1b376:0e4b5473aafcce3f92fd5724",
+          "observation": "field required",
+          "reference": "/response_body/detail/0/msg",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:deb028bc8e53a08006c1b376:b34ac4f91275b42b755247c3",
+          "observation": "value_error.missing",
+          "reference": "/response_body/detail/0/type",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:deb028bc8e53a08006c1b376:e010d9672a2b3cd8fa86988e",
+          "observation": "422",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "Unsafe credential-material request replaced by trusted safety policy; confirmation remains outstanding.",
+          "required_to_resolve": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-007",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Report includes an explicit GET /users/me and HTTP 422 response.\n- The supplied request places authentication in a header; the dependency has a plain required token parameter.",
+      "endpoint": "/users/me",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Complete the reported GET /users/me request.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-007",
+      "logs": [],
+      "request_metadata": {
+        "dependency_signature_parts": {
+          "annotation": "str",
+          "function": "decode_access_token",
+          "parameter_name": "token"
+        },
+        "framework_version": "0.92.0",
+        "handler_code": "@app.get(\"/users/me\"); read_current_user(username: str = Depends(decode_access_token))",
+        "query_parameter_present": false,
+        "reported_header_scheme": "Bearer",
+        "status_evidence": {
+          "kind": "published_http_transcript"
+        }
+      },
+      "response_body": {
+        "detail": [
+          {
+            "loc": [
+              "query",
+              "token"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      },
+      "service": "FastAPI application",
+      "severity": "unknown",
+      "status_code": 422
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "8f6047bc-e6ca-4e6b-a935-d73f08334bed",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "5afffa2b-614d-4dea-bc20-457222a5d732",
+      "elapsed_seconds": 1.6566824589390308,
+      "error": null,
+      "input_tokens": 1464,
+      "output_tokens": 145,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1609
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "08c5c126-0ee8-4d45-a17a-fc2b8823997b",
+      "elapsed_seconds": 1.7485288330353796,
+      "error": null,
+      "input_tokens": 1802,
+      "output_tokens": 143,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1945
+    }
+  ],
+  "root_id": "8f6047bc-e6ca-4e6b-a935-d73f08334bed",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 67996,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

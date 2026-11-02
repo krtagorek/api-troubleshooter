@@ -1,0 +1,24 @@
+{
+  "case_id": "W4-REAL-028",
+  "expected_supported_response": "Distinguish client-visible 400 from upstream 429; investigate gateway status/header preservation. Do not treat upstream Retry-After as received by the client.",
+  "acceptable_uncertainty_clarification": "Real third-party bug reproduction USING MOCK upstream, not real production rate limit. Disclose sourcing category for rubric review; later fix evaluator-only. Broad rate-limit overlap with 009.; No independent capture/reproduction; missing original fields are not invented.; User must decide whether this documented third-party reproduction with a mock upstream is eligible under the source/LLM allowance rubric; it is not production traffic.",
+  "forbidden_unsupported_claims": "Do not label this production traffic, claim the client received upstream Retry-After, or assume sourcing eligibility is settled. No independent reproduction, tested fix, automatic changes or security bypass.",
+  "human_review": {
+    "decision": "CONDITIONAL_ACCEPT",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "confirmation_evidence": "Explicit 021–030 batch decisions in this conversation",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false,
+    "status": "CONDITIONAL_ACCEPT"
+  },
+  "scenario_label": "known_difficult_or_failure",
+  "failure_provenance": "Reported application failure in a third-party controlled reproduction; not an observed agent failure",
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

@@ -1,0 +1,240 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0017664",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0017664",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0017664",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "case_id": "W4-REAL-018",
+  "elapsed_seconds": 4.331691792001948,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 3.700249749934301,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.700249749934301,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.8,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/status_evidence/kind",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP 409 Conflict status code indicates a conflict due to a duplicate resource, consistent with the reported issue creation conflict during project import. This suggests a validation failure related to duplicate issue creation rather than authentication, authorization, or server error. The evidence includes structured server logs pairing the POST request with status 409 and user reports describing the conflict as a duplicated issue (E01, E06, E08). The absence of response body and independent reproduction limits certainty but the conflict status strongly supports validation category."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0173ab4fb5c879a80dcbcd93:32f89d28f4e28d080281213e",
+          "observation": "Reported historical observations; not independently reproduced:\n- Published structured server logs explicitly pair POST /api/v4/projects/2/issues with status 409.\n- Report describes creating an issue while project import is ongoing, followed by issue-create conflicts after import.\n- Reporter describes API error as Duplicated issue and suspects internal issue-number tracking.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0173ab4fb5c879a80dcbcd93:8fc2d879431a1616ab1c9040",
+          "observation": "Create the requested issue in the specified project.",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0173ab4fb5c879a80dcbcd93:277f592a5689a23b241b78d6",
+          "observation": "reported_structured_server_log",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:0173ab4fb5c879a80dcbcd93:00b39b1670aa7b522da95ecd",
+          "observation": "409",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent reproduction of the issue creation conflict; evidence is based on reported structured logs and user descriptions only.",
+          "required_to_resolve": "Independent reproduction or additional typed log events capturing the conflict and internal issue-number tracking during project import."
+        },
+        {
+          "description": "Response body is not supplied or captured as JSON null, limiting insight into error details or API response content.",
+          "required_to_resolve": "Captured response body or error payload to clarify the nature of the 409 conflict and any server-side validation messages."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-018",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Independent reproduction or additional typed log events capturing the conflict and internal issue-number tracking during project import.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Captured response body or error payload to clarify the nature of the 409 conflict and any server-side validation messages.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /request_metadata/observation_representation, /request_metadata/operation_goal_mapping, /request_metadata/response_body_scope, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Published structured server logs explicitly pair POST /api/v4/projects/2/issues with status 409.\n- Report describes creating an issue while project import is ongoing, followed by issue-create conflicts after import.\n- Reporter describes API error as Duplicated issue and suspects internal issue-number tracking.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+      "endpoint": "/api/v4/projects/2/issues",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Create the requested issue in the specified project.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-018",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+        "operation_goal_mapping": "editorial; not an additional human confirmation",
+        "response_body_scope": "not_supplied_not_a_captured_json_null",
+        "status_evidence": {
+          "kind": "reported_structured_server_log"
+        }
+      },
+      "response_body": null,
+      "service": "GitLab issue API",
+      "severity": "unknown",
+      "status_code": 409
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "a730b34a-11a9-4b27-9f15-d1f01529d61c",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "6b219e86-7b24-419e-b979-2c7d4d9b9fb0",
+      "elapsed_seconds": 1.8346714999061078,
+      "error": null,
+      "input_tokens": 1206,
+      "output_tokens": 186,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1392
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "e7e48895-18e6-42c3-ad79-224fb2fe987d",
+      "elapsed_seconds": 1.865578250028193,
+      "error": null,
+      "input_tokens": 1722,
+      "output_tokens": 186,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1908
+    }
+  ],
+  "root_id": "a730b34a-11a9-4b27-9f15-d1f01529d61c",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/request_metadata/observation_representation",
+        "/request_metadata/operation_goal_mapping",
+        "/request_metadata/response_body_scope",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/request_metadata/status_evidence/kind",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 4,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "a974d1ef8b14b98eb33d873a5aa0b5ea1a284c1fcc2647a768c836e60df445e8",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 72959,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

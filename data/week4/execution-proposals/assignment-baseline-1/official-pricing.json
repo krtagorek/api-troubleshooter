@@ -1,0 +1,17 @@
+{
+  "model": "gpt-4.1-mini-2025-04-14",
+  "verification_date": "2026-10-29",
+  "input_per_million": "0.40",
+  "cached_input_per_million": "0.10",
+  "output_per_million": "1.60",
+  "source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+  "lifecycle_source": "https://developers.openai.com/api/docs/deprecations",
+  "deprecated": true,
+  "shutdown_date": "2027-01-14",
+  "documented_context_tokens": 1047576,
+  "structured_outputs_documented": true,
+  "chat_completions_documented": true,
+  "account_access": "UNVERIFIED",
+  "real_provider_behavior_for_this_batch": "UNVERIFIED",
+  "cache_savings_assumed": false
+}

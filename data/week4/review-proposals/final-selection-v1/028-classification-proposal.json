@@ -1,0 +1,16 @@
+{
+  "case_id": "W4-REAL-028",
+  "status": "PROPOSED_NOT_APPROVED",
+  "classification": "Documented third-party controlled reproduction with mock upstream; authorship unknown; not production traffic.",
+  "authorship": "Human/LLM authorship of report/reproduction unverified; public posting identity does not resolve it.",
+  "proposed_rubric_treatment": "Source-derived controlled-reproduction episode, not a newly generated evaluation incident; proposed additional LLM allowance charge zero, pending explicit human approval.",
+  "approved_additional_llm_charge": null,
+  "if_counted_as_generated": "Would make six with the proposed five-artificial-case plan; do not include without another approved replacement or exclusion.",
+  "expected_behavior": "Keep existing accepted conditional expectation and existing inference unchanged; distinguish client 400/upstream 429 and header receipt.",
+  "review_decision": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "scores": null,
+  "final_eligibility": null,
+  "independently_reproduced": false
+}

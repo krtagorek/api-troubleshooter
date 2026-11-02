@@ -1,0 +1,146 @@
+{
+  "baseline": {
+    "assigned": 30,
+    "attempted": 30,
+    "unattempted": 0,
+    "outcomes": {
+      "held": 29,
+      "failed": 1
+    },
+    "calls": 68,
+    "accounting": {
+      "accounted_ceiling_usd": "0.0681888",
+      "attempted_model_calls": 68,
+      "attempted_model_calls_complete": true,
+      "known_cost_usd": "0.0681888",
+      "reserved_call_slots": 68,
+      "retained_reservations_usd": "0",
+      "unknown_call_slot_bound": 0,
+      "unknown_case_liability_bound_usd": "0",
+      "usage_priced_total_usd": "0.0681888"
+    },
+    "mean_usage_priced_cost_per_attempted_case_usd": "0.00227296",
+    "usage": {
+      "input_tokens": {
+        "total": 120420,
+        "calls_missing": 0
+      },
+      "output_tokens": {
+        "total": 12513,
+        "calls_missing": 0
+      },
+      "cached_input_tokens": {
+        "total": 0,
+        "calls_missing": 0
+      },
+      "total_tokens": {
+        "total": 132933,
+        "calls_missing": 0
+      },
+      "reasoning_tokens": {
+        "total": 0,
+        "calls_missing": 0
+      }
+    },
+    "latency_attempted_count": 30,
+    "latency_missing_attempted_count": 0,
+    "p50_seconds": 4.136218084022403,
+    "p95_seconds": 13.033312333980575,
+    "analyst_entries": [
+      "W4-DRAFT-032-v1",
+      "V2-03-01",
+      "V2-15-01"
+    ],
+    "saved_final_report_cases": [],
+    "errors": {
+      "V2-15-01": [
+        "AgentOutputError"
+      ]
+    }
+  },
+  "treatment": {
+    "assigned": 30,
+    "attempted": 30,
+    "unattempted": 0,
+    "outcomes": {
+      "held": 28,
+      "completed": 1,
+      "failed": 1
+    },
+    "calls": 65,
+    "accounting": {
+      "accounted_ceiling_usd": "0.0730880",
+      "attempted_model_calls": 65,
+      "attempted_model_calls_complete": true,
+      "known_cost_usd": "0.0730880",
+      "reserved_call_slots": 65,
+      "retained_reservations_usd": "0",
+      "unknown_call_slot_bound": 0,
+      "unknown_case_liability_bound_usd": "0",
+      "usage_priced_total_usd": "0.0730880"
+    },
+    "mean_usage_priced_cost_per_attempted_case_usd": "0.002436266666666666666666666667",
+    "usage": {
+      "input_tokens": {
+        "total": 132472,
+        "calls_missing": 0
+      },
+      "output_tokens": {
+        "total": 12562,
+        "calls_missing": 0
+      },
+      "cached_input_tokens": {
+        "total": 0,
+        "calls_missing": 0
+      },
+      "total_tokens": {
+        "total": 145034,
+        "calls_missing": 0
+      },
+      "reasoning_tokens": {
+        "total": 0,
+        "calls_missing": 0
+      }
+    },
+    "latency_attempted_count": 30,
+    "latency_missing_attempted_count": 0,
+    "p50_seconds": 4.272331834072247,
+    "p95_seconds": 12.108335291966796,
+    "analyst_entries": [
+      "W4-REAL-016",
+      "V2-03-01"
+    ],
+    "saved_final_report_cases": [
+      "V2-03-01"
+    ],
+    "errors": {
+      "V2-05-01": [
+        "AgentOutputError"
+      ]
+    }
+  },
+  "changed_terminal_outcomes": [
+    "V2-03-01",
+    "V2-05-01",
+    "V2-15-01"
+  ],
+  "changed_routes": [
+    "W4-REAL-016",
+    "W4-DRAFT-032-v1",
+    "V2-15-01"
+  ],
+  "baseline_human_quality_passes": {
+    "correctness": "0/30",
+    "uncertainty": "4/30",
+    "grounding": "4/30",
+    "grounding_explicitly_unscored": 1
+  },
+  "treatment_semantic_scores_assigned": false,
+  "semantic_delta": null,
+  "baseline_rerun": false,
+  "prior_zero_call_attempt_in_quality_comparison": false,
+  "new_model_calls_during_packet": 0,
+  "paired_run_complete": true,
+  "isolated_per_change_causality": false,
+  "ui_delivery_verified": false
+}

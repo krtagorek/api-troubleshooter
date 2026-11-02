@@ -1,0 +1,9 @@
+# Week 4 selected-set worksheet — frozen 30 cases
+
+Use the existing [workbook](../outputs/week4-completion-30/week4-evaluation.xlsx) and [assignment-30-v1 manifest](../data/week4/datasets/assignment-30-v1/manifest.json). Selected inputs, references, rubric, case-level applicability, provenance and scenario labels are bound. **30 unique cases; five artificial allowance slots; zero remaining sourcing/applicability decisions.** No model scores or execution assignments were added.
+
+Approved replacements: W4-DRAFT-031-v1 for held 030; W4-DRAFT-032-v1 for V2-01-03 one-for-one. Parent/held inputs and decisions remain outside selection. 028 is a source-derived third-party controlled mock-upstream reproduction, authorship unknown, not production traffic; no additional generated charge. Its label is reported application failure/difficulty, not an observed agent failure. 022 archive condition fulfilled; historical decision unchanged. All eleven scenario completions approved.
+
+Mix is 12 happy / 15 edge / 2 difficult-failure / 1 adversarial versus approximate 15/9/4/2; deviation is explicit. All five metrics apply to all selected accepted scopes; 032 has the additional approved robustness check. Holds/errors/unattempted cases are not automatic passes; reference validation needs human support assessment, unknown costs stay unknown, and unattempted cases are not zero-cost successes. Applicability and scoring are frozen before execution; scores remain blank.
+
+The [baseline-only proposal](week4-assignment-baseline-proposal-1.md) remains unauthorized: maximum $63.223200/150 calls, five per case, zero retries, concurrency one, local tracing ON and exports/incident tools OFF. No later improved run is authorized. See the [completion package](week4-assignment-completion-package.md) for remaining execution/grading/report/Loom work and preservation evidence.

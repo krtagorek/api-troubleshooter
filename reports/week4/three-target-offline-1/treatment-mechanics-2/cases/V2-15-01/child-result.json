@@ -1,0 +1,365 @@
+{
+  "case_id": "V2-15-01",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [],
+      "reasoning": "Offline scripted response, no diagnostic claim."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Offline scripted inconclusive response; no semantic judgment.",
+      "uncertainty": [
+        "No verification was performed.",
+        "Evidence is incomplete or conflicting"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:f7aaea7f0b31e5a03bbddb5a",
+          "observation": "Observed status 200; the client could not complete its intended operation",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:995f1865af619060048df518",
+          "observation": "synthetic-v2-14-0",
+          "reference": "/logs/0/correlation_id",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:251357399439df7096908fe8",
+          "observation": "connector.response",
+          "reference": "/logs/0/event",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:1fdc60ab494c275b38f2ef89",
+          "observation": "application/x-ndjson",
+          "reference": "/logs/0/fields/content_type",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:f8006d85772f3670fc69b853",
+          "observation": "single-document",
+          "reference": "/logs/0/fields/decoder",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:4ccd607e957be5a70e334731",
+          "observation": "12",
+          "reference": "/logs/0/fields/error_offset",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:37d7d9e60c488140330ab1d1",
+          "observation": "2",
+          "reference": "/logs/0/fields/line_count",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:ee527936791aeda3c7e89869",
+          "observation": "ERROR",
+          "reference": "/logs/0/level",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:cbb000089a4290640a6af7f4",
+          "observation": "Upstream response inspected",
+          "reference": "/logs/0/message",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:0f3834557166bec9e7e14146",
+          "observation": "2026-01-15T12:00:00Z",
+          "reference": "/logs/0/timestamp",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:f553f92fd367e9a24c0ee1d5",
+          "observation": "synthetic",
+          "reference": "/request_metadata/environment",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:dffd1c0e2c431c2f2909f09f",
+          "observation": "complete",
+          "reference": "/request_metadata/evidence_quality",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:b7b05e2f0d8e34277c08d011",
+          "observation": "synthetic-only",
+          "reference": "/request_metadata/headers/X-Demo-Mode",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:54c4e19762c2780184a967c3",
+          "observation": "synthetic-v2-14-0",
+          "reference": "/request_metadata/request_id",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:3ba1ce758d9a589893c968a3",
+          "observation": "5000",
+          "reference": "/request_metadata/timeout_ms",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:8da589ab3dbc364592e713a7",
+          "observation": "synthetic-v2-14-0",
+          "reference": "/response_body/request_id",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:88445a9e7f84a5b5d0b51c82",
+          "observation": "contract rejected",
+          "reference": "/response_body/result",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:d0ed25caccb3e890aab29448",
+          "observation": "200",
+          "reference": "/response_body/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:4b8a8247a10ecc7da786af92",
+          "observation": "2026-01-15T12:00:00Z",
+          "reference": "/response_body/timestamp",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:ecc299f4202b4fed9ba715de",
+          "observation": "200",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "V2-15-01",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Provide additional sanitized upstream logs, response details, or contract documentation",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "For the selected user/reporter-supplied comparison /logs/0/fields/error_offset versus /logs/0/fields/decoder versus /logs/0/fields/content_type, can the responsible owner compare sanitized nonsecret metadata and clarify the operation/attempt association? This is not independent verification or a confirmed cause.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 200; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-15-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-14-0",
+          "event": "connector.response",
+          "fields": {
+            "content_type": "application/x-ndjson",
+            "decoder": "single-document",
+            "error_offset": 12,
+            "line_count": 2
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-15T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-14-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-14-0",
+        "result": "contract rejected",
+        "status": 200,
+        "timestamp": "2026-01-15T12:00:00Z"
+      },
+      "service": "synthetic-schema_mismatch-connector",
+      "severity": "medium",
+      "status_code": 200
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "a68579ab-1546-4909-97eb-960c5152bb74",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "a979fbf6-3990-4e48-b440-245fdfad4cf2",
+      "elapsed_seconds": 0.018613375024870038,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "8b6ac4f4-9584-43b3-801f-593a354bffad",
+      "elapsed_seconds": 0.0025971250142902136,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "a8325fe2-e4ef-4cbd-81aa-0fa7daefa4a0",
+      "elapsed_seconds": 0.0031028329394757748,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "RootCauseAnalystOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    }
+  ],
+  "root_id": "a68579ab-1546-4909-97eb-960c5152bb74",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [
+        "/logs/0/fields/error_offset",
+        "/logs/0/fields/decoder",
+        "/logs/0/fields/content_type"
+      ],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [],
+      "other_available_unselected_references": [
+        "/expected_behavior"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": true,
+      "readiness_reason": "Legacy readiness retained",
+      "selected_references": [
+        "/actual_behavior",
+        "/logs/0/correlation_id",
+        "/logs/0/event",
+        "/logs/0/fields/content_type",
+        "/logs/0/fields/decoder",
+        "/logs/0/fields/error_offset",
+        "/logs/0/fields/line_count",
+        "/logs/0/level",
+        "/logs/0/message",
+        "/logs/0/timestamp",
+        "/request_metadata/environment",
+        "/request_metadata/evidence_quality",
+        "/request_metadata/headers/X-Demo-Mode",
+        "/request_metadata/request_id",
+        "/request_metadata/timeout_ms",
+        "/response_body/request_id",
+        "/response_body/result",
+        "/response_body/status",
+        "/response_body/timestamp",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": true,
+    "readiness_reason": "Legacy readiness retained",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 20,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "62f7df43731f19d926fd4ce9cb479b983e2dc23c298e2d4230779e8a4bc53d94",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "completed",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

@@ -1,0 +1,224 @@
+{
+  "case_id": "W4-REAL-028",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "rate_limiting",
+      "confidence": 0.8,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/status_evidence/kind",
+        "/request_metadata/upstream_retry_after_reported",
+        "/request_metadata/upstream_status_reported",
+        "/status_code"
+      ],
+      "reasoning": "The incident involves a POST request to /api/chat/completions resulting in a 400 status code, with upstream status reported as 429 and upstream retry-after header present. The response detail describes rate limiting, and the controlled mock upstream returns 429 with retry headers, indicating the failure is related to rate limiting. However, the client response lacks retry headers and the evidence is from a third-party controlled reproduction, not independent telemetry, so confidence is moderate."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:5964fe00f52df646fd7ec7a6",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Published server log pairs POST /api/chat/completions with 400; response detail describes rate limiting.\n- Controlled mock upstream returns 429 and retry headers; client response lacks retry headers.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:2cfa8ed1d9cf55893024f6fb",
+          "observation": "7",
+          "reference": "/request_metadata/upstream_retry_after_reported",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:82ff3d3c40ad71511e4ac1e3",
+          "observation": "429",
+          "reference": "/request_metadata/upstream_status_reported",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:3cb04cc38cf4581fea925857:bf54b024eb5e781a2180f774",
+          "observation": "400",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent captured telemetry or production logs are supplied; all observations are from third-party controlled reproduction and reporter-published paraphrases.",
+          "required_to_resolve": "Provide independent production telemetry or logs capturing the actual client and upstream interactions, including full response headers and bodies."
+        },
+        {
+          "description": "Client response lacks retry-after headers despite upstream reporting 429 with retry-after; no evidence explains this discrepancy.",
+          "required_to_resolve": "Supply evidence clarifying why client response omits retry headers when upstream includes them, such as proxy behavior or client-side modifications."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-028",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Provide independent production telemetry or logs capturing the actual client and upstream interactions, including full response headers and bodies.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Supply evidence clarifying why client response omits retry headers when upstream includes them, such as proxy behavior or client-side modifications.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /request_metadata/client_retry_after_reported, /request_metadata/observation_representation, /request_metadata/reproduction_context, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /request_metadata/upstream_retry_after_reported, /request_metadata/upstream_status_reported, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published server log pairs POST /api/chat/completions with 400; response detail describes rate limiting.\n- Controlled mock upstream returns 429 and retry headers; client response lacks retry headers.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/api/chat/completions",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Submit the intended chat completion through POST /api/chat/completions.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-028",
+      "logs": [],
+      "request_metadata": {
+        "client_retry_after_reported": "absent",
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reproduction_context": "Third-party controlled reproduction using a mock upstream, not production rate-limit traffic.",
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "third_party_controlled_mock_upstream_reproduction_client_log_400_distinct_upstream_429"
+        },
+        "upstream_retry_after_reported": "7",
+        "upstream_status_reported": 429
+      },
+      "response_body": null,
+      "service": "Open WebUI",
+      "severity": "unknown",
+      "status_code": 400
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "65e03161-d28c-4910-8b25-76714948471b",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "18de0905-83b9-4144-9125-b43fe3f848da",
+      "elapsed_seconds": 1.8783242080826312,
+      "error": null,
+      "input_tokens": 1383,
+      "output_tokens": 184,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1567
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "b4744d60-c246-40be-a88d-60e7044baee6",
+      "elapsed_seconds": 1.7162230419926345,
+      "error": null,
+      "input_tokens": 1911,
+      "output_tokens": 194,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2105
+    }
+  ],
+  "root_id": "65e03161-d28c-4910-8b25-76714948471b",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/expected_behavior",
+        "/request_metadata/client_retry_after_reported",
+        "/request_metadata/observation_representation",
+        "/request_metadata/reproduction_context",
+        "/request_metadata/response_body_scope",
+        "/request_metadata/status_evidence/kind",
+        "/response_body"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/request_metadata/upstream_retry_after_reported",
+        "/request_metadata/upstream_status_reported",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 4,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "b9ce66c2c84c1232800c60b98b23f819898d3db6021cb7ab99d280d2752f803e",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "PASS_CONFIGURATION_BUDGET; EXECUTION_NOT_AUTHORIZED",
+  "five_calls_funded": true,
+  "authorization_rejected_as_expected": true,
+  "immutable_authorization_identity_sha256": "a996d40dd93440d58ed722e2eb9999d98d40a9165d676300db6ac5b1aa8322b4",
+  "dependencies": {
+    "pins_checked": 88,
+    "python": "3.11.16",
+    "lock_sha256": "337dbdc8e75e70bebe1c8ac3b06b2a4149aede9299862ef99d03c74cb775fca0",
+    "mismatches": [],
+    "artifact_integrity": "installed versions checked; reinstall --require-hashes to verify distribution archives"
+  },
+  "guard_attempts": {
+    "network_attempts_blocked": 0,
+    "sdk_initializations_blocked": 0,
+    "command_attempts_blocked": 0
+  },
+  "no_model_or_workflow_or_smoke_execution": true,
+  "account_access": "UNVERIFIED",
+  "semantic_accuracy": null,
+  "actual_cost_usd": null
+}

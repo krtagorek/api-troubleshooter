@@ -1,0 +1,241 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0033792",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0033792",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0033792",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "case_id": "W4-REAL-016",
+  "elapsed_seconds": 3.744987166952342,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 3.093475457979366,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.093475457979366,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/report_attribution_v2/anchors/exception/literal",
+        "/request_metadata/reported_exception",
+        "/request_metadata/request_headers/skull",
+        "/status_code"
+      ],
+      "reasoning": "The incident involves a 502 Bad Gateway response caused by an HttpRequestException indicating that request headers must contain only ASCII characters. The presence of a non-ASCII character (emoji \ud83d\udc80) in the 'skull' header violates header validation rules, leading to the failure. This is a validation error related to request header content."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:fac62466a8d20ee3b0051b6c",
+          "observation": "Reported historical observations; not independently reproduced:\n- Curl transcript shows GET and HTTP/1.1 502; response Content-Length is 0.\n- Request includes custom header skull with value \ud83d\udc80.\n- Gateway exception says outgoing request headers must contain only ASCII characters; report uses sample tag 24.1.0.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:63b08b8be5810c56363976fa",
+          "observation": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+          "reference": "/request_metadata/reported_exception",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:81d2dadf397aa697b5f38137",
+          "observation": "\ud83d\udc80",
+          "reference": "/request_metadata/request_headers/skull",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:86d44a7bc6107e038cd0d961:d8986be1dbbbccf734d35ad6",
+          "observation": "502",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "Trusted coverage check cannot establish diagnostic sufficiency",
+          "required_to_resolve": "Collect specific correlated diagnostics or review omitted comparison evidence"
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-016",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Collect specific correlated diagnostics or review omitted comparison evidence",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Curl transcript shows GET and HTTP/1.1 502; response Content-Length is 0.\n- Request includes custom header skull with value \ud83d\udc80.\n- Gateway exception says outgoing request headers must contain only ASCII characters; report uses sample tag 24.1.0.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+      "endpoint": "/ocelot/posts/askdj",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Handle the reported GET /ocelot/posts/askdj request with appropriate error handling.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-016",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+        "operation_goal_mapping": "editorial; not an additional human confirmation",
+        "report_attribution_v2": {
+          "anchors": {
+            "bridge": {
+              "block": "bridge",
+              "end": 25,
+              "kind": "verbatim_source_excerpt",
+              "literal": "The logs shed some light:",
+              "start": 0
+            },
+            "exception": {
+              "block": "exception",
+              "end": 89,
+              "kind": "verbatim_source_excerpt",
+              "literal": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+              "start": 0
+            },
+            "header": {
+              "block": "header",
+              "end": 8,
+              "kind": "verbatim_source_excerpt",
+              "literal": "skull: \ud83d\udc80",
+              "start": 0
+            },
+            "request": {
+              "block": "request",
+              "end": 23,
+              "kind": "verbatim_source_excerpt",
+              "literal": "GET /ocelot/posts/askdj",
+              "start": 0
+            },
+            "status": {
+              "block": "status",
+              "end": 12,
+              "kind": "verbatim_source_excerpt",
+              "literal": "HTTP/1.1 502",
+              "start": 0
+            }
+          },
+          "authenticated_request_correlation": false,
+          "endpoint": "/ocelot/posts/askdj",
+          "exception_pointer": "/request_metadata/reported_exception",
+          "header_pointer": "/request_metadata/request_headers/skull",
+          "kind": "reporter_associated_reproduction",
+          "method": "GET",
+          "relationship": "reproduction-with-explanatory-logs",
+          "source_sha256": "dbc8ea81f66eba30c74cba89b08ab1c1ceee230886825f4f4f0acca429916d9f",
+          "summary": "The report presents the request transcript and explanatory log excerpt as the same reproduction; this is attributed context, not independent correlation.",
+          "summary_kind": "attributed_editorial_summary",
+          "version": "attributed-report-readiness-v2"
+        },
+        "reported_exception": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+        "request_headers": {
+          "Accept": "*/*",
+          "skull": "\ud83d\udc80"
+        },
+        "response_body_scope": "not_supplied_not_a_captured_json_null",
+        "status_evidence": {
+          "kind": "reported_curl_http_status_line"
+        }
+      },
+      "response_body": null,
+      "service": "Ocelot",
+      "severity": "unknown",
+      "status_code": 502
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "da46d26b-3fec-4c32-8792-9b48da648f43",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "4282f370-c132-4fd3-8091-57f0d53501a6",
+      "elapsed_seconds": 1.80218895804137,
+      "error": null,
+      "input_tokens": 3585,
+      "output_tokens": 155,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 3740
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "4e651cc1-d7a9-49a2-ba16-f280a2659b51",
+      "elapsed_seconds": 1.2912864999379963,
+      "error": null,
+      "input_tokens": 3911,
+      "output_tokens": 83,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 3994
+    }
+  ],
+  "root_id": "da46d26b-3fec-4c32-8792-9b48da648f43",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 67904,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

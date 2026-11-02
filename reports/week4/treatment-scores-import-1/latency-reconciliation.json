@@ -1,0 +1,335 @@
+{
+  "status": "RECONCILED_METHOD_DIFFERENCE",
+  "documented_method_sources": [
+    "reports/week4/assignment-baseline-live-review-1/README.md",
+    "docs/week4-baseline-final-scorecard.md"
+  ],
+  "historical_reports_modified": false,
+  "original_timing_records_modified": false,
+  "correction": "Later paired summary used nearest-rank p50. Current scorecard uses documented median p50 consistently in both arms; p95 remains nearest rank.",
+  "arms": {
+    "baseline": {
+      "attempted_count": 30,
+      "timing_source": "Original result.json supervisor elapsed_seconds, matched to case-records; model receipt duration is a different boundary.",
+      "p50_method": "Median: mean of ordered positions 15 and 16 for 30 attempts.",
+      "p50_seconds": 4.1444601465482265,
+      "p95_method": "Nearest rank ceil(0.95*n), position 29 of 30.",
+      "p95_seconds": 13.033312333980575,
+      "historical_nearest_rank_p50_seconds": 4.136218084022403,
+      "ordered_case_timings": [
+        {
+          "rank": 1,
+          "case_id": "W4-REAL-011",
+          "elapsed_seconds": 3.4485130421817303
+        },
+        {
+          "rank": 2,
+          "case_id": "W4-REAL-006",
+          "elapsed_seconds": 3.6179769169539213
+        },
+        {
+          "rank": 3,
+          "case_id": "W4-REAL-013",
+          "elapsed_seconds": 3.70082087488845
+        },
+        {
+          "rank": 4,
+          "case_id": "V2-05-01",
+          "elapsed_seconds": 3.719947125064209
+        },
+        {
+          "rank": 5,
+          "case_id": "W4-REAL-028",
+          "elapsed_seconds": 3.7291703748051077
+        },
+        {
+          "rank": 6,
+          "case_id": "W4-REAL-016",
+          "elapsed_seconds": 3.744987166952342
+        },
+        {
+          "rank": 7,
+          "case_id": "W4-REAL-024",
+          "elapsed_seconds": 3.8401593340095133
+        },
+        {
+          "rank": 8,
+          "case_id": "W4-REAL-020",
+          "elapsed_seconds": 3.866075291065499
+        },
+        {
+          "rank": 9,
+          "case_id": "W4-REAL-023",
+          "elapsed_seconds": 3.9745567908976227
+        },
+        {
+          "rank": 10,
+          "case_id": "W4-REAL-029",
+          "elapsed_seconds": 3.9954017919953912
+        },
+        {
+          "rank": 11,
+          "case_id": "W4-REAL-025",
+          "elapsed_seconds": 4.000295375008136
+        },
+        {
+          "rank": 12,
+          "case_id": "W4-REAL-026",
+          "elapsed_seconds": 4.020049832994118
+        },
+        {
+          "rank": 13,
+          "case_id": "W4-REAL-007",
+          "elapsed_seconds": 4.03102537500672
+        },
+        {
+          "rank": 14,
+          "case_id": "W4-REAL-014",
+          "elapsed_seconds": 4.113772291922942
+        },
+        {
+          "rank": 15,
+          "case_id": "W4-REAL-022",
+          "elapsed_seconds": 4.136218084022403
+        },
+        {
+          "rank": 16,
+          "case_id": "W4-REAL-018",
+          "elapsed_seconds": 4.15270220907405
+        },
+        {
+          "rank": 17,
+          "case_id": "W4-REAL-027",
+          "elapsed_seconds": 4.179380249930546
+        },
+        {
+          "rank": 18,
+          "case_id": "W4-REAL-021",
+          "elapsed_seconds": 4.226657541934401
+        },
+        {
+          "rank": 19,
+          "case_id": "W4-REAL-008",
+          "elapsed_seconds": 4.256035249913111
+        },
+        {
+          "rank": 20,
+          "case_id": "W4-DRAFT-031-v1",
+          "elapsed_seconds": 4.346739790868014
+        },
+        {
+          "rank": 21,
+          "case_id": "W4-REAL-017",
+          "elapsed_seconds": 4.4028662499040365
+        },
+        {
+          "rank": 22,
+          "case_id": "W4-REAL-012",
+          "elapsed_seconds": 4.4652590421028435
+        },
+        {
+          "rank": 23,
+          "case_id": "V2-04-01",
+          "elapsed_seconds": 4.553715834161267
+        },
+        {
+          "rank": 24,
+          "case_id": "W4-REAL-009",
+          "elapsed_seconds": 4.559315540827811
+        },
+        {
+          "rank": 25,
+          "case_id": "W4-REAL-015",
+          "elapsed_seconds": 4.570067249936983
+        },
+        {
+          "rank": 26,
+          "case_id": "W4-REAL-019",
+          "elapsed_seconds": 4.9238867501262575
+        },
+        {
+          "rank": 27,
+          "case_id": "W4-REAL-005",
+          "elapsed_seconds": 5.868736624950543
+        },
+        {
+          "rank": 28,
+          "case_id": "V2-15-01",
+          "elapsed_seconds": 10.514472709037364
+        },
+        {
+          "rank": 29,
+          "case_id": "V2-03-01",
+          "elapsed_seconds": 13.033312333980575
+        },
+        {
+          "rank": 30,
+          "case_id": "W4-DRAFT-032-v1",
+          "elapsed_seconds": 13.071874333079904
+        }
+      ]
+    },
+    "treatment": {
+      "attempted_count": 30,
+      "timing_source": "Original result.json supervisor elapsed_seconds, matched to case-records; model receipt duration is a different boundary.",
+      "p50_method": "Median: mean of ordered positions 15 and 16 for 30 attempts.",
+      "p50_seconds": 4.274353187996894,
+      "p95_method": "Nearest rank ceil(0.95*n), position 29 of 30.",
+      "p95_seconds": 12.108335291966796,
+      "historical_nearest_rank_p50_seconds": 4.272331834072247,
+      "ordered_case_timings": [
+        {
+          "rank": 1,
+          "case_id": "V2-05-01",
+          "elapsed_seconds": 2.3225504579022527
+        },
+        {
+          "rank": 2,
+          "case_id": "V2-15-01",
+          "elapsed_seconds": 3.5910223750397563
+        },
+        {
+          "rank": 3,
+          "case_id": "W4-REAL-029",
+          "elapsed_seconds": 3.6510253748856485
+        },
+        {
+          "rank": 4,
+          "case_id": "W4-REAL-009",
+          "elapsed_seconds": 3.6764704999513924
+        },
+        {
+          "rank": 5,
+          "case_id": "W4-REAL-007",
+          "elapsed_seconds": 3.72759479098022
+        },
+        {
+          "rank": 6,
+          "case_id": "W4-DRAFT-032-v1",
+          "elapsed_seconds": 3.7690757911186665
+        },
+        {
+          "rank": 7,
+          "case_id": "W4-REAL-023",
+          "elapsed_seconds": 3.8441467920783907
+        },
+        {
+          "rank": 8,
+          "case_id": "W4-REAL-013",
+          "elapsed_seconds": 3.8710290000308305
+        },
+        {
+          "rank": 9,
+          "case_id": "W4-REAL-015",
+          "elapsed_seconds": 3.9459612919017673
+        },
+        {
+          "rank": 10,
+          "case_id": "W4-REAL-024",
+          "elapsed_seconds": 4.043560083955526
+        },
+        {
+          "rank": 11,
+          "case_id": "W4-REAL-012",
+          "elapsed_seconds": 4.13964204210788
+        },
+        {
+          "rank": 12,
+          "case_id": "W4-REAL-006",
+          "elapsed_seconds": 4.147480166982859
+        },
+        {
+          "rank": 13,
+          "case_id": "W4-REAL-020",
+          "elapsed_seconds": 4.211313625099137
+        },
+        {
+          "rank": 14,
+          "case_id": "W4-REAL-017",
+          "elapsed_seconds": 4.21508829202503
+        },
+        {
+          "rank": 15,
+          "case_id": "W4-REAL-021",
+          "elapsed_seconds": 4.272331834072247
+        },
+        {
+          "rank": 16,
+          "case_id": "W4-REAL-028",
+          "elapsed_seconds": 4.276374541921541
+        },
+        {
+          "rank": 17,
+          "case_id": "W4-REAL-022",
+          "elapsed_seconds": 4.299729958176613
+        },
+        {
+          "rank": 18,
+          "case_id": "W4-REAL-018",
+          "elapsed_seconds": 4.331691792001948
+        },
+        {
+          "rank": 19,
+          "case_id": "V2-04-01",
+          "elapsed_seconds": 4.371801625005901
+        },
+        {
+          "rank": 20,
+          "case_id": "W4-REAL-019",
+          "elapsed_seconds": 4.407633041031659
+        },
+        {
+          "rank": 21,
+          "case_id": "W4-REAL-027",
+          "elapsed_seconds": 4.423333957791328
+        },
+        {
+          "rank": 22,
+          "case_id": "W4-REAL-011",
+          "elapsed_seconds": 4.549745958065614
+        },
+        {
+          "rank": 23,
+          "case_id": "W4-REAL-025",
+          "elapsed_seconds": 4.5846626670099795
+        },
+        {
+          "rank": 24,
+          "case_id": "W4-REAL-008",
+          "elapsed_seconds": 4.701787542086095
+        },
+        {
+          "rank": 25,
+          "case_id": "W4-REAL-026",
+          "elapsed_seconds": 4.781894124811515
+        },
+        {
+          "rank": 26,
+          "case_id": "W4-DRAFT-031-v1",
+          "elapsed_seconds": 4.85002770787105
+        },
+        {
+          "rank": 27,
+          "case_id": "W4-REAL-014",
+          "elapsed_seconds": 5.0579787499736995
+        },
+        {
+          "rank": 28,
+          "case_id": "W4-REAL-005",
+          "elapsed_seconds": 5.702716249972582
+        },
+        {
+          "rank": 29,
+          "case_id": "V2-03-01",
+          "elapsed_seconds": 12.108335291966796
+        },
+        {
+          "rank": 30,
+          "case_id": "W4-REAL-016",
+          "elapsed_seconds": 15.450587458210066
+        }
+      ]
+    }
+  },
+  "model_receipt_latency_substituted": false
+}

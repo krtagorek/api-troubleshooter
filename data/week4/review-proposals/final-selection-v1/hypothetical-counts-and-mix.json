@@ -1,0 +1,340 @@
+{
+  "kind": "HYPOTHETICAL_NOT_ACTIVE_SELECTION",
+  "conditions": [
+    "Approve both draft replacements and their scoped expectations",
+    "Approve 028 sourcing eligibility and proposed source-derived treatment without an additional generated allowance"
+  ],
+  "active_input_compatible_unchanged": 29,
+  "hypothetical_count": 30,
+  "hypothetical_composition": {
+    "source_backed_public_report_cases": 24,
+    "documented_third_party_mock_upstream_reproduction": 1,
+    "artificial_cases": 5
+  },
+  "conservative_artificial_allowance": 5,
+  "artificial_allowance_breakdown": {
+    "existing_unknown_authorship_procedural": 4,
+    "explicit_llm_authored_prompt_injection_derivative": 1
+  },
+  "mix_after_only_three_proposals": {
+    "unclassified": 11,
+    "edge": 7,
+    "known_difficult_or_failure": 2,
+    "adversarial": 1,
+    "happy": 9
+  },
+  "complete_mix_if_eleven_additional_scenario_proposals_approved": {
+    "edge": 15,
+    "happy": 12,
+    "known_difficult_or_failure": 2,
+    "adversarial": 1
+  },
+  "eleven_additional_classifications_approved": false,
+  "if_028_excluded": "29 cases after both swaps; one further source-supported case needed",
+  "if_028_charged_generated": "Six charges; this 30-case composition cannot be approved unchanged under max-five rule",
+  "rows": [
+    {
+      "slot": 1,
+      "current_case_id": "W4-REAL-005",
+      "hypothetical_case_id": "W4-REAL-005",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "302 versus exception hint; framing evidence incomplete",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 2,
+      "current_case_id": "W4-REAL-006",
+      "hypothetical_case_id": "W4-REAL-006",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Qualified historical media-type comparison is supported",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 3,
+      "current_case_id": "W4-REAL-008",
+      "hypothetical_case_id": "W4-REAL-008",
+      "mix_after_only_three_proposals": "edge",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 4,
+      "current_case_id": "W4-REAL-009",
+      "hypothetical_case_id": "W4-REAL-009",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Rate-limit response supported; scope/cause unresolved",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 5,
+      "current_case_id": "W4-REAL-011",
+      "hypothetical_case_id": "W4-REAL-011",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Missing-header observation supports a scoped diagnostic task",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 6,
+      "current_case_id": "W4-REAL-012",
+      "hypothetical_case_id": "W4-REAL-012",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Parsing error present; exact payload defect unavailable",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 7,
+      "current_case_id": "W4-REAL-013",
+      "hypothetical_case_id": "W4-REAL-013",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "GET-only contract and informative PUT rejection are explicit",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 8,
+      "current_case_id": "W4-REAL-014",
+      "hypothetical_case_id": "W4-REAL-014",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Write outcome/response inconsistency and duplicate risk",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 9,
+      "current_case_id": "W4-REAL-015",
+      "hypothetical_case_id": "W4-REAL-015",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "No-handler rejection supported; availability cause unresolved",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 10,
+      "current_case_id": "W4-REAL-016",
+      "hypothetical_case_id": "W4-REAL-016",
+      "mix_after_only_three_proposals": "known_difficult_or_failure",
+      "complete_mix_proposed_for_review": "known_difficult_or_failure",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 11,
+      "current_case_id": "W4-REAL-017",
+      "hypothetical_case_id": "W4-REAL-017",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Concurrent/precondition case without actual ETag/header facts",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 12,
+      "current_case_id": "W4-REAL-018",
+      "hypothetical_case_id": "W4-REAL-018",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Creation conflict and import sequence; exact mechanism unresolved",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 13,
+      "current_case_id": "W4-REAL-019",
+      "hypothetical_case_id": "W4-REAL-019",
+      "mix_after_only_three_proposals": "unclassified",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Masked host/version discrepancy and unresolved request chain",
+      "classification_source": "New scenario completion for review; active scenario field remains blank",
+      "approved": false
+    },
+    {
+      "slot": 14,
+      "current_case_id": "W4-REAL-020",
+      "hypothetical_case_id": "W4-REAL-020",
+      "mix_after_only_three_proposals": "edge",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 15,
+      "current_case_id": "V2-01-03",
+      "hypothetical_case_id": "W4-DRAFT-032-v1",
+      "mix_after_only_three_proposals": "adversarial",
+      "complete_mix_proposed_for_review": "adversarial",
+      "reason": "Explicit prompt-injection attempt in untrusted metadata",
+      "classification_source": "Replacement proposal",
+      "approved": false
+    },
+    {
+      "slot": 16,
+      "current_case_id": "V2-03-01",
+      "hypothetical_case_id": "V2-03-01",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 17,
+      "current_case_id": "V2-04-01",
+      "hypothetical_case_id": "V2-04-01",
+      "mix_after_only_three_proposals": "edge",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 18,
+      "current_case_id": "V2-05-01",
+      "hypothetical_case_id": "V2-05-01",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 19,
+      "current_case_id": "V2-15-01",
+      "hypothetical_case_id": "V2-15-01",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 20,
+      "current_case_id": "W4-REAL-007",
+      "hypothetical_case_id": "W4-REAL-007",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 21,
+      "current_case_id": "W4-REAL-021",
+      "hypothetical_case_id": "W4-REAL-021",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 22,
+      "current_case_id": "W4-REAL-022",
+      "hypothetical_case_id": "W4-REAL-022",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 23,
+      "current_case_id": "W4-REAL-023",
+      "hypothetical_case_id": "W4-REAL-023",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 24,
+      "current_case_id": "W4-REAL-024",
+      "hypothetical_case_id": "W4-REAL-024",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 25,
+      "current_case_id": "W4-REAL-025",
+      "hypothetical_case_id": "W4-REAL-025",
+      "mix_after_only_three_proposals": "edge",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 26,
+      "current_case_id": "W4-REAL-026",
+      "hypothetical_case_id": "W4-REAL-026",
+      "mix_after_only_three_proposals": "happy",
+      "complete_mix_proposed_for_review": "happy",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 27,
+      "current_case_id": "W4-REAL-027",
+      "hypothetical_case_id": "W4-REAL-027",
+      "mix_after_only_three_proposals": "edge",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 28,
+      "current_case_id": "W4-REAL-028",
+      "hypothetical_case_id": "W4-REAL-028",
+      "mix_after_only_three_proposals": "known_difficult_or_failure",
+      "complete_mix_proposed_for_review": "known_difficult_or_failure",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 29,
+      "current_case_id": "W4-REAL-029",
+      "hypothetical_case_id": "W4-REAL-029",
+      "mix_after_only_three_proposals": "edge",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Existing proposal retained",
+      "classification_source": "Existing recorded planning scenario; not a final human label",
+      "approved": false
+    },
+    {
+      "slot": 30,
+      "current_case_id": "W4-REAL-030",
+      "hypothetical_case_id": "W4-DRAFT-031-v1",
+      "mix_after_only_three_proposals": "edge",
+      "complete_mix_proposed_for_review": "edge",
+      "reason": "Multipart field delivery and separate exception association unresolved",
+      "classification_source": "Replacement proposal",
+      "approved": false
+    }
+  ],
+  "final_selection": null,
+  "golden_ready": false,
+  "paid_execution_authorized": false
+}

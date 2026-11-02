@@ -1,0 +1,15 @@
+{
+  "status": "PASS_LOCAL_IMPLEMENTATION_CHECKS; PAID_RUN_BLOCKED",
+  "settings_supported": true,
+  "explicit_V2_selected": true,
+  "plan_loader_rejection": "Plan cannot fund its maximum calls at full reservations; revise before dispatch",
+  "budget_025_infeasible": true,
+  "network_or_sdk_or_command_attempts": {
+    "network_attempts_blocked": 0,
+    "sdk_initializations_blocked": 0,
+    "command_attempts_blocked": 0
+  },
+  "no_workflow_or_smoke_executed": true,
+  "semantic_accuracy": null,
+  "cost_usd": null
+}

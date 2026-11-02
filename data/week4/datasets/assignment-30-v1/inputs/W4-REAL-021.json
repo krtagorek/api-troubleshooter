@@ -1,0 +1,28 @@
+{
+  "case_id": "W4-REAL-021",
+  "incident": {
+    "incident_id": "W4-REAL-021",
+    "service": "OpenCode Python SDK",
+    "endpoint": "/session",
+    "http_method": "POST",
+    "status_code": 500,
+    "request_metadata": {
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "0"
+      },
+      "reported_error": "Malformed JSON in request body",
+      "status_evidence": {
+        "kind": "published_request_and_http_500_response"
+      },
+      "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+      "response_body_scope": "Not supplied; null is not evidence of a captured null response."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Submit the intended request to the reported POST /session operation.",
+    "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published request has Content-Type application/json and Content-Length 0.\n- Response is HTTP 500 with a malformed-JSON error.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

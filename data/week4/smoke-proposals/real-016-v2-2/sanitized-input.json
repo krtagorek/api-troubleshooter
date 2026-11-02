@@ -1,0 +1,79 @@
+{
+  "case_id": "W4-REAL-016",
+  "incident": {
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Curl transcript shows GET and HTTP/1.1 502; response Content-Length is 0.\n- Request includes custom header skull with value 💀.\n- Gateway exception says outgoing request headers must contain only ASCII characters; report uses sample tag 24.1.0.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+    "endpoint": "/ocelot/posts/askdj",
+    "evidence_quality": "unknown",
+    "expected_behavior": "Handle the reported GET /ocelot/posts/askdj request with appropriate error handling.",
+    "http_method": "GET",
+    "incident_id": "W4-REAL-016",
+    "logs": [],
+    "request_metadata": {
+      "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+      "operation_goal_mapping": "editorial; not an additional human confirmation",
+      "report_attribution_v2": {
+        "anchors": {
+          "bridge": {
+            "block": "bridge",
+            "end": 25,
+            "kind": "verbatim_source_excerpt",
+            "literal": "The logs shed some light:",
+            "start": 0
+          },
+          "exception": {
+            "block": "exception",
+            "end": 89,
+            "kind": "verbatim_source_excerpt",
+            "literal": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+            "start": 0
+          },
+          "header": {
+            "block": "header",
+            "end": 8,
+            "kind": "verbatim_source_excerpt",
+            "literal": "skull: 💀",
+            "start": 0
+          },
+          "request": {
+            "block": "request",
+            "end": 23,
+            "kind": "verbatim_source_excerpt",
+            "literal": "GET /ocelot/posts/askdj",
+            "start": 0
+          },
+          "status": {
+            "block": "status",
+            "end": 12,
+            "kind": "verbatim_source_excerpt",
+            "literal": "HTTP/1.1 502",
+            "start": 0
+          }
+        },
+        "authenticated_request_correlation": false,
+        "endpoint": "/ocelot/posts/askdj",
+        "exception_pointer": "/request_metadata/reported_exception",
+        "header_pointer": "/request_metadata/request_headers/skull",
+        "kind": "reporter_associated_reproduction",
+        "method": "GET",
+        "relationship": "reproduction-with-explanatory-logs",
+        "source_sha256": "dbc8ea81f66eba30c74cba89b08ab1c1ceee230886825f4f4f0acca429916d9f",
+        "summary": "The report presents the request transcript and explanatory log excerpt as the same reproduction; this is attributed context, not independent correlation.",
+        "summary_kind": "attributed_editorial_summary",
+        "version": "attributed-report-readiness-v2"
+      },
+      "reported_exception": "System.Net.Http.HttpRequestException: Request headers must contain only ASCII characters.",
+      "request_headers": {
+        "Accept": "*/*",
+        "skull": "💀"
+      },
+      "response_body_scope": "not_supplied_not_a_captured_json_null",
+      "status_evidence": {
+        "kind": "reported_curl_http_status_line"
+      }
+    },
+    "response_body": null,
+    "service": "Ocelot",
+    "severity": "unknown",
+    "status_code": 502
+  }
+}

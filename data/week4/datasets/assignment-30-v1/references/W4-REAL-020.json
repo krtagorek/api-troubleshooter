@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-020",
+  "expected_supported_response": "Ambiguous proxy-configuration case; request/log correlation and intended proxy operation unresolved. Preserve HEAD / envoy-egress:8080 ->503 and separate HEAD / Google ->200, two-URL command, and different-attempt TLS/400 context. Second request is not proven proxied; source -k is not recommended practice; no disabling TLS verification.",
+  "acceptable_uncertainty_clarification": "Clarify explicit-proxy versus direct intent; separate the two transfers and request fresh correlated diagnostics for protocol/TLS hypotheses.",
+  "forbidden_unsupported_claims": "Do not call the Google request proxied success, merge different-attempt TLS/400 into HEAD/503, or recommend disabling TLS verification.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Ambiguous proxy-configuration case; request/log correlation and intended proxy operation unresolved. Preserve HEAD / envoy-egress:8080 ->503 and separate HEAD / Google ->200, two-URL command, and different-attempt TLS/400 context. Second request is not proven proxied; source -k is not recommended practice; no disabling TLS verification.",
+    "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

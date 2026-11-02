@@ -1,0 +1,25 @@
+{
+  "case_id": "W4-REAL-014",
+  "incident": {
+    "incident_id": "W4-REAL-014",
+    "service": "Paperclip",
+    "endpoint": "/api/issues/5a773a8c-85e8-4668-a72e-b7feff2ce14a/children",
+    "http_method": "POST",
+    "status_code": 500,
+    "request_metadata": {
+      "status_evidence": {
+        "kind": "reported_curl_status_line"
+      },
+      "observation_representation": "Attributed public-report paraphrases, not independently reproduced measurements.",
+      "response_body_scope": "reported_excerpt_completeness_unknown"
+    },
+    "response_body": {
+      "error": "Internal server error"
+    },
+    "logs": [],
+    "expected_behavior": "Create the requested child issue and return a response consistent with the write outcome.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Verbose curl transcript pairs explicit POST path with HTTP/1.1 500 and JSON error body.\n- Reporter says a subsequent listing shows the row created by this request.\n- Reporter describes duplicate rows after repeated creates.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

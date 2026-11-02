@@ -1,0 +1,204 @@
+{
+  "fixture_kind": "WHOLLY_SYNTHETIC_CONTRACT_TEST_NOT_A_REAL_INCIDENT",
+  "tests": [
+    {
+      "field": "status_code",
+      "test_input": "missing",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "status_code"
+          ],
+          "type": "missing",
+          "message": "Field required"
+        }
+      ]
+    },
+    {
+      "field": "status_code",
+      "test_input": "null",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "status_code"
+          ],
+          "type": "int_type",
+          "message": "Input should be a valid integer"
+        }
+      ]
+    },
+    {
+      "field": "http_method",
+      "test_input": "missing",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "http_method"
+          ],
+          "type": "missing",
+          "message": "Field required"
+        }
+      ]
+    },
+    {
+      "field": "http_method",
+      "test_input": "null",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "http_method"
+          ],
+          "type": "literal_error",
+          "message": "Input should be 'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD' or 'OPTIONS'"
+        }
+      ]
+    },
+    {
+      "field": "endpoint",
+      "test_input": "missing",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "endpoint"
+          ],
+          "type": "missing",
+          "message": "Field required"
+        }
+      ]
+    },
+    {
+      "field": "endpoint",
+      "test_input": "null",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "endpoint"
+          ],
+          "type": "string_type",
+          "message": "Input should be a valid string"
+        }
+      ]
+    },
+    {
+      "field": "expected_behavior",
+      "test_input": "missing",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "expected_behavior"
+          ],
+          "type": "missing",
+          "message": "Field required"
+        }
+      ]
+    },
+    {
+      "field": "expected_behavior",
+      "test_input": "null",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "expected_behavior"
+          ],
+          "type": "string_type",
+          "message": "Input should be a valid string"
+        }
+      ]
+    },
+    {
+      "field": "endpoint",
+      "test_input": "",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "endpoint"
+          ],
+          "type": "string_too_short",
+          "message": "String should have at least 1 character"
+        }
+      ]
+    },
+    {
+      "field": "expected_behavior",
+      "test_input": "",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "expected_behavior"
+          ],
+          "type": "string_too_short",
+          "message": "String should have at least 1 character"
+        }
+      ]
+    },
+    {
+      "field": "http_method",
+      "test_input": "UNKNOWN",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "http_method"
+          ],
+          "type": "literal_error",
+          "message": "Input should be 'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD' or 'OPTIONS'"
+        }
+      ]
+    },
+    {
+      "field": "status_code",
+      "test_input": 99,
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "status_code"
+          ],
+          "type": "greater_than_equal",
+          "message": "Input should be greater than or equal to 100"
+        }
+      ]
+    },
+    {
+      "field": "status_code",
+      "test_input": 600,
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "status_code"
+          ],
+          "type": "less_than_equal",
+          "message": "Input should be less than or equal to 599"
+        }
+      ]
+    },
+    {
+      "field": "status_code",
+      "test_input": "302",
+      "result": "REJECTED",
+      "safe_errors": [
+        {
+          "location": [
+            "status_code"
+          ],
+          "type": "int_type",
+          "message": "Input should be a valid integer"
+        }
+      ]
+    }
+  ],
+  "real_candidates_constructed_with_fillers": false,
+  "agent_graph_executed": false,
+  "models_executed": false
+}

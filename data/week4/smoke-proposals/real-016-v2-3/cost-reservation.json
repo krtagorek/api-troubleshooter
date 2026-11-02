@@ -1,0 +1,16 @@
+{
+  "currency": "USD",
+  "per_call_input_reservation_tokens": 1047576,
+  "input_bound_kind": "Entire documented model context; conservative bound, not exact input token count",
+  "max_complete_request_bytes": 65536,
+  "output_cap_total_tokens": 1536,
+  "calls": 5,
+  "per_call_usd": "0.421488",
+  "five_call_usd": "2.107440",
+  "proposed_ceiling_usd": "2.25",
+  "headroom_usd": "0.142560",
+  "cached_savings_assumed": false,
+  "reasoning_billed": "Included in completion_tokens once; no double counting",
+  "actual_usage": null,
+  "actual_cost_usd": null
+}

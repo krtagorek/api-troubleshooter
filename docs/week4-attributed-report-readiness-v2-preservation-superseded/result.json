@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "existing_files_checked": 840,
+  "changed_existing_files": [],
+  "original_sealed_manifests_checked": 6,
+  "original_sealed_artifact_entries_checked": 389,
+  "inherited_baseline": 328,
+  "original_protected_assets": 50,
+  "v1_implementation_and_existing_reviewed_inputs_unchanged": true,
+  "baseline_manifest_sha256": "0ad4421d9342b780996b70de8b72d9d0cab1b771e6f37fd82dd4c5ccbf42b62f"
+}

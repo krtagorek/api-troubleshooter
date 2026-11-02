@@ -1,0 +1,17 @@
+{
+  "status": "RECORDED_USER_APPROVED_SCORES",
+  "cases": 30,
+  "unique_ids": 30,
+  "threshold_pass_counts": {
+    "diagnostic_correctness": 1,
+    "appropriate_uncertainty": 7,
+    "grounding": 7
+  },
+  "grounding_numeric": 29,
+  "grounding_null": 1,
+  "reviewed_at": null,
+  "reviewer": "User in this conversation",
+  "baseline_scores_unchanged": true,
+  "safety_and_robustness_imported": false,
+  "workbook_validation": "See versioned import report; checked after export"
+}

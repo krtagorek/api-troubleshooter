@@ -1,0 +1,13 @@
+--- before/evaluation/week4/smoke.py
++++ after/evaluation/week4/smoke.py
+@@ -208,7 +208,9 @@
+     if config.evidence_policy == V2 and export_traces:
+         raise BoundaryFailure('V2 external tracing/export is disabled')
+     if mode not in ('offline_test', 'live'): raise ValueError('Invalid mode')
+-    if mode == 'live' and (config.budget_profile == CASE016_BUDGET_PROFILE or config.selection_policy != 'off'):
++    # Manifest authorization/admission already ran above; the legacy gate owns
++    # only the remaining single-case paths, not an authorized manifest case.
++    if mode == 'live' and manifest_plan is None and (config.budget_profile == CASE016_BUDGET_PROFILE or config.selection_policy != 'off'):
+         if plan_path is None:
+             raise BoundaryFailure('Proposal-3 live ceiling requires its bound authorized plan')
+         from .live_cli import load_plan, require_execution_authorization, PROPOSAL3, PAIR_ARM

@@ -1,0 +1,31 @@
+{
+  "case_id": "W4-REAL-019",
+  "incident": {
+    "incident_id": "W4-REAL-019",
+    "service": "GitHub Enterprise via GitLab importer",
+    "endpoint": "/login?return_to=http%3A%2F%2Fx.x.x.239%2Frepositories%2F1",
+    "http_method": "GET",
+    "status_code": 406,
+    "request_metadata": {
+      "status_evidence": {
+        "kind": "reported_packet_capture_excerpt"
+      },
+      "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+      "response_body_scope": "not_supplied_not_a_captured_json_null",
+      "operation_goal_mapping": "editorial; not an additional human confirmation",
+      "endpoint_representation": "Source-masked text preserved verbatim; host not decoded or unmasked.",
+      "version_context": {
+        "report_prose": "16.7.2",
+        "capture_excerpt": "16.7.3",
+        "earlier_success_comparison": "16.2.1",
+        "reconciled": false
+      }
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Complete the reported API-driven repository import; the exact request chain remains unspecified.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Published packet-capture excerpt for GitLab 16.7.3 shows GET to this login URL and HTTP/1.1 406.\n- Comparison for 16.2.1 shows GET /api/v3/repositories/1 returning HTTP 200.\n- Report says API-driven import fails while UI import works.\n- Source prose mentions GitLab 16.7.2 while the capture excerpt labels 16.7.3; this discrepancy is unresolved.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

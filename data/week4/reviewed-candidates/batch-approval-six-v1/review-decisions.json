@@ -1,0 +1,143 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "cases": [
+    {
+      "id": "V2-01-03",
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "scenario_label": null,
+      "inference_source": {
+        "path": "data/benchmark_v2/dataset/inference/development.jsonl",
+        "line": 3,
+        "file_sha256": "e37473b691a26bf3cfac2979ec228f52eaff9dcff1d834e1258f92cda24bab29",
+        "line_sha256": "50c5585f4f0dc914b2e23e107d20cc50254718fda5f44801f9059aa9c6d346ef"
+      },
+      "llm_cap_charge": 1
+    },
+    {
+      "id": "V2-03-01",
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "scenario_label": null,
+      "inference_source": {
+        "path": "data/benchmark_v2/dataset/inference/development.jsonl",
+        "line": 6,
+        "file_sha256": "e37473b691a26bf3cfac2979ec228f52eaff9dcff1d834e1258f92cda24bab29",
+        "line_sha256": "a31143035fbc8ae27f4ca4bbe51ad27f8178eed31e138662b174ba7ee5afab66"
+      },
+      "llm_cap_charge": 1
+    },
+    {
+      "id": "V2-04-01",
+      "human_review": {
+        "decision": "ACCEPT_WITH_REVISIONS",
+        "status": "ACCEPTED_WITH_REVISIONS",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "scenario_label": "edge/contradictory evidence",
+      "inference_source": {
+        "path": "data/benchmark_v2/dataset/inference/test.jsonl",
+        "line": 6,
+        "file_sha256": "25b9ff633398c4e2fc846e0548888d765be19a523ce0db5b73bd19589199a21a",
+        "line_sha256": "363ae13bedf04d98daa8f96e2a79c88e81f91e651503d9ea3f7cb44e82a4b984"
+      },
+      "llm_cap_charge": 1
+    },
+    {
+      "id": "V2-05-01",
+      "human_review": {
+        "decision": "ACCEPT_WITH_REVISIONS",
+        "status": "ACCEPTED_WITH_REVISIONS",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "scenario_label": null,
+      "inference_source": {
+        "path": "data/benchmark_v2/dataset/inference/development.jsonl",
+        "line": 11,
+        "file_sha256": "e37473b691a26bf3cfac2979ec228f52eaff9dcff1d834e1258f92cda24bab29",
+        "line_sha256": "ade9dd96ded57afba9126235cac56f7499b64b338a248623df92f7a218f3704b"
+      },
+      "llm_cap_charge": 1
+    },
+    {
+      "id": "V2-15-01",
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "scenario_label": null,
+      "inference_source": {
+        "path": "data/benchmark_v2/dataset/inference/development.jsonl",
+        "line": 36,
+        "file_sha256": "e37473b691a26bf3cfac2979ec228f52eaff9dcff1d834e1258f92cda24bab29",
+        "line_sha256": "ce80c07cc769d5a738dbdd7136bb15913d4cf4fbcd7e4623433519c525c193b0"
+      },
+      "llm_cap_charge": 1
+    },
+    {
+      "id": "W4-REAL-007",
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "scenario_label": null,
+      "inference_source": {
+        "path": "data/week4/reviewed-candidates/batch-approval-six-v1/inference/W4-REAL-007.json",
+        "sha256": "d77f3671d5d45286ce44e1f383861079962ab8c071d86013e33e938ab83dfc36"
+      },
+      "llm_cap_charge": 0
+    }
+  ],
+  "execution_authorized": false,
+  "trace_export_authorized": false
+}

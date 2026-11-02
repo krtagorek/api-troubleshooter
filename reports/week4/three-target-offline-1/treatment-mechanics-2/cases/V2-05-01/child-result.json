@@ -1,0 +1,108 @@
+{
+  "case_id": "V2-05-01",
+  "errors": [
+    "AgentOutputError"
+  ],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [],
+      "reasoning": "Offline scripted response, no diagnostic claim."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": null,
+    "evidence": {
+      "completeness": "unknown",
+      "items": [],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "V2-05-01",
+    "max_retries": 0,
+    "pending_user_questions": [],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 422; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "POST",
+      "incident_id": "V2-05-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-4-0",
+          "event": "connector.response",
+          "fields": {
+            "contract_unit": "milliseconds",
+            "field": "event_time_ms",
+            "minimum": 1700000000000,
+            "received": 1770000000
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-05T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-4-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-4-0",
+        "result": "request unsuccessful",
+        "status": 422,
+        "timestamp": "2026-01-05T12:00:00Z"
+      },
+      "service": "synthetic-validation-connector",
+      "severity": "medium",
+      "status_code": 422
+    },
+    "status": "running",
+    "stop_reason": null,
+    "thread_id": "126a5dc9-1f97-4828-9aa2-719f16ad60f0",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "c1757568-7a89-4a1d-bcbe-92b4de9a72a5",
+      "elapsed_seconds": 0.018583625089377165,
+      "error": null,
+      "input_tokens": 11,
+      "output_tokens": 7,
+      "reasoning_tokens": null,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "mock_test_data",
+      "total_tokens": 18
+    }
+  ],
+  "root_id": "126a5dc9-1f97-4828-9aa2-719f16ad60f0",
+  "selection_measurements": null,
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "failed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "failed",
+  "workflow_status": "running"
+}

@@ -1,0 +1,91 @@
+[
+  {
+    "case_id": "W4-DEV-1",
+    "incident": {
+      "actual_behavior": "Observed status 401; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-01-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-0-0",
+          "event": "connector.response",
+          "fields": {
+            "issuer_configured": "https://identity.example.invalid/realm",
+            "issuer_received": "https://identity.example.invalid/realm/",
+            "signature_valid": true
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-01T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-0-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-0-0",
+        "result": "request unsuccessful",
+        "status": 401,
+        "timestamp": "2026-01-01T12:00:00Z"
+      },
+      "service": "synthetic-authentication-connector",
+      "severity": "medium",
+      "status_code": 401
+    }
+  },
+  {
+    "case_id": "W4-DEV-2",
+    "incident": {
+      "actual_behavior": "Observed status 401; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/2",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-01-02",
+      "logs": [
+        {
+          "attributes": {
+            "diagnostics": {
+              "issuer_configured": "https://identity.example.invalid/realm",
+              "issuer_received": "https://identity.example.invalid/realm/",
+              "signature_valid": true
+            }
+          },
+          "body": "Contract probe completed",
+          "severity": "warn",
+          "time": "2026-01-01T12:01:00Z",
+          "trace": {
+            "id": "synthetic-v2-0-1"
+          }
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-0-1",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-0-1",
+        "result": "request unsuccessful",
+        "status": 401,
+        "timestamp": "2026-01-01T12:01:00Z"
+      },
+      "service": "synthetic-authentication-connector",
+      "severity": "medium",
+      "status_code": 401
+    }
+  }
+]

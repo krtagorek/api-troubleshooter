@@ -1,0 +1,254 @@
+What this week is about
+Choose one evaluation track: (1) the provided Customer Support Agent, (2) social media posts using the provided spreadsheet and optional LLM judge, or (3) your new model/your Week 3 agent using spreadsheets or LangSmith. Complete reviewed ground truth or a golden dataset, metrics, trace evidence where applicable, and prioritized improvements with measured impact.
+A successful demo does not prove reliability. Define success, evaluate systematically, and measure improvements.
+How this project works
+Evaluate the supplied Customer Support or Social Media materials, or your Week 3 agent , or your own new use case. Complete these four phases in order.
+#
+Phase
+What you do
+1
+Define metrics & build golden dataset
+Turn your Week 3 success metric into measurable, automatable evaluators. Label 30–50 test cases covering happy paths, edge cases, and known failures.
+2
+Instrument and evaluate with LangSmith
+For the LangSmith route, trace each evaluation case with child runs for LLM/tool calls. Verify inputs, outputs, latency, tokens, errors, and evaluation metadata.
+3
+Run evaluation & analyze failures
+Evaluate the golden dataset. Link aggregate scores to case results (using LangSmith traces/metadata where applicable), cluster failures, identify the dominant mode, and estimate each failure mode’s cost.
+4
+Improve & measure delta
+Make 3–4 targeted changes, rerun evaluations, and report each metric’s delta: what worked, what failed, and what to try next.
+
+
+Deliverable
+Submit your report, dataset, trace evidence where applicable, and Loom; see “How to submit.” 
+
+Part 1: The Evaluation Framework
+
+
+The Primer: Your evaluation one-liner
+First, summarize what you will measure, on which agent and cases, and against which pass bar.
+I will measure [METRIC SET] on [AGENT FROM WEEK 3] using a golden dataset of [N] cases covering [SCENARIO TYPES], with [JUDGE METHOD]. Pass bar: [TARGET %s + LATENCY + COST]. I will compare [BASELINE] vs [POST-IMPROVEMENT] using [SPREADSHEET OR LANGSMITH].
+
+
+Worked example
+I will evaluate my Multi-Agent Deal Review Pipeline on red-flag recall, summary faithfulness, end-to-end task completion, and p95 latency using 40 historical deals (15 closed-won, 15 closed-lost, 10 edge cases) covering missing-MEDDPICC, exception-flagged, and large-deal scenarios. Judges: LLM-as-judge for faithfulness; exact-match for red flags. Pass bar: 85% recall, 90% faithfulness, 100% completion, p95 <2 minutes, $2/run. I will report baseline-to-improved deltas from LangSmith traces.
+
+Three rules for evaluation design
+Tie metrics to user outcomes: did the manager catch a red flag they would have caught manually? A generic “helpfulness score” is insufficient unless it predicts user value.
+Use a golden dataset with known correct outputs, preferably from real usage. You or a domain expert must label each case.
+Prove improvement with before/after evaluations and measured deltas; a prompt change that feels better is not evidence. 
+
+The Framework
+Complete every field in 1–2 sentences, making a clear decision at each evaluation layer.
+Field
+Fill in (1 to 2 sentences max)
+Agent under test
+(one line)
+Name the Week 3 agent you or a teammate built.
+User outcome
+The essential user outcome the agent must deliver.
+Metrics
+(3 to 5)
+Quality + behavioral + cost metrics. Each maps to user outcome.
+Judge method
+Per metric: exact match, LLM-as-judge, code-based, human review.
+Golden dataset
+Source, size (30-50 cases), scenario mix (happy/edge/failure), how you labeled it.
+Pass bar
+Numeric target per metric: what is good enough to ship?
+Instrumentation
+For LangSmith: one trace/case; child runs for LLM/tool calls; metadata for run name, prompt version, case ID, expected/predicted output, correctness, reasoning, errors, tokens, and latency.
+Baseline run
+Pre-change scores; for LangSmith, include the project/run link and one verified trace.
+Failure analysis
+Top 3 failure modes by frequency and rough cost, with an example case each. For LangSmith, link each example trace to its case via metadata.
+Improvement hypotheses
+(3 to 4)
+Specific changes (prompt, model, retrieval, tool, control flow) with predicted impact per metric.
+Post-improvement run
+Post-change scores and deltas. For LangSmith, include the run link and reuse the baseline trace structure and metadata schema.
+What is next
+Top remaining failure, next week’s proposed change, and a production monitoring plan (using LangSmith where applicable).
+
+
+Tips before you fill it in
+Pair quality (e.g., faithfulness, recall) with cost/latency to expose slow or expensive quality gains and quality losses from cost cuts.
+For LangSmith, verify one case-level trace with LangGraph, LLM, and tool child runs plus evaluation metadata. Then build the dataset and run evaluations.
+Cluster before fixing: 20 failures may share 2–3 root causes. Fix the root cause and measure the lift.
+
+Part 2: Eval Types and Metric Library
+
+
+Usually combine at least two evaluator types for useful signal: code-based is precise but narrow; LLM-as-judge is flexible but needs calibration; human review is the gold standard but slow.
+Evaluator type
+What it does
+When to use
+Examples
+Code-based
+A function scores output against a reference.
+Deterministic, machine-checkable answers.
+Exact match, JSON schema valid, contains keyword, regex match, numeric within tolerance.
+LLM-as-judge
+An LLM scores output against your rubric.
+Subjective quality captured by a rubric.
+Faithfulness, relevance, tone match, helpfulness, hallucination check.
+Human review
+You or a domain expert labels outputs manually.
+High-stakes metrics or LLM-judge calibration.
+Manager-rated usefulness, expert-rated correctness, customer satisfaction.
+Trajectory eval
+Scores the steps and final output.
+When the path matters: tool order, unnecessary calls.
+Tool selection accuracy, step count, retry behavior, hand-off timing.
+
+
+Metric library by use case type
+Choose 3–5 metrics, including at least one quality and one cost/latency metric.
+Metric category
+Common metrics + when to use
+Quality (RAG / Q&A)
+Faithfulness (does answer match retrieved context), Answer Relevance, Context Precision/Recall, Citation Accuracy, Refusal Rate on out-of-scope questions.
+Quality (Agentic)
+Task Completion Rate, Tool Selection Accuracy, Trajectory Correctness, Step Count vs Optimal, Hand-off Appropriateness, Error Recovery Rate.
+Quality (Generative)
+Brand Voice Match, Tone Match, Structural Compliance (length, format), Factuality vs Source, No-Hallucination Rate.
+Behavior / Safety
+Guardrail Compliance (no PII leaks, no unsafe content), Refusal on Forbidden Inputs, Escalation Triggered Correctly, Drift over Time.
+Cost / Latency
+p50 / p95 latency, Cost per Run, Token Usage, Tool Call Count, Cache Hit Rate.
+
+Part 3: Building Your Golden Dataset
+
+
+Build a representative golden dataset of 30–50 cases; unrepresentative cases produce misleading scores.
+Scenario mix
+Use this approximate mix across your 30–50 cases.
+Scenario type
+Share
+What it includes
+Happy path
+50%
+Common, well-formed inputs the agent must handle reliably.
+Edge cases
+30%
+Ambiguous inputs, partial data, multiple valid answers, and out-of-scope questions requiring graceful refusal.
+Known failures
+15%
+Known difficult or failing cases, including those omitted from demos; measure improvement here.
+Adversarial
+5%
+Prompt injection, jailbreaks, irrelevant questions, and malformed inputs to test guardrails and refusals.
+
+
+Where to source cases
+Sources below are ranked; prefer real data.
+Real user data (preferred)
+Production logs, ticket archives, past Slack threads, historical emails, real PRs from your repo. Anonymize first.
+Synthetic from real seeds
+Use an LLM to paraphrase real cases, swap entities, or vary difficulty; label manually.
+LLM-generated
+Last resort; useful for adversarial cases. Keep below 20% of the dataset and verify generated labels.
+Public benchmarks
+MS MARCO, HotpotQA, AgentBench, etc.: useful sanity checks, rarely task-specific. Do not rely on them alone.
+
+
+Golden dataset rules
+Every case needs a known correct answer or expected behavior. Label it before scoring, or exclude it.
+For the LangSmith route, store cases as a LangSmith dataset via its UI or SDK, rather than only a CSV, to rerun evaluations and compare versions.
+Tag the dataset version and use it for both baseline and re-evaluation; changing cases invalidates the delta.
+
+Part 4: LangSmith Playbook
+
+
+Use LangSmith to record structured traces, evaluate, and compare agent runs.
+Create one trace/case with child runs for agent steps, LLM calls, and tools. Reuse the trace structure and metadata schema across baseline and improved runs.
+Minimum viable setup
+1. Create a project
+Create an agent-named LangSmith project (e.g., “deal-review-eval”) to organize traces and evaluation runs; use the golden dataset for both runs.
+2. Configure LangSmith
+Install langsmith and relevant LangChain/LangGraph integrations. Set LANGSMITH_TRACING=true, LANGSMITH_API_KEY, LANGSMITH_PROJECT, and LANGSMITH_ENDPOINT. Never commit keys or include secrets/customer PII in trace inputs, outputs, or metadata.
+3. Verify one trace
+Run one case end to end. Verify its trace and LangGraph/model child runs, with case ID, run name, prompt version, expected/predicted output (true/predicted category for tickets), correctness, and timing/error metadata. Fix tracing before continuing.
+4. Upload your golden dataset
+Upload via LangSmith’s Datasets UI or `client.create_dataset()`. Include inputs, expected outputs where applicable, and scenario type/difficulty metadata.
+5. Write your evaluators
+Register evaluators with the dataset: score-returning Python functions for code-based checks, or a prompt template plus model for LLM-as-judge.
+6. Run the eval
+Run client.evaluate(agent, data, evaluators) or the provided notebook’s evaluation loop. Each case needs a result row and trace with matching case ID, run name, prompt version, expected/predicted output, and correctness. Keep the baseline trace structure and metadata schema for improved runs.
+7. Compare runs
+In LangSmith’s Comparison view, inspect metric deltas, per-case improvements/regressions, and trace differences. Link each score or spreadsheet row to its trace using the case/example ID.
+
+
+What to monitor in production
+Define production alerts beyond batch evaluation. Keep stable agent/prompt version, run name, environment, and case ID metadata so anomalies link to specific runs.
+Quality drift
+Faithfulness or task-completion drops by more than X% over a 7-day rolling window.
+Cost spike
+p95 cost-per-run exceeds budget by more than 25% over 24 hours (often signals a retrieval or tool-loop regression).
+Latency regression
+p95 latency exceeds SLA on more than 5% of runs.
+Guardrail trips
+Any refusal, PII redaction, or escalation rate change of more than 2x baseline.
+Tool failure rate
+Any single tool exceeds 5% failure rate over 1 hour (often signals an external dependency outage).
+
+Part 5: Improvement Playbook
+
+
+Choose 3–4 changes targeting your dominant baseline failure. The levers below are roughly ranked by impact per hour.
+Lever
+What to try
+Symptoms it fixes
+Prompt engineering
+Refine the system prompt, add few-shot examples, restructure the task, or specify refusals.
+Hand-waving in instructions, inconsistent format, refusal failures, tone drift.
+Retrieval tuning (RAG)
+Re-chunk, switch embedding model, add re-ranking, switch to hybrid search, expand query, filter by metadata.
+Faithfulness failures, irrelevant context, missing answers when info exists in corpus.
+Tool design
+Rewrite tool descriptions, split multi-purpose tools, validate inputs, or return richer errors.
+Wrong tools, repeated tool calls, malformed inputs.
+Control flow
+Change patterns (ReAct → plan-execute; single-agent → supervisor), cap steps, or add planning/verification.
+Excessive tool calls, missed steps, giving up, poor recovery from partial failures.
+Model upgrade
+Use a larger/newer model for the critical step; often costly, sometimes the only fix.
+Reasoning failures on complex multi-hop or multi-step tasks that prompt engineering cannot fix.
+Add guardrails
+Pre-call input filters, post-call output filters, structured output schemas, explicit refusal triggers.
+Hallucinations, PII leaks, unsafe content, format violations.
+Human-in-the-loop
+Require approval before writes or review low-confidence outputs.
+High-stakes failures where human review reduces the risk of harm.
+
+
+How to report improvements
+For each of 3–4 improvements, report the lever, change, targeted failure cluster, predicted impact, and measured delta. Example: “MiniLM → BGE-large for long-context faithfulness failures; predicted +5% faithfulness; measured +7%, with p95 latency +400ms.”
+Report regressions and negative deltas; they are useful evidence.
+
+How to submit
+
+
+Deliverables for Week 4
+Submit the checklist for your chosen track. 
+Social Media Post Evaluation
+Completed Social Media Post Evaluation spreadsheet 
+Demo video
+LLM-as-a-Judge materials (optional): prompt or notebook, judge outputs, agreement with human labels, disagreements, and notes on judge model changes.
+Customer Support Agent Evaluation
+Completed customer support spreadsheet: reviewed/corrected ground truth, predicted labels, PASS/FAIL comparisons, and your failure categories.
+Demo video
+Executed customer-support notebook with baseline/improved LangSmith traces, plus a trace screenshot or project/run link showing ticket-level traces and evaluation metadata. 
+Optional LLM-as-a-Judge: include results, human-vs-judge comparison, and judge model comparisons/change notes.
+Your Own Use Case / Week 3 Agent Evaluation
+Evaluate your agent with a spreadsheet or LangSmith. Tailor inputs, expected outputs/behaviors, and metrics to your use case; submit the following.
+Evaluation report: Use case, agent, target user/outcome, evaluation one-liner, 3–5 metrics (including quality and cost/latency), scoring method/rubric, and numeric pass bars.
+Golden dataset and scored results: 30–50 labeled happy-path, edge, known-failure, and adversarial cases. Each needs a case ID, input, expected output/behavior, baseline output and score or PASS/FAIL, failure category, and improved output/score. Use identical cases for both runs. Submit the completed spreadsheet or LangSmith dataset and results.
+Failure analysis and measured improvements: Top 3 failure modes with example cases; 3–4 targeted changes; before/after metrics and deltas, regressions, remaining failures, and next steps.
+Supporting materials: Prompts, rubrics, and relevant agent/evaluator code or executed notebook. If using an LLM judge, include its prompt, outputs, and comparison with human labels.
+LangSmith evidence (if used): Baseline/improved project or run links, or trace screenshots with case-level inputs/outputs, IDs, prompt/agent version, scores, and available latency, tokens, and errors. Spreadsheet submissions provide case-level results and the scoring rubric.
+Demo video: A short Loom showing the use case, dataset, evaluation process, an example failure, changes, and measured results.
+Final submission
+
+Upload your track’s spreadsheet, solution doc (with relevant prompts/screenshots), executed notebook where applicable, and a short Loom covering changes, improvements, and remaining failures. Include LangSmith trace evidence for Customer Support and own-use-case LangSmith submissions; spreadsheet-based own-use-case submissions need case-level results and a scoring rubric.

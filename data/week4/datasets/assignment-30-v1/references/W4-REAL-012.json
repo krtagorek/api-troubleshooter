@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-012",
+  "expected_supported_response": "Supported JSON-parsing diagnosis, exact payload defect unresolved. Preserve POST /euronews/mytable/1266?pretty=true, HTTP 400 and nested json_parse_exception location. Exact payload unavailable; no invented corrected JSON or confirmed later mapping fix.",
+  "acceptable_uncertainty_clarification": "JSON parsing failure is supported; request sanitized exact serialized bytes near the reported location before specifying the exact payload correction.",
+  "forbidden_unsupported_claims": "Do not fabricate corrected JSON or promote later mapping discussion to a verified fix for this request.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Supported JSON-parsing diagnosis, exact payload defect unresolved. Preserve POST /euronews/mytable/1266?pretty=true, HTTP 400 and nested json_parse_exception location. Exact payload unavailable; no invented corrected JSON or confirmed later mapping fix.",
+    "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "collection": "First public-source development candidates",
+  "version": "human-reviewed-2",
+  "collected_on": "2026-10-28",
+  "review_status": "ACCEPTED_CONTENT_RUNTIME_PENDING",
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "provenance": "Real third-party public reports, AI-curated paraphrases and expectations explicitly reviewed by the user in this conversation. Not independently reproduced. Development-exposed, not reserved. Public redistribution rights remain unadjudicated.",
+  "schema_status": "Evidence records only, NOT runner-ready Incident records. Null values represent missing observations. Do not fabricate required fields.",
+  "separation": "Only inference_evidence may be considered for future runtime mapping. Titles, URLs, families and proposed_review are evaluator-only. Review prose for answer leakage before mapping.",
+  "cases": [
+    {
+      "id": "W4-REAL-001",
+      "source_url": "https://github.com/stripe/stripe-python/issues/316",
+      "source_date": "2017-05-23",
+      "family": "stripe-list-expansion",
+      "scope": "API parameter validation",
+      "inference_evidence": {
+        "service": "Stripe",
+        "operation": "Charge.list",
+        "http_method": null,
+        "status_code": null,
+        "observations": [
+          "A list request expands application without a data prefix.",
+          "InvalidRequestError identifies application and suggests data.application.",
+          "Reporter states that prefixing the list expansion paths with data. makes the request work."
+        ],
+        "logs": [
+          {
+            "source": "reported SDK exception",
+            "message": "This property cannot be expanded (application)."
+          }
+        ]
+      },
+      "proposed_review": {
+        "expected_behavior": "Explain expansion paths within the list wrapper; propose checking data.application. Do not infer authentication failure.",
+        "source_support": "Reporter says prefixed paths work; contributor explains nesting under data.",
+        "sufficiency": "Qualified diagnosis",
+        "missing": "HTTP status, SDK version and raw response absent.",
+        "integration": "Blocked: required status/method not observed. No guessed values.",
+        "question": "Accept as a supported parameter-path case?",
+        "status": "Accepted by user with recorded qualifications; retained for provenance"
+      },
+      "human_review": {
+        "decision": "ACCEPT_WITH_REVISIONS",
+        "accepted_case_type": "Supported parameter-path diagnosis",
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "reviewer": "User in this conversation",
+        "confirmation_evidence": "Explicit user acceptance in the case-by-case conversation",
+        "reviewed_at": null,
+        "recorded_at": "2026-10-28T23:39:03Z",
+        "notes": "Add the reporter's successful prefixed-path comparison to inference evidence; do not require every expansion field.",
+        "semantic_scores": null,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Explain expansion paths within the list wrapper; propose checking data.application. Do not infer authentication failure.",
+      "runtime_ready": false
+    },
+    {
+      "id": "W4-REAL-002",
+      "source_url": "https://github.com/stripe/stripe-python/issues/1437",
+      "source_date": "2024-12-19",
+      "family": "stripe-async-tls",
+      "scope": "API client connectivity",
+      "inference_evidence": {
+        "service": "Stripe",
+        "operation": "checkout.Session.create_async",
+        "http_method": null,
+        "status_code": null,
+        "observations": [
+          "Reporter compares stripe-python 11.4.0 failure with 11.3.0 success under asyncio and HTTPXClient.",
+          "Trace reaches TLS setup; Python versions 3.9.15/3.12.2; macOS/Fedora reported."
+        ],
+        "logs": [
+          {
+            "source": "reported client traceback",
+            "message": "httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate"
+          }
+        ]
+      },
+      "proposed_review": {
+        "expected_behavior": "Identify local certificate-chain validation failure and investigate SDK/client trust configuration. Preserve uncertainty about exact underlying defect.",
+        "source_support": "Version comparison and TLS traceback; no maintainer resolution visible in retrieved page.",
+        "sufficiency": "Mechanism supported; root defect unconfirmed",
+        "missing": "No HTTP response/status or verified patch.",
+        "integration": "Blocked: no observed HTTP status. A TLS failure is not HTTP 500.",
+        "question": "Accept mechanism-level explanation, rejecting advice to disable verification?",
+        "status": "Accepted by user with recorded qualifications; retained for provenance"
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "accepted_case_type": "Mechanism supported; underlying defect unconfirmed",
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "reviewer": "User in this conversation",
+        "confirmation_evidence": "Explicit user acceptance in the case-by-case conversation",
+        "reviewed_at": null,
+        "recorded_at": "2026-10-28T23:39:03Z",
+        "notes": "TLS mechanism and version association accepted; exact cause unconfirmed. No disabling verification.",
+        "semantic_scores": null,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Identify local certificate-chain validation failure and investigate SDK/client trust configuration. Preserve uncertainty about exact underlying defect.",
+      "runtime_ready": false
+    },
+    {
+      "id": "W4-REAL-003",
+      "source_url": "https://github.com/boto/boto3/issues/4400",
+      "source_date": "2025-01-17",
+      "family": "boto-s3-acceleration-signing",
+      "scope": "API signing/version interaction",
+      "inference_evidence": {
+        "service": "AWS S3",
+        "operation": "PutObject via upload_file",
+        "http_method": null,
+        "status_code": null,
+        "observations": [
+          "Reporter uses boto3/botocore 1.36.x with transfer acceleration and s3v4.",
+          "Reporter says disabling acceleration or using boto3 1.35.99 succeeds.",
+          "Environment: Python 3.9.4, Ubuntu 20.04.6."
+        ],
+        "logs": [
+          {
+            "source": "reported SDK exception",
+            "message": "SignatureDoesNotMatch"
+          }
+        ]
+      },
+      "proposed_review": {
+        "expected_behavior": "Prioritize version/acceleration interaction; request sanitized signing/region diagnostics before naming an exact defect. Do not assert invalid credentials.",
+        "source_support": "Contributor requests logs/region. Original reporter disputes another comment's third-party-only explanation; later reports mention differing outcomes.",
+        "sufficiency": "Qualified hypothesis",
+        "missing": "Raw status/headers and precise version absent.",
+        "integration": "Blocked: status not observed. Keep original reporter separate from other commenters.",
+        "question": "Accept as regression investigation rather than definitive checksum diagnosis?",
+        "status": "Accepted by user with recorded qualifications; retained for provenance"
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "accepted_case_type": "Qualified hypothesis",
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "reviewer": "User in this conversation",
+        "confirmation_evidence": "Explicit user acceptance in the case-by-case conversation",
+        "reviewed_at": null,
+        "recorded_at": "2026-10-28T23:39:03Z",
+        "notes": "Prioritize version/acceleration interaction; no definitive credential or checksum diagnosis.",
+        "semantic_scores": null,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Prioritize version/acceleration interaction; request sanitized signing/region diagnostics before naming an exact defect. Do not assert invalid credentials.",
+      "runtime_ready": false
+    },
+    {
+      "id": "W4-REAL-004",
+      "source_url": "https://github.com/orgs/community/discussions/24494",
+      "source_date": "2020-07-31",
+      "family": "github-secondary-rate-limit",
+      "scope": "API rate-limit ambiguity",
+      "inference_evidence": {
+        "service": "GitHub GraphQL",
+        "operation": "GraphQL requests using app authentication",
+        "http_method": null,
+        "status_code": 403,
+        "observations": [
+          "Reporter sees bursts lasting seconds, sometimes 20–30 seconds.",
+          "No detailed message reported; reporter says primary quota is not exhausted."
+        ],
+        "logs": []
+      },
+      "proposed_review": {
+        "expected_behavior": "Offer secondary limiting as a hypothesis; request sanitized response headers, request timing/concurrency, and quota evidence. Do not declare the cause proven.",
+        "source_support": "Accepted responder suggests secondary/anti-abuse limiting rather than establishing it from a captured response.",
+        "sufficiency": "Ambiguous; clarification appropriate",
+        "missing": "HTTP method, response headers/body and request pattern absent.",
+        "integration": "Blocked: method not observed; no fabricated log event.",
+        "question": "Accept as uncertainty case where confident permission-denied diagnosis fails?",
+        "status": "Accepted by user with recorded qualifications; retained for provenance"
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "accepted_case_type": "Ambiguous evidence",
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "reviewer": "User in this conversation",
+        "confirmation_evidence": "Explicit user acceptance in the case-by-case conversation",
+        "reviewed_at": null,
+        "recorded_at": "2026-10-28T23:39:03Z",
+        "notes": "Secondary limiting is a hypothesis. Request discriminating metadata; no status-only diagnosis.",
+        "semantic_scores": null,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Offer secondary limiting as a hypothesis; request sanitized response headers, request timing/concurrency, and quota evidence. Do not declare the cause proven.",
+      "runtime_ready": false
+    },
+    {
+      "id": "W4-REAL-005",
+      "source_url": "https://github.com/encode/httpx/issues/739",
+      "source_date": "2020-01-08",
+      "family": "httpx-chunked-redirect",
+      "scope": "Accepted transport-edge case: generic HTTP client",
+      "inference_evidence": {
+        "service": "HTTP endpoint (identity omitted)",
+        "operation": "GET /",
+        "http_method": "GET",
+        "status_code": 302,
+        "observations": [
+          "Trace records a redirect to HTTPS port 4433 with Transfer-Encoding: chunked.",
+          "A protocol exception follows the redirect response.",
+          "Reporter states curl works."
+        ],
+        "logs": [
+          {
+            "source": "reported HTTPX trace",
+            "message": "h11.RemoteProtocolError; their_state=ERROR; error_status_hint=400"
+          }
+        ]
+      },
+      "proposed_review": {
+        "expected_behavior": "Investigate missing/malformed chunked response framing as a qualified hypothesis. Distinguish observed 302 from exception hint 400.",
+        "source_support": "Maintainer suggests framing/body problem, using tentative language; no raw body confirmation.",
+        "sufficiency": "Qualified transport hypothesis",
+        "missing": "Raw body, SDK version and confirmed root cause absent.",
+        "integration": "Status/method available; remaining schema/redaction checks not run. Endpoint identity omitted; do not replay.",
+        "question": "Include HTTP transport failures in scope, or replace this candidate?",
+        "status": "Accepted by user with recorded qualifications; retained for provenance"
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "accepted_case_type": "Transport-edge qualified hypothesis",
+        "runtime_status": "RUNTIME_VALIDATION_PENDING",
+        "reviewer": "User in this conversation",
+        "confirmation_evidence": "Explicit user acceptance in the case-by-case conversation",
+        "reviewed_at": null,
+        "recorded_at": "2026-10-28T23:39:03Z",
+        "notes": "Generic HTTP transport failures are accepted in scope. Distinguish actual 302 from exception hint 400.",
+        "semantic_scores": null,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Investigate missing/malformed chunked response framing as a qualified hypothesis. Distinguish observed 302 from exception hint 400.",
+      "runtime_ready": false
+    }
+  ],
+  "recorded_at": "2026-10-28T23:39:03Z",
+  "timestamp_note": "Recorded-at is processing time. Exact individual confirmation timestamps are unavailable and are not fabricated.",
+  "approval_boundary": "Content/scope review only. No live model execution, trace export, runtime compatibility, complete golden-set freeze, or remediation approval."
+}

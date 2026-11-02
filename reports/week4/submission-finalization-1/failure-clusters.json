@@ -1,0 +1,53 @@
+{
+  "basis": "Recorded baseline mechanisms, disjoint assigned-case costs, not causal cost attribution",
+  "clusters": {
+    "pre_analyst_hold": {
+      "count": 27,
+      "case_ids": [
+        "W4-REAL-005",
+        "W4-REAL-006",
+        "W4-REAL-008",
+        "W4-REAL-009",
+        "W4-REAL-011",
+        "W4-REAL-012",
+        "W4-REAL-013",
+        "W4-REAL-014",
+        "W4-REAL-015",
+        "W4-REAL-016",
+        "W4-REAL-017",
+        "W4-REAL-018",
+        "W4-REAL-019",
+        "W4-REAL-020",
+        "V2-04-01",
+        "V2-05-01",
+        "W4-REAL-007",
+        "W4-REAL-021",
+        "W4-REAL-022",
+        "W4-REAL-023",
+        "W4-REAL-024",
+        "W4-REAL-025",
+        "W4-REAL-026",
+        "W4-REAL-027",
+        "W4-REAL-028",
+        "W4-REAL-029",
+        "W4-DRAFT-031-v1"
+      ],
+      "case_associated_cost_usd": "0.0483668"
+    },
+    "later_hold": {
+      "count": 2,
+      "case_ids": [
+        "W4-DRAFT-032-v1",
+        "V2-03-01"
+      ],
+      "case_associated_cost_usd": "0.0142180"
+    },
+    "resolution_failure": {
+      "count": 1,
+      "case_ids": [
+        "V2-15-01"
+      ],
+      "case_associated_cost_usd": "0.0056040"
+    }
+  }
+}

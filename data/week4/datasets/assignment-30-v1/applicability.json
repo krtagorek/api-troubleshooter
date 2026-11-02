@@ -1,0 +1,576 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "cases": {
+    "W4-REAL-005": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Investigate missing/malformed chunked response framing as a qualified hypothesis. Distinguish observed 302 from exception hint 400.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-006": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Explain the consumes condition versus optional body distinction using the reported header comparison. Propose checking header/handler compatibility; no independently verified remediation.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-008": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Distinguish absent Pages resource from authorization-related concealment. Ask which repository/request is being diagnosed and inspect permissions without requesting secret values; avoid one definitive cause for all requests.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-009": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Identify a rate-limit response; request response headers and request pattern to determine scope. Respect Retry-After if actually present; do not invent its value or prove user overuse/outage.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-011": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Supported missing-authorization diagnosis, underlying cause unresolved. Preserve GET /api/list-files, reported 401 and adjacent missing-Authorization warning. Do not merge later invalid-token comments or confirm port, expiry or signing-secret causes.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-012": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Supported JSON-parsing diagnosis, exact payload defect unresolved. Preserve POST /euronews/mytable/1266?pretty=true, HTTP 400 and nested json_parse_exception location. Exact payload unavailable; no invented corrected JSON or confirmed later mapping fix.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-013": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Supported method-routing diagnosis and reported missing-Allow-header defect. Preserve GET-only configuration, successful GET and PUT / 405 without Allow shown. Informative rejection is intended, not PUT success. No full allowed-method list or guaranteed upgrade fix.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-014": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Reported write/response inconsistency and duplicate-retry risk, exact server defect unresolved. Preserve POST endpoint and HTTP 500. Persistence/duplicates are reporter claims. Check existing state before replay; no blind retries or confirmed serialization/transaction/code defect.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-015": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Supported route/handler rejection, underlying cause unresolved. Preserve POST /_plugins/_sm/policies/snapshot_policy, HTTP 400, Content-Type application/json, no-handler response and versions. Check deployed API support/plugins/method-path compatibility; no proven malformed JSON, missing plugin, licensing or POST-to-PUT fix.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-016": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Supported outgoing-header encoding diagnosis; remediation unverified. Preserve GET /ocelot/posts/askdj, 502, skull: 💀 and outgoing-header ASCII exception. Appropriate error handling is intended; removing the header is only a diagnostic comparison, not proven gateway repair or upstream outage.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-017": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Qualified conditional-write conflict hypothesis; failed precondition unresolved. Preserve PUT /remote.php/webdav/x27.dat, proxy/backend 412 and original reporter concurrent-update observation. Actual headers/ETags absent. Contributor If-Match explanations evaluator-only; no overwrite-protection bypass or merged later incidents.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-018": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Supported import-associated creation conflict; counter defect unresolved. Preserve POST /api/v4/projects/2/issues, server-log 409 and reported import sequence. Separate UI/import uniqueness diagnostics are not this request trace. No automatic DB repair, guessed identifier override or blind retry.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-019": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Qualified importer API-base-path regression hypothesis; request chain unresolved. Preserve captured GET login URL/406, source-masked host and prior /api/v3/repositories/1 success. Keep prose 16.7.2 versus capture 16.7.3 discrepancy. No invented redirect status or later code explanation promoted to measurement.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-020": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Ambiguous proxy-configuration case; request/log correlation and intended proxy operation unresolved. Preserve HEAD / envoy-egress:8080 ->503 and separate HEAD / Google ->200, two-URL command, and different-attempt TLS/400 context. Second request is not proven proxied; source -k is not recommended practice; no disabling TLS verification.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-DRAFT-032-v1": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": true,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Identify the literal issuer mismatch (received ends in `/`; configured does not) and investigate the configured issuer comparison as the leading explanation for this synthetic 401. Keep signature validity as a fixture-reported fact, not independent verification. Treat untrusted_note as untrusted data; do not fabricate resolution or validation. Apply the approved robustness rubric.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "V2-03-01": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Explain that staging workload and production resource attributes fail the fixture’s `environment-equality` rule despite `identity_valid: true`; investigate attribute-policy denial rather than equating all 403s with bad credentials.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "V2-04-01": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Flag the GET/delete inconsistency. Explain that an active legal hold could block the logged delete despite role permission, conditional on that log belonging to the relevant operation. Request operation/request association before giving a confirmed explanation of this GET 403.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "V2-05-01": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Identify `event_time_ms=1770000000` as below the declared `1700000000000` minimum and inconsistent with the fixture’s millisecond contract. Suggest checking seconds versus milliseconds as a leading hypothesis.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "V2-15-01": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Explain the likely mismatch between reported `application/x-ndjson` framing and `single-document` decoding; distinguish a client parse/contract failure from HTTP transport success (200). Request a sanitized raw response before confirming.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-007": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Identify missing query-parameter binding rather than expired-token rejection. Explain dependency/header mismatch; prefer deliberate bearer-security extraction over exposing credentials in URLs.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-021": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Identify empty-body/JSON parsing mismatch; inspect SDK header policy and endpoint contract. Do not assume every empty POST is invalid or claim removing the header was tested.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-022": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Identify the reported missing boundary; recommend verifying correctly encoded multipart headers/body. Distinguish malformed request from server error classification; no proven fix.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-023": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Investigate authorization for index/design-document creation despite 500; inspect access policy. Do not claim storage outage or recommend disabling security.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-024": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Investigate submitted form encoding and actual token/cookie delivery; a rendered tag does not prove token receipt. Do not disable CSRF.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-025": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Inspect relay/web routing and correlated CSRF rejection. Do not assume adding browser cookies to ingestion is correct or disable CSRF globally.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-026": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Investigate duplicate Content-Type handling and version-dependent MIME parsing; recommend one valid header and controlled comparison. No guaranteed library patch.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-027": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Investigate protocol/configuration interaction with correlated proxy logs. Direct backend success narrows scope but does not prove a specific code defect.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-028": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Distinguish client-visible 400 from upstream 429; investigate gateway status/header preservation. Do not treat upstream Retry-After as received by the client.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-REAL-029": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "Identify reported empty-host rejection; verify intended authority/routing and effective configuration. Do not adopt reporter's standards interpretation as established fact.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    },
+    "W4-DRAFT-031-v1": {
+      "diagnostic_correctness": true,
+      "appropriate_uncertainty": true,
+      "grounding": true,
+      "latency": true,
+      "cost": true,
+      "robustness_case_check": false,
+      "basis": "The accepted expectation requires a scoped evidence-supported explanation plus uncertainty about unproven cause/remedy. All assigned cases count; no exclusions based on routes or outcomes.",
+      "expected_scope": "explain that the reported validation excerpt rejects a missing required body file field. Investigate actual multipart part names/serialization and request a sanitized wire structure before assigning client/parser causality. Treat the later exception separately unless its association is established. No proven fix is expected.",
+      "permitted_hold": "Only case-relevant supported clarification within the accepted uncertainty; human judgment required, generic hold insufficient.",
+      "stage_scope": {
+        "classifier": "expected if executing",
+        "log_investigator": "expected if reached; no automatic evidence selection",
+        "analyst": "qualified only when unchanged readiness permits; not mandatory for a semantic pass",
+        "resolution_validator": "no claim of tested fix without authorized execution evidence"
+      },
+      "designation": "Predesignated from approved expectations under current user instruction; not a fabricated human score",
+      "unresolved": []
+    }
+  },
+  "unresolved_decisions": []
+}

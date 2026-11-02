@@ -1,0 +1,47 @@
+{
+  "test_command": ".venv-week4-py311/bin/python -m unittest scripts.week4_reviewed_compatibility_tests scripts.week4_reviewed_batch2_tests scripts.week4_reviewed_batch3_tests scripts.week4_reviewed_batch4_tests -v",
+  "tests_passed": 39,
+  "batch_counts": {
+    "human_accepted": 5,
+    "input_schema_compatible": 5,
+    "evidence_preserving_input_compatible": 5,
+    "graph_executed": 0,
+    "golden_set_ready": 0
+  },
+  "cumulative_counts": {
+    "scope": "Local imported real cases 001–020; external past use remains unknown",
+    "human_accepted": 20,
+    "input_schema_compatible": 15,
+    "evidence_preserving_input_compatible": 14,
+    "graph_executed": 0,
+    "golden_set_ready": 0,
+    "schema_pass_with_evidence_loss_ids": [
+      "W4-REAL-007"
+    ],
+    "runtime_blocked_ids": [
+      "W4-REAL-001",
+      "W4-REAL-002",
+      "W4-REAL-003",
+      "W4-REAL-004",
+      "W4-REAL-007",
+      "W4-REAL-010"
+    ],
+    "meaning": "Input-compatible means supported schema/sanitization/initialization/catalog, not exercised workflow or frozen golden eligibility."
+  },
+  "external_network_blocked": true,
+  "graph_executed": false,
+  "provider_sdk_imported": false,
+  "baseline_entries_checked": 328,
+  "baseline_mismatches": [],
+  "baseline_manifest_sha256": "0ad4421d9342b780996b70de8b72d9d0cab1b771e6f37fd82dd4c5ccbf42b62f",
+  "prior_review_artifacts_checked": 33,
+  "prior_artifact_mismatches": [],
+  "inventory_rows": 235,
+  "inventory_unique_ids": 235,
+  "old_230_row_prefix_matches": true,
+  "idempotence_verified": true,
+  "source_hashes": {
+    "api-incident-candidates-016-020-v1.json": "1afd93762b41edf0a4777edd80aef8e41fdc0b9cb32b3db5eeb35d578fc9337a",
+    "api-incident-reviewed-016-020-v5.json": "b503fdd5ee0f7e5ab2a403f8b05bfbaeeef6a1e88f721098a5d4dab9d2029893"
+  }
+}

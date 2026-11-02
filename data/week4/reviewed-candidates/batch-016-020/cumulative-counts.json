@@ -1,0 +1,20 @@
+{
+  "scope": "Local imported real cases 001–020; external past use remains unknown",
+  "human_accepted": 20,
+  "input_schema_compatible": 15,
+  "evidence_preserving_input_compatible": 14,
+  "graph_executed": 0,
+  "golden_set_ready": 0,
+  "schema_pass_with_evidence_loss_ids": [
+    "W4-REAL-007"
+  ],
+  "runtime_blocked_ids": [
+    "W4-REAL-001",
+    "W4-REAL-002",
+    "W4-REAL-003",
+    "W4-REAL-004",
+    "W4-REAL-007",
+    "W4-REAL-010"
+  ],
+  "meaning": "Input-compatible means supported schema/sanitization/initialization/catalog, not exercised workflow or frozen golden eligibility."
+}

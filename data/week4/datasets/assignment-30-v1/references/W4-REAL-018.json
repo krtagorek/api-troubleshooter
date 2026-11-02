@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-018",
+  "expected_supported_response": "Supported import-associated creation conflict; counter defect unresolved. Preserve POST /api/v4/projects/2/issues, server-log 409 and reported import sequence. Separate UI/import uniqueness diagnostics are not this request trace. No automatic DB repair, guessed identifier override or blind retry.",
+  "acceptable_uncertainty_clarification": "Import-associated creation conflict is supported; correlate the specific API request before treating an issue-counter defect as confirmed.",
+  "forbidden_unsupported_claims": "No automatic DB repair, guessed identifier override, blind retry, invented publication date, or promotion of separate UI/import diagnostics into this trace.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Supported import-associated creation conflict; counter defect unresolved. Preserve POST /api/v4/projects/2/issues, server-log 409 and reported import sequence. Separate UI/import uniqueness diagnostics are not this request trace. No automatic DB repair, guessed identifier override or blind retry.",
+    "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

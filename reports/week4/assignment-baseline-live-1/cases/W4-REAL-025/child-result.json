@@ -1,0 +1,176 @@
+{
+  "case_id": "W4-REAL-025",
+  "errors": [],
+  "evidence_policy": "inherited",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "authentication",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_error",
+        "/request_metadata/reported_handler",
+        "/request_metadata/status_evidence/kind",
+        "/status_code"
+      ],
+      "reasoning": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:db7f54feb2cde8566750e4f8",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Access and application logs record POST /api/2/envelope/ returning 403.\n- Warning says CSRF cookie not set; recorded handler is RedirectView.\n- Relay reports envelope delivery failure while web UI works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:6886cdc23d7609098387e226",
+          "observation": "CSRF cookie not set",
+          "reference": "/request_metadata/reported_error",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:a043eca98eb48791ef53e438",
+          "observation": "django.views.generic.base.RedirectView",
+          "reference": "/request_metadata/reported_handler",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:db5f9e9cb0273dc1bf220094",
+          "observation": "reporter_published_access_application_logs_403",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f1d3c26d2ce2781adbcb18c3:56ff0eec3b9dc35177e93381",
+          "observation": "403",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "Unsafe credential-material request replaced by trusted safety policy; confirmation remains outstanding.",
+          "required_to_resolve": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+        },
+        {
+          "description": "No response body content to confirm error details or server messages.",
+          "required_to_resolve": "Captured response body or error message from the server for the 403 response."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-025",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval.",
+      "Captured response body or error message from the server for the 403 response.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Access and application logs record POST /api/2/envelope/ returning 403.\n- Warning says CSRF cookie not set; recorded handler is RedirectView.\n- Relay reports envelope delivery failure while web UI works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/api/2/envelope/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Deliver the intended envelope through POST /api/2/envelope/.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-025",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_error": "CSRF cookie not set",
+        "reported_handler": "django.views.generic.base.RedirectView",
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "reporter_published_access_application_logs_403"
+        }
+      },
+      "response_body": null,
+      "service": "Sentry self-hosted",
+      "severity": "unknown",
+      "status_code": 403
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "0a365ad1-49b2-4352-8fee-0760eb2da222",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "57ad5b4a-ebf6-49e7-a68d-59543b088d9a",
+      "elapsed_seconds": 1.73972695809789,
+      "error": null,
+      "input_tokens": 1265,
+      "output_tokens": 170,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1435
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "c21a6450-6de4-4bf3-82a8-79017f25403c",
+      "elapsed_seconds": 1.6392361249309033,
+      "error": null,
+      "input_tokens": 1581,
+      "output_tokens": 179,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1760
+    }
+  ],
+  "root_id": "0a365ad1-49b2-4352-8fee-0760eb2da222",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

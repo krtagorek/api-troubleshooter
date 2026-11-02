@@ -1,0 +1,169 @@
+{
+  "case_id": "W4-REAL-008",
+  "errors": [],
+  "evidence_policy": "inherited",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/response_body",
+        "/status_code"
+      ],
+      "reasoning": "The incident reports a 404 Not Found status for a GET request to retrieve Pages information from a repository. However, the evidence is reporter-stated, not independently reproduced, and the response body is null. There is no clear indication whether the failure is due to authorization, resource absence, or other causes. The evidence does not conclusively indicate a specific failure category such as authentication, authorization, validation, rate limiting, timeout, server error, schema mismatch, or dependency failure."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:00ca30aed3632356c2f40bfb:2a0e85c599e6c5df5c565480",
+          "observation": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly calls this a GET request and reports 404 for the shown endpoint.\n- Reporter also reports failures on owned repositories with Pages configured; branch endpoints work.\nThe shown example request and the separately reported reporter-owned repository requests are distinct; no shared outcome is established.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:00ca30aed3632356c2f40bfb:3f4a69032d300a2d2aa61d32",
+          "observation": "Retrieve Pages information for the repository in the shown GET request.",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:00ca30aed3632356c2f40bfb:333207f7c74cd957c8a7addf",
+          "observation": "null",
+          "reference": "/response_body",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:00ca30aed3632356c2f40bfb:66463dee8efb91ac7242ea20",
+          "observation": "404",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent reproduction or verification of the reported 404 status code and null response body.",
+          "required_to_resolve": "Independent request logs or server-side logs confirming the 404 response and response body content."
+        },
+        {
+          "description": "Unsafe credential-material request replaced by trusted safety policy; confirmation remains outstanding.",
+          "required_to_resolve": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-008",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Independent request logs or server-side logs confirming the 404 response and response body content.",
+      "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly calls this a GET request and reports 404 for the shown endpoint.\n- Reporter also reports failures on owned repositories with Pages configured; branch endpoints work.\nThe shown example request and the separately reported reporter-owned repository requests are distinct; no shared outcome is established.",
+      "endpoint": "/repos/octocat/hello-world/pages",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Retrieve Pages information for the repository in the shown GET request.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-008",
+      "logs": [],
+      "request_metadata": {
+        "accept": "application/vnd.github.v3+json",
+        "repository_scope": {
+          "other_reported_requests": "Reporter-owned repositories; identities and exact requests not supplied; separate from the shown example.",
+          "shown_endpoint_role": "example repository"
+        },
+        "status_evidence": {
+          "captured_status_line_available": false,
+          "kind": "reporter_stated"
+        }
+      },
+      "response_body": null,
+      "service": "GitHub REST API",
+      "severity": "unknown",
+      "status_code": 404
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "c9855ba6-7f6f-4128-a385-253df64ba697",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "975a29b6-ac1f-4d8e-9012-681731aa3375",
+      "elapsed_seconds": 2.014820208074525,
+      "error": null,
+      "input_tokens": 1221,
+      "output_tokens": 181,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1402
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "22e507a7-a874-4e11-ad9e-8b52a3852c9f",
+      "elapsed_seconds": 1.6196469999849796,
+      "error": null,
+      "input_tokens": 1554,
+      "output_tokens": 171,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1725
+    }
+  ],
+  "root_id": "c9855ba6-7f6f-4128-a385-253df64ba697",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

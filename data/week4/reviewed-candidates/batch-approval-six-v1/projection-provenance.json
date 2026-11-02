@@ -1,0 +1,21 @@
+{
+  "kind": "SOURCE_FACT_MAPPING_ONLY",
+  "case_id": "W4-REAL-007",
+  "projection_version": "neutral-signature-parts-v1",
+  "input_path": "data/week4/reviewed-candidates/batch-approval-six-v1/inference/W4-REAL-007.json",
+  "input_sha256": "d77f3671d5d45286ce44e1f383861079962ab8c071d86013e33e938ab83dfc36",
+  "archived_source": "data/week4/reviewed-candidates/batch-006-010/sources/api-incident-reviewed-006-010-v5.json",
+  "archived_source_sha256": "682f0b0e1564f79528cb86a7e3048ffafdf9f51e67253dfd1d8561446f50a5df",
+  "historical_preview": "data/week4/reviewed-candidates/batch-006-010/runtime-assessment.json",
+  "historical_preview_sha256": "d2ea446e33c3f52fb15d65fc51329c7d24ce067231eefb1e25d85ae15f5bb62a",
+  "field_mapping": {
+    "authorization_scheme_reported": "reported_header_scheme",
+    "dependency_code": "dependency_signature_parts (function, parameter_name, annotation)"
+  },
+  "signature_reconstructed": "decode_access_token(token: str)",
+  "representation_change": "Formatting and JSON pointer paths change; source declaration and other input facts preserved.",
+  "independently_reproduced": false,
+  "authenticated_request_correlation": false,
+  "human_mapping_acceptance": "User in this conversation",
+  "reviewed_at": null
+}

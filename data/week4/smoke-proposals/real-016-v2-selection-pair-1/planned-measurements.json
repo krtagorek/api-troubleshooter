@@ -1,0 +1,14 @@
+{
+  "assigned_arms": 2,
+  "case_version": "report-evidence-v2-1",
+  "measurement_values_before_execution": null,
+  "required_reference_coverage": "selected_required_reference_count / required_reference_count from snapshot-bound V2 operands and attribution leaves; not semantic accuracy",
+  "valid_selection": "valid_selected_references means catalog ID/reference/scalar binding; not sufficient evidence or confirmed cause",
+  "analyst_entry": "actual root_cause_analyst stage start/completion only; not diagnostic success",
+  "terminal_outcome": "held/completed/failed/timeout/interrupted with errors; unattempted arm retained if baseline blocks treatment",
+  "tokens": "sum durable provider receipts across actual attempted calls; input/output/cache/reasoning; unknown stays null",
+  "cost": "usage at bound rates, or retained uncertain reservations; never assume absent usage is zero; not invoice verification",
+  "latency": "case elapsed from before process start through reaping and fsynced terminal journal/reconciliation, excluding report/export; model elapsed sum of ended attempted calls, never root+node+model totals",
+  "semantic_quality": "Genuine human review required; review worksheet remains blank",
+  "pairing_limitations": "Independent live outputs may differ; identical upstream requests do not guarantee identical classifier responses. Later payload differences may be downstream consequences. One case cannot establish isolated causality."
+}

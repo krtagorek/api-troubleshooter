@@ -1,0 +1,25 @@
+{
+  "case_id": "W4-REAL-015",
+  "incident": {
+    "incident_id": "W4-REAL-015",
+    "service": "OpenSearch",
+    "endpoint": "/_plugins/_sm/policies/snapshot_policy",
+    "http_method": "POST",
+    "status_code": 400,
+    "request_metadata": {
+      "status_evidence": {
+        "kind": "reported_curl_status_line"
+      },
+      "observation_representation": "Attributed public-report paraphrases, not independently reproduced measurements.",
+      "response_body_scope": "reported_excerpt_completeness_unknown"
+    },
+    "response_body": {
+      "error": "no handler found for uri [/_plugins/_sm/policies/snapshot_policy] and method [POST]"
+    },
+    "logs": [],
+    "expected_behavior": "Submit the intended snapshot policy through the reported POST /_plugins/_sm/policies/snapshot_policy operation.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Verbose curl shows POST to the named path, Content-Type application/json and HTTP/1.1 400.\n- Response reports no handler for this URI and POST.\n- Reporter lists OpenSearch 2.0.1 with Graylog 5.0.3.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

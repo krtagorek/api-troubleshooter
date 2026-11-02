@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-009",
+  "expected_supported_response": "Identify a rate-limit response; request response headers and request pattern to determine scope. Respect Retry-After if actually present; do not invent its value or prove user overuse/outage.",
+  "acceptable_uncertainty_clarification": "Identify the supported rate-limit response, then request headers and request-pattern evidence for scope and cause.",
+  "forbidden_unsupported_claims": "Do not invent Retry-After, quota values, excessive user traffic, a confirmed outage, or a captured transport status line.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Supported rate-limit response, scope/cause unresolved. Reporter-stated 429 echoed in body, not a captured status line. No invented Retry-After, quotas, excessive traffic or outage.",
+    "confirmation_evidence": "Explicit user decisions in this conversation (006–010 import request)",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

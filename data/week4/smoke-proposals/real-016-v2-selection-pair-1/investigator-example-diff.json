@@ -1,0 +1,186 @@
+{
+  "version": "attributed-selection-dependencies-v1",
+  "added_user_json_field": "selection_dependency_advisory",
+  "added": {
+    "version": "attributed-selection-dependencies-v1",
+    "evidence_contract": "evidence-handles-v1",
+    "evidence_snapshot": "a153398686288d9b0ca69b6deca394dba17f9a332cbea86e5d6175c22406693d",
+    "instruction": "Dependency handles are existing catalog evidence, not new observations or a diagnosis. If relying on the reported ASCII-header rejection pair, review and select its attribution and original-excerpt dependencies together. Select only evidence you actually reviewed. If dependencies are missing, invalid, irrelevant, or unsupported, retain uncertainty and report diagnostic_gaps; do not claim completeness. Selection does not authenticate correlation or establish a cause. Existing readiness checks decide qualification.",
+    "groups": [
+      {
+        "rule": "reported-ascii-header-rejection",
+        "operands": [
+          {
+            "handle": "E43",
+            "reference": "/request_metadata/request_headers/skull"
+          },
+          {
+            "handle": "E41",
+            "reference": "/request_metadata/reported_exception"
+          }
+        ],
+        "required_all": [
+          {
+            "handle": "E03",
+            "reference": "/request_metadata/observation_representation"
+          },
+          {
+            "handle": "E05",
+            "reference": "/request_metadata/report_attribution_v2/anchors/bridge/block"
+          },
+          {
+            "handle": "E06",
+            "reference": "/request_metadata/report_attribution_v2/anchors/bridge/end"
+          },
+          {
+            "handle": "E07",
+            "reference": "/request_metadata/report_attribution_v2/anchors/bridge/kind"
+          },
+          {
+            "handle": "E08",
+            "reference": "/request_metadata/report_attribution_v2/anchors/bridge/literal"
+          },
+          {
+            "handle": "E09",
+            "reference": "/request_metadata/report_attribution_v2/anchors/bridge/start"
+          },
+          {
+            "handle": "E10",
+            "reference": "/request_metadata/report_attribution_v2/anchors/exception/block"
+          },
+          {
+            "handle": "E11",
+            "reference": "/request_metadata/report_attribution_v2/anchors/exception/end"
+          },
+          {
+            "handle": "E12",
+            "reference": "/request_metadata/report_attribution_v2/anchors/exception/kind"
+          },
+          {
+            "handle": "E13",
+            "reference": "/request_metadata/report_attribution_v2/anchors/exception/literal"
+          },
+          {
+            "handle": "E14",
+            "reference": "/request_metadata/report_attribution_v2/anchors/exception/start"
+          },
+          {
+            "handle": "E15",
+            "reference": "/request_metadata/report_attribution_v2/anchors/header/block"
+          },
+          {
+            "handle": "E16",
+            "reference": "/request_metadata/report_attribution_v2/anchors/header/end"
+          },
+          {
+            "handle": "E17",
+            "reference": "/request_metadata/report_attribution_v2/anchors/header/kind"
+          },
+          {
+            "handle": "E18",
+            "reference": "/request_metadata/report_attribution_v2/anchors/header/literal"
+          },
+          {
+            "handle": "E19",
+            "reference": "/request_metadata/report_attribution_v2/anchors/header/start"
+          },
+          {
+            "handle": "E20",
+            "reference": "/request_metadata/report_attribution_v2/anchors/request/block"
+          },
+          {
+            "handle": "E21",
+            "reference": "/request_metadata/report_attribution_v2/anchors/request/end"
+          },
+          {
+            "handle": "E22",
+            "reference": "/request_metadata/report_attribution_v2/anchors/request/kind"
+          },
+          {
+            "handle": "E23",
+            "reference": "/request_metadata/report_attribution_v2/anchors/request/literal"
+          },
+          {
+            "handle": "E24",
+            "reference": "/request_metadata/report_attribution_v2/anchors/request/start"
+          },
+          {
+            "handle": "E25",
+            "reference": "/request_metadata/report_attribution_v2/anchors/status/block"
+          },
+          {
+            "handle": "E26",
+            "reference": "/request_metadata/report_attribution_v2/anchors/status/end"
+          },
+          {
+            "handle": "E27",
+            "reference": "/request_metadata/report_attribution_v2/anchors/status/kind"
+          },
+          {
+            "handle": "E28",
+            "reference": "/request_metadata/report_attribution_v2/anchors/status/literal"
+          },
+          {
+            "handle": "E29",
+            "reference": "/request_metadata/report_attribution_v2/anchors/status/start"
+          },
+          {
+            "handle": "E30",
+            "reference": "/request_metadata/report_attribution_v2/authenticated_request_correlation"
+          },
+          {
+            "handle": "E31",
+            "reference": "/request_metadata/report_attribution_v2/endpoint"
+          },
+          {
+            "handle": "E32",
+            "reference": "/request_metadata/report_attribution_v2/exception_pointer"
+          },
+          {
+            "handle": "E33",
+            "reference": "/request_metadata/report_attribution_v2/header_pointer"
+          },
+          {
+            "handle": "E34",
+            "reference": "/request_metadata/report_attribution_v2/kind"
+          },
+          {
+            "handle": "E35",
+            "reference": "/request_metadata/report_attribution_v2/method"
+          },
+          {
+            "handle": "E36",
+            "reference": "/request_metadata/report_attribution_v2/relationship"
+          },
+          {
+            "handle": "E37",
+            "reference": "/request_metadata/report_attribution_v2/source_sha256"
+          },
+          {
+            "handle": "E38",
+            "reference": "/request_metadata/report_attribution_v2/summary"
+          },
+          {
+            "handle": "E39",
+            "reference": "/request_metadata/report_attribution_v2/summary_kind"
+          },
+          {
+            "handle": "E40",
+            "reference": "/request_metadata/report_attribution_v2/version"
+          }
+        ],
+        "provenance_ceiling": "reporter-associated reproduction; not authenticated request correlation"
+      }
+    ],
+    "issues": []
+  },
+  "system_schema_parameters_unchanged": true,
+  "other_user_fields_unchanged": true,
+  "before_request_bytes": 17112,
+  "after_request_bytes": 22025,
+  "before_prepared_request_sha256": "c05daf6a7f897afbad4613b0aea6e810779167576615b0c2367d9b7594dd77f3",
+  "after_prepared_request_sha256": "b8c370f1a3c5a833b65aacb56026e6164fc24aa1c2047dcef70ce31348fc62c3",
+  "before_matches_sealed_live_prepared_hash": true,
+  "request_limit_bytes": 65536,
+  "after_sent": false
+}

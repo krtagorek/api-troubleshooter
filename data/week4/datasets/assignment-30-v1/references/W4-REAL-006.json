@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-006",
+  "expected_supported_response": "Explain the consumes condition versus optional body distinction using the reported header comparison. Propose checking header/handler compatibility; no independently verified remediation.",
+  "acceptable_uncertainty_clarification": "Explain the historical optional-body versus consumes/header comparison; remediation remains unverified outside that reported example.",
+  "forbidden_unsupported_claims": "Do not generalize to all Spring versions, invent a body, or omit the successful JSON-header comparison.",
+  "human_review": null,
+  "scenario_label": "happy",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Supported media-type diagnosis. Preserve empty-body/no-Content-Type failure and successful JSON-header comparison; historical Spring behavior only.",
+    "confirmation_evidence": "Explicit user decisions in this conversation (006–010 import request)",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "case_id": "V2-03-01",
+  "incident": {
+    "actual_behavior": "Observed status 403; the client could not complete its intended operation",
+    "endpoint": "/demo/resources/1",
+    "evidence_quality": "complete",
+    "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+    "http_method": "GET",
+    "incident_id": "V2-03-01",
+    "logs": [
+      {
+        "correlation_id": "synthetic-v2-2-0",
+        "event": "connector.response",
+        "fields": {
+          "decision_rule": "environment-equality",
+          "identity_valid": true,
+          "resource_environment": "production",
+          "workload_environment": "staging"
+        },
+        "level": "ERROR",
+        "message": "Upstream response inspected",
+        "timestamp": "2026-01-03T12:00:00Z"
+      }
+    ],
+    "request_metadata": {
+      "environment": "synthetic",
+      "evidence_quality": "complete",
+      "headers": {
+        "X-Demo-Mode": "synthetic-only"
+      },
+      "request_id": "synthetic-v2-2-0",
+      "timeout_ms": 5000
+    },
+    "response_body": {
+      "request_id": "synthetic-v2-2-0",
+      "result": "request unsuccessful",
+      "status": 403,
+      "timestamp": "2026-01-03T12:00:00Z"
+    },
+    "service": "synthetic-authorization-connector",
+    "severity": "medium",
+    "status_code": 403
+  }
+}

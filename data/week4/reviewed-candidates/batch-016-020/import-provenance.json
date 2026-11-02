@@ -1,0 +1,75 @@
+{
+  "version": "week4-import-016-020-1",
+  "sources": {
+    "api-incident-candidates-016-020-v1.json": {
+      "path": "/Users/tagore/Documents/Codex/2026-10-25/w/outputs/api-incident-candidates-016-020-v1.json",
+      "sha256": "1afd93762b41edf0a4777edd80aef8e41fdc0b9cb32b3db5eeb35d578fc9337a",
+      "bytes": 10000
+    },
+    "api-incident-reviewed-016-020-v5.json": {
+      "path": "/Users/tagore/Documents/Codex/2026-10-25/w/outputs/api-incident-reviewed-016-020-v5.json",
+      "sha256": "b503fdd5ee0f7e5ab2a403f8b05bfbaeeef6a1e88f721098a5d4dab9d2029893",
+      "bytes": 11535
+    }
+  },
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "confirmation_at": null,
+  "recorded_at": null,
+  "authority": "Current explicit decisions 016–020; 020 accepted after v5.",
+  "v5_accepted_ids": [
+    "W4-REAL-016",
+    "W4-REAL-017",
+    "W4-REAL-018",
+    "W4-REAL-019"
+  ],
+  "newly_confirmed_id": "W4-REAL-020",
+  "raw_inference_evidence_identical_between_v1_v5": true,
+  "authorized_observational_additions": [
+    {
+      "case_id": "W4-REAL-019",
+      "content": "Source prose mentions GitLab 16.7.2 while the capture excerpt labels 16.7.3; this discrepancy is unresolved.",
+      "basis": "Explicit user instruction plus source prose/capture distinction in v5; observational provenance, not a contributor causal explanation."
+    }
+  ],
+  "prior_artifact_sha256": {
+    "data/week4/reviewed-candidates/import-provenance.json": "2cd88590e005518e716faa13ddc38cbd6cd293bae3b16ce2599b23be38ce1ff3",
+    "data/week4/reviewed-candidates/real-incidents-v2.json": "f3eb5764d834b6a65e4a54dfad61426fdeb08adc41bbe73e5ed703b8e826af28",
+    "data/week4/reviewed-candidates/evaluator-references.json": "708fe64be7de22dcdd0681ba6edf808e8d3836a024de40f63d01acc8a22a7bc7",
+    "data/week4/reviewed-candidates/inventory-update.json": "f84c429da21ee538371d5f49976479ab75e4c84ffcfae87256829f951c7ed0a9",
+    "data/week4/reviewed-candidates/runtime-assessment.json": "81f1b80d7fc974373a59285da133f061c23e4ae940643cba4123ea0415408d6b",
+    "data/week4/reviewed-candidates/contract-test-results.json": "aa46b9260c5bd18724ad067ca000f60fe13ffcbf2fb7b87ef19404f19a0df3e9",
+    "data/week4/reviewed-candidates/batch-011-015/import-provenance.json": "7640afaacd00768c8892cc1ff66196377f82c9ba47a72f68ac51a578b23e3593",
+    "data/week4/reviewed-candidates/batch-011-015/family-overlap.json": "7e9a6ea02376d4eaff458534e815d5ee51aa4ec4382c6311144d295e6f138b6a",
+    "data/week4/reviewed-candidates/batch-011-015/evaluator-references.json": "f736a4ea805becaf0f89941b436485d44fee05092e6065999ef5a60f6224835c",
+    "data/week4/reviewed-candidates/batch-011-015/reviewed-candidates.json": "911a3960b93ca88e7e27bf66ae1764f39eed89152c111527b1a2a2d1d7fca72b",
+    "data/week4/reviewed-candidates/batch-011-015/inventory-update.json": "10fba39b1b1983915463eddc11ed8fca79d00304fa08ca5bf7d5c86ca067229c",
+    "data/week4/reviewed-candidates/batch-011-015/runtime-assessment.json": "91c878c913cd6bcc3515418dea52cc186af0f3ece22ed9441d082a47c7f40a40",
+    "data/week4/reviewed-candidates/batch-011-015/verification.json": "dc313c5f50d6ed14c1a735f0c3da530737e541db1c0cd565bf6225bdd754e433",
+    "data/week4/reviewed-candidates/batch-011-015/sources/api-incident-reviewed-011-015-v5.json": "0ff93d69a63a7e98aadbce8c9f5184b079f943e6f12c2837bc329b0730c23c63",
+    "data/week4/reviewed-candidates/batch-011-015/sources/api-incident-candidates-011-015-v1.json": "7eaf6dcd1169bf11ccbf139cf53b76f2f46a0cb846e68388400783df8cf6773e",
+    "data/week4/reviewed-candidates/batch-011-015/inference/W4-REAL-012.json": "ba1a67a54296aa897c7d9d22269ea56f788595ed245ad643d6b76bf92cc109c6",
+    "data/week4/reviewed-candidates/batch-011-015/inference/W4-REAL-013.json": "ac89541893b71ea83474327c8b2b352457ec8e0f04d2446d6f912eaef71130ed",
+    "data/week4/reviewed-candidates/batch-011-015/inference/W4-REAL-014.json": "5494c560424d3802135809d32a1017cab21854de15b902501a5438431f6161fd",
+    "data/week4/reviewed-candidates/batch-011-015/inference/W4-REAL-015.json": "e0f8216a36d0a7e032c4ac4af36c44c6c7f6fd3b93666722fd768bb36c50f801",
+    "data/week4/reviewed-candidates/batch-011-015/inference/W4-REAL-011.json": "93098131c12a3a0eb1baa5fcd5b9507a912b1d3081836f7a8f602ccb079f9cbf",
+    "data/week4/reviewed-candidates/inference/W4-REAL-005.json": "af8be851b8302f1067f91f44d98b2f3defd8c73c7d41cfdeabcfbd42763e013f",
+    "data/week4/reviewed-candidates/batch-006-010/import-provenance.json": "d2af5954d89120a276dd36ff6aa72377058aa0884fbeda5614aad5b7a1e04e59",
+    "data/week4/reviewed-candidates/batch-006-010/family-overlap.json": "fa2a4ccc10fec25f5ce0b60b553b0cf7d5a8f3b7e59090384e886d9b4403fb24",
+    "data/week4/reviewed-candidates/batch-006-010/evaluator-references.json": "5bdeb7709a762d44c8dd519256346ae472bf67debbd04ada69d9cf9726331075",
+    "data/week4/reviewed-candidates/batch-006-010/reviewed-candidates.json": "f7e596fbf328bd039df49cda460e81d040888f9ba65ae34a6bf5a5988860a370",
+    "data/week4/reviewed-candidates/batch-006-010/inventory-update.json": "0d504b4096312968d6b0d47b0cf9c5c17c159028df11b5ee32afe98ed1310f18",
+    "data/week4/reviewed-candidates/batch-006-010/runtime-assessment.json": "d2ea446e33c3f52fb15d65fc51329c7d24ce067231eefb1e25d85ae15f5bb62a",
+    "data/week4/reviewed-candidates/batch-006-010/verification.json": "7ea57919567aa94c69fb5e83e9663538d2e8e0a9d4202bf7314dcc75ebc38335",
+    "data/week4/reviewed-candidates/batch-006-010/sources/api-incident-reviewed-006-010-v5.json": "682f0b0e1564f79528cb86a7e3048ffafdf9f51e67253dfd1d8561446f50a5df",
+    "data/week4/reviewed-candidates/batch-006-010/sources/api-incident-candidates-006-010-v1.json": "c56e7aff05e0b0aede6b4df79691482798de07b32b09f1808ad709998b0e203f",
+    "data/week4/reviewed-candidates/batch-006-010/inference/W4-REAL-008.json": "0f81c4b3755659f012e37f9a68c6581a917797be4d5cd3f7cb624320601ce44a",
+    "data/week4/reviewed-candidates/batch-006-010/inference/W4-REAL-009.json": "3bccbd5cc804d3a59dd884c1b2e6402f983a414aea18530bb3c1b24295f24f09",
+    "data/week4/reviewed-candidates/batch-006-010/inference/W4-REAL-006.json": "779dc45742d1b813eb39e79724643ec6ebc60cae6c595e99a27627109291139b"
+  },
+  "golden_set_ready": false,
+  "independent_reproduction": false,
+  "execution_authorized": false,
+  "imported_at": "2026-10-29T02:39:34.670532+00:00",
+  "time_note": "Import processing only, not review/confirmation time."
+}

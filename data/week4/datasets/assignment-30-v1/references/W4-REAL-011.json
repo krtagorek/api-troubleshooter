@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-011",
+  "expected_supported_response": "Supported missing-authorization diagnosis, underlying cause unresolved. Preserve GET /api/list-files, reported 401 and adjacent missing-Authorization warning. Do not merge later invalid-token comments or confirm port, expiry or signing-secret causes.",
+  "acceptable_uncertainty_clarification": "Missing authorization at the reported server boundary is supported; exact forwarding/session/port/expiry cause is unresolved.",
+  "forbidden_unsupported_claims": "Do not merge later invalid-token comments, claim authenticated request correlation, assert a signing-secret/port/expiry defect, or disable authentication.",
+  "human_review": null,
+  "scenario_label": "happy",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Supported missing-authorization diagnosis, underlying cause unresolved. Preserve GET /api/list-files, reported 401 and adjacent missing-Authorization warning. Do not merge later invalid-token comments or confirm port, expiry or signing-secret causes.",
+    "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

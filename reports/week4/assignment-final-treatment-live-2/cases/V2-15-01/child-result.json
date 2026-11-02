@@ -1,0 +1,255 @@
+{
+  "case_id": "V2-15-01",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "schema_mismatch",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/logs/0/fields/error_offset",
+        "/logs/0/level",
+        "/response_body/result",
+        "/status_code"
+      ],
+      "reasoning": "The response status code is 200 (E21) but the response body indicates 'contract rejected' (E18), and logs show an error decoding the upstream response with an error offset (E07) and error level (E09). The client could not complete its intended operation despite the 200 status (E01). This indicates the response did not satisfy the approved endpoint contract (E02), consistent with a schema mismatch error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "complete",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:f7aaea7f0b31e5a03bbddb5a",
+          "observation": "Observed status 200; the client could not complete its intended operation",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:a33d7aa3d07b8a576a815c7b",
+          "observation": "Return a response satisfying the approved endpoint contract within its deadline",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:4ccd607e957be5a70e334731",
+          "observation": "12",
+          "reference": "/logs/0/fields/error_offset",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:ee527936791aeda3c7e89869",
+          "observation": "ERROR",
+          "reference": "/logs/0/level",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:88445a9e7f84a5b5d0b51c82",
+          "observation": "contract rejected",
+          "reference": "/response_body/result",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:fb3d9fa7cea46e070230d7b2:ecc299f4202b4fed9ba715de",
+          "observation": "200",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "Unselected catalog comparison candidates were not automatically included: /logs/0/fields/content_type, /logs/0/fields/decoder, /logs/0/fields/line_count",
+          "required_to_resolve": "Review omitted comparison evidence and select it explicitly if supported."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "V2-15-01",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Review omitted comparison evidence and select it explicitly if supported.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Already supplied but not selected: /logs/0/fields/content_type, /logs/0/fields/decoder, /logs/0/fields/line_count. Review these existing references explicitly if supported; do not describe them as unavailable or infer authenticated correlation.",
+      "Other supplied but unselected catalog references (not established dependencies): /logs/0/correlation_id, /logs/0/event, /logs/0/message, /logs/0/timestamp, /request_metadata/environment, /request_metadata/evidence_quality, /request_metadata/headers/X-Demo-Mode, /request_metadata/request_id. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /logs/0/fields/error_offset, /logs/0/level, /response_body/result, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 200; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-15-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-14-0",
+          "event": "connector.response",
+          "fields": {
+            "content_type": "application/x-ndjson",
+            "decoder": "single-document",
+            "error_offset": 12,
+            "line_count": 2
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-15T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-14-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-14-0",
+        "result": "contract rejected",
+        "status": 200,
+        "timestamp": "2026-01-15T12:00:00Z"
+      },
+      "service": "synthetic-schema_mismatch-connector",
+      "severity": "medium",
+      "status_code": 200
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "04ccfc15-7d3e-4192-99fd-da74d14c1377",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "99f9e4ac-7ee1-4fa6-8390-0d297e065536",
+      "elapsed_seconds": 1.6178123748395592,
+      "error": null,
+      "input_tokens": 1722,
+      "output_tokens": 183,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1905
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "0537151f-6c36-4831-8ab6-98c162bc048e",
+      "elapsed_seconds": 1.3302699581254274,
+      "error": null,
+      "input_tokens": 2243,
+      "output_tokens": 91,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2334
+    }
+  ],
+  "root_id": "04ccfc15-7d3e-4192-99fd-da74d14c1377",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [
+        "/logs/0/fields/content_type",
+        "/logs/0/fields/decoder",
+        "/logs/0/fields/line_count"
+      ],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [],
+      "other_available_unselected_references": [
+        "/logs/0/correlation_id",
+        "/logs/0/event",
+        "/logs/0/message",
+        "/logs/0/timestamp",
+        "/request_metadata/environment",
+        "/request_metadata/evidence_quality",
+        "/request_metadata/headers/X-Demo-Mode",
+        "/request_metadata/request_id",
+        "/request_metadata/timeout_ms",
+        "/response_body/request_id",
+        "/response_body/status",
+        "/response_body/timestamp"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "Legacy hold retained: Diagnostic comparison peers remain omitted",
+      "selected_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/logs/0/fields/error_offset",
+        "/logs/0/level",
+        "/response_body/result",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "complete",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "Legacy hold retained: Diagnostic comparison peers remain omitted",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 6,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "62f7df43731f19d926fd4ce9cb479b983e2dc23c298e2d4230779e8a4bc53d94",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

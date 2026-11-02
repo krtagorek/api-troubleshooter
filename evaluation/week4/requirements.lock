@@ -1,0 +1,3 @@
+# Week 4 uses the inherited complete hash lock unchanged; no additions/upgrades.
+# Paths are relative to this file. Install with --require-hashes.
+-r ../../requirements.lock

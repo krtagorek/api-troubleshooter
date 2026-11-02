@@ -1,0 +1,13 @@
+{
+  "before_rows": 220,
+  "appended_ids": [
+    "W4-REAL-006",
+    "W4-REAL-007",
+    "W4-REAL-008",
+    "W4-REAL-009",
+    "W4-REAL-010"
+  ],
+  "before_sha256": "e636f576e250162a477b937e5eb139430e2106cd4e921f1542f9be596cc19b42",
+  "after_sha256": "d55dde9f418447033216dcc06867d73ac7f5af002f2d8a332e1dfc33fe5cedb6",
+  "old_bytes_preserved": true
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "EVALUATOR_ONLY_USER_APPROVAL",
+  "human_review": {
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  },
+  "approved_packet": "docs/week4-final-selection-review-packet.md",
+  "packet_sha256": "16cfb0d601b5409ac8af430a8bd5ea6a3a1033043ce1118a32206e3ad752317e",
+  "decisions": [
+    {
+      "id": "W4-DRAFT-031-v1",
+      "decision": "ACCEPT",
+      "replaces": "W4-REAL-030"
+    },
+    {
+      "id": "W4-DRAFT-032-v1",
+      "decision": "ACCEPT",
+      "replaces": "V2-01-03",
+      "robustness_rubric": "APPROVED"
+    },
+    {
+      "id": "W4-REAL-028",
+      "decision": "APPROVE_SOURCE_DERIVED_CONTROLLED_REPRODUCTION",
+      "authorship": "unknown",
+      "production_traffic": false,
+      "additional_generated_slot_charge": 0
+    },
+    {
+      "decision": "APPROVE_ALL_ELEVEN_SCENARIO_COMPLETIONS"
+    },
+    {
+      "id": "W4-REAL-028",
+      "label_correction": "Reported application failure/difficult case, not observed agent failure; actual agent clusters must come from baseline results"
+    }
+  ]
+}

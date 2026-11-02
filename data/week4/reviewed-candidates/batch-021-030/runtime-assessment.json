@@ -1,0 +1,308 @@
+{
+  "cases": [
+    {
+      "case_id": "W4-REAL-021",
+      "human_decision": "ACCEPT",
+      "status_provenance": "published_request_and_http_500_response",
+      "editorial_goal": "Submit the intended request to the reported POST /session operation.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Related media-type family to 006, but distinct source and failure. Reporter reproduction, not independent production capture.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 10,
+      "inference_sha256": "4955655148230f3ac723782f8ec1e718cb703aacd677291c1eb3fce900962062",
+      "sourcing_status": "HUMAN_ACCEPTED_FINAL_SELECTION_PENDING",
+      "catalog_qualifications": [
+        "Related media-type family to 006, but distinct source and failure. Reporter reproduction, not independent production capture.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-022",
+      "human_decision": "CONDITIONAL_ACCEPT",
+      "status_provenance": "archived_primary_http_500_and_reporter_published_access_log",
+      "editorial_goal": "Create the intended project through POST /api/v4/projects.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Original primary report retrieved and archived; archival condition met. Final selection not assigned.",
+        "Only reporter-published correlation; no authenticated trace correlation or independently verified fix."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 9,
+      "inference_sha256": "79b97697960e3ec39f25501259e64380ff0b08c8c44b8a62109855660e846ac2",
+      "sourcing_status": "ARCHIVAL_CONDITION_MET_FINAL_SELECTION_PENDING",
+      "catalog_qualifications": [
+        "Original primary report retrieved and archived; archival condition met. Final selection not assigned.",
+        "Only reporter-published correlation; no authenticated trace correlation or independently verified fix."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-023",
+      "human_decision": "ACCEPT",
+      "status_provenance": "published_curl_http_500",
+      "editorial_goal": "Submit the intended index-creation request to POST /new/_index.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Report reproduction, not independently verified. Source response date does not establish publication date.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 9,
+      "inference_sha256": "42199453910060ec4dab54a6dc6e8589a5ae310ab7a322a943a384d90272889a",
+      "sourcing_status": "HUMAN_ACCEPTED_FINAL_SELECTION_PENDING",
+      "catalog_qualifications": [
+        "Report reproduction, not independently verified. Source response date does not establish publication date.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-024",
+      "human_decision": "ACCEPT",
+      "status_provenance": "reporter_published_server_access_log_403",
+      "editorial_goal": "Submit the intended form through POST /.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Reporter later says changing enctype works; keep later resolution evaluator-only. Broad CSRF overlap with 025, different application and cause.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 9,
+      "inference_sha256": "00032862553b39535a32063fe834b3d9af16db231382a3fbba8e3620942c3eaf",
+      "sourcing_status": "HUMAN_ACCEPTED_FINAL_SELECTION_PENDING",
+      "catalog_qualifications": [
+        "Reporter later says changing enctype works; keep later resolution evaluator-only. Broad CSRF overlap with 025, different application and cause.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-025",
+      "human_decision": "ACCEPT",
+      "status_provenance": "reporter_published_access_application_logs_403",
+      "editorial_goal": "Deliver the intended envelope through POST /api/2/envelope/.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Keep external acceptance versus internal 403 separate. Omit IPs, cookies, relay signatures and personal data. Later proposed fixes not input.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 9,
+      "inference_sha256": "870b949ab31ea397b405d615ecac91f77c0aa721fe138c8051e54284c80a77f7",
+      "sourcing_status": "HUMAN_ACCEPTED_FINAL_SELECTION_PENDING",
+      "catalog_qualifications": [
+        "Keep external acceptance versus internal 403 separate. Omit IPs, cookies, relay signatures and personal data. Later proposed fixes not input.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-026",
+      "human_decision": "ACCEPT",
+      "status_provenance": "contributor_reproduction_v3_access_log_500_distinct_v2_201_comparison",
+      "editorial_goal": "Submit the intended request through POST /todos.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Preserve duplicate headers as ordered pairs, not a collapsed map. Later partial patch still errors; not a successful fix. Contributor reproduction.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 12,
+      "inference_sha256": "b03e222a6cbb3691e9f588f0319731a9c6bfd66550d02fc7da33e78f449e777a",
+      "sourcing_status": "HUMAN_ACCEPTED_FINAL_SELECTION_PENDING",
+      "catalog_qualifications": [
+        "Preserve duplicate headers as ordered pairs, not a collapsed map. Later partial patch still errors; not a successful fix. Contributor reproduction.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-027",
+      "human_decision": "ACCEPT",
+      "status_provenance": "published_curl_http_502",
+      "editorial_goal": "Retrieve the intended resource through GET /.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Host is source-masked. Do not infer DNS failure, disable TLS verification or promise an upgrade fix.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 10,
+      "inference_sha256": "4a29b001cb6bff92332d7e22451cee9895765fd80afecce0f404d61a08de4957",
+      "sourcing_status": "HUMAN_ACCEPTED_FINAL_SELECTION_PENDING",
+      "catalog_qualifications": [
+        "Host is source-masked. Do not infer DNS failure, disable TLS verification or promise an upgrade fix.",
+        "No independent capture/reproduction; missing original fields are not invented."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-028",
+      "human_decision": "CONDITIONAL_ACCEPT",
+      "status_provenance": "third_party_controlled_mock_upstream_reproduction_client_log_400_distinct_upstream_429",
+      "editorial_goal": "Submit the intended chat completion through POST /api/chat/completions.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Real third-party bug reproduction USING MOCK upstream, not real production rate limit. Disclose sourcing category for rubric review; later fix evaluator-only. Broad rate-limit overlap with 009.",
+        "No independent capture/reproduction; missing original fields are not invented.",
+        "User must decide whether this documented third-party reproduction with a mock upstream is eligible under the source/LLM allowance rubric; it is not production traffic."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 11,
+      "inference_sha256": "c5ac95f2f1962098fb9c0e32350f8798ef3b972d2275d56ccdac3f1f475931b5",
+      "sourcing_status": "PENDING_MOCK_REPRODUCTION_ELIGIBILITY",
+      "catalog_qualifications": [
+        "Real third-party bug reproduction USING MOCK upstream, not real production rate limit. Disclose sourcing category for rubric review; later fix evaluator-only. Broad rate-limit overlap with 009.",
+        "No independent capture/reproduction; missing original fields are not invented.",
+        "User must decide whether this documented third-party reproduction with a mock upstream is eligible under the source/LLM allowance rubric; it is not production traffic."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-029",
+      "human_decision": "ACCEPT",
+      "status_provenance": "published_curl_http_400",
+      "editorial_goal": "Process the reported GET /keepalive.html according to the configured request contract.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Not an AI prompt-injection test. Source host already anonymized. Preserve empty value; no fabricated target hostname.",
+        "No independent capture/reproduction; missing original fields are not invented.",
+        "Empty Host value remains in input; catalog omits empty strings. Prose still describes the empty header; no readiness equivalence claimed."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "NOT_FINAL_ELIGIBILITY; see sourcing_status and pre-execution applicability",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 8,
+      "inference_sha256": "bcac311338910227d88e2c38c5834a94a2d96eb2900fb197e7251dba5400b0ea",
+      "sourcing_status": "HUMAN_ACCEPTED_FINAL_SELECTION_PENDING",
+      "catalog_qualifications": [
+        "Not an AI prompt-injection test. Source host already anonymized. Preserve empty value; no fabricated target hostname.",
+        "No independent capture/reproduction; missing original fields are not invented.",
+        "Empty Host value remains in input; catalog omits empty strings. Prose still describes the empty header; no readiness equivalence claimed."
+      ]
+    },
+    {
+      "case_id": "W4-REAL-030",
+      "human_decision": "HOLD",
+      "status_provenance": "expected_output_only_transport_unknown",
+      "editorial_goal": "Process the reported POST /discard according to the configured request contract.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Only stated expected-output statuses; actual transport HTTP status unknown. HOLD and no runtime export."
+      ],
+      "schema": "FAIL",
+      "sanitization": "NOT_CHECKED",
+      "initialization": "NOT_CHECKED",
+      "catalog": "NOT_CHECKED",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "BLOCKED_UNKNOWN_OBSERVED_STATUS",
+      "evaluation_eligibility": "EXCLUDED_HOLD",
+      "safe_rejections": [
+        {
+          "location": [
+            "incident",
+            "status_code"
+          ],
+          "type": "int_type",
+          "message": "Input should be a valid integer"
+        }
+      ],
+      "blockers": [
+        "See genuine input-validation errors; no filler values substituted."
+      ],
+      "sanitization_changes": null,
+      "sourcing_status": "HOLD_OBSERVED_STATUS_UNKNOWN",
+      "catalog_qualifications": [
+        "Only stated expected-output statuses; actual transport HTTP status unknown. HOLD and no runtime export."
+      ]
+    }
+  ],
+  "checked_with": "Existing scripts.week4_reviewed_batch3.assess; no new runtime adapter",
+  "graph_execution": false,
+  "model_calls": 0
+}

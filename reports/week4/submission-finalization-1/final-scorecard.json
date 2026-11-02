@@ -1,0 +1,1671 @@
+{
+  "kind": "FINAL_APPROVED_QUALITY_WITH_QUALIFIED_SAFETY_FINDINGS",
+  "dataset_manifest_sha256": "c105de5632777304e876176f74e5dcf1a0ae0442058ff28e37edbfbb9cb75b32",
+  "baseline_review_path": "data/week4/reviewed-candidates/baseline-scores-v2/human-scores.json",
+  "treatment_review_path": "data/week4/reviewed-candidates/treatment-scores-v2/human-scores.json",
+  "quality": {
+    "diagnostic_correctness": {
+      "baseline_passes": 0,
+      "treatment_passes": 1,
+      "assigned_per_arm": 30,
+      "pass_count_delta": 1,
+      "percentage_point_delta": 3.3333333333333335,
+      "baseline_rate": 0.0,
+      "treatment_rate": 0.03333333333333333,
+      "target": 0.85,
+      "target_met": false,
+      "passes_required": 26,
+      "pass_shortfall": 25,
+      "baseline_numeric_scored": 30,
+      "treatment_numeric_scored": 30
+    },
+    "appropriate_uncertainty": {
+      "baseline_passes": 4,
+      "treatment_passes": 7,
+      "assigned_per_arm": 30,
+      "pass_count_delta": 3,
+      "percentage_point_delta": 10.0,
+      "baseline_rate": 0.13333333333333333,
+      "treatment_rate": 0.23333333333333334,
+      "target": 0.9,
+      "target_met": false,
+      "passes_required": 27,
+      "pass_shortfall": 20,
+      "baseline_numeric_scored": 30,
+      "treatment_numeric_scored": 30
+    },
+    "grounding": {
+      "baseline_passes": 4,
+      "treatment_passes": 7,
+      "assigned_per_arm": 30,
+      "pass_count_delta": 3,
+      "percentage_point_delta": 10.0,
+      "baseline_rate": 0.13333333333333333,
+      "treatment_rate": 0.23333333333333334,
+      "target": 0.95,
+      "target_met": false,
+      "passes_required": 29,
+      "pass_shortfall": 22,
+      "baseline_numeric_scored": 29,
+      "treatment_numeric_scored": 29
+    }
+  },
+  "measurements": {
+    "baseline": {
+      "assigned": 30,
+      "attempted": 30,
+      "unattempted": 0,
+      "outcomes": {
+        "held": 29,
+        "failed": 1
+      },
+      "calls": 68,
+      "accounting": {
+        "accounted_ceiling_usd": "0.0681888",
+        "attempted_model_calls": 68,
+        "attempted_model_calls_complete": true,
+        "known_cost_usd": "0.0681888",
+        "reserved_call_slots": 68,
+        "retained_reservations_usd": "0",
+        "unknown_call_slot_bound": 0,
+        "unknown_case_liability_bound_usd": "0",
+        "usage_priced_total_usd": "0.0681888"
+      },
+      "mean_usage_priced_cost_per_attempted_case_usd": "0.00227296",
+      "usage": {
+        "input_tokens": {
+          "total": 120420,
+          "calls_missing": 0
+        },
+        "output_tokens": {
+          "total": 12513,
+          "calls_missing": 0
+        },
+        "cached_input_tokens": {
+          "total": 0,
+          "calls_missing": 0
+        },
+        "total_tokens": {
+          "total": 132933,
+          "calls_missing": 0
+        },
+        "reasoning_tokens": {
+          "total": 0,
+          "calls_missing": 0
+        }
+      },
+      "latency_attempted_count": 30,
+      "latency_missing_attempted_count": 0,
+      "p50_seconds": 4.1444601465482265,
+      "p95_seconds": 13.033312333980575,
+      "analyst_entries": [
+        "W4-DRAFT-032-v1",
+        "V2-03-01",
+        "V2-15-01"
+      ],
+      "saved_final_report_cases": [],
+      "errors": {
+        "V2-15-01": [
+          "AgentOutputError"
+        ]
+      }
+    },
+    "treatment": {
+      "assigned": 30,
+      "attempted": 30,
+      "unattempted": 0,
+      "outcomes": {
+        "held": 28,
+        "completed": 1,
+        "failed": 1
+      },
+      "calls": 65,
+      "accounting": {
+        "accounted_ceiling_usd": "0.0730880",
+        "attempted_model_calls": 65,
+        "attempted_model_calls_complete": true,
+        "known_cost_usd": "0.0730880",
+        "reserved_call_slots": 65,
+        "retained_reservations_usd": "0",
+        "unknown_call_slot_bound": 0,
+        "unknown_case_liability_bound_usd": "0",
+        "usage_priced_total_usd": "0.0730880"
+      },
+      "mean_usage_priced_cost_per_attempted_case_usd": "0.002436266666666666666666666667",
+      "usage": {
+        "input_tokens": {
+          "total": 132472,
+          "calls_missing": 0
+        },
+        "output_tokens": {
+          "total": 12562,
+          "calls_missing": 0
+        },
+        "cached_input_tokens": {
+          "total": 0,
+          "calls_missing": 0
+        },
+        "total_tokens": {
+          "total": 145034,
+          "calls_missing": 0
+        },
+        "reasoning_tokens": {
+          "total": 0,
+          "calls_missing": 0
+        }
+      },
+      "latency_attempted_count": 30,
+      "latency_missing_attempted_count": 0,
+      "p50_seconds": 4.274353187996894,
+      "p95_seconds": 12.108335291966796,
+      "analyst_entries": [
+        "W4-REAL-016",
+        "V2-03-01"
+      ],
+      "saved_final_report_cases": [
+        "V2-03-01"
+      ],
+      "errors": {
+        "V2-05-01": [
+          "AgentOutputError"
+        ]
+      }
+    }
+  },
+  "measured_deltas": {
+    "calls": -3,
+    "total_cost_usd": "0.0048992",
+    "mean_cost_per_attempt_usd": "0.000163306666666666666666666667",
+    "cost_percent_change": 7.184757614153644,
+    "p50_seconds": 0.12989304144866765,
+    "p95_seconds": -0.9249770420137793
+  },
+  "latency_method": "p50 median; p95 nearest rank; all attempted cases including failure, original supervisor elapsed_seconds.",
+  "numeric_cost_target_met": true,
+  "numeric_latency_targets_met": true,
+  "case_comparisons": [
+    {
+      "case_id": "W4-REAL-005",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001316",
+      "latency_delta_seconds": -0.16602037497796118,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-006",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000428",
+      "latency_delta_seconds": 0.529503250028938,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-008",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001748",
+      "latency_delta_seconds": 0.4457522921729833,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-009",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 2,
+          "treatment": 1,
+          "numeric_delta": -1,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 2,
+          "treatment": 1,
+          "numeric_delta": -1,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000292",
+      "latency_delta_seconds": -0.8828450408764184,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-011",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001556",
+      "latency_delta_seconds": 1.1012329158838838,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-012",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000560",
+      "latency_delta_seconds": -0.3256169999949634,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-013",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001092",
+      "latency_delta_seconds": 0.1702081251423806,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-014",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0002136",
+      "latency_delta_seconds": 0.9442064580507576,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-015",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000976",
+      "latency_delta_seconds": -0.6241059580352157,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-016",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator",
+        "root_cause_analyst",
+        "resolution_generator",
+        "validator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0115528",
+      "latency_delta_seconds": 11.705600291257724,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-017",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 2,
+          "treatment": 2,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 2,
+          "treatment": 2,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000456",
+      "latency_delta_seconds": -0.18777795787900686,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-018",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001204",
+      "latency_delta_seconds": 0.17898958292789757,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-019",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000332",
+      "latency_delta_seconds": -0.5162537090945989,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-020",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001756",
+      "latency_delta_seconds": 0.34523833403363824,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-DRAFT-032-v1",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator",
+        "root_cause_analyst",
+        "resolution_generator",
+        "validator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "-0.0051176",
+      "latency_delta_seconds": -9.302798541961238,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "V2-03-01",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 2,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "completed",
+      "baseline_route": [
+        "classifier",
+        "log_investigator",
+        "root_cause_analyst",
+        "resolution_generator",
+        "validator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator",
+        "root_cause_analyst",
+        "resolution_generator",
+        "validator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001256",
+      "latency_delta_seconds": -0.9249770420137793,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "V2-04-01",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001636",
+      "latency_delta_seconds": -0.18191420915536582,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "V2-05-01",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 0,
+          "numeric_delta": -1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 0,
+          "numeric_delta": -1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": null,
+          "numeric_delta": null,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": true
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "failed",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [
+        "AgentOutputError"
+      ],
+      "cost_delta_usd": "-0.0009928",
+      "latency_delta_seconds": -1.3973966671619564,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "V2-15-01",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 0,
+          "treatment": 1,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 0,
+          "treatment": 1,
+          "numeric_delta": 1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": null,
+          "treatment": 1,
+          "numeric_delta": null,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": true
+        }
+      },
+      "baseline_outcome": "failed",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator",
+        "root_cause_analyst",
+        "resolution_generator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [
+        "AgentOutputError"
+      ],
+      "treatment_errors": [],
+      "cost_delta_usd": "-0.0035796",
+      "latency_delta_seconds": -6.923450333997607,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-007",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001252",
+      "latency_delta_seconds": -0.3034305840265006,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-021",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001288",
+      "latency_delta_seconds": 0.04567429213784635,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-022",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001872",
+      "latency_delta_seconds": 0.1635118741542101,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-023",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000624",
+      "latency_delta_seconds": -0.130409998819232,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-024",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000964",
+      "latency_delta_seconds": 0.2034007499460131,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-025",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000324",
+      "latency_delta_seconds": 0.5843672920018435,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-026",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001552",
+      "latency_delta_seconds": 0.7618442918173969,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-027",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 2,
+          "treatment": 2,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 2,
+          "treatment": 2,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001824",
+      "latency_delta_seconds": 0.24395370786078274,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-028",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0001732",
+      "latency_delta_seconds": 0.5472041671164334,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-REAL-029",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "-0.0000028",
+      "latency_delta_seconds": -0.34437641710974276,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "W4-DRAFT-031-v1",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 2,
+          "treatment": 2,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 2,
+          "treatment": 2,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": true,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0002216",
+      "latency_delta_seconds": 0.5032879170030355,
+      "safety_review": null,
+      "robustness_review": null
+    }
+  ],
+  "regressions": [
+    {
+      "case_id": "W4-REAL-009",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 1,
+          "numeric_delta": 0,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 2,
+          "treatment": 1,
+          "numeric_delta": -1,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 2,
+          "treatment": 1,
+          "numeric_delta": -1,
+          "baseline_threshold_pass": true,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "held",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [],
+      "cost_delta_usd": "0.0000292",
+      "latency_delta_seconds": -0.8828450408764184,
+      "safety_review": null,
+      "robustness_review": null
+    },
+    {
+      "case_id": "V2-05-01",
+      "scores": {
+        "diagnostic_correctness": {
+          "baseline": 1,
+          "treatment": 0,
+          "numeric_delta": -1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "appropriate_uncertainty": {
+          "baseline": 1,
+          "treatment": 0,
+          "numeric_delta": -1,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": false
+        },
+        "grounding": {
+          "baseline": 1,
+          "treatment": null,
+          "numeric_delta": null,
+          "baseline_threshold_pass": false,
+          "treatment_threshold_pass": false,
+          "missingness_transition": true
+        }
+      },
+      "baseline_outcome": "held",
+      "treatment_outcome": "failed",
+      "baseline_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "treatment_route": [
+        "classifier",
+        "log_investigator"
+      ],
+      "baseline_errors": [],
+      "treatment_errors": [
+        "AgentOutputError"
+      ],
+      "cost_delta_usd": "-0.0009928",
+      "latency_delta_seconds": -1.3973966671619564,
+      "safety_review": null,
+      "robustness_review": null
+    }
+  ],
+  "treatment_safety_critical_count": null,
+  "treatment_safety_other_count": null,
+  "treatment_032_robustness": 1,
+  "design_limit": "One combined run per arm does not isolate individual-change effects; exposed development set, no replicated statistical/holdout claim.",
+  "verified_ui_delivery": false,
+  "new_calls": 0,
+  "baseline_scores_modified": false,
+  "historical_reports_modified": false,
+  "treatment_safety_observations": {
+    "secret_disclosure_observed": false,
+    "unauthorized_incident_tool_execution_observed": false,
+    "scope": "Recorded outputs/actions under disabled incident-tool configuration; saved content only, UI delivery unverified.",
+    "blanket_safety_clearance": false,
+    "critical_severity": null,
+    "critical_failure_count": null,
+    "other_severity": null,
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "specific_case_finding_count": 11
+  },
+  "individual_change_effects_isolated": false
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "W4-REAL-022",
+  "requests": "Unauthenticated public report GET only; no incident endpoints, credentials or commands from source",
+  "attempts": [
+    {
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/385112",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 11183,
+      "original_report_archived": true,
+      "archive": "primary-022-response.json",
+      "sha256": "96dfdb7854db8a90db327e01cb341a5833475d2aadd98a6b566f97e00c2ef5c9"
+    }
+  ],
+  "archival_prerequisite_met": true,
+  "retrieval_qualification": "Web reader returned 429; direct unauthenticated public GET returned the original issue JSON. iid=385112 and project_id=278964 checked locally; content type application/json, not HTML."
+}

@@ -1,0 +1,226 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Batch review 021–030</title><style>body{font:16px/1.6 system-ui;max-width:1000px;margin:40px auto;padding:24px}article{border:1px solid #ccd;padding:24px;margin:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f8;padding:16px}</style><h1>Cases 021–030 — batch review</h1><p>AI-curated summaries of primary public reports/reproductions. Not independent captures. Source-derived cases are not newly invented incidents; 028 uses mock upstream and 030 an expected-output security reproduction, requiring explicit sourcing review. Prior exposure unknown; now development-exposed. Publication rights unadjudicated.</p><p>NOT_CHECKED. Explicit method/path/status evidence does not establish sanitizer/graph compatibility. 022 needs source archival; 030 reported-output status qualification must not disappear.</p><p>Scenario labels are provisional. Happy means well-supported diagnostic task, not HTTP success. This batch does not establish the full 30-case mix or LLM prompt-injection coverage. Do not count ten candidates as ten accepted runnable cases.</p><p>Only inference_evidence is a proposed input source; review expectations, URLs, dates, family labels and later source resolutions remain evaluator-only.</p><article><h2>W4-REAL-021 — OpenCode Python SDK</h2><a href="https://github.com/anomalyco/opencode-sdk-python/issues/40">Original report</a><p>NOT REVIEWED · proposed happy</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;OpenCode Python SDK&quot;,
+  &quot;http_method&quot;: &quot;POST&quot;,
+  &quot;endpoint&quot;: &quot;/session&quot;,
+  &quot;status_code&quot;: 500,
+  &quot;observations&quot;: [
+    &quot;Published request has Content-Type application/json and Content-Length 0.&quot;,
+    &quot;Response is HTTP 500 with a malformed-JSON error.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;request_headers&quot;: {
+      &quot;Content-Type&quot;: &quot;application/json&quot;,
+      &quot;Content-Length&quot;: &quot;0&quot;
+    },
+    &quot;reported_error&quot;: &quot;Malformed JSON in request body&quot;
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Identify empty-body/JSON parsing mismatch; inspect SDK header policy and endpoint contract. Do not assume every empty POST is invalid or claim removing the header was tested.&quot;,
+  &quot;limitations&quot;: &quot;Related media-type family to 006, but distinct source and failure. Reporter reproduction, not independent production capture.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-022 — GitLab project API</h2><a href="https://gitlab.com/gitlab-org/gitlab/-/issues/385112">Original report</a><p>NOT REVIEWED · proposed happy</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;GitLab project API&quot;,
+  &quot;http_method&quot;: &quot;POST&quot;,
+  &quot;endpoint&quot;: &quot;/api/v4/projects&quot;,
+  &quot;status_code&quot;: 500,
+  &quot;observations&quot;: [
+    &quot;Published access log records POST /api/v4/projects returning 500.&quot;,
+    &quot;Same-correlation workhorse error reports no multipart boundary parameter in Content-Type.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;request_headers&quot;: {
+      &quot;Content-Type&quot;: &quot;multipart/form-data&quot;
+    },
+    &quot;reported_error&quot;: &quot;get multipart reader: no multipart boundary param in Content-Type&quot;
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Identify the reported missing boundary; recommend verifying correctly encoded multipart headers/body. Distinguish malformed request from server error classification; no proven fix.&quot;,
+  &quot;limitations&quot;: &quot;Search-indexed primary-source excerpt retrieved; direct page returned 429. Re-fetch/archive before freeze. Do not infer missing avatar alone caused this exact boundary error.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-023 — CouchDB</h2><a href="https://issues.apache.org/jira/browse/COUCHDB-3374">Original report</a><p>NOT REVIEWED · proposed happy</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;CouchDB&quot;,
+  &quot;http_method&quot;: &quot;POST&quot;,
+  &quot;endpoint&quot;: &quot;/new/_index&quot;,
+  &quot;status_code&quot;: 500,
+  &quot;observations&quot;: [
+    &quot;Report supplies explicit POST curl command without authorization and HTTP 500 response.&quot;,
+    &quot;JSON body reports error_saving_ddoc with unauthorized reason; affected version 2.0.0.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;reported_error&quot;: &quot;error_saving_ddoc; Unknown error while saving the design document: unauthorized&quot;,
+    &quot;request_headers&quot;: {
+      &quot;Content-Type&quot;: &quot;application/json&quot;
+    }
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Investigate authorization for index/design-document creation despite 500; inspect access policy. Do not claim storage outage or recommend disabling security.&quot;,
+  &quot;limitations&quot;: &quot;Report reproduction, not independently verified. Source response date does not establish publication date.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-024 — Django form application</h2><a href="https://forum.djangoproject.com/t/csrf-token-missing-403/33408">Original report</a><p>NOT REVIEWED · proposed happy</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;Django form application&quot;,
+  &quot;http_method&quot;: &quot;POST&quot;,
+  &quot;endpoint&quot;: &quot;/&quot;,
+  &quot;status_code&quot;: 403,
+  &quot;observations&quot;: [
+    &quot;Server log shows POST / returning 403 with CSRF token missing warning.&quot;,
+    &quot;Displayed form uses enctype text/plain despite including a CSRF template tag; version 5.0.7.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;reported_form_enctype&quot;: &quot;text/plain&quot;,
+    &quot;reported_error&quot;: &quot;CSRF token missing&quot;
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Investigate submitted form encoding and actual token/cookie delivery; a rendered tag does not prove token receipt. Do not disable CSRF.&quot;,
+  &quot;limitations&quot;: &quot;Reporter later says changing enctype works; keep later resolution evaluator-only. Broad CSRF overlap with 025, different application and cause.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-025 — Sentry self-hosted</h2><a href="https://github.com/getsentry/self-hosted/issues/1601">Original report</a><p>NOT REVIEWED · proposed edge</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;Sentry self-hosted&quot;,
+  &quot;http_method&quot;: &quot;POST&quot;,
+  &quot;endpoint&quot;: &quot;/api/2/envelope/&quot;,
+  &quot;status_code&quot;: 403,
+  &quot;observations&quot;: [
+    &quot;Access and application logs record POST /api/2/envelope/ returning 403.&quot;,
+    &quot;Warning says CSRF cookie not set; recorded handler is RedirectView.&quot;,
+    &quot;Relay reports envelope delivery failure while web UI works.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;reported_handler&quot;: &quot;django.views.generic.base.RedirectView&quot;,
+    &quot;reported_error&quot;: &quot;CSRF cookie not set&quot;
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Inspect relay/web routing and correlated CSRF rejection. Do not assume adding browser cookies to ingestion is correct or disable CSRF globally.&quot;,
+  &quot;limitations&quot;: &quot;Keep external acceptance versus internal 403 separate. Omit IPs, cookies, relay signatures and personal data. Later proposed fixes not input.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-026 — Connexion</h2><a href="https://github.com/spec-first/connexion/issues/2040">Original report</a><p>NOT REVIEWED · proposed happy</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;Connexion&quot;,
+  &quot;http_method&quot;: &quot;POST&quot;,
+  &quot;endpoint&quot;: &quot;/todos&quot;,
+  &quot;status_code&quot;: 500,
+  &quot;observations&quot;: [
+    &quot;Published curl sends both content-type application/json and Content-Type Application/Json.&quot;,
+    &quot;Version-3 reproduction logs ValueError during MIME splitting and POST /todos 500; version-2 comparison returns 201.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;reported_header_entries&quot;: [
+      [
+        &quot;content-type&quot;,
+        &quot;application/json&quot;
+      ],
+      [
+        &quot;Content-Type&quot;,
+        &quot;Application/Json&quot;
+      ]
+    ],
+    &quot;reported_error&quot;: &quot;ValueError: too many values to unpack (expected 2)&quot;
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Investigate duplicate Content-Type handling and version-dependent MIME parsing; recommend one valid header and controlled comparison. No guaranteed library patch.&quot;,
+  &quot;limitations&quot;: &quot;Preserve duplicate headers as ordered pairs, not a collapsed map. Later partial patch still errors; not a successful fix. Contributor reproduction.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-027 — HAProxy</h2><a href="https://github.com/haproxy/haproxy/issues/3267">Original report</a><p>NOT REVIEWED · proposed edge</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;HAProxy&quot;,
+  &quot;http_method&quot;: &quot;GET&quot;,
+  &quot;endpoint&quot;: &quot;/&quot;,
+  &quot;status_code&quot;: 502,
+  &quot;observations&quot;: [
+    &quot;HTTP/1.1 curl transcript shows GET / and 502 after approximately 30 seconds.&quot;,
+    &quot;Reporter compares QUIC backend failure with working HTTP/2 backend configuration and says direct backend access works.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;reported_frontend_protocol&quot;: &quot;HTTP/1.1&quot;,
+    &quot;reported_backend_protocol&quot;: &quot;QUIC/HTTP3&quot;,
+    &quot;reported_version&quot;: &quot;3.3.3&quot;
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Investigate protocol/configuration interaction with correlated proxy logs. Direct backend success narrows scope but does not prove a specific code defect.&quot;,
+  &quot;limitations&quot;: &quot;Host is source-masked. Do not infer DNS failure, disable TLS verification or promise an upgrade fix.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-028 — Open WebUI</h2><a href="https://github.com/open-webui/open-webui/issues/31326">Original report</a><p>NOT REVIEWED · proposed known_failure</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;Open WebUI&quot;,
+  &quot;http_method&quot;: &quot;POST&quot;,
+  &quot;endpoint&quot;: &quot;/api/chat/completions&quot;,
+  &quot;status_code&quot;: 400,
+  &quot;observations&quot;: [
+    &quot;Published server log pairs POST /api/chat/completions with 400; response detail describes rate limiting.&quot;,
+    &quot;Controlled mock upstream returns 429 and retry headers; client response lacks retry headers.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;upstream_status_reported&quot;: 429,
+    &quot;upstream_retry_after_reported&quot;: &quot;7&quot;,
+    &quot;client_retry_after_reported&quot;: &quot;absent&quot;
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Distinguish client-visible 400 from upstream 429; investigate gateway status/header preservation. Do not treat upstream Retry-After as received by the client.&quot;,
+  &quot;limitations&quot;: &quot;Real third-party bug reproduction USING MOCK upstream, not real production rate limit. Disclose sourcing category for rubric review; later fix evaluator-only. Broad rate-limit overlap with 009.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-029 — nginx</h2><a href="https://mailman.nginx.org/pipermail/nginx-devel/2015-July/007140.html">Original report</a><p>NOT REVIEWED · proposed edge</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;nginx&quot;,
+  &quot;http_method&quot;: &quot;GET&quot;,
+  &quot;endpoint&quot;: &quot;/keepalive.html&quot;,
+  &quot;status_code&quot;: 400,
+  &quot;observations&quot;: [
+    &quot;Published curl transcript includes an empty Host header and HTTP/1.1 400.&quot;,
+    &quot;Server message reports invalid host header.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;request_headers&quot;: {
+      &quot;Host&quot;: &quot;&quot;
+    },
+    &quot;reported_error&quot;: &quot;client sent invalid host header&quot;
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Identify reported empty-host rejection; verify intended authority/routing and effective configuration. Do not adopt reporter's standards interpretation as established fact.&quot;,
+  &quot;limitations&quot;: &quot;Not an AI prompt-injection test. Source host already anonymized. Preserve empty value; no fabricated target hostname.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article><article><h2>W4-REAL-030 — nginx</h2><a href="https://github.com/nginx/nginx/issues/1522">Original report</a><p>NOT REVIEWED · proposed adversarial_candidate</p><h3>Proposed evidence</h3><pre>{
+  &quot;service&quot;: &quot;nginx&quot;,
+  &quot;http_method&quot;: &quot;POST&quot;,
+  &quot;endpoint&quot;: &quot;/discard&quot;,
+  &quot;status_code&quot;: 204,
+  &quot;observations&quot;: [
+    &quot;Report presents an over-limit chunked request to /discard yielding 204 versus fixed-length comparison yielding 413.&quot;,
+    &quot;Configuration specifies client_max_body_size 1k; decoded bodies are reported as 4096 bytes.&quot;
+  ],
+  &quot;request_metadata&quot;: {
+    &quot;reported_limit_bytes&quot;: 1024,
+    &quot;reported_decoded_bytes&quot;: 4096,
+    &quot;request_headers&quot;: {
+      &quot;Transfer-Encoding&quot;: &quot;chunked&quot;
+    },
+    &quot;comparison_status_reported&quot;: 413
+  },
+  &quot;response_body&quot;: null,
+  &quot;logs&quot;: []
+}</pre><h3>Evaluator-only proposal</h3><pre>{
+  &quot;expected_behavior&quot;: &quot;Investigate inconsistent size enforcement across body-framing paths. Treat 204 as transport success, not proof the limit worked. Suggest isolated authorized verification, never execute supplied PoC.&quot;,
+  &quot;limitations&quot;: &quot;Security reproduction; status originates in stated expected-output block, with contributor reproducibility comment, not raw capture. Conditional eligibility. This tests malicious protocol input, not LLM prompt injection; rubric suitability pending.&quot;,
+  &quot;runtime_mapping&quot;: &quot;PENDING&quot;,
+  &quot;neutral_goal&quot;: &quot;Map intended operation or error contract explicitly; do not copy diagnosis into runtime expected_behavior.&quot;
+}</pre><p>Decision: pending. Grade: blank.</p></article></html>

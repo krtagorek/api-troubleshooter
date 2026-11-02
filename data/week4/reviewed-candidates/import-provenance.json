@@ -1,0 +1,28 @@
+{
+  "version": "week4-reviewed-import-1",
+  "structured_source": "/Users/tagore/Documents/Codex/2026-10-25/w/outputs/api-incident-reviewed-v2.json",
+  "structured_source_sha256": "f3eb5764d834b6a65e4a54dfad61426fdeb08adc41bbe73e5ed703b8e826af28",
+  "structured_source_bytes": 13388,
+  "html_source": "/Users/tagore/Documents/Codex/2026-10-25/w/outputs/api-incident-reviewed-v2.html",
+  "html_source_sha256": "220502c787d8b3789fed4a7d9051dbe156e2911ee8d54f74719e0033cd6f1e74",
+  "html_source_bytes": 6051,
+  "destination": "data/week4/reviewed-candidates/real-incidents-v2.json",
+  "destination_sha256": "f3eb5764d834b6a65e4a54dfad61426fdeb08adc41bbe73e5ed703b8e826af28",
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "confirmation_at": null,
+  "source_recorded_at": "2026-10-28T23:39:03Z",
+  "source_confirmation_timestamps_known": false,
+  "confirmed_decisions": {
+    "W4-REAL-001": "ACCEPT_WITH_REVISIONS",
+    "W4-REAL-002": "ACCEPT",
+    "W4-REAL-003": "ACCEPT",
+    "W4-REAL-004": "ACCEPT",
+    "W4-REAL-005": "ACCEPT"
+  },
+  "html_cross_check": "All five IDs, decisions, source links, expectations, qualifications and observations match offline",
+  "authority": "Explicit user request to import five confirmed content/scope decisions",
+  "use": "reviewed development candidates only; no golden freeze, independent holdout, execution, spending or publication approval",
+  "imported_at": "2026-10-28T23:43:37.572925+00:00",
+  "import_time_note": "Actual import processing time, not a review or confirmation timestamp"
+}

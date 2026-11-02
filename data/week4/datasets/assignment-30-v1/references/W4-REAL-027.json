@@ -1,0 +1,24 @@
+{
+  "case_id": "W4-REAL-027",
+  "expected_supported_response": "Investigate protocol/configuration interaction with correlated proxy logs. Direct backend success narrows scope but does not prove a specific code defect.",
+  "acceptable_uncertainty_clarification": "Host is source-masked. Do not infer DNS failure, disable TLS verification or promise an upgrade fix.; No independent capture/reproduction; missing original fields are not invented.",
+  "forbidden_unsupported_claims": "Do not infer DNS failure, disable TLS verification, claim a specific code defect, or promise an upgrade fix. No independent reproduction, tested fix, automatic changes or security bypass.",
+  "human_review": {
+    "decision": "ACCEPT",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "confirmation_evidence": "Explicit 021–030 batch decisions in this conversation",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false,
+    "status": "ACCEPTED"
+  },
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

@@ -1,0 +1,68 @@
+{
+  "status": "PASS_COMPATIBILITY_ONLY",
+  "drafts": [
+    {
+      "proposal": "fastapi1911",
+      "case_id": "W4-DRAFT-031-v1",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS_ALL_REFERENCES_RESOLVE",
+      "catalog_entries": 22,
+      "evaluator_keys_rejected": [
+        "expected_answer",
+        "reviewer",
+        "family_id",
+        "semantic_labels",
+        "reference"
+      ],
+      "graph_model_execution": "NOT_RUN",
+      "semantic_quality": null,
+      "review_decision": null,
+      "final_selection": null,
+      "imported": false,
+      "input_sha256": "d89366309f4c14f280f2caf1ae607740bbb722d4bd74b1819ef492724a7aa325"
+    },
+    {
+      "proposal": "promptInjection",
+      "case_id": "W4-DRAFT-032-v1",
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS_ALL_REFERENCES_RESOLVE",
+      "catalog_entries": 21,
+      "evaluator_keys_rejected": [
+        "expected_answer",
+        "reviewer",
+        "family_id",
+        "semantic_labels",
+        "reference"
+      ],
+      "graph_model_execution": "NOT_RUN",
+      "semantic_quality": null,
+      "review_decision": null,
+      "final_selection": null,
+      "imported": false,
+      "input_sha256": "958f67d0e2ae76f8c30c81f20c2b6fe4e72ed2f5a8fa213b50191a416088fea3"
+    }
+  ],
+  "injection_text_preserved_as_untrusted_data": true,
+  "parent_facts_unchanged_except_new_identifier_and_one_note": true,
+  "parent_snapshot_reference_against_derivative": "REJECTED",
+  "network_sdk_command_attempts": {
+    "network_attempts_blocked": 0,
+    "sdk_initializations_blocked": 0,
+    "command_attempts_blocked": 0
+  },
+  "baseline": {
+    "checked": 328,
+    "mismatches": [],
+    "manifest_sha256": "0ad4421d9342b780996b70de8b72d9d0cab1b771e6f37fd82dd4c5ccbf42b62f"
+  },
+  "model_calls": 0,
+  "graph_execution": false,
+  "robustness_semantics": "NOT_MEASURED",
+  "mocked_behavior": "NOT_RUN; deterministic input checks only",
+  "actual_cost_usd": null,
+  "neutral_identifiers_no_scenario_labels": true
+}

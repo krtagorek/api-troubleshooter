@@ -1,0 +1,252 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.001848",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.001848",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.001848",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "W4-REAL-008",
+  "elapsed_seconds": 4.701787542086095,
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "known_model_elapsed_seconds": 4.050645750248805,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 4.050645750248805,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/response_body",
+        "/status_code"
+      ],
+      "reasoning": "The incident reports a 404 Not Found status for a GET request to retrieve Pages information on a repository. A 404 status indicates the resource was not found, which could be due to various reasons such as the Pages feature not being configured, the repository not existing, or incorrect endpoint usage. There is no direct evidence indicating authentication, authorization, validation, rate limiting, timeout, server error, schema mismatch, or dependency failure. The evidence is based on reporter-stated status without independent reproduction, and the response body is null, providing insufficient information to classify the failure category confidently."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:00ca30aed3632356c2f40bfb:2a0e85c599e6c5df5c565480",
+          "observation": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly calls this a GET request and reports 404 for the shown endpoint.\n- Reporter also reports failures on owned repositories with Pages configured; branch endpoints work.\nThe shown example request and the separately reported reporter-owned repository requests are distinct; no shared outcome is established.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:00ca30aed3632356c2f40bfb:3f4a69032d300a2d2aa61d32",
+          "observation": "Retrieve Pages information for the repository in the shown GET request.",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:00ca30aed3632356c2f40bfb:333207f7c74cd957c8a7addf",
+          "observation": "null",
+          "reference": "/response_body",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:00ca30aed3632356c2f40bfb:66463dee8efb91ac7242ea20",
+          "observation": "404",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent reproduction or verification of the reported 404 status; reliance on reporter-stated status without captured status line.",
+          "required_to_resolve": "Independent reproduction of the GET request to /repos/octocat/hello-world/pages with captured status line and response body."
+        },
+        {
+          "description": "No information on repository configuration or existence to confirm if the Pages feature is enabled or if the repository exists.",
+          "required_to_resolve": "Repository metadata confirming existence and Pages configuration status."
+        },
+        {
+          "description": "Unsafe credential-material request replaced by trusted safety policy; confirmation remains outstanding.",
+          "required_to_resolve": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-008",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Independent reproduction of the GET request to /repos/octocat/hello-world/pages with captured status line and response body.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Repository metadata confirming existence and Pages configuration status.",
+      "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /request_metadata/accept, /request_metadata/repository_scope/other_reported_requests, /request_metadata/repository_scope/shown_endpoint_role, /request_metadata/status_evidence/captured_status_line_available, /request_metadata/status_evidence/kind. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /actual_behavior, /response_body, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported evidence from the reviewed historical public-report paraphrase; not independently reproduced:\n- Reporter explicitly calls this a GET request and reports 404 for the shown endpoint.\n- Reporter also reports failures on owned repositories with Pages configured; branch endpoints work.\nThe shown example request and the separately reported reporter-owned repository requests are distinct; no shared outcome is established.",
+      "endpoint": "/repos/octocat/hello-world/pages",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Retrieve Pages information for the repository in the shown GET request.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-008",
+      "logs": [],
+      "request_metadata": {
+        "accept": "application/vnd.github.v3+json",
+        "repository_scope": {
+          "other_reported_requests": "Reporter-owned repositories; identities and exact requests not supplied; separate from the shown example.",
+          "shown_endpoint_role": "example repository"
+        },
+        "status_evidence": {
+          "captured_status_line_available": false,
+          "kind": "reporter_stated"
+        }
+      },
+      "response_body": null,
+      "service": "GitHub REST API",
+      "severity": "unknown",
+      "status_code": 404
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "6cff9b16-0404-4ad0-bef0-5c5bd6f38d96",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "9da61916-8b00-44db-aecc-607e19681e2b",
+      "elapsed_seconds": 2.0149149580392987,
+      "error": null,
+      "input_tokens": 1221,
+      "output_tokens": 201,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1422
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "afc9b095-971d-49f6-8a1d-cc2a6e478c1d",
+      "elapsed_seconds": 2.035730792209506,
+      "error": null,
+      "input_tokens": 1751,
+      "output_tokens": 211,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1962
+    }
+  ],
+  "root_id": "6cff9b16-0404-4ad0-bef0-5c5bd6f38d96",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [
+        {
+          "reference": "/response_body",
+          "status": "not supplied; not a captured null body"
+        },
+        {
+          "reference": "/logs",
+          "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+        }
+      ],
+      "other_available_unselected_references": [
+        "/request_metadata/accept",
+        "/request_metadata/repository_scope/other_reported_requests",
+        "/request_metadata/repository_scope/shown_endpoint_role",
+        "/request_metadata/status_evidence/captured_status_line_available",
+        "/request_metadata/status_evidence/kind"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/response_body",
+        "/status_code"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 4,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "2e93683c5b534b44370c2e773bb501dcad3ed982c54c8b65eec54d01f194dcae",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 72872,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

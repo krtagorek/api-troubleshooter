@@ -1,0 +1,24 @@
+{
+  "case_id": "W4-REAL-018",
+  "incident": {
+    "incident_id": "W4-REAL-018",
+    "service": "GitLab issue API",
+    "endpoint": "/api/v4/projects/2/issues",
+    "http_method": "POST",
+    "status_code": 409,
+    "request_metadata": {
+      "status_evidence": {
+        "kind": "reported_structured_server_log"
+      },
+      "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+      "response_body_scope": "not_supplied_not_a_captured_json_null",
+      "operation_goal_mapping": "editorial; not an additional human confirmation"
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Create the requested issue in the specified project.",
+    "actual_behavior": "Reported historical observations; not independently reproduced:\n- Published structured server logs explicitly pair POST /api/v4/projects/2/issues with status 409.\n- Report describes creating an issue while project import is ongoing, followed by issue-create conflicts after import.\n- Reporter describes API error as Duplicated issue and suspects internal issue-number tracking.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

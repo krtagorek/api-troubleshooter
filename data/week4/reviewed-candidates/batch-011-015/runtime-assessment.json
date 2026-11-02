@@ -1,0 +1,127 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "counts": {
+    "human_accepted": 5,
+    "input_schema_compatible": 5,
+    "evidence_preserving_input_compatible": 5,
+    "graph_executed": 0,
+    "golden_set_ready": 0
+  },
+  "cases": [
+    {
+      "case_id": "W4-REAL-011",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_server_access_log",
+      "editorial_goal": "List the reporter's generated files through the reported GET /api/list-files operation.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Original full request/header capture and exact missing-header cause not established; no proven port/session/expiry/signing-secret cause."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 7,
+      "inference_sha256": "93098131c12a3a0eb1baa5fcd5b9507a912b1d3081836f7a8f602ccb079f9cbf"
+    },
+    {
+      "case_id": "W4-REAL-012",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_client_exception_http_status_line",
+      "editorial_goal": "Submit the intended document to the reported POST /euronews/mytable/1266?pretty=true operation.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Exact original payload bytes unavailable; no confirmed corrected JSON or exact serialization defect."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 11,
+      "inference_sha256": "ba1a67a54296aa897c7d9d22269ea56f788595ed245ad643d6b76bf92cc109c6"
+    },
+    {
+      "case_id": "W4-REAL-013",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_httpie_status_line",
+      "editorial_goal": "Return an informative rejection for the reported unsupported PUT / request under the configured route contract.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Full allowed-method list and independently reproduced upgrade/remediation outcome unavailable."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 7,
+      "inference_sha256": "ac89541893b71ea83474327c8b2b352457ec8e0f04d2446d6f912eaef71130ed"
+    },
+    {
+      "case_id": "W4-REAL-014",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_curl_status_line",
+      "editorial_goal": "Create the requested child issue and return a response consistent with the write outcome.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Independent verification of persistence/duplicates, request payload and exact server failure point unavailable."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 7,
+      "inference_sha256": "5494c560424d3802135809d32a1017cab21854de15b902501a5438431f6161fd"
+    },
+    {
+      "case_id": "W4-REAL-015",
+      "human_decision": "ACCEPTED",
+      "status_provenance": "reported_curl_status_line",
+      "editorial_goal": "Submit the intended snapshot policy through the reported POST /_plugins/_sm/policies/snapshot_policy operation.",
+      "editorial_goal_additionally_confirmed": false,
+      "missing_evidence": [
+        "Deployed API/plugin support and exact root cause unresolved; alternative snapshot API advice not a verified repair."
+      ],
+      "schema": "PASS",
+      "sanitization": "PASS_UNCHANGED",
+      "initialization": "PASS",
+      "catalog": "PASS",
+      "graph_executed": false,
+      "semantic_quality": "NOT_CHECKED",
+      "runtime_result": "INPUT_COMPATIBLE_NOT_EXECUTED",
+      "evaluation_eligibility": "PENDING_MAPPING_AND_BENCHMARK_REVIEW",
+      "safe_rejections": [],
+      "blockers": [],
+      "sanitization_changes": [],
+      "catalog_entries": 7,
+      "inference_sha256": "e0f8216a36d0a7e032c4ac4af36c44c6c7f6fd3b93666722fd768bb36c50f801"
+    }
+  ]
+}

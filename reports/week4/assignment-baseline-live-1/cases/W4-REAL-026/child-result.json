@@ -1,0 +1,162 @@
+{
+  "case_id": "W4-REAL-026",
+  "errors": [],
+  "evidence_policy": "inherited",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "server_error",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_error",
+        "/status_code"
+      ],
+      "reasoning": "The incident involves a 500 Internal Server Error status code (E12) and a ValueError exception indicating 'too many values to unpack (expected 2)' (E04). This suggests a server-side failure during request processing rather than client-side issues such as authentication, authorization, or validation. The error occurs during MIME splitting as per the reproduction logs (E01). There is no direct evidence of schema mismatch, rate limiting, timeout, or dependency failure. Therefore, the failure is best categorized as a server error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:dd5da2f1b56a235de2a63e3a:001f4bc67a13e4e8f5ec82c4",
+          "observation": "Reporter-published observations; not independently reproduced:\n- Published curl sends both content-type application/json and Content-Type Application/Json.\n- Version-3 reproduction logs ValueError during MIME splitting and POST /todos 500; version-2 comparison returns 201.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:dd5da2f1b56a235de2a63e3a:e03e4a4ba1b4ebacefed4c6e",
+          "observation": "ValueError: too many values to unpack (expected 2)",
+          "reference": "/request_metadata/reported_error",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:dd5da2f1b56a235de2a63e3a:2af465ac548465729c71cbd4",
+          "observation": "500",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent captured telemetry or raw logs provided to confirm the error context and exact failure point.",
+          "required_to_resolve": "Access to original server logs, stack traces, and request payloads to verify the cause of the ValueError and 500 status."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-026",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Access to original server logs, stack traces, and request payloads to verify the cause of the ValueError and 500 status.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published curl sends both content-type application/json and Content-Type Application/Json.\n- Version-3 reproduction logs ValueError during MIME splitting and POST /todos 500; version-2 comparison returns 201.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/todos",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Submit the intended request through POST /todos.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-026",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_error": "ValueError: too many values to unpack (expected 2)",
+        "reported_header_entries": [
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "Content-Type",
+            "Application/Json"
+          ]
+        ],
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "contributor_reproduction_v3_access_log_500_distinct_v2_201_comparison"
+        }
+      },
+      "response_body": null,
+      "service": "Connexion",
+      "severity": "unknown",
+      "status_code": 500
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "65b4bba0-02b9-4c58-80da-e3ae8c5909f0",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "806a4ee3-b1cc-41c2-bbd7-59fbb0b19143",
+      "elapsed_seconds": 1.8958953330293298,
+      "error": null,
+      "input_tokens": 1406,
+      "output_tokens": 186,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1592
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "3e685edc-61a8-4b92-a7cb-d42134f770f8",
+      "elapsed_seconds": 1.4953751671127975,
+      "error": null,
+      "input_tokens": 1748,
+      "output_tokens": 131,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1879
+    }
+  ],
+  "root_id": "65b4bba0-02b9-4c58-80da-e3ae8c5909f0",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

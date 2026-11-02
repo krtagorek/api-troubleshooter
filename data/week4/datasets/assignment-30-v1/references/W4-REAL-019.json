@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-019",
+  "expected_supported_response": "Qualified importer API-base-path regression hypothesis; request chain unresolved. Preserve captured GET login URL/406, source-masked host and prior /api/v3/repositories/1 success. Keep prose 16.7.2 versus capture 16.7.3 discrepancy. No invented redirect status or later code explanation promoted to measurement.",
+  "acceptable_uncertainty_clarification": "Investigate API-base-path/login-target handling as a qualified hypothesis; request the request/redirect chain and preserve conflicting reported versions.",
+  "forbidden_unsupported_claims": "Do not infer unsupported Accept type solely from 406, invent redirect statuses, unmask the host, or promote later code explanations into measurements.",
+  "human_review": null,
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "confirmation_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "runtime_status": "RUNTIME_MAPPING_PENDING",
+    "notes": "Qualified importer API-base-path regression hypothesis; request chain unresolved. Preserve captured GET login URL/406, source-masked host and prior /api/v3/repositories/1 success. Keep prose 16.7.2 versus capture 16.7.3 discrepancy. No invented redirect status or later code explanation promoted to measurement.",
+    "confirmation_evidence": "Current explicit user decisions for 016–020; 020 accepted after v5",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  }
+}

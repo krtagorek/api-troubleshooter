@@ -1,0 +1,38 @@
+{
+  "arm": "baseline",
+  "config": {
+    "budget_profile": "week4-case-manifest-1",
+    "cached_input_per_million": "0.10",
+    "call_timeout_seconds": 20,
+    "case_timeout_seconds": 120,
+    "evidence_policy": "inherited",
+    "input_bound_kind": "model_context_max",
+    "input_cap": 1047576,
+    "input_per_million": "0.40",
+    "max_calls": 5,
+    "max_request_bytes": 65536,
+    "max_usd": "2.107440",
+    "model": "gpt-4.1-mini-2025-04-14",
+    "output_cap": 1536,
+    "output_per_million": "1.60",
+    "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+    "pricing_verified_at": "2026-10-29",
+    "selection_policy": "off",
+    "service_tier": "default"
+  },
+  "dataset_manifest_sha256": "c105de5632777304e876176f74e5dcf1a0ae0442058ff28e37edbfbb9cb75b32",
+  "execution": {
+    "case_count": 30,
+    "concurrency": 1,
+    "external_diagnostic_tools": false,
+    "external_trace_export": false,
+    "fallback": false,
+    "local_tracing": true,
+    "max_calls": 150,
+    "max_usd": "63.223200",
+    "retries": 0
+  },
+  "mode": "live",
+  "plan_identity": "b41c23e44c1c034f5e220701a901bfee3cabb32dae9348c4ad1ffd7a65cdcc3b",
+  "version": "week4-case-manifest-evaluation-1"
+}

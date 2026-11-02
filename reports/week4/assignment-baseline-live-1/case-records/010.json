@@ -1,0 +1,190 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0016188",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0016188",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0016188",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "W4-REAL-017",
+  "elapsed_seconds": 4.4028662499040365,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 3.808776499936357,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.808776499936357,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP 412 status code indicates a precondition failure, which typically means that the request's preconditions (such as 'If-Match' headers) were not met. The evidence (E01, E08) shows concurrent updates causing precondition failures, consistent with validation errors related to write preconditions and overwrite protection. There is no indication of authentication, authorization, rate limiting, timeout, server error, schema mismatch, or dependency failure in the provided evidence."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f9d6c3d2861396230ef5be72:794c07f6d61b80be0f43829f",
+          "observation": "Reported historical observations; not independently reproduced:\n- Proxy and backend access logs both record PUT to this path returning 412.\n- Client reports precondition failure under heavier HTTPS load.\n- Original reporter later observes this mainly when two clients update the same user's files concurrently.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f9d6c3d2861396230ef5be72:60160b50664dd411d8a43bc1",
+          "observation": "Update the requested file while respecting write preconditions and overwrite protection.",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f9d6c3d2861396230ef5be72:0252c0c2c5ca4fa0ef12e6a6",
+          "observation": "reported_proxy_and_backend_access_logs",
+          "reference": "/request_metadata/status_evidence/kind",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:f9d6c3d2861396230ef5be72:a8f1d1b5519be4b5d4871c6e",
+          "observation": "412",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No independent reproduction or typed log events confirming the precondition failure cause.",
+          "required_to_resolve": "Captured detailed logs or traces showing exact precondition headers and server evaluation during the PUT requests."
+        },
+        {
+          "description": "Unknown response body content limits understanding of server response details.",
+          "required_to_resolve": "Captured response bodies or error messages from the server for the 412 responses."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-017",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Captured detailed logs or traces showing exact precondition headers and server evaluation during the PUT requests.",
+      "Captured response bodies or error messages from the server for the 412 responses.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Proxy and backend access logs both record PUT to this path returning 412.\n- Client reports precondition failure under heavier HTTPS load.\n- Original reporter later observes this mainly when two clients update the same user's files concurrently.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.",
+      "endpoint": "/remote.php/webdav/x27.dat",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Update the requested file while respecting write preconditions and overwrite protection.",
+      "http_method": "PUT",
+      "incident_id": "W4-REAL-017",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+        "operation_goal_mapping": "editorial; not an additional human confirmation",
+        "response_body_scope": "not_supplied_not_a_captured_json_null",
+        "status_evidence": {
+          "kind": "reported_proxy_and_backend_access_logs"
+        }
+      },
+      "response_body": null,
+      "service": "ownCloud WebDAV",
+      "severity": "unknown",
+      "status_code": 412
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "3e03f127-5ca0-4805-b533-4be7e07d82d6",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "8278a657-fb46-4e0b-81c1-097b53c31535",
+      "elapsed_seconds": 1.7997365419287235,
+      "error": null,
+      "input_tokens": 1188,
+      "output_tokens": 176,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1364
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "7fe63841-e457-43f7-a579-64a6e0221348",
+      "elapsed_seconds": 2.0090399580076337,
+      "error": null,
+      "input_tokens": 1511,
+      "output_tokens": 161,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1672
+    }
+  ],
+  "root_id": "3e03f127-5ca0-4805-b533-4be7e07d82d6",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 67911,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

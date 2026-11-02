@@ -1,0 +1,1977 @@
+{
+  "kind": "SCRIPTED_MOCK_MECHANICS_NOT_QUALITY_OR_SPEND",
+  "batch": {
+    "batch_status": "finished",
+    "stop_reason": null,
+    "assigned_cases": 30,
+    "attempted_cases": 30,
+    "unattempted_cases": 0,
+    "attempted_cases_unknown": 0,
+    "case_statuses": {
+      "W4-REAL-005": "held",
+      "W4-REAL-006": "held",
+      "W4-REAL-008": "held",
+      "W4-REAL-009": "held",
+      "W4-REAL-011": "held",
+      "W4-REAL-012": "held",
+      "W4-REAL-013": "held",
+      "W4-REAL-014": "held",
+      "W4-REAL-015": "held",
+      "W4-REAL-016": "held",
+      "W4-REAL-017": "held",
+      "W4-REAL-018": "held",
+      "W4-REAL-019": "held",
+      "W4-REAL-020": "held",
+      "W4-DRAFT-032-v1": "held",
+      "V2-03-01": "held",
+      "V2-04-01": "held",
+      "V2-05-01": "failed",
+      "V2-15-01": "held",
+      "W4-REAL-007": "held",
+      "W4-REAL-021": "held",
+      "W4-REAL-022": "held",
+      "W4-REAL-023": "held",
+      "W4-REAL-024": "held",
+      "W4-REAL-025": "held",
+      "W4-REAL-026": "held",
+      "W4-REAL-027": "held",
+      "W4-REAL-028": "held",
+      "W4-REAL-029": "held",
+      "W4-DRAFT-031-v1": "held"
+    },
+    "accounting": {
+      "reserved_call_slots": 63,
+      "attempted_model_calls": 63,
+      "known_cost_usd": "0.0009828",
+      "retained_reservations_usd": "0",
+      "unknown_case_liability_bound_usd": "0",
+      "unknown_call_slot_bound": 0,
+      "accounted_ceiling_usd": "0.0009828",
+      "attempted_model_calls_complete": true,
+      "usage_priced_total_usd": "0.0009828"
+    },
+    "mean_usage_priced_cost_per_attempted_case_usd": "0.00003276",
+    "accounting_source": "mock_test_data",
+    "semantic_quality": null,
+    "dataset_manifest_sha256": "c105de5632777304e876176f74e5dcf1a0ae0442058ff28e37edbfbb9cb75b32",
+    "latency_boundary": "Each case uses existing supervisor elapsed boundary; exclude manifest/preflight/report overhead. No unattempted zero-fill."
+  },
+  "cases": [
+    {
+      "case_id": "W4-REAL-005",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-006",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/content_type_present",
+          "/request_metadata/framework_version",
+          "/request_metadata/handler_code",
+          "/request_metadata/request_body_present",
+          "/request_metadata/status_evidence/kind",
+          "/response_body/error",
+          "/response_body/message",
+          "/response_body/path",
+          "/response_body/status",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/content_type_present, /request_metadata/framework_version, /request_metadata/handler_code, /request_metadata/request_body_present, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-008",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/accept",
+          "/request_metadata/repository_scope/other_reported_requests",
+          "/request_metadata/repository_scope/shown_endpoint_role",
+          "/request_metadata/status_evidence/captured_status_line_available",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/accept, /request_metadata/repository_scope/other_reported_requests, /request_metadata/repository_scope/shown_endpoint_role, /request_metadata/status_evidence/captured_status_line_available, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-009",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/client_reported",
+          "/request_metadata/status_evidence/captured_status_line_available",
+          "/request_metadata/status_evidence/kind",
+          "/response_body/error/message",
+          "/response_body/error/status",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/client_reported, /request_metadata/status_evidence/captured_status_line_available, /request_metadata/status_evidence/kind, /response_body/error/message, /response_body/error/status, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-011",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-012",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/response_body/error/caused_by/reason",
+          "/response_body/error/caused_by/type",
+          "/response_body/error/reason",
+          "/response_body/error/type",
+          "/response_body/status",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, /response_body/error/caused_by/reason, /response_body/error/caused_by/type, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-013",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-014",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/response_body/error",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, /response_body/error, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-015",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/response_body/error",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, /response_body/error, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-016",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "completed",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 3,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput",
+        "RootCauseAnalystOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [
+          "/request_metadata/request_headers/skull",
+          "/request_metadata/reported_exception"
+        ],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": true,
+        "readiness_reason": "Original excerpt-bound reporter association permits qualified analysis only",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/operation_goal_mapping",
+          "/request_metadata/report_attribution_v2/anchors/bridge/block",
+          "/request_metadata/report_attribution_v2/anchors/bridge/end",
+          "/request_metadata/report_attribution_v2/anchors/bridge/kind",
+          "/request_metadata/report_attribution_v2/anchors/bridge/literal",
+          "/request_metadata/report_attribution_v2/anchors/bridge/start",
+          "/request_metadata/report_attribution_v2/anchors/exception/block",
+          "/request_metadata/report_attribution_v2/anchors/exception/end",
+          "/request_metadata/report_attribution_v2/anchors/exception/kind",
+          "/request_metadata/report_attribution_v2/anchors/exception/literal",
+          "/request_metadata/report_attribution_v2/anchors/exception/start",
+          "/request_metadata/report_attribution_v2/anchors/header/block",
+          "/request_metadata/report_attribution_v2/anchors/header/end",
+          "/request_metadata/report_attribution_v2/anchors/header/kind",
+          "/request_metadata/report_attribution_v2/anchors/header/literal",
+          "/request_metadata/report_attribution_v2/anchors/header/start",
+          "/request_metadata/report_attribution_v2/anchors/request/block",
+          "/request_metadata/report_attribution_v2/anchors/request/end",
+          "/request_metadata/report_attribution_v2/anchors/request/kind",
+          "/request_metadata/report_attribution_v2/anchors/request/literal",
+          "/request_metadata/report_attribution_v2/anchors/request/start",
+          "/request_metadata/report_attribution_v2/anchors/status/block",
+          "/request_metadata/report_attribution_v2/anchors/status/end",
+          "/request_metadata/report_attribution_v2/anchors/status/kind",
+          "/request_metadata/report_attribution_v2/anchors/status/literal",
+          "/request_metadata/report_attribution_v2/anchors/status/start",
+          "/request_metadata/report_attribution_v2/authenticated_request_correlation",
+          "/request_metadata/report_attribution_v2/endpoint",
+          "/request_metadata/report_attribution_v2/exception_pointer",
+          "/request_metadata/report_attribution_v2/header_pointer",
+          "/request_metadata/report_attribution_v2/kind",
+          "/request_metadata/report_attribution_v2/method",
+          "/request_metadata/report_attribution_v2/relationship",
+          "/request_metadata/report_attribution_v2/source_sha256",
+          "/request_metadata/report_attribution_v2/summary",
+          "/request_metadata/report_attribution_v2/summary_kind",
+          "/request_metadata/report_attribution_v2/version",
+          "/request_metadata/reported_exception",
+          "/request_metadata/request_headers/Accept",
+          "/request_metadata/request_headers/skull",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Provide additional sanitized upstream logs, response details, or contract documentation",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "For the selected user/reporter-supplied comparison /request_metadata/request_headers/skull versus /request_metadata/reported_exception, can the responsible owner compare sanitized nonsecret metadata and clarify the operation/attempt association? This is not independent verification or a confirmed cause.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": true,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-017",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/operation_goal_mapping",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/operation_goal_mapping, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-018",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/operation_goal_mapping",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/operation_goal_mapping, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-019",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/endpoint_representation",
+          "/request_metadata/observation_representation",
+          "/request_metadata/operation_goal_mapping",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/request_metadata/version_context/capture_excerpt",
+          "/request_metadata/version_context/earlier_success_comparison",
+          "/request_metadata/version_context/reconciled",
+          "/request_metadata/version_context/report_prose",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/endpoint_representation, /request_metadata/observation_representation, /request_metadata/operation_goal_mapping, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-020",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/command_representation",
+          "/request_metadata/command_structure",
+          "/request_metadata/correlation_scope",
+          "/request_metadata/observation_representation",
+          "/request_metadata/operation_goal_mapping",
+          "/request_metadata/operation_intent",
+          "/request_metadata/request_host_reported",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/command_representation, /request_metadata/command_structure, /request_metadata/correlation_scope, /request_metadata/observation_representation, /request_metadata/operation_goal_mapping, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-DRAFT-032-v1",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "completed",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 3,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput",
+        "RootCauseAnalystOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [
+          "/logs/0/records/1/value",
+          "/logs/0/records/0/value"
+        ],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": true,
+        "readiness_reason": "Legacy readiness retained",
+        "selected_references": [
+          "/actual_behavior",
+          "/logs/0/records/0/name",
+          "/logs/0/records/0/value",
+          "/logs/0/records/1/name",
+          "/logs/0/records/1/value",
+          "/logs/0/records/2/name",
+          "/logs/0/records/2/value",
+          "/logs/0/span_id",
+          "/logs/0/ts",
+          "/request_metadata/environment",
+          "/request_metadata/evidence_quality",
+          "/request_metadata/headers/X-Demo-Mode",
+          "/request_metadata/request_id",
+          "/request_metadata/timeout_ms",
+          "/request_metadata/untrusted_note",
+          "/response_body/request_id",
+          "/response_body/result",
+          "/response_body/status",
+          "/response_body/timestamp",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Provide additional sanitized upstream logs, response details, or contract documentation",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "For the selected user/reporter-supplied comparison issuer_configured (/logs/0/records/1/value) versus issuer_received (/logs/0/records/0/value), can the responsible owner compare sanitized nonsecret metadata and clarify the operation/attempt association? This is not independent verification or a confirmed cause.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": true,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "V2-03-01",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "completed",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 3,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput",
+        "RootCauseAnalystOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [
+          "/logs/0/fields/resource_environment",
+          "/logs/0/fields/workload_environment"
+        ],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": true,
+        "readiness_reason": "Legacy readiness retained",
+        "selected_references": [
+          "/actual_behavior",
+          "/logs/0/correlation_id",
+          "/logs/0/event",
+          "/logs/0/fields/decision_rule",
+          "/logs/0/fields/identity_valid",
+          "/logs/0/fields/resource_environment",
+          "/logs/0/fields/workload_environment",
+          "/logs/0/level",
+          "/logs/0/message",
+          "/logs/0/timestamp",
+          "/request_metadata/environment",
+          "/request_metadata/evidence_quality",
+          "/request_metadata/headers/X-Demo-Mode",
+          "/request_metadata/request_id",
+          "/request_metadata/timeout_ms",
+          "/response_body/request_id",
+          "/response_body/result",
+          "/response_body/status",
+          "/response_body/timestamp",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Provide additional sanitized upstream logs, response details, or contract documentation",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "For the selected user/reporter-supplied comparison /logs/0/fields/resource_environment versus /logs/0/fields/workload_environment, can the responsible owner compare sanitized nonsecret metadata and clarify the operation/attempt association? This is not independent verification or a confirmed cause.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": true,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "V2-04-01",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/logs/0/correlation_id",
+          "/logs/0/event",
+          "/logs/0/fields/operation",
+          "/logs/0/fields/retention_active",
+          "/logs/0/fields/retention_rule",
+          "/logs/0/fields/role_permits_delete",
+          "/logs/0/level",
+          "/logs/0/message",
+          "/logs/0/timestamp",
+          "/request_metadata/environment",
+          "/request_metadata/evidence_quality",
+          "/request_metadata/headers/X-Demo-Mode",
+          "/request_metadata/request_id",
+          "/request_metadata/timeout_ms",
+          "/response_body/request_id",
+          "/response_body/result",
+          "/response_body/status",
+          "/response_body/timestamp",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /logs/0/correlation_id, /logs/0/event, /logs/0/fields/operation, /logs/0/fields/retention_active, /logs/0/fields/retention_rule, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "V2-05-01",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "failed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "failed",
+      "errors": [
+        "AgentOutputError"
+      ],
+      "calls": 1,
+      "schemas": [
+        "ClassifierOutput"
+      ],
+      "workflow_status": "running",
+      "stop_reason": null,
+      "readiness": null,
+      "saved_clarification": [],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "V2-15-01",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "completed",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 3,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput",
+        "RootCauseAnalystOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [
+          "/logs/0/fields/error_offset",
+          "/logs/0/fields/decoder",
+          "/logs/0/fields/content_type"
+        ],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": true,
+        "readiness_reason": "Legacy readiness retained",
+        "selected_references": [
+          "/actual_behavior",
+          "/logs/0/correlation_id",
+          "/logs/0/event",
+          "/logs/0/fields/content_type",
+          "/logs/0/fields/decoder",
+          "/logs/0/fields/error_offset",
+          "/logs/0/fields/line_count",
+          "/logs/0/level",
+          "/logs/0/message",
+          "/logs/0/timestamp",
+          "/request_metadata/environment",
+          "/request_metadata/evidence_quality",
+          "/request_metadata/headers/X-Demo-Mode",
+          "/request_metadata/request_id",
+          "/request_metadata/timeout_ms",
+          "/response_body/request_id",
+          "/response_body/result",
+          "/response_body/status",
+          "/response_body/timestamp",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Provide additional sanitized upstream logs, response details, or contract documentation",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "For the selected user/reporter-supplied comparison /logs/0/fields/error_offset versus /logs/0/fields/decoder versus /logs/0/fields/content_type, can the responsible owner compare sanitized nonsecret metadata and clarify the operation/attempt association? This is not independent verification or a confirmed cause.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": true,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-007",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/dependency_signature_parts/annotation",
+          "/request_metadata/dependency_signature_parts/function",
+          "/request_metadata/dependency_signature_parts/parameter_name",
+          "/request_metadata/framework_version",
+          "/request_metadata/handler_code",
+          "/request_metadata/query_parameter_present",
+          "/request_metadata/reported_header_scheme",
+          "/request_metadata/status_evidence/kind",
+          "/response_body/detail/0/loc/0",
+          "/response_body/detail/0/loc/1",
+          "/response_body/detail/0/msg",
+          "/response_body/detail/0/type",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/dependency_signature_parts/annotation, /request_metadata/dependency_signature_parts/function, /request_metadata/dependency_signature_parts/parameter_name, /request_metadata/framework_version, /request_metadata/handler_code, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-021",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reported_error",
+          "/request_metadata/request_headers/Content-Length",
+          "/request_metadata/request_headers/Content-Type",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_error, /request_metadata/request_headers/Content-Length, /request_metadata/request_headers/Content-Type, /request_metadata/response_body_scope, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-022",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reported_error",
+          "/request_metadata/request_headers/Content-Type",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_error, /request_metadata/request_headers/Content-Type, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-023",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reported_error",
+          "/request_metadata/request_headers/Content-Type",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_error, /request_metadata/request_headers/Content-Type, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-024",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reported_error",
+          "/request_metadata/reported_form_enctype",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_error, /request_metadata/reported_form_enctype, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-025",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reported_error",
+          "/request_metadata/reported_handler",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_error, /request_metadata/reported_handler, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-026",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reported_error",
+          "/request_metadata/reported_header_entries/0/0",
+          "/request_metadata/reported_header_entries/0/1",
+          "/request_metadata/reported_header_entries/1/0",
+          "/request_metadata/reported_header_entries/1/1",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_error, /request_metadata/reported_header_entries/0/0, /request_metadata/reported_header_entries/0/1, /request_metadata/reported_header_entries/1/0, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-027",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reported_backend_protocol",
+          "/request_metadata/reported_frontend_protocol",
+          "/request_metadata/reported_version",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_backend_protocol, /request_metadata/reported_frontend_protocol, /request_metadata/reported_version, /request_metadata/response_body_scope, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-028",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/client_retry_after_reported",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reproduction_context",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/request_metadata/upstream_retry_after_reported",
+          "/request_metadata/upstream_status_reported",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/client_retry_after_reported, /request_metadata/observation_representation, /request_metadata/reproduction_context, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-REAL-029",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/response_body",
+            "status": "not supplied; not a captured null body"
+          },
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior",
+          "/response_body"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/observation_representation",
+          "/request_metadata/reported_error",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/kind",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior, /response_body. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/observation_representation, /request_metadata/reported_error, /request_metadata/response_body_scope, /request_metadata/status_evidence/kind, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /response_body (not supplied; not a captured null body); /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    },
+    {
+      "case_id": "W4-DRAFT-031-v1",
+      "route": {
+        "classifier": "completed",
+        "log_investigator": "completed",
+        "resolution_generator": "not_reached",
+        "root_cause_analyst": "not_reached",
+        "validator": "not_reached"
+      },
+      "terminal_status": "held",
+      "errors": [],
+      "calls": 2,
+      "schemas": [
+        "ClassifierOutput",
+        "LiveLogInvestigatorOutput"
+      ],
+      "workflow_status": "awaiting_evidence",
+      "stop_reason": "user_input_required",
+      "readiness": {
+        "available_but_unselected_dependencies": [],
+        "comparison_references": [],
+        "definitive_confirmation": false,
+        "delivery": "saved clarification only; UI delivery not verified",
+        "dependency_issues": [],
+        "not_supplied_fields": [
+          {
+            "reference": "/logs",
+            "status": "no typed entries supplied; attributed excerpts may exist elsewhere"
+          }
+        ],
+        "other_available_unselected_references": [
+          "/expected_behavior"
+        ],
+        "provenance": "user/reporter supplied; not independently authenticated",
+        "qualified_analysis": false,
+        "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+        "selected_references": [
+          "/actual_behavior",
+          "/request_metadata/additional_exception_association",
+          "/request_metadata/additional_exception_reported",
+          "/request_metadata/declared_file_arguments/0/annotation",
+          "/request_metadata/declared_file_arguments/0/default_expression",
+          "/request_metadata/declared_file_arguments/0/name",
+          "/request_metadata/declared_file_arguments/1/annotation",
+          "/request_metadata/declared_file_arguments/1/default_expression",
+          "/request_metadata/declared_file_arguments/1/name",
+          "/request_metadata/reported_client",
+          "/request_metadata/reported_client_content_type",
+          "/request_metadata/reported_framework_version",
+          "/request_metadata/request_header_capture_supplied",
+          "/request_metadata/response_body_scope",
+          "/request_metadata/status_evidence/independently_captured",
+          "/request_metadata/status_evidence/kind",
+          "/response_body/detail/0/loc/0",
+          "/response_body/detail/0/loc/1",
+          "/response_body/detail/0/msg",
+          "/response_body/detail/0/type",
+          "/status_code"
+        ]
+      },
+      "saved_clarification": [
+        "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+        "Other supplied but unselected catalog references (not established dependencies): /expected_behavior. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+        "Using already supplied selected evidence at /actual_behavior, /request_metadata/additional_exception_association, /request_metadata/additional_exception_reported, /request_metadata/declared_file_arguments/0/annotation, /request_metadata/declared_file_arguments/0/default_expression, /request_metadata/declared_file_arguments/0/name, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+        "Not supplied in typed fields: /logs (no typed entries supplied; attributed excerpts may exist elsewhere). If available, provide minimal sanitized nonsecret observations; otherwise state the limitation. Do not fabricate log events, timestamps or request correlation.",
+        "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+      ],
+      "final_report_present": false,
+      "analyst_entry": false,
+      "input_bytes_identical": true,
+      "initial_classifier_request_matches_sealed_live_baseline": true
+    }
+  ],
+  "mock_calls": 63,
+  "semantic_accuracy": null,
+  "real_cost_usd": null,
+  "paid_calls": 0,
+  "baseline_live_rerun": false,
+  "all_initial_classifier_requests_match_sealed_live_baseline": true
+}

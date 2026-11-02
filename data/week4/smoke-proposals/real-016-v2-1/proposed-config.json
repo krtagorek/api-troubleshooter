@@ -1,0 +1,14 @@
+{
+  "model": "gpt-4.1-mini-2025-04-14",
+  "input_per_million": "0.40",
+  "output_per_million": "1.60",
+  "cached_input_per_million": "0.10",
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+  "pricing_verified_at": "2026-10-29",
+  "max_usd": "0.25",
+  "max_calls": 5,
+  "input_cap": 65536,
+  "output_cap": 1536,
+  "case_timeout_seconds": 120,
+  "call_timeout_seconds": 20
+}

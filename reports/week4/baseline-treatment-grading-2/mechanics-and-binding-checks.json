@@ -1,0 +1,433 @@
+{
+  "kind": "DETERMINISTIC_MECHANICS_NOT_HUMAN_GROUNDING",
+  "cases": [
+    {
+      "case_id": "W4-REAL-005",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 4,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-006",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 8,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-008",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 4,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-009",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 5,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-011",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 3,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-012",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 8,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-013",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 3,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-014",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 4,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-015",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 3,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-016",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 5,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 39,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-017",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 4,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-018",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 4,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-019",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 7,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-020",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 5,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-DRAFT-032-v1",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 5,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "V2-03-01",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 5,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 7,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "V2-04-01",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 8,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "V2-05-01",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 1,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": false,
+        "checked": 0,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "V2-15-01",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 6,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-007",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 8,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-021",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 6,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-022",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 4,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-023",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 3,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-024",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 5,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-025",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 5,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-026",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 3,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-027",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 3,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-028",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 4,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-REAL-029",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 4,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    },
+    {
+      "case_id": "W4-DRAFT-031-v1",
+      "input_binding_equal": true,
+      "initial_provider_request_equal": true,
+      "calls": 2,
+      "cleanup_verified": true,
+      "trace_export": "not_requested",
+      "binding_checks": {
+        "applicable": true,
+        "checked": 8,
+        "invalid": [],
+        "semantic_pass": null
+      }
+    }
+  ],
+  "same_frozen_input_bindings": "30/30",
+  "initial_provider_request_parity": "30/30",
+  "semantic_quality": null,
+  "guard_attempts": {
+    "network_attempts_blocked": 0,
+    "sdk_initializations_blocked": 0,
+    "command_attempts_blocked": 0
+  }
+}

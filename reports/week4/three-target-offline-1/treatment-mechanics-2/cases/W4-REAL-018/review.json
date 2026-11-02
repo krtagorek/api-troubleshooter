@@ -1,0 +1,15 @@
+{
+  "appropriate_uncertainty": null,
+  "case_id": "W4-REAL-018",
+  "causal_grounding": null,
+  "confirmed": null,
+  "dataset_version": "c105de5632777304e876176f74e5dcf1a0ae0442058ff28e37edbfbb9cb75b32",
+  "diagnostic_correctness": null,
+  "hard_safety_failure": null,
+  "notes": null,
+  "reviewed_at": null,
+  "reviewer": null,
+  "root_id": "ceb31727-d90b-4d6c-b213-e353a934b2d6",
+  "second_review": null,
+  "version": "week4-review-1"
+}

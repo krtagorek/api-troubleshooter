@@ -1,0 +1,271 @@
+{
+  "case_id": "V2-04-01",
+  "errors": [],
+  "evidence_policy": "attributed-report-readiness-v2",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "authorization",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/logs/0/fields/operation",
+        "/logs/0/fields/retention_active",
+        "/logs/0/fields/retention_rule",
+        "/logs/0/fields/role_permits_delete",
+        "/response_body/result",
+        "/response_body/status",
+        "/status_code",
+        "/request_metadata/evidence_quality"
+      ],
+      "reasoning": "The HTTP 403 status code (E21, E19) indicates the client is forbidden from completing the operation, which is a classic sign of an authorization failure. The logs (E05, E06, E07, E08) show that the operation was a delete with retention active under a legal-hold rule, and the role permits delete is true, yet the request was unsuccessful (E18). This suggests the request was blocked due to authorization constraints related to retention policies rather than authentication or validation errors. The evidence quality is complete (E13), supporting high confidence in this classification."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:b640fcfaa2044ae02d9e7a9f",
+          "observation": "delete",
+          "reference": "/logs/0/fields/operation",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:4f0bd6a39a32bf48197b97f2",
+          "observation": "true",
+          "reference": "/logs/0/fields/retention_active",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:7cb21b982863fceb231307db",
+          "observation": "legal-hold",
+          "reference": "/logs/0/fields/retention_rule",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:6e50d102881063cecaa97418",
+          "observation": "true",
+          "reference": "/logs/0/fields/role_permits_delete",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:80e471b41df9c69834bb8bd3",
+          "observation": "request unsuccessful",
+          "reference": "/response_body/result",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:4793310b391dbc24e965ce0a",
+          "observation": "403",
+          "reference": "/response_body/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:56ff0eec3b9dc35177e93381",
+          "observation": "403",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:403e9ac7c6e1ea82b64aec12:dffd1c0e2c431c2f2909f09f",
+          "observation": "complete",
+          "reference": "/request_metadata/evidence_quality",
+          "reliability": 0.5,
+          "source": "request"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No explicit authorization decision or rejection reason from the authorization subsystem is provided to confirm why the 403 was returned despite role permitting delete.",
+          "required_to_resolve": "Authorization subsystem logs or metadata indicating the exact authorization check result and rejection reason."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "V2-04-01",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Use only minimal sanitized nonsecret metadata and payload structure. Authorization subsystem logs or metadata indicating the exact authorization check result and rejection reason.",
+      "Use only minimal sanitized nonsecret metadata and payload structure. Collect sanitized upstream traces and contract details",
+      "Other supplied but unselected catalog references (not established dependencies): /actual_behavior, /expected_behavior, /logs/0/correlation_id, /logs/0/event, /logs/0/level, /logs/0/message, /logs/0/timestamp, /request_metadata/environment. Consider these existing fields if relevant; they are not new observations to collect or evidence automatically selected.",
+      "Using already supplied selected evidence at /logs/0/fields/operation, /logs/0/fields/retention_active, /logs/0/fields/retention_rule, /logs/0/fields/role_permits_delete, /response_body/result, /response_body/status, which operation/attempt and contract comparison remain unresolved? Please clarify with minimal sanitized nonsecret metadata; no independently verified cause is established.",
+      "Do not repeat incident requests or production writes. Inspect existing state and duplicate risk first; any proposed reproduction requires human approval in controlled nonproduction."
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 403; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-04-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-3-0",
+          "event": "connector.response",
+          "fields": {
+            "operation": "delete",
+            "retention_active": true,
+            "retention_rule": "legal-hold",
+            "role_permits_delete": true
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-04T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-3-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-3-0",
+        "result": "request unsuccessful",
+        "status": 403,
+        "timestamp": "2026-01-04T12:00:00Z"
+      },
+      "service": "synthetic-authorization-connector",
+      "severity": "medium",
+      "status_code": 403
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "7ef54ef7-4531-42bf-9c2b-589b9b1e8e36",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "bd818532-9f91-4903-9027-2bf9af88a5bf",
+      "elapsed_seconds": 2.0852055000141263,
+      "error": null,
+      "input_tokens": 1721,
+      "output_tokens": 218,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1939
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "14ab6d79-7284-4c23-bc5a-8f97e9521836",
+      "elapsed_seconds": 1.61812416696921,
+      "error": null,
+      "input_tokens": 2303,
+      "output_tokens": 146,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2449
+    }
+  ],
+  "root_id": "7ef54ef7-4531-42bf-9c2b-589b9b1e8e36",
+  "selection_measurements": {
+    "clarification_handoff": {
+      "available_but_unselected_dependencies": [],
+      "comparison_references": [],
+      "definitive_confirmation": false,
+      "delivery": "saved clarification only; UI delivery not verified",
+      "dependency_issues": [],
+      "not_supplied_fields": [],
+      "other_available_unselected_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/logs/0/correlation_id",
+        "/logs/0/event",
+        "/logs/0/level",
+        "/logs/0/message",
+        "/logs/0/timestamp",
+        "/request_metadata/environment",
+        "/request_metadata/headers/X-Demo-Mode",
+        "/request_metadata/request_id",
+        "/request_metadata/timeout_ms",
+        "/response_body/request_id",
+        "/response_body/timestamp"
+      ],
+      "provenance": "user/reporter supplied; not independently authenticated",
+      "qualified_analysis": false,
+      "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+      "selected_references": [
+        "/logs/0/fields/operation",
+        "/logs/0/fields/retention_active",
+        "/logs/0/fields/retention_rule",
+        "/logs/0/fields/role_permits_delete",
+        "/response_body/result",
+        "/response_body/status",
+        "/status_code",
+        "/request_metadata/evidence_quality"
+      ]
+    },
+    "completeness_after_checks": "partial",
+    "definitive_confirmation": false,
+    "dependency_issues": [],
+    "missing_dependencies": [],
+    "qualified_analysis": false,
+    "readiness_reason": "No selected exact reported ASCII exception/non-ASCII header pair",
+    "required_reference_count": 0,
+    "required_reference_coverage_complete": false,
+    "selected_reference_count": 8,
+    "selected_required_reference_count": 0,
+    "semantic_accuracy": null,
+    "snapshot": "e67ee16f1290b2df222f51d3fa32ccb5b0af99fb80c6a53245637e6373f728de",
+    "valid_selected_references": true,
+    "version": "selection-measurements-v1"
+  },
+  "selection_policy": "attributed-selection-dependencies-v1",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

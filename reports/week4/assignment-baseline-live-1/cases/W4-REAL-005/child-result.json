@@ -1,0 +1,159 @@
+{
+  "case_id": "W4-REAL-005",
+  "errors": [],
+  "evidence_policy": "inherited",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "unknown",
+      "confidence": 0.0,
+      "evidence_references": [
+        "/actual_behavior",
+        "/expected_behavior",
+        "/response_body",
+        "/status_code"
+      ],
+      "reasoning": "The evidence shows a redirect (302) response followed by a protocol exception (h11.RemoteProtocolError) during the GET request. However, there is no direct evidence indicating whether this failure is due to authentication, authorization, validation, rate limiting, timeout, server error, schema mismatch, or dependency failure. The cause of the protocol exception is not established, and the reporter notes that curl works, suggesting the issue may be client-specific or environmental. Therefore, the failure category cannot be determined with the available information."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:30c6b2d78630eaf4642538ca:4313f3de15797f2e7f41c2f2",
+          "observation": "Reported observations from the reviewed public-report paraphrase; not independently captured:\n- Trace records a redirect to HTTPS port 4433 with Transfer-Encoding: chunked.\n- A protocol exception follows the redirect response.\n- Reporter states curl works.\nQuoted reported trace text, not a captured response body:\n- reported HTTPX trace: h11.RemoteProtocolError; their_state=ERROR; error_status_hint=400\nNo raw response body or endpoint identity is supplied in this reviewed evidence.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:30c6b2d78630eaf4642538ca:62482ddd66a56c165055bcb0",
+          "observation": "Complete the reported GET / request without a client protocol exception.",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:30c6b2d78630eaf4642538ca:333207f7c74cd957c8a7addf",
+          "observation": "null",
+          "reference": "/response_body",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:30c6b2d78630eaf4642538ca:1a0c0442fc7324f274b53b0a",
+          "observation": "302",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No raw response body or endpoint identity is supplied to verify the redirect response or protocol exception details.",
+          "required_to_resolve": "Capture and provide raw HTTP response bodies and full endpoint identifiers to analyze the redirect and protocol exception cause."
+        },
+        {
+          "description": "No client environment or configuration details are provided to explain why curl works but HTTPX fails.",
+          "required_to_resolve": "Collect client environment, HTTP client versions, and configuration to compare behaviors and isolate client-specific issues."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-005",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Capture and provide raw HTTP response bodies and full endpoint identifiers to analyze the redirect and protocol exception cause.",
+      "Collect client environment, HTTP client versions, and configuration to compare behaviors and isolate client-specific issues.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported observations from the reviewed public-report paraphrase; not independently captured:\n- Trace records a redirect to HTTPS port 4433 with Transfer-Encoding: chunked.\n- A protocol exception follows the redirect response.\n- Reporter states curl works.\nQuoted reported trace text, not a captured response body:\n- reported HTTPX trace: h11.RemoteProtocolError; their_state=ERROR; error_status_hint=400\nNo raw response body or endpoint identity is supplied in this reviewed evidence.",
+      "endpoint": "/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Complete the reported GET / request without a client protocol exception.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-005",
+      "logs": [],
+      "request_metadata": {},
+      "response_body": null,
+      "service": "HTTP endpoint (identity omitted)",
+      "severity": "unknown",
+      "status_code": 302
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "1d689f88-bc7a-4689-96a8-249c9e87b407",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "233bddf2-ab53-4419-8f37-e971a7fba131",
+      "elapsed_seconds": 3.1580113749951124,
+      "error": null,
+      "input_tokens": 966,
+      "output_tokens": 192,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1158
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "bd9e8909-4245-4721-9e04-00ae80b23cd3",
+      "elapsed_seconds": 1.9545487922150642,
+      "error": null,
+      "input_tokens": 1306,
+      "output_tokens": 182,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1488
+    }
+  ],
+  "root_id": "1d689f88-bc7a-4689-96a8-249c9e87b407",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

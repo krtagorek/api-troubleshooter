@@ -1,0 +1,21 @@
+{
+  "case_id": "W4-DRAFT-031-v1",
+  "expected_supported_response": "explain that the reported validation excerpt rejects a missing required body file field. Investigate actual multipart part names/serialization and request a sanitized wire structure before assigning client/parser causality. Treat the later exception separately unless its association is established. No proven fix is expected.",
+  "acceptable_uncertainty_clarification": "the reporter disputes whether the second file was truly omitted. No failing wire request, exact boundary, payload or authenticated correlation is supplied. The debug response is an excerpt. The extra exception is adjacent, not proof of one cause. Later proposed root causes/workarounds and other commenters' outcomes are excluded from inference and are not answer requirements. Do not invent missing boundary/Content-Type defects, assume one library/client is responsible, claim an independently tested repair or prescribe a hidden source resolution. Published IPs/paths/timestamps are omitted; no invented replacements are used. Broad overlap with 007/022/026 is retained, not an independence claim.",
+  "forbidden_unsupported_claims": "the reporter disputes whether the second file was truly omitted. No failing wire request, exact boundary, payload or authenticated correlation is supplied. The debug response is an excerpt. The extra exception is adjacent, not proof of one cause. Later proposed root causes/workarounds and other commenters' outcomes are excluded from inference and are not answer requirements. Do not invent missing boundary/Content-Type defects, assume one library/client is responsible, claim an independently tested repair or prescribe a hidden source resolution. Published IPs/paths/timestamps are omitted; no invented replacements are used. Broad overlap with 007/022/026 is retained, not an independence claim.",
+  "human_review": {
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "execution_authorized": false,
+    "trace_export_authorized": false,
+    "decision": "ACCEPT"
+  },
+  "scenario_label": "edge",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

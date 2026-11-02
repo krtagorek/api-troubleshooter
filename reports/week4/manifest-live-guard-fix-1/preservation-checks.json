@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "baseline_files_checked": 328,
+  "baseline_mismatches": [],
+  "baseline_manifest_sha256": "0ad4421d9342b780996b70de8b72d9d0cab1b771e6f37fd82dd4c5ccbf42b62f",
+  "protected_start_files_checked": 2278,
+  "protected_changes": [],
+  "prior_sealed_groups_checked": 151,
+  "prior_sealed_artifacts_checked": 3216,
+  "frozen_dataset_manifest_sha256": "c105de5632777304e876176f74e5dcf1a0ae0442058ff28e37edbfbb9cb75b32",
+  "sealed_baseline_preserved": true,
+  "zero_call_attempt_preserved": true,
+  "zero_call_attempt_summary_sha256": "c9c546946505c8c026b27c59bd6ee7a156dedf07978a769b40f82f13be21f910",
+  "zero_call_attempt_is_model_quality_result": false,
+  "workbook_sha256": "8e97804bb7612cecd5bf8d237c9050893cc6c42673ccf3c0113556fc0de391a7",
+  "treatment_scores_written": false,
+  "existing_runtime_sources_changed": [
+    "evaluation/week4/smoke.py"
+  ],
+  "new_test_file": "tests/week4/test_manifest_live_guard.py",
+  "private_env": {
+    "ignored": true,
+    "tracked": false,
+    "contents_read_printed_copied_or_hashed": false
+  },
+  "new_live_calls": 0,
+  "new_external_exports": 0,
+  "new_live_result_directory_created": false
+}

@@ -1,0 +1,154 @@
+{
+  "case_id": "W4-REAL-027",
+  "errors": [],
+  "evidence_policy": "inherited",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "dependency_failure",
+      "confidence": 0.7,
+      "evidence_references": [
+        "/actual_behavior",
+        "/request_metadata/reported_backend_protocol",
+        "/status_code"
+      ],
+      "reasoning": "The incident involves an HTTP 502 Bad Gateway error from HAProxy when accessing a backend using QUIC/HTTP3, while direct backend access and HTTP/2 backend configuration work correctly. This suggests a failure in the dependency communication between HAProxy and the backend over QUIC/HTTP3 rather than client-side issues or validation errors. The evidence includes the 502 status code (E10), the reported backend protocol as QUIC/HTTP3 (E04), and the user observation of backend failure with QUIC but not HTTP/2 (E01). No logs or detailed error messages are provided, so the confidence is moderate."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:b38c0e3d2dc568f39d3261ae:06943347560fe5ab272ad5ca",
+          "observation": "Reporter-published observations; not independently reproduced:\n- HTTP/1.1 curl transcript shows GET / and 502 after approximately 30 seconds.\n- Reporter compares QUIC backend failure with working HTTP/2 backend configuration and says direct backend access works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:b38c0e3d2dc568f39d3261ae:4076ef150203c666aaf96551",
+          "observation": "QUIC/HTTP3",
+          "reference": "/request_metadata/reported_backend_protocol",
+          "reliability": 0.5,
+          "source": "request"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:b38c0e3d2dc568f39d3261ae:d8986be1dbbbccf734d35ad6",
+          "observation": "502",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No detailed HAProxy logs or backend error messages are provided to confirm the exact failure mechanism.",
+          "required_to_resolve": "Access to HAProxy logs and backend server logs during the incident to identify the cause of the 502 error."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-027",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Access to HAProxy logs and backend server logs during the incident to identify the cause of the 502 error.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reporter-published observations; not independently reproduced:\n- HTTP/1.1 curl transcript shows GET / and 502 after approximately 30 seconds.\n- Reporter compares QUIC backend failure with working HTTP/2 backend configuration and says direct backend access works.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+      "endpoint": "/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Retrieve the intended resource through GET /.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-027",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+        "reported_backend_protocol": "QUIC/HTTP3",
+        "reported_frontend_protocol": "HTTP/1.1",
+        "reported_version": "3.3.3",
+        "response_body_scope": "Not supplied; null is not evidence of a captured null response.",
+        "status_evidence": {
+          "kind": "published_curl_http_502"
+        }
+      },
+      "response_body": null,
+      "service": "HAProxy",
+      "severity": "unknown",
+      "status_code": 502
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "9f1d177e-2eb2-4217-99b8-4d698332f617",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "be44076d-4baa-4039-9128-829d78a83f71",
+      "elapsed_seconds": 2.05730720795691,
+      "error": null,
+      "input_tokens": 1271,
+      "output_tokens": 208,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1479
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "62bdf7e7-3c95-418e-8ceb-e5c20a8b4a1e",
+      "elapsed_seconds": 1.5065161669626832,
+      "error": null,
+      "input_tokens": 1636,
+      "output_tokens": 127,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1763
+    }
+  ],
+  "root_id": "9f1d177e-2eb2-4217-99b8-4d698332f617",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

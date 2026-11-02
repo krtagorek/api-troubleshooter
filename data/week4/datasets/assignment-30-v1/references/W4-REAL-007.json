@@ -1,0 +1,24 @@
+{
+  "case_id": "W4-REAL-007",
+  "expected_supported_response": "Identify missing query-parameter binding rather than expired-token rejection. Explain dependency/header mismatch; prefer deliberate bearer-security extraction over exposing credentials in URLs.",
+  "acceptable_uncertainty_clarification": "Keep the accepted historical scope: ask for sanitized dependency/security extraction configuration if more context is needed. Do not extrapolate to every framework/version. The reporter’s later resolution remains evaluator-only.",
+  "forbidden_unsupported_claims": "No credential values, assertions of token expiry/revocation from this validation error, preference for URL-token production authentication, independently reproduced outcome or tested repair. Also no automatic configuration changes, disabled security checks, independent-reproduction claims or verified repair without evidence.",
+  "human_review": {
+    "decision": "ACCEPT",
+    "status": "ACCEPTED",
+    "reviewer": "User in this conversation",
+    "reviewed_at": null,
+    "recorded_at": null,
+    "semantic_scores": null,
+    "confirmation_evidence": "Explicit six-case batch approval in this conversation",
+    "independently_reproduced": false,
+    "execution_authorized": false,
+    "trace_export_authorized": false
+  },
+  "scenario_label": "happy",
+  "failure_provenance": null,
+  "review_decision_source": "data/week4/reviewed-candidates/final-selection-approved-v1/review-decisions.json",
+  "semantic_scores": null,
+  "final_split": null,
+  "historical_human_review": null
+}

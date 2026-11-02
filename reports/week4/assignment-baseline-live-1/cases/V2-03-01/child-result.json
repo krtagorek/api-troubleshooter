@@ -1,0 +1,355 @@
+{
+  "case_id": "V2-03-01",
+  "errors": [],
+  "evidence_policy": "inherited",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "authorization",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/logs/0/fields/decision_rule",
+        "/logs/0/fields/identity_valid",
+        "/logs/0/fields/resource_environment",
+        "/logs/0/fields/workload_environment",
+        "/response_body/status",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP 403 status code indicates the client is forbidden from accessing the resource, which is an authorization failure. The logs show the identity is valid (E06) but the decision rule 'environment-equality' failed due to mismatched environments between resource (production) and workload (staging) (E05, E07, E08). This mismatch caused the authorization denial, not an authentication or validation error."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.7,
+      "diagnostic_checks": [
+        "Inspect authorization policy configuration for environment-equality rule details.",
+        "Correlate upstream authorization logs to confirm environment mismatch causes denial.",
+        "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+      ],
+      "discriminating_evidence_ids": [
+        "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+        "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+        "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9"
+      ],
+      "missing_evidence": [],
+      "selected_hypothesis_id": "H1",
+      "status": "tentative",
+      "summary": "The most supported hypothesis is that the 403 Forbidden response is caused by an authorization failure due to environment mismatch between the resource (production) and workload (staging), triggering the environment-equality decision rule to deny access despite a valid identity.",
+      "uncertainty": [
+        "The evidence quality is moderate (0.5 reliability), so confidence is not definitive.",
+        "No direct evidence confirms the exact enforcement mechanism of the environment-equality rule.",
+        "No evidence excludes other rare causes of 403 such as token expiry or revocation, though identity validity reduces their likelihood."
+      ]
+    },
+    "evidence": {
+      "completeness": "complete",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+          "observation": "environment-equality",
+          "reference": "/logs/0/fields/decision_rule",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:51cb3385c2d8c312f6ad0e3e",
+          "observation": "true",
+          "reference": "/logs/0/fields/identity_valid",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+          "observation": "production",
+          "reference": "/logs/0/fields/resource_environment",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9",
+          "observation": "staging",
+          "reference": "/logs/0/fields/workload_environment",
+          "reliability": 0.5,
+          "source": "log"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:4793310b391dbc24e965ce0a",
+          "observation": "403",
+          "reference": "/response_body/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:56ff0eec3b9dc35177e93381",
+          "observation": "403",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:75641fc6aacc73864c59d51e:2b9600badd8b870b597763d1",
+          "observation": "Observed status 403; the client could not complete its intended operation",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        }
+      ],
+      "missing": []
+    },
+    "final_report": null,
+    "hypotheses": [
+      {
+        "assumptions": [
+          "The environment-equality decision rule enforces that resource and workload environments must match for authorization to succeed.",
+          "The identity is valid and authenticated, so authentication failure is excluded.",
+          "The 403 status code is caused by authorization denial, not other errors such as token expiry or revocation."
+        ],
+        "confidence": 0.7,
+        "contradicting_evidence_ids": [],
+        "description": "Authorization failure due to environment mismatch between resource (production) and workload (staging) causing the environment-equality decision rule to deny access.",
+        "evidence_assessments": [
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d"
+            ],
+            "explanation": "The decision rule 'environment-equality' indicates the authorization check is based on environment matching.",
+            "hypothesis_prediction": "The environment-equality rule triggers denial if environments differ.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead"
+            ],
+            "explanation": "Resource environment is 'production', which differs from workload environment.",
+            "hypothesis_prediction": "Mismatch with workload environment causes denial.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9"
+            ],
+            "explanation": "Workload environment is 'staging', differing from resource environment.",
+            "hypothesis_prediction": "Mismatch with resource environment causes denial.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:51cb3385c2d8c312f6ad0e3e"
+            ],
+            "explanation": "Identity is valid, so authentication is not the cause of denial.",
+            "hypothesis_prediction": "Valid identity means denial is due to authorization rules, not authentication failure.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:4793310b391dbc24e965ce0a",
+              "ev:75641fc6aacc73864c59d51e:56ff0eec3b9dc35177e93381"
+            ],
+            "explanation": "HTTP 403 status code confirms access is forbidden, consistent with authorization denial.",
+            "hypothesis_prediction": "403 status is expected when authorization fails due to environment mismatch.",
+            "relation": "supporting"
+          },
+          {
+            "evidence_ids": [
+              "ev:75641fc6aacc73864c59d51e:2b9600badd8b870b597763d1"
+            ],
+            "explanation": "Observed client failure to complete operation matches authorization denial.",
+            "hypothesis_prediction": "Client cannot complete operation due to forbidden access.",
+            "relation": "supporting"
+          }
+        ],
+        "hypothesis_id": "H1",
+        "supporting_evidence_ids": [
+          "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+          "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+          "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9",
+          "ev:75641fc6aacc73864c59d51e:51cb3385c2d8c312f6ad0e3e",
+          "ev:75641fc6aacc73864c59d51e:4793310b391dbc24e965ce0a",
+          "ev:75641fc6aacc73864c59d51e:56ff0eec3b9dc35177e93381",
+          "ev:75641fc6aacc73864c59d51e:2b9600badd8b870b597763d1"
+        ]
+      }
+    ],
+    "incident_id": "V2-03-01",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Review withheld diagnostic wording with the responsible owner; provide only sanitized nonsecret metadata."
+    ],
+    "proposed_fix": {
+      "evidence_ids": [
+        "ev:75641fc6aacc73864c59d51e:ecc267628c4784dc7ed66c4d",
+        "ev:75641fc6aacc73864c59d51e:99b2e9d0d5a25f431b407ead",
+        "ev:75641fc6aacc73864c59d51e:3a20505842db5d0b66eeadc9"
+      ],
+      "plan_kind": "diagnostic",
+      "prerequisites": [
+        "Access to authorization policy configurations and logs.",
+        "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+      ],
+      "requires_human_approval": true,
+      "risks": [
+        "No configuration changes are made, so no risk of service disruption.",
+        "Potential delay in resolution while awaiting human-provided sanitized authorization data."
+      ],
+      "steps": [
+        "Inspect the authorization policy configuration to understand the environment-equality rule and its enforcement criteria.",
+        "Review upstream authorization logs to correlate environment mismatch events with access denial.",
+        "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval.",
+        "Confirm that the identity is valid and that no other authorization factors are causing denial besides environment mismatch."
+      ],
+      "summary": "Verify and confirm the environment-equality authorization rule enforcement causing the 403 Forbidden response due to environment mismatch between resource and workload.",
+      "verification_steps": [
+        "Confirm that the environment-equality rule requires matching resource and workload environments for authorization success.",
+        "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval.",
+        "Validate that the authorization denial correlates with environment mismatch events.",
+        "Ensure no other authorization or authentication failures are present."
+      ]
+    },
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Observed status 403; the client could not complete its intended operation",
+      "endpoint": "/demo/resources/1",
+      "evidence_quality": "complete",
+      "expected_behavior": "Return a response satisfying the approved endpoint contract within its deadline",
+      "http_method": "GET",
+      "incident_id": "V2-03-01",
+      "logs": [
+        {
+          "correlation_id": "synthetic-v2-2-0",
+          "event": "connector.response",
+          "fields": {
+            "decision_rule": "environment-equality",
+            "identity_valid": true,
+            "resource_environment": "production",
+            "workload_environment": "staging"
+          },
+          "level": "ERROR",
+          "message": "Upstream response inspected",
+          "timestamp": "2026-01-03T12:00:00Z"
+        }
+      ],
+      "request_metadata": {
+        "environment": "synthetic",
+        "evidence_quality": "complete",
+        "headers": {
+          "X-Demo-Mode": "synthetic-only"
+        },
+        "request_id": "synthetic-v2-2-0",
+        "timeout_ms": 5000
+      },
+      "response_body": {
+        "request_id": "synthetic-v2-2-0",
+        "result": "request unsuccessful",
+        "status": 403,
+        "timestamp": "2026-01-03T12:00:00Z"
+      },
+      "service": "synthetic-authorization-connector",
+      "severity": "medium",
+      "status_code": 403
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "diagnostic_output_safety_review_required",
+    "thread_id": "79f31e25-e10b-40b8-88fb-4550eaaf8ceb",
+    "validation_results": [
+      {
+        "checks": [],
+        "issues": [
+          "No real or simulated validation tools are integrated; no checks were executed."
+        ],
+        "retry_recommended": false,
+        "status": "NOT_TESTED"
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "39c23c53-5729-4251-841c-da65a5749664",
+      "elapsed_seconds": 2.0308224998880178,
+      "error": null,
+      "input_tokens": 1718,
+      "output_tokens": 176,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1894
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "46cd2d49-b8fc-485a-8882-9687ba964d70",
+      "elapsed_seconds": 1.2674355409108102,
+      "error": null,
+      "input_tokens": 2071,
+      "output_tokens": 93,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2164
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "6ad44c62-d76d-4b6c-bd0c-9454b4300566",
+      "elapsed_seconds": 4.80433383397758,
+      "error": null,
+      "input_tokens": 2745,
+      "output_tokens": 680,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "RootCauseAnalystOutput",
+      "source": "provider_usage",
+      "total_tokens": 3425
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "32e37312-9cd1-4b93-a362-ed06778fc4b3",
+      "elapsed_seconds": 2.7068644580431283,
+      "error": null,
+      "input_tokens": 2653,
+      "output_tokens": 323,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ResolutionGeneratorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2976
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "822279fe-b17b-44de-9a5f-5ce1b13bb34d",
+      "elapsed_seconds": 1.34245291701518,
+      "error": null,
+      "input_tokens": 2863,
+      "output_tokens": 90,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ValidatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2953
+    }
+  ],
+  "root_id": "79f31e25-e10b-40b8-88fb-4550eaaf8ceb",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "completed",
+    "root_cause_analyst": "completed",
+    "validator": "completed"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

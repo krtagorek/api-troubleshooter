@@ -1,0 +1,197 @@
+{
+  "case_id": "W4-REAL-012",
+  "errors": [],
+  "evidence_policy": "inherited",
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "validation",
+      "confidence": 0.95,
+      "evidence_references": [
+        "/actual_behavior",
+        "/response_body/error/caused_by/reason",
+        "/response_body/error/caused_by/type",
+        "/response_body/error/reason",
+        "/response_body/error/type",
+        "/response_body/status",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP 400 status code combined with the response body indicating a 'mapper_parsing_exception' caused by a 'json_parse_exception' due to an unexpected character in the JSON payload clearly indicates a client-side input validation failure. The error message specifies a JSON parsing error, which is a classic validation issue where the submitted document is malformed JSON. There is no evidence of authentication, authorization, rate limiting, timeout, server error, schema mismatch beyond parsing, or dependency failure. The evidence references E01, E06, E07, E08, E09, E10, and E11 support this conclusion."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:8a1529170d8b5624e63ee99f:a23a204a94aad256c4e8ebca",
+          "observation": "Reported historical observations; not independently reproduced:\n- Client exception explicitly provides method POST, URI and HTTP/1.1 400.\n- Response names mapper_parsing_exception caused by json_parse_exception; parser encounters character f while expecting a comma at line 2 column 45.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:8a1529170d8b5624e63ee99f:b2a8eb935a66e9bd77088208",
+          "observation": "Unexpected character ('f' (code 102)): was expecting comma to separate Object entries; line: 2, column: 45",
+          "reference": "/response_body/error/caused_by/reason",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:8a1529170d8b5624e63ee99f:1015accbbbdc2839e8bc938b",
+          "observation": "json_parse_exception",
+          "reference": "/response_body/error/caused_by/type",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:8a1529170d8b5624e63ee99f:fdcc2500f1b7487a6a28aec7",
+          "observation": "failed to parse",
+          "reference": "/response_body/error/reason",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:8a1529170d8b5624e63ee99f:9ede87f551485a3fe882fece",
+          "observation": "mapper_parsing_exception",
+          "reference": "/response_body/error/type",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:8a1529170d8b5624e63ee99f:1560e30bcaaa3cfaa014ab6e",
+          "observation": "400",
+          "reference": "/response_body/status",
+          "reliability": 0.5,
+          "source": "response"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:8a1529170d8b5624e63ee99f:bf54b024eb5e781a2180f774",
+          "observation": "400",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "Completeness of the response body excerpt is unknown; full JSON payload and logs are missing to confirm parsing error context.",
+          "required_to_resolve": "Complete response body and source logs to verify the exact JSON parsing failure and rule out other causes."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-012",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Complete response body and source logs to verify the exact JSON parsing failure and rule out other causes.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Client exception explicitly provides method POST, URI and HTTP/1.1 400.\n- Response names mapper_parsing_exception caused by json_parse_exception; parser encounters character f while expecting a comma at line 2 column 45.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+      "endpoint": "/euronews/mytable/1266?pretty=true",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Submit the intended document to the reported POST /euronews/mytable/1266?pretty=true operation.",
+      "http_method": "POST",
+      "incident_id": "W4-REAL-012",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report paraphrases, not independently reproduced measurements.",
+        "response_body_scope": "reported_excerpt_completeness_unknown",
+        "status_evidence": {
+          "kind": "reported_client_exception_http_status_line"
+        }
+      },
+      "response_body": {
+        "error": {
+          "caused_by": {
+            "reason": "Unexpected character ('f' (code 102)): was expecting comma to separate Object entries; line: 2, column: 45",
+            "type": "json_parse_exception"
+          },
+          "reason": "failed to parse",
+          "type": "mapper_parsing_exception"
+        },
+        "status": 400
+      },
+      "service": "Elasticsearch",
+      "severity": "unknown",
+      "status_code": 400
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "d10a8cc1-01d0-4e82-a231-02e10b1642c0",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "7f01c926-bb99-4ff7-80c2-9a733680dbdf",
+      "elapsed_seconds": 2.0608806249219924,
+      "error": null,
+      "input_tokens": 1425,
+      "output_tokens": 218,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1643
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "59626ad7-857c-47fe-a984-aff1cfa80e29",
+      "elapsed_seconds": 1.743655125144869,
+      "error": null,
+      "input_tokens": 1816,
+      "output_tokens": 144,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1960
+    }
+  ],
+  "root_id": "d10a8cc1-01d0-4e82-a231-02e10b1642c0",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

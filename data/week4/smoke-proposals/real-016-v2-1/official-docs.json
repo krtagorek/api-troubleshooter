@@ -1,0 +1,56 @@
+{
+  "retrieved_date_utc": "2026-10-29",
+  "raw_document_snapshots_saved": false,
+  "account_discovery_performed": false,
+  "official_sources": [
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+      "facts": {
+        "snapshot": "gpt-4.1-mini-2025-04-14",
+        "chat_completions": true,
+        "structured_outputs": true,
+        "context_window": 1047576,
+        "max_output_tokens": 32768,
+        "reasoning_step": false,
+        "status": "deprecated",
+        "listed_usd_per_million": {
+          "input": "0.40",
+          "cached_input": "0.10",
+          "output": "1.60"
+        }
+      }
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "facts": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "scheduled_shutdown_date": "2027-01-14"
+      }
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+      "facts": {
+        "json_schema_strict_supported_for_compatible_models": true,
+        "provider_schema_subset_still_requires_validation": true
+      }
+    },
+    {
+      "url": "https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create",
+      "facts": {
+        "temperature_zero_in_documented_range": true,
+        "max_completion_tokens_includes_reasoning": true,
+        "omitted_service_tier_defaults_to_auto": true,
+        "explicit_default_tier_uses_standard_pricing": true
+      }
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "facts": {
+        "pricing_mode_varies_by_service_tier": true,
+        "no_tools_or_batch_discounts_assumed": true
+      }
+    }
+  ],
+  "price_record_kind": "Local transcription of fetched official facts, not a raw-page hash or account quote.",
+  "availability": "Documented deprecated model with future shutdown; actual project access/billing/tier unknown."
+}

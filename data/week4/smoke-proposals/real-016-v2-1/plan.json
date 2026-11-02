@@ -1,0 +1,140 @@
+{
+  "version": "week4-real-016-v2-live-smoke-proposal-1",
+  "status": "BLOCKED_NOT_READY_FOR_APPROVAL",
+  "ready_for_approval": false,
+  "execution_authorized": false,
+  "trace_export_authorized": false,
+  "approval_identity": null,
+  "approval_time": null,
+  "case_id": "W4-REAL-016",
+  "case_count": 1,
+  "exposure": "Known development case; no holdout/golden claim",
+  "policy": {
+    "selected": "attributed-report-readiness-v2",
+    "fallback": false,
+    "policy_files": {
+      "evaluation/week4/attributed_report_v2/__init__.py": "ccc8c577d1039b85c1667e58279f34d1c727235e1222135c75b7c7e4448e3e97",
+      "evaluation/week4/attributed_report_v2/archive.py": "2df47acaf8438c3b456d0ca7b7899aece3dcbadb9c47f406fcb2cee4fc84174e",
+      "evaluation/week4/attributed_report_v2/contracts.py": "bb55f214645ec295ce9d6c21f68e695790a5cefee32ccffdc64ec8126ee8ed5b",
+      "evaluation/week4/attributed_report_v2/readiness.py": "b81f51cbc84204dcefba31a3d93d54d7bb47d65cd4a6b0864fc8ec37965b3508",
+      "evaluation/week4/attributed_report_v2/workflow.py": "d7291b9a54df90cfe64cd4d4512d00efb3fe77ff163e15a702fdac69ef7db522"
+    },
+    "policy_files_digest": "95110de68fcb97e932a4e8f9ebcf9e5de0f9e16c2af870f1e1e543ceb65037bc"
+  },
+  "bindings": {
+    "input_sha256": "30ece2362f9b8623b12568cc6726215d407604fcc92b3cae2c1e4c3c0f29410c",
+    "sanitized_copy_sha256": "30ece2362f9b8623b12568cc6726215d407604fcc92b3cae2c1e4c3c0f29410c",
+    "archive_sha256": "dbc8ea81f66eba30c74cba89b08ab1c1ceee230886825f4f4f0acca429916d9f",
+    "source_files_digest": "b559b1e65acd6ad6e772b34e3ede3c8493bf9d70568a02d30a81705868c4d16f",
+    "source_hashes_file_sha256": "056689b435ee80b2350d361fec1ece9d068bed358fc5f1ca110486af4bff967a",
+    "configuration_sha256": "ecdadaaec1d692007dd30b00b262b1dc7067e741e9b6671bd5daa0d09503223f",
+    "dependency_locks": {
+      "requirements.lock": "337dbdc8e75e70bebe1c8ac3b06b2a4149aede9299862ef99d03c74cb775fca0",
+      "evaluation/week4/requirements.lock": "255d12304bd2a1d304739592992a02274e5bf706f18cd58023fee848c57a4654",
+      "evaluation/week4/requirements.in": "8447c592cc595f0949901d8413defb3fd3e0a69f347bddb2692572d74ae2b554",
+      "evaluation/week4/.python-version": "03520ee77719f14d31fd23cdbe29ea0e6dc6e7f181f8d8f99ef053500c192223"
+    },
+    "assessment_sha256": "f229e4696931effd1a5d8fd89a5a30c84d5cea8a0e1c90753190eeb743e70131",
+    "first_request_preview_sha256": "2be02f3bcc624bda7389208ca9e6dcbe2a740e2c36be6e584bbc8b1b08da2786",
+    "later_templates_sha256": "ec8def6fb8b9dca44189af80460fe498775d65483c85c03d3de4b46f04d2b641",
+    "pricing_record_sha256": "658bf05e801ee95f37738354a241a792573e113af6f9b7bdeb5e8fa9f565bb28"
+  },
+  "execution": {
+    "command": null,
+    "v2_live_command_supported": false,
+    "existing_legacy_command_shape": "python -m evaluation.week4.live_cli run --plan OLD_FORMAT_PLAN --output NEW_DIR --execute-live (NOT COMPATIBLE WITH THIS PROPOSAL)",
+    "existing_path": [
+      "live_cli.load_plan",
+      "smoke.run_smoke",
+      "supervise(smoke.inference_worker)",
+      "inherited graph.workflow.build_workflow",
+      "LiveModel",
+      "Journal"
+    ],
+    "required_path": "Explicit V2 composition and scoped analyst advisory plus supported provider, durable reservations and process supervisor; currently not integrated.",
+    "concurrency": 1,
+    "sdk_retries": 0,
+    "workflow_retries": 0,
+    "max_calls": 5,
+    "input_token_reservation_per_call": 65536,
+    "max_completion_tokens_per_call": 1536,
+    "combined_proposed_context_tokens": 67072,
+    "case_process_timeout_seconds": 120,
+    "network_phase_timeout_seconds": 20,
+    "external_diagnostic_tools": false,
+    "external_tracing": false,
+    "export_traces": false,
+    "local_durable_spans": true
+  },
+  "model": {
+    "selected_proposal": "gpt-4.1-mini-2025-04-14",
+    "public_documentation_verified_on_utc": "2026-10-29",
+    "documented_deprecated": true,
+    "scheduled_shutdown_date": "2027-01-14",
+    "account_access": "UNVERIFIED",
+    "revalidate_before_any_paid_run": true,
+    "substitution_allowed": false
+  },
+  "budget": {
+    "currency": "USD",
+    "proposed_max_usd": "0.25",
+    "maximum_full_reservations_usd": "0.143360",
+    "enforceable_current_runner_guarantee": false,
+    "no_cache_hits_assumed": true,
+    "conditional_on": "Verified default service tier, accepted complete-request bound, exact snapshot/rates and future supported V2 live integration.",
+    "actual_spend_usd": null
+  },
+  "credentials": {
+    "required_dedicated_names": [
+      "WEEK4_OPENAI_API_KEY"
+    ],
+    "langsmith_credentials_required": false,
+    "do_not_load_original_credentials": true,
+    "secret_values_read": false,
+    "credential_files_opened": false,
+    "future_worker_isolation": "Allowlist then clear environment; false ambient tracing flags; nonexistent local LangSmith SDK profile; fixed provider origin, trust_env=false, redirects disabled. Use a clean dedicated shell and omit all tracing credentials."
+  },
+  "ambient_tracing_presence_check": {
+    "LANGSMITH_TRACING": "unset",
+    "LANGCHAIN_TRACING_V2": "unset",
+    "LANGCHAIN_TRACING": "unset",
+    "LANGSMITH_OTEL_ENABLED": "unset",
+    "OTEL_EXPORTER_OTLP_ENDPOINT": "unset",
+    "OTEL_EXPORTER_OTLP_TRACES_ENDPOINT": "unset",
+    "OTEL_TRACES_EXPORTER": "unset",
+    "LANGSMITH_ENDPOINT": "unset",
+    "LANGCHAIN_ENDPOINT": "unset"
+  },
+  "provenance": {
+    "archive": "partial selected-excerpt transcription",
+    "association": "reporter-associated reproduction",
+    "authenticated_request_correlation": false,
+    "independent_reproduction": false,
+    "model_selection_assumption": "Assessment uses deterministic full-catalog scenario only; actual live selection/readiness and later requests are unknown."
+  },
+  "blockers": [
+    {
+      "id": "V2_LIVE_PATH_UNSUPPORTED",
+      "evidence": "smoke.inference_worker uses graph.workflow.build_workflow directly and has no V2 workflow/advisory selector; V2 comparison supports deterministic model transport only."
+    },
+    {
+      "id": "NEW_PLAN_FORMAT_NOT_LOADABLE",
+      "evidence": "live_cli.load_plan accepts only week4-smoke-plan-1; the new version is intentionally incompatible. No V1/inherited fallback is permitted."
+    },
+    {
+      "id": "PROPOSED_INPUT_BOUND_UNSUPPORTED",
+      "evidence": "LiveConfig rejects 65536 (hard maximum 32768). Historical full-selection analyst request does not fit the current byte guard; do not trim required provenance or silently skip analysis."
+    },
+    {
+      "id": "SERVICE_TIER_AND_TOKEN_ENVELOPE_UNRESOLVED",
+      "evidence": "Provider omits service_tier (official API defaults to project auto) and journal does not validate returned tier. Input byte+4096 proxy is not provider-verified token metering."
+    },
+    {
+      "id": "ACCOUNT_ACCESS_AND_LIVE_SCHEMA_UNVERIFIED",
+      "evidence": "No authenticated model discovery or live schema submission authorized. Public support does not establish this account access or acceptance of every concrete dynamic wire schema."
+    }
+  ],
+  "human_review": "review-worksheet.json; all grades unset",
+  "authorization_rule": "Any future paid run requires explicit user authorization tied to a supported, refreshed plan version and its exact hashes. This blocked proposal does not authorize execution or supersede the earlier smoke plan.",
+  "no_runtime_changes_in_this_task": true
+}

@@ -1,0 +1,9 @@
+{
+  "028-provenance-approval.json": "d99dfd0dc9d3ad5139e84b7c70479dc929c6fd535d9c08a379114a0f69b3dd9a",
+  "evaluator-references.json": "fdd25d6282ab884e2e8442b10b95429a224e1747dc92ea550574eb098e96ba82",
+  "inference/W4-DRAFT-031-v1.json": "d89366309f4c14f280f2caf1ae607740bbb722d4bd74b1819ef492724a7aa325",
+  "inference/W4-DRAFT-032-v1.json": "958f67d0e2ae76f8c30c81f20c2b6fe4e72ed2f5a8fa213b50191a416088fea3",
+  "preserved-exclusions.json": "f0f60adfe1ab5b3733c3abb4efbd8272fa72308b2b8027d9a3ead8d75a35f892",
+  "review-decisions.json": "79568feafdace218d483feadd3e55559eae3f1ee78e854a5bbe915357016c8b8",
+  "runtime-assessment.json": "95b23da2a37040ba084eda97274755c365aa8881b577797457a19339b6b84a40"
+}

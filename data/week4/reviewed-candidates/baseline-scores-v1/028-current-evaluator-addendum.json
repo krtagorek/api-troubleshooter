@@ -1,0 +1,13 @@
+{
+  "version": "week4-current-028-evaluator-addendum-1",
+  "case_id": "W4-REAL-028",
+  "reviewer": "User in this conversation",
+  "reviewed_at": null,
+  "current_sourcing_status": "APPROVED",
+  "classification": "Source-derived third-party controlled reproduction using a mock upstream; authorship unknown; not production traffic.",
+  "artificial_allowance_charge": 0,
+  "source_approval_record": "data/week4/reviewed-candidates/final-selection-approved-v1/028-provenance-approval.json",
+  "superseded_prose": "Sourcing eligibility pending/unresolved in historical draft expectations and frozen snapshots is historical, not the current eligibility decision.",
+  "historical_and_frozen_records_modified": false,
+  "diagnostic_expectation_changed": false
+}

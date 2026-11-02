@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-023",
+  "incident": {
+    "incident_id": "W4-REAL-023",
+    "service": "CouchDB",
+    "endpoint": "/new/_index",
+    "http_method": "POST",
+    "status_code": 500,
+    "request_metadata": {
+      "reported_error": "error_saving_ddoc; Unknown error while saving the design document: unauthorized",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "status_evidence": {
+        "kind": "published_curl_http_500"
+      },
+      "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+      "response_body_scope": "Not supplied; null is not evidence of a captured null response."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Submit the intended index-creation request to POST /new/_index.",
+    "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Report supplies explicit POST curl command without authorization and HTTP 500 response.\n- JSON body reports error_saving_ddoc with unauthorized reason; affected version 2.0.0.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

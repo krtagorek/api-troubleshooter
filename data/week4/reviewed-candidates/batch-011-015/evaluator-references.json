@@ -1,0 +1,150 @@
+{
+  "kind": "EVALUATOR_ONLY",
+  "cases": [
+    {
+      "id": "W4-REAL-011",
+      "source_url": "https://github.com/OpenHands/OpenHands/issues/5574",
+      "source_date": "2024-12-12",
+      "family": "missing-authorization-header",
+      "field_provenance": "server access log; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Identify missing authorization at the server boundary; inspect sanitized client header forwarding and session configuration. Do not disable authentication.",
+        "limitations": "Later commenters describe different invalid-token symptoms; do not merge their causes or fixes with the original report.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported missing-authorization diagnosis, underlying cause unresolved. Preserve GET /api/list-files, reported 401 and adjacent missing-Authorization warning. Do not merge later invalid-token comments or confirm port, expiry or signing-secret causes.",
+        "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Supported missing-authorization diagnosis, underlying cause unresolved. Preserve GET /api/list-files, reported 401 and adjacent missing-Authorization warning. Do not merge later invalid-token comments or confirm port, expiry or signing-secret causes."
+    },
+    {
+      "id": "W4-REAL-012",
+      "source_url": "https://discuss.elastic.co/t/how-to-solve-this-error/181624",
+      "source_date": "2019-05-17",
+      "family": "json-serialization-parse-error",
+      "field_provenance": "client-recorded status line; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Identify malformed serialized JSON as supported failure category. Request sanitized exact request bytes and inspect serialization near reported location. Do not fabricate corrected payload.",
+        "limitations": "Initial request payload is unavailable. Later mapping discussion and another parse error do not establish a fix for this exact request.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported JSON-parsing diagnosis, exact payload defect unresolved. Preserve POST /euronews/mytable/1266?pretty=true, HTTP 400 and nested json_parse_exception location. Exact payload unavailable; no invented corrected JSON or confirmed later mapping fix.",
+        "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Supported JSON-parsing diagnosis, exact payload defect unresolved. Preserve POST /euronews/mytable/1266?pretty=true, HTTP 400 and nested json_parse_exception location. Exact payload unavailable; no invented corrected JSON or confirmed later mapping fix."
+    },
+    {
+      "id": "W4-REAL-013",
+      "source_url": "https://github.com/actix/actix-web/issues/2359",
+      "source_date": "2021-08-09",
+      "family": "router-method-and-allow-header",
+      "field_provenance": "HTTPie response status line; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Explain PUT versus GET route mismatch; distinguish expected method rejection from reported missing Allow response header. Verify route contract and framework behavior without inventing allowed methods.",
+        "limitations": "Standards-correctness reproduction, not production outage. Version milestone is not independently verified upgrade remediation.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported method-routing diagnosis and reported missing-Allow-header defect. Preserve GET-only configuration, successful GET and PUT / 405 without Allow shown. Informative rejection is intended, not PUT success. No full allowed-method list or guaranteed upgrade fix.",
+        "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Supported method-routing diagnosis and reported missing-Allow-header defect. Preserve GET-only configuration, successful GET and PUT / 405 without Allow shown. Informative rejection is intended, not PUT success. No full allowed-method list or guaranteed upgrade fix."
+    },
+    {
+      "id": "W4-REAL-014",
+      "source_url": "https://github.com/paperclipai/paperclip/issues/6737",
+      "source_date": "2026-05-26",
+      "family": "write-side-effect-error-response",
+      "field_provenance": "curl response status line; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Treat write outcome as uncertain despite 500 and reported persistence as important evidence. Verify creation before replay; investigate server logs and response path. Do not automatically retry non-idempotent writes or assert exact failing code.",
+        "limitations": "Reporter theories about transaction/serialization are not independently confirmed. Related #6529 and #3310 must not automatically become independent cases. Source issue UUID preserved; run identifier omitted.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Reported write/response inconsistency and duplicate-retry risk, exact server defect unresolved. Preserve POST endpoint and HTTP 500. Persistence/duplicates are reporter claims. Check existing state before replay; no blind retries or confirmed serialization/transaction/code defect.",
+        "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Reported write/response inconsistency and duplicate-retry risk, exact server defect unresolved. Preserve POST endpoint and HTTP 500. Persistence/duplicates are reporter claims. Check existing state before replay; no blind retries or confirmed serialization/transaction/code defect."
+    },
+    {
+      "id": "W4-REAL-015",
+      "source_url": "https://forum.opensearch.org/t/error-no-handler-found-for-uri-plugins-sm-policies-snapshot-policy-and-method-post/12649",
+      "source_date": "2023-02-24",
+      "family": "plugin-route-availability",
+      "field_provenance": "curl response status line; explicit method and endpoint. Observations are attributed paraphrases; logs=[] does not mean no source logs existed. Any shortened response body is an excerpt, not full captured bytes.",
+      "proposed_review": {
+        "expected_behavior": "Identify route/handler availability as the supported error category. Check version-specific API support, installed plugins and method/path contract before changing payload.",
+        "limitations": "Do not assume malformed JSON from 400. Later unsupported claims about licensing/modified installation and advice for a different snapshot API are not proven root cause or equivalent fix.",
+        "runtime_mapping": "PENDING",
+        "neutral_user_goal": "Not yet mapped; do not copy diagnostic expectations into runtime expected_behavior."
+      },
+      "human_review": {
+        "decision": "ACCEPT",
+        "status": "ACCEPTED",
+        "reviewer": "User in this conversation",
+        "reviewed_at": null,
+        "confirmation_at": null,
+        "recorded_at": null,
+        "semantic_scores": null,
+        "runtime_status": "RUNTIME_MAPPING_PENDING",
+        "notes": "Supported route/handler rejection, underlying cause unresolved. Preserve POST /_plugins/_sm/policies/snapshot_policy, HTTP 400, Content-Type application/json, no-handler response and versions. Check deployed API support/plugins/method-path compatibility; no proven malformed JSON, missing plugin, licensing or POST-to-PUT fix.",
+        "confirmation_evidence": "Explicit user decisions in current 011–015 import request; 015 accepted after v5",
+        "independently_reproduced": false,
+        "execution_authorized": false,
+        "trace_export_authorized": false
+      },
+      "accepted_expected_behavior": "Supported route/handler rejection, underlying cause unresolved. Preserve POST /_plugins/_sm/policies/snapshot_policy, HTTP 400, Content-Type application/json, no-handler response and versions. Check deployed API support/plugins/method-path compatibility; no proven malformed JSON, missing plugin, licensing or POST-to-PUT fix."
+    }
+  ]
+}

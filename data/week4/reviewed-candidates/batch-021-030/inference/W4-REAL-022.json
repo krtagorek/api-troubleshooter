@@ -1,0 +1,27 @@
+{
+  "case_id": "W4-REAL-022",
+  "incident": {
+    "incident_id": "W4-REAL-022",
+    "service": "GitLab project API",
+    "endpoint": "/api/v4/projects",
+    "http_method": "POST",
+    "status_code": 500,
+    "request_metadata": {
+      "request_headers": {
+        "Content-Type": "multipart/form-data"
+      },
+      "reported_error": "get multipart reader: no multipart boundary param in Content-Type",
+      "status_evidence": {
+        "kind": "archived_primary_http_500_and_reporter_published_access_log"
+      },
+      "observation_representation": "Attributed public-report/reproduction paraphrases, not independent captured telemetry.",
+      "response_body_scope": "Not supplied; null is not evidence of a captured null response."
+    },
+    "response_body": null,
+    "logs": [],
+    "expected_behavior": "Create the intended project through POST /api/v4/projects.",
+    "actual_behavior": "Reporter-published observations; not independently reproduced:\n- Published access log records POST /api/v4/projects returning 500.\n- Same-correlation workhorse error reports no multipart boundary parameter in Content-Type.\nLogs and exceptions above remain attributed prose; logs=[] does not mean no source logs existed. No later resolution is supplied.",
+    "severity": "unknown",
+    "evidence_quality": "unknown"
+  }
+}

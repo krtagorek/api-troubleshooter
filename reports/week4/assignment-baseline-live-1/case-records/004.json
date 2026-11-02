@@ -1,0 +1,176 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0014860",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0014860",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0014860",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "W4-REAL-011",
+  "elapsed_seconds": 3.4485130421817303,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 2.838333416962996,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 2.838333416962996,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "authentication",
+      "confidence": 0.9,
+      "evidence_references": [
+        "/actual_behavior",
+        "/status_code"
+      ],
+      "reasoning": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:91abdd7a2bef956de4e4f2da:5ba34510d7adef8726c1fb1f",
+          "observation": "Reported historical observations; not independently reproduced:\n- Published server log pairs GET /api/list-files with 401 Unauthorized.\n- Adjacent middleware warning reports Missing Authorization header.\n- Reporter can use the assistant but cannot access generated files; image 0.15, Linux, changed port 3001.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:91abdd7a2bef956de4e4f2da:b859d934079e90450b66015b",
+          "observation": "List the reporter's generated files through the reported GET /api/list-files operation.",
+          "reference": "/expected_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:91abdd7a2bef956de4e4f2da:994b4a31ce4c67db8a6b800a",
+          "observation": "401",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "Unsafe credential-material request replaced by trusted safety policy; confirmation remains outstanding.",
+          "required_to_resolve": "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-011",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "[OUTPUT SAFETY: credential-material request withheld.] Ask the responsible owner for sanitized issuer, audience and expiry claims, verifier decisions and rejection reasons only. Exclude raw access tokens, refresh tokens, complete JWTs, passwords, API keys, session cookies and reusable credentials. No automatic collection or execution; obtain human approval.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Published server log pairs GET /api/list-files with 401 Unauthorized.\n- Adjacent middleware warning reports Missing Authorization header.\n- Reporter can use the assistant but cannot access generated files; image 0.15, Linux, changed port 3001.\nSource warnings/exceptions remain attributed prose; logs=[] does not establish that no source logs existed. Any supplied response body is an excerpt, with completeness unverified.",
+      "endpoint": "/api/list-files",
+      "evidence_quality": "unknown",
+      "expected_behavior": "List the reporter's generated files through the reported GET /api/list-files operation.",
+      "http_method": "GET",
+      "incident_id": "W4-REAL-011",
+      "logs": [],
+      "request_metadata": {
+        "observation_representation": "Attributed public-report paraphrases, not independently reproduced measurements.",
+        "response_body_scope": "not_supplied_not_a_captured_null",
+        "status_evidence": {
+          "kind": "reported_server_access_log"
+        }
+      },
+      "response_body": null,
+      "service": "OpenHands",
+      "severity": "unknown",
+      "status_code": 401
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "acca52b9-f5f1-4aee-84c0-5d5a82e3b053",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "2820de59-4283-4307-9063-47f9e0fbdef8",
+      "elapsed_seconds": 1.5405916247982532,
+      "error": null,
+      "input_tokens": 1151,
+      "output_tokens": 147,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1298
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "d7a785c0-26ca-4d6a-8240-032928a21317",
+      "elapsed_seconds": 1.297741792164743,
+      "error": null,
+      "input_tokens": 1444,
+      "output_tokens": 133,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 1577
+    }
+  ],
+  "root_id": "acca52b9-f5f1-4aee-84c0-5d5a82e3b053",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 67814,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}

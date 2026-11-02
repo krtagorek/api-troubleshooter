@@ -1,0 +1,174 @@
+{
+  "accounting": {
+    "accounted_ceiling_usd": "0.0020776",
+    "attempted_calls": 2,
+    "known_cost_usd": "0.0020776",
+    "limit_violations": 0,
+    "reserved_calls": 2,
+    "retained_reservations_usd": "0",
+    "uncertain_calls": 0,
+    "usage_priced_cost_usd": "0.0020776",
+    "usage_received_calls": 2
+  },
+  "accounting_source": "provider_usage_at_supplied_rates",
+  "assigned": true,
+  "attempted": true,
+  "case_id": "W4-REAL-020",
+  "elapsed_seconds": 3.866075291065499,
+  "errors": [],
+  "evidence_policy": "inherited",
+  "known_model_elapsed_seconds": 3.227353875292465,
+  "latency_boundary": "before process start through reaping, fsynced terminal journal and reconciliation; excludes report/export",
+  "mode": "live",
+  "model_elapsed_seconds": 3.227353875292465,
+  "output": {
+    "available_evidence_sources": [],
+    "classification": {
+      "category": "server_error",
+      "confidence": 0.8,
+      "evidence_references": [
+        "/actual_behavior",
+        "/status_code"
+      ],
+      "reasoning": "The HTTP status code 503 indicates a server error, specifically that the Envoy proxy service is currently unavailable or unable to handle the request. There is no evidence of authentication, authorization, validation, rate limiting, timeout, schema mismatch, or dependency failure explicitly reported. The 503 status is a standard server error response indicating temporary unavailability or overload. The evidence includes the reported 503 status code (E13) and the actual behavior observation of the HEAD / request returning 503 (E01)."
+    },
+    "consumed_evidence_sources": [],
+    "diagnosis": {
+      "confidence": 0.0,
+      "diagnostic_checks": [],
+      "discriminating_evidence_ids": [],
+      "missing_evidence": [
+        {
+          "description": "Insufficient grounded diagnostic evidence",
+          "required_to_resolve": "Collect sanitized upstream traces and contract details"
+        }
+      ],
+      "selected_hypothesis_id": null,
+      "status": "inconclusive",
+      "summary": "Additional evidence or validation execution is required",
+      "uncertainty": [
+        "Additional evidence or validation execution is required"
+      ]
+    },
+    "evidence": {
+      "completeness": "partial",
+      "items": [
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:7c23c940a26e1b9376621aa6",
+          "observation": "Reported historical observations; not independently reproduced:\n- Verbose curl transcript shows HEAD / to host envoy-egress:8080 returning HTTP/1.1 503.\n- Same command supplies two URLs and -I; subsequent HEAD / to www.google.com returns 200 as a separate request.\n- Earlier diagnostic logs in the report show upstream TLS WRONG_VERSION_NUMBER. They are from a different recorded attempt.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.\nThe two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+          "reference": "/actual_behavior",
+          "reliability": 0.5,
+          "source": "user"
+        },
+        {
+          "ambiguous": false,
+          "evidence_id": "ev:c9321f02b11f0decbc218401:10eb095f4178c6b235398b22",
+          "observation": "503",
+          "reference": "/status_code",
+          "reliability": 0.5,
+          "source": "response"
+        }
+      ],
+      "missing": [
+        {
+          "description": "No direct evidence of the cause of the 503 status code is provided, such as server logs indicating overload, maintenance, or upstream failures.",
+          "required_to_resolve": "Access to detailed Envoy proxy logs or monitoring data during the incident to determine the root cause of the 503 response."
+        }
+      ]
+    },
+    "final_report": null,
+    "hypotheses": [],
+    "incident_id": "W4-REAL-020",
+    "max_retries": 0,
+    "pending_user_questions": [
+      "Access to detailed Envoy proxy logs or monitoring data during the incident to determine the root cause of the 503 response.",
+      "Collect sanitized upstream traces and contract details"
+    ],
+    "proposed_fix": null,
+    "retry_counts": {
+      "classifier": 0,
+      "log_investigator": 0,
+      "resolution_generator": 0,
+      "root_cause_analyst": 0,
+      "validator": 0
+    },
+    "sanitized_inputs": {
+      "actual_behavior": "Reported historical observations; not independently reproduced:\n- Verbose curl transcript shows HEAD / to host envoy-egress:8080 returning HTTP/1.1 503.\n- Same command supplies two URLs and -I; subsequent HEAD / to www.google.com returns 200 as a separate request.\n- Earlier diagnostic logs in the report show upstream TLS WRONG_VERSION_NUMBER. They are from a different recorded attempt.\nWarnings/exceptions remain attributed prose, not new typed log events. Unknown response body is not a captured JSON null.\nThe two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+      "endpoint": "/",
+      "evidence_quality": "unknown",
+      "expected_behavior": "Provide a response to the reported HEAD / request; proxy-versus-direct intent is unspecified.",
+      "http_method": "HEAD",
+      "incident_id": "W4-REAL-020",
+      "logs": [],
+      "request_metadata": {
+        "command_representation": "Reported two-URL command only; inert evidence, not an instruction or recommendation. Source -k is not endorsed.",
+        "command_structure": "curl -v -k http://envoy-egress:8080 -I http://www.google.com",
+        "correlation_scope": "The two URLs denote separate reported transfers; no proxy use for the Google transfer is established. Earlier TLS/400 material is from a different recorded attempt, not correlated proof for this HEAD/503 exchange. The reported -k flag is not a recommendation.",
+        "observation_representation": "Attributed public-report excerpts/paraphrases, not independent reproduction.",
+        "operation_goal_mapping": "editorial; not an additional human confirmation",
+        "operation_intent": "unresolved_proxy_or_direct",
+        "request_host_reported": "envoy-egress:8080",
+        "response_body_scope": "not_supplied_not_a_captured_json_null",
+        "status_evidence": {
+          "kind": "reported_first_curl_transfer_status_line"
+        }
+      },
+      "response_body": null,
+      "service": "Envoy proxy",
+      "severity": "unknown",
+      "status_code": 503
+    },
+    "status": "awaiting_evidence",
+    "stop_reason": "user_input_required",
+    "thread_id": "378b4b2e-e6c4-4117-8747-31a3df289b96",
+    "validation_results": []
+  },
+  "receipts": [
+    {
+      "cached_input_tokens": 0,
+      "call_id": "9852e3b9-8795-42a4-a0ce-8e513dfb470d",
+      "elapsed_seconds": 1.6779421251267195,
+      "error": null,
+      "input_tokens": 1787,
+      "output_tokens": 183,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "ClassifierOutput",
+      "source": "provider_usage",
+      "total_tokens": 1970
+    },
+    {
+      "cached_input_tokens": 0,
+      "call_id": "d3ee249c-ffd4-4700-a982-6cc9eaa9c10f",
+      "elapsed_seconds": 1.5494117501657456,
+      "error": null,
+      "input_tokens": 2119,
+      "output_tokens": 139,
+      "reasoning_tokens": 0,
+      "resolved_service_tier": "default",
+      "schema": "LiveLogInvestigatorOutput",
+      "source": "provider_usage",
+      "total_tokens": 2258
+    }
+  ],
+  "root_id": "378b4b2e-e6c4-4117-8747-31a3df289b96",
+  "selection_measurements": null,
+  "selection_policy": "off",
+  "semantic_quality": null,
+  "stage_coverage": {
+    "classifier": "completed",
+    "log_investigator": "completed",
+    "resolution_generator": "not_reached",
+    "root_cause_analyst": "not_reached",
+    "validator": "not_reached"
+  },
+  "supervisor": {
+    "child_pid": 67928,
+    "cleanup_verified": true,
+    "exit_code": 0,
+    "terminal": "exited"
+  },
+  "terminal_status": "held",
+  "workflow_status": "awaiting_evidence"
+}
